@@ -1,0 +1,5 @@
+Started: 2026-10-23 19:06:45
+Inputs:
+  <PROJECT_DIR>/disclosures/example.md
+
+[nabc] saved nabc.md (31 s)

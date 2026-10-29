@@ -1,0 +1,18 @@
+{
+  "weights": {
+    "need": 0.12,
+    "benefits": 0.12,
+    "team": 0.16,
+    "novelty": 0.12,
+    "freedom_to_operate": 0.10,
+    "technical_maturity": 0.08,
+    "market_size": 0.10,
+    "route_to_market": 0.06,
+    "competition": 0.06,
+    "funding_availability": 0.04,
+    "funding_fit": 0.04
+  },
+  "opinion_weight": 0.25,
+  "bands": {"pursue": 70, "pass": 45},
+  "verifier_tolerance": 10
+}

@@ -1,0 +1,8 @@
+Started: 2026-10-24 10:17:21
+Inputs:
+  <PROJECT_DIR>/disclosures/example.md
+
+[funding] saved funding.md (199 s)
+[ip] saved ip.md (118 s)
+[market] saved market.md (192 s)
+[nabc] saved nabc.md (37 s)

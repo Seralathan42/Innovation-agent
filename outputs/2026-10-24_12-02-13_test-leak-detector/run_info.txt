@@ -1,0 +1,11 @@
+Started: 2026-10-24 12:02:13
+Inputs:
+  /Users/sera/Downloads/AI Project - shareable/disclosures/test-leak-detector.pdf
+
+[funding] saved funding.md (154 s)
+[ip] saved ip.md (148 s)
+[market] saved market.md (160 s)
+[nabc] saved nabc.md (51 s)
+[scorer] saved scorer.json, 3 of 3 runs (10 s)
+[verifier] saved verifier.json, 1 of 1 runs (33 s)
+[score] saved score.md (0 s)

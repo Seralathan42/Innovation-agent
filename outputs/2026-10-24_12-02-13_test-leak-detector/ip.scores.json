@@ -1,0 +1,17 @@
+{
+  "novelty": {
+    "score": 2,
+    "confidence": "medium",
+    "evidence": "Measuring section sound speed with active pulses between two sensors (NRC/Echologics/Mueller) and sensor-emitted calibration signals (Itron US5974862) are known, so only the combination is possibly new: nodes that automatically and repeatedly calibrate speed and attenuation and feed them into leak location in district heating."
+  },
+  "freedom_to_operate": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "No blocking patent was found for Finland or the EU, but Mueller's active patents in the US (especially US11726064B2 on averaged impulses to measure speed of sound) could be close for US sales, and EP equivalents were not checked."
+  },
+  "technical_maturity": {
+    "score": 4,
+    "confidence": "medium",
+    "evidence": "A 4-month trial on 2.3 km of a real district heating network located 3 known leaks with 2.1 m mean error, but with only 6 prototype sensors built from off-the-shelf parts and an estimated (not measured) battery life."
+  }
+}

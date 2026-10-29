@@ -1,0 +1,7 @@
+Started: 2026-10-23 18:54:51 (first test run, recorded afterwards from file times)
+Inputs:
+  disclosures/example.md
+
+[nabc] saved nabc.md (about 60 s)
+[ip] saved ip.md (about 180 s)
+[market] saved market.md (about 180 s)

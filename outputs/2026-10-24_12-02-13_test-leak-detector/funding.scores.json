@@ -1,0 +1,12 @@
+{
+  "funding_availability": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "One very strong option (Business Finland R2B) is expected in spring 2027 but not currently open, and the other options either close soon and fit only partly (research organisations and SMEs call, 18 Dec 2026), need a company (EIC Accelerator, start-up funding) or need an international consortium (CETP 2027)."
+  },
+  "funding_fit": {
+    "score": 4,
+    "confidence": "medium",
+    "evidence": "Field-validated TRL 5\u20136 results, a spin-off-minded doctoral researcher and an operator asking for a 2027 pilot match R2B's purpose and Aalto's eligibility well, but the lack of IP protection before an imminent publication, possible Kamstrup patents and no business experience in the team are real gaps."
+  }
+}

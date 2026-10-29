@@ -1,0 +1,28 @@
+[
+  {
+    "score": 47,
+    "summary": "The four reports agree with one another, quote the disclosure accurately, and are open about what they did not check. My spot-checks held up: Mueller's US11726064B2 is active and has no EP family member listed, the Business Finland call for research organisations and SMEs does close on 18 Dec 2026, and Itron's US5974862 does describe a sensor sending a signal into the pipe to measure sound speed. The main weaknesses are that the funding and NABC reports are more optimistic than the IP evidence allows, and that technical maturity is scored a little high for a 6-sensor, 4-month trial.",
+    "issues": [
+      {
+        "criterion": "novelty",
+        "problem": "The score of 2 is right, but the IP report still calls US5974862 'per the search summary' and says the full text should be checked. I read the full text: it explicitly has a processor send a random token signal into the pipe as vibration and use the travel time to measure sound speed and sensor spacing. Sensor-sent active calibration is therefore confirmed prior art, and only the damping/attenuation measurement and the repeated recalibration over temperature might still be new. That makes inventive step weaker than the reports suggest, and the funding and NABC reports do not take it into account.",
+        "suggested_score": 2
+      },
+      {
+        "criterion": "technical_maturity",
+        "problem": "A 4 means mature for TRL 5, but the evidence is 6 hand-built sensors, one network, one season and 3 known leaks. No unknown leak has been found. The 5-year battery life is only an estimate and has not been checked against the extra energy needed to send active pulses. Pump-noise false alarms are also unresolved.",
+        "suggested_score": 3
+      },
+      {
+        "criterion": "funding_fit",
+        "problem": "The funding report rates R2B as 'very strong' and presents Kamstrup's patent as the main IP risk. The IP report finds Kamstrup a low risk and the real weakness to be prior art from Mueller and Itron, which could leave little patentable to license. R2B also needs a market study and a commercialisation lead, and neither exists yet, so fit is moderate rather than strong.",
+        "suggested_score": 3
+      },
+      {
+        "criterion": "benefits",
+        "problem": "The benefit table leaves out the cost of the 2 false alarms in 4 months on 2.3 km (about 2.6 per km per year). Scaled to a network of hundreds of km, that could cancel out much of the time saved by more accurate location, so the score should note this as a material unknown. The score itself is acceptable.",
+        "suggested_score": 3
+      }
+    ]
+  }
+]

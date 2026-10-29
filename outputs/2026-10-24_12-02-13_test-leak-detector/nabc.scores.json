@@ -1,0 +1,17 @@
+{
+  "need": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "Operators clearly struggle to locate leaks (alarm wires broken or missing, drones winter-only, days of digging) and one operator wants a larger pilot, but losses and costs are not quantified."
+  },
+  "benefits": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "Field position error fell from 9.4 m to 2.1 m with about 120 EUR of parts per sensor, but price, installation cost, savings per leak and false-alarm handling at scale are not stated."
+  },
+  "team": {
+    "score": 2,
+    "confidence": "high",
+    "evidence": "One doctoral researcher wants to found a company in 2027, the senior inventor will only advise, and nobody in the team has business experience."
+  }
+}

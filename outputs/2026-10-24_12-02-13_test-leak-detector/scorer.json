@@ -1,0 +1,29 @@
+[
+  {
+    "score": 52,
+    "reasons": [
+      "The field trial shows a clear technical gain (2.1 m vs 9.4 m position error). The sensors are cheap (about \u20ac120 each), and the host utility has asked about a 2027 pilot. The problem on older networks with broken alarm wires is real.",
+      "IP is shaky. The individual building blocks are known: Mueller/Echologics patents cover active sound-speed measurement, and an expired Itron patent describes sensor-sent pulses. Patentability rests on a weak inventive step for the combination. The conference decision in December 2026 also forces an urgent filing before publication, and no patent search has been done.",
+      "The market is niche, with perhaps a few million euros a year in the Nordics. The team has no business experience and only one founder, who is still finishing a doctorate. The evidence is thin: 3 known leaks, 6 sensors, one network. A clear funding path exists through Business Finland R2B."
+    ],
+    "biggest_risk": "The conference paper could publish the method before a patent is filed, and the combination claim is already weak against known prior art, so the invention may end up with no defensible IP edge over vendors such as Mueller/Echologics, Gutermann and Kamstrup."
+  },
+  {
+    "score": 52,
+    "reasons": [
+      "The field trial shows a clear technical gain (2.1 m error against 9.4 m for a manual correlator). Hardware is cheap at about \u20ac120 per sensor. The host energy company has asked about a 2027 pilot. The need is real in older networks where alarm wires are broken or missing.",
+      "IP is fragile. A conference paper decision is due in December 2026, and no patent search has been done. Active speed measurement and sensor-emitted pulses already appear in prior art, including Mueller patents in the US and an expired Itron patent. The inventive step for the combination is uncertain, and fixed-logger vendors could copy the method.",
+      "The market is niche, with perhaps a few million euros a year at maturity in the Nordics. The team has no business experience and only one prospective founder, who is still finishing a doctorate. Evidence is thin: 3 known leaks, 6 sensors, and one network. A Business Finland R2B grant is a good funding fit for the next step."
+    ],
+    "biggest_risk": "The invention may lose patentability through the December 2026 paper publication, or may prove too weak on inventive step, which would leave no defensible moat against established logger vendors."
+  },
+  {
+    "score": 50,
+    "reasons": [
+      "Solid technical evidence for an early-stage case: the field trial gave 2.1 m mean position error against 9.4 m for a manual correlator. A real operator wants a larger pilot in 2027. Hardware is cheap, at about \u20ac120 per sensor. Funding routes such as Business Finland R2B fit well.",
+      "The IP position is weak and time-critical. A conference paper decision is due in December 2026, and no patent search has been done. Active sound-speed measurement and sensor-emitted pulses are already in the prior art, including Mueller patents and an expired Itron patent. Inventive step for the combination is uncertain.",
+      "The market is niche, with perhaps a few million euros a year at maturity in the Nordics. Established incumbents such as Gutermann, Kamstrup and Vexve are close. The team is thin: one founder who is still finishing a doctorate and has no business experience. Evidence so far is limited to 3 known leaks, 6 sensors, and false alarms from pump noise."
+    ],
+    "biggest_risk": "The conference paper could become public before a patent application is filed, which would end patentability, and the claims may be narrow anyway given the crowded active-acoustics prior art, leaving a thin team without a defensible edge against incumbents."
+  }
+]

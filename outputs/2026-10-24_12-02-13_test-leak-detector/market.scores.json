@@ -1,0 +1,17 @@
+{
+  "market_size": {
+    "score": 2,
+    "confidence": "medium",
+    "evidence": "Finland has 16,690 km and Europe roughly 190,000 km of district heating network, but the reachable segment (older networks without working alarm wires) suggests only a few million euros a year in the Nordics, and the figures come from my own sensor-spacing and price assumptions."
+  },
+  "route_to_market": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "One utility has asked for a 2027 pilot and there are natural licensees or partners (Vexve, Gutermann or its distributors, Kamstrup), but utility procurement is slow, the team has no business experience, and the pre-filing publication puts IP at risk."
+  },
+  "competition": {
+    "score": 2,
+    "confidence": "medium",
+    "evidence": "Alarm wires are standard on new pipes, Gutermann loggers already do nightly neighbour correlation on district heating networks via DWI, Kamstrup holds a 2026 US patent on acoustic district heating leak detection, and thermal surveys are established; the self-calibration is a real but narrow difference."
+  }
+}

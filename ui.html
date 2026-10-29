@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innovation Agents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f5f7; --panel: #ffffff; --line: #e3e6eb; --text: #1b2230; --muted: #667085;
+    --accent: #3b5bdb; --accent-soft: #edf1ff; --ok: #12805c; --bad: #c4320a; --code: #f1f3f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1218; --panel: #161a22; --line: #283041; --text: #e6e9ef; --muted: #98a2b3;
+      --accent: #8ba4ff; --accent-soft: #1c2440; --ok: #4cc38a; --bad: #ff7b5c; --code: #1e2430;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { font: 15px/1.6 Inter, system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+  button { font: inherit; color: inherit; cursor: pointer; }
+
+  .app { display: grid; grid-template-columns: 250px minmax(0, 1fr) 410px; height: 100vh; }
+  aside, main, .chat { display: flex; flex-direction: column; min-height: 0; }
+
+  /* Runs */
+  aside { background: var(--panel); border-right: 1px solid var(--line); }
+  .brand { padding: 20px 20px 14px; }
+  .brand h1 { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  .new { margin: 0 14px 4px; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 600; }
+  .new:hover { filter: brightness(1.08); }
+  .hint { margin: 0 0 10px; text-align: center; color: var(--muted); font-size: 12px; }
+  .runs { overflow-y: auto; padding: 4px 10px 16px; border-top: 1px solid var(--line); }
+  .run { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 10px 12px; border-radius: 8px; margin-top: 4px; }
+  .run:hover { background: var(--bg); }
+  .run.active { background: var(--accent-soft); }
+  .run b { display: block; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .run small { color: var(--muted); font-size: 12.5px; }
+  .run .warn { color: var(--bad); }
+  .run .busy { color: var(--accent); }
+
+  /* Report */
+  main header { background: var(--panel); border-bottom: 1px solid var(--line); padding: 20px 32px 0; }
+  main h2 { margin: 0; font-size: 21px; letter-spacing: -0.01em; }
+  .meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .status { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip { font-size: 12px; padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); background: var(--bg); }
+  .chip.saved::before { content: "✓ "; color: var(--ok); }
+  .chip.failed, .chip.stopped { color: var(--bad); border-color: currentColor; }
+  .chip.failed::before, .chip.stopped::before { content: "✕ "; }
+  .chip.running { color: var(--accent); border-color: currentColor; }
+  .chip.waiting::before { content: "… "; }
+  .spin { display: inline-block; width: 9px; height: 9px; margin-right: 5px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.9s linear infinite; vertical-align: -1px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .tabs { display: flex; gap: 2px; margin-top: 12px; overflow-x: auto; }
+  .tab { border: 0; background: none; color: var(--muted); font-weight: 500; padding: 10px 12px; border-bottom: 2px solid transparent; white-space: nowrap; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .report { flex: 1; overflow-y: auto; padding: 28px 32px 48px; }
+  .doc { max-width: 840px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 36px 44px; }
+  .doc pre.info { white-space: pre-wrap; font-size: 13px; margin: 0; }
+  .placeholder { color: var(--muted); text-align: center; padding: 40px 0; }
+
+  /* Start screen and progress */
+  .dropzone { display: block; width: 100%; padding: 70px 24px; border: 2px dashed var(--line); border-radius: 12px; background: none; text-align: center; color: var(--muted); }
+  .dropzone:hover { border-color: var(--accent); color: var(--text); }
+  .dropzone b { display: block; font-size: 18px; color: var(--text); margin-bottom: 6px; }
+  .steps { list-style: none; margin: 18px 0 0; padding: 0; }
+  .steps li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--line); }
+  .steps .icon { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; background: var(--bg); color: var(--muted); }
+  .steps .saved .icon { background: var(--ok); color: #fff; }
+  .steps .failed .icon, .steps .stopped .icon { background: var(--bad); color: #fff; }
+  .steps .running .icon { color: var(--accent); }
+  .steps .running .icon .spin { margin: 0; }
+  .steps .text { flex: 1; min-width: 0; }
+  .steps .text b { display: block; }
+  .steps .text small { color: var(--muted); }
+  .steps .when { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .steps a { color: var(--accent); cursor: pointer; }
+
+  /* Markdown, in reports and chat replies */
+  .md > :first-child { margin-top: 0; }
+  .md > :last-child { margin-bottom: 0; }
+  .md h1 { font-size: 24px; line-height: 1.3; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .md h2 { font-size: 19px; margin: 30px 0 10px; }
+  .md h3 { font-size: 16px; margin: 22px 0 8px; }
+  .md a { color: var(--accent); text-decoration: none; }
+  .md a:hover { text-decoration: underline; }
+  .md table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 13.5px; margin: 14px 0; }
+  .md th, .md td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+  .md th { background: var(--bg); font-weight: 600; }
+  .md code { background: var(--code); border-radius: 4px; padding: 1px 5px; font-size: 0.9em; }
+  .md blockquote { margin: 14px 0; padding: 6px 16px; border-left: 3px solid var(--accent); background: var(--bg); color: var(--muted); }
+  .md hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+  .md ul, .md ol { padding-left: 22px; }
+
+  /* Chat */
+  .chat { background: var(--panel); border-left: 1px solid var(--line); }
+  .chat-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 18px 18px 14px; border-bottom: 1px solid var(--line); }
+  .chat-head h3 { margin: 0; font-size: 15px; }
+  .chat-head p { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+  .ghost { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 5px 10px; font-size: 13px; white-space: nowrap; }
+  .ghost:hover { background: var(--bg); }
+  .messages { flex: 1; overflow-y: auto; padding: 16px; }
+  .msg { margin-bottom: 14px; max-width: 94%; }
+  .msg.user { width: fit-content; margin-left: auto; background: var(--accent); color: #fff; padding: 9px 13px; border-radius: 14px 14px 4px 14px; white-space: pre-wrap; }
+  .msg.assistant { background: var(--bg); padding: 10px 14px; border-radius: 14px 14px 14px 4px; font-size: 14.5px; }
+  .msg.assistant .md table { font-size: 12.5px; }
+  .tool { display: block; width: fit-content; max-width: 100%; margin: 6px 0; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tool.failed { color: var(--bad); }
+  .tool.failed::after { content: " (not allowed or failed)"; }
+  .error { color: var(--bad); font-size: 13px; }
+  .typing i { display: inline-block; width: 6px; height: 6px; margin-right: 4px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+  .typing i:nth-child(2) { animation-delay: 0.2s; }
+  .typing i:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+  .empty { color: var(--muted); font-size: 13.5px; }
+  .empty button { display: block; width: 100%; text-align: left; margin-top: 8px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--text); font-size: 13.5px; }
+  .empty button:hover { border-color: var(--accent); }
+  .composer { display: flex; gap: 8px; align-items: flex-end; padding: 12px 14px 16px; border-top: 1px solid var(--line); }
+  .composer textarea { flex: 1; resize: none; max-height: 160px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 14.5px; color: var(--text); background: var(--panel); outline: none; }
+  .composer textarea:focus { border-color: var(--accent); }
+  .composer button { width: 40px; height: 40px; flex: none; border: 0; border-radius: 12px; background: var(--accent); color: #fff; font-size: 18px; font-weight: 700; }
+  .composer button:disabled { opacity: 0.4; cursor: default; }
+
+  /* Drop overlay and notices */
+  .drop { position: fixed; inset: 0; z-index: 10; display: none; place-items: center; padding: 24px; background: rgba(15, 18, 24, 0.7); backdrop-filter: blur(3px); }
+  .drop.show { display: grid; }
+  .drop div { padding: 60px 70px; border: 3px dashed #fff; border-radius: 18px; background: rgba(59, 91, 219, 0.35); color: #fff; font-size: 20px; font-weight: 600; text-align: center; pointer-events: none; }
+  .toast { position: fixed; left: 50%; bottom: 24px; z-index: 11; transform: translateX(-50%); max-width: min(560px, calc(100vw - 32px)); padding: 11px 16px; border-radius: 10px; background: var(--text); color: var(--panel); font-size: 14px; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+  .toast.show { opacity: 1; }
+
+  @media (max-width: 1280px) {
+    .app { grid-template-columns: 210px minmax(0, 1fr) 350px; }
+    .report { padding: 20px; }
+    .doc { padding: 28px 30px; }
+  }
+  @media (max-width: 1000px) {
+    .app { grid-template-columns: 1fr; height: auto; }
+    aside { border-right: 0; border-bottom: 1px solid var(--line); }
+    .runs { display: flex; gap: 6px; overflow-x: auto; }
+    .run { min-width: 190px; }
+    main header { padding: 16px 16px 0; }
+    .report { overflow: visible; padding: 16px; }
+    .doc { padding: 22px 18px; }
+    .chat { height: 85vh; border-left: 0; border-top: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><h1>Innovation agents</h1><p>Invention disclosure analysis</p></div>
+    <button class="new" id="new" type="button">+ New analysis</button>
+    <p class="hint">or drop a file anywhere on the page</p>
+    <input type="file" id="file" hidden accept=".pdf,.md,.txt,.png,.jpg,.jpeg,.gif,.webp">
+    <nav class="runs" id="runs"></nav>
+  </aside>
+
+  <main>
+    <header>
+      <h2 id="title">Loading…</h2>
+      <div class="meta" id="meta"></div>
+      <div class="status" id="status"></div>
+      <nav class="tabs" id="tabs"></nav>
+    </header>
+    <div class="report" id="report"><article class="doc md" id="doc"></article></div>
+  </main>
+
+  <section class="chat">
+    <div class="chat-head">
+      <div><h3>Assistant</h3><p>Knows this run's reports. Can edit them and check facts on the web.</p></div>
+      <button class="ghost" id="reset" type="button">New chat</button>
+    </div>
+    <div class="messages" id="messages"></div>
+    <form class="composer" id="composer">
+      <textarea id="input" rows="1" placeholder="Ask about this run…"></textarea>
+      <button id="send" type="submit" aria-label="Send">↑</button>
+    </form>
+  </section>
+</div>
+<div class="drop" id="drop"><div>Drop the invention disclosure<br>to start the analysis</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const LABELS = { overview: "Overview", score: "Score", scorer: "Scorer", verifier: "Verifier", nabc: "NABC summary", ip: "Technology & IP", market: "Market", funding: "Funding" };
+const STEPS = {
+  overview: "Sums up all reports once the others are done",
+  nabc: "Writes the NABC summary from the disclosure",
+  ip: "Searches patents, papers and research projects",
+  market: "Researches the market, statistics and Finnish companies",
+  funding: "Finds EU calls and earlier funded projects",
+  scorer: "Gives an overall opinion score, 3 times",
+  verifier: "Re-scores on its own and checks the sub-scores",
+  score: "Combines the sub-scores into the final score",
+};
+const ORDER = ["overview", "score", "nabc", "ip", "market", "funding"];
+const FILE_TYPES = [".pdf", ".md", ".txt", ".png", ".jpg", ".jpeg", ".gif", ".webp"];
+const STALE_MINUTES = 60;  // a run still "running" after this long was stopped (for example the app was closed)
+const TOOL_LABELS = {
+  Read: "Read", Edit: "Edited", Write: "Wrote", WebSearch: "Searched the web:", WebFetch: "Opened",
+  google_patent: "Read patent", search_papers: "Searched papers:", eu_funding_calls: "Searched EU calls:",
+  eu_call_details: "Read EU call", finnish_companies: "Searched Finnish companies:", eurostat_search: "Searched Eurostat:",
+  eurostat_data: "Got Eurostat data:", research_projects: "Searched research projects:",
+};
+const SUGGESTIONS = [
+  "What are the three biggest risks across all reports?",
+  "Double-check the market size figures in the market report.",
+  "Shorten the NABC summary to half a page.",
+];
+const $ = (id) => document.getElementById(id);
+const state = { runs: [], run: null, tab: null, shown: "", busy: false, threads: {} };
+
+DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+  if (node.tagName === "A") { node.setAttribute("target", "_blank"); node.setAttribute("rel", "noopener"); }
+});
+const markdown = (text) => DOMPurify.sanitize(marked.parse(text));
+const currentRun = () => state.runs.find((r) => r.id === state.run);
+const label = (name) => LABELS[name] || name;
+const rank = (name) => (ORDER.includes(name) ? ORDER.indexOf(name) : ORDER.length);
+const byOrder = (a, b) => rank(a) - rank(b) || a.localeCompare(b);
+
+function toast(text, ms = 4000) {
+  $("toast").textContent = text;
+  $("toast").classList.add("show");
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => $("toast").classList.remove("show"), ms);
+}
+
+function duration(seconds) {
+  const m = Math.floor(seconds / 60), s = Math.floor(seconds % 60);
+  return m ? `${m} min ${String(s).padStart(2, "0")} s` : `${s} s`;
+}
+
+// Run folders are named <date>_<time>_<disclosure>; run_info.txt has one status line per agent:
+// "[ip] running", "[overview] waiting", "[ip] saved ip.md (118 s)" or "[ip] failed: <reason> (12 s)".
+function describe(run) {
+  const m = run.id.match(/^(\d{4})-(\d\d)-(\d\d)_(\d\d)-(\d\d)-(\d\d)_(.+)$/);
+  const started = m ? new Date(m[1], m[2] - 1, m[3], m[4], m[5], m[6]) : null;
+  const when = started ? started.toLocaleString(undefined,
+    { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "";
+  const stale = started && Date.now() - started > STALE_MINUTES * 60000;
+  const agents = [...run.info.matchAll(/^\[([^\]]+)\] (running|waiting|saved|failed)(.*)$/gm)].map(([, name, status, rest]) => {
+    const time = rest.match(/\(([^()]*s)\)\s*$/)?.[1] || "";
+    if (stale && (status === "running" || status === "waiting")) status = "stopped";
+    return { name, status, time, detail: rest.replace(/\(([^()]*s)\)\s*$/, "").replace(/^:\s*/, "").trim() };
+  }).sort((a, b) => byOrder(a.name, b.name));
+  const inputs = [...run.info.matchAll(/^ {2}(\S.*)$/gm)].map((m) => m[1].split("/").pop());
+  const active = agents.some((a) => a.status === "running" || a.status === "waiting");
+  return { name: m ? m[7] : run.id, when, started, agents, inputs, active };
+}
+
+async function loadRuns(force = false) {
+  const response = await fetch("/api/runs").catch(() => null);
+  if (!response?.ok) return;
+  const text = await response.text();
+  if (text === state.raw && !force) return;  // nothing new since the last check
+  state.raw = text;
+  state.runs = JSON.parse(text);
+  renderRuns();
+  if (!state.runs.length) {
+    state.run = null;
+    $("title").textContent = "Analyse an invention disclosure";
+    $("meta").textContent = "";
+    $("status").replaceChildren();
+    $("tabs").replaceChildren();
+    $("doc").innerHTML = '<button class="dropzone" type="button" id="start"><b>Drop an invention disclosure here</b>' +
+      "or click to choose a file. PDF, text, Markdown or image.</button>";
+    $("start").onclick = () => $("file").click();
+  } else if (!currentRun()) {
+    selectRun(state.runs[0].id);
+  } else {
+    updateRun();
+  }
+}
+
+function renderRuns() {
+  $("runs").replaceChildren(...state.runs.map((run) => {
+    const info = describe(run);
+    const failed = info.agents.filter((a) => a.status === "failed" || a.status === "stopped").length;
+    const button = document.createElement("button");
+    button.className = "run" + (run.id === state.run ? " active" : "");
+    button.innerHTML = "<b></b><small></small>";
+    button.querySelector("b").textContent = info.name;
+    const small = button.querySelector("small");
+    small.textContent = info.when + " · ";
+    if (info.active) small.insertAdjacentHTML("beforeend", '<span class="busy"><span class="spin"></span>Analysing</span>');
+    else small.append(`${run.reports.length} reports`);
+    if (failed) small.insertAdjacentHTML("beforeend", ` · <span class="warn">${failed} failed</span>`);
+    button.onclick = () => selectRun(run.id);
+    return button;
+  }));
+}
+
+function selectRun(id, tab = null) {
+  state.run = id;
+  state.shown = "";
+  renderRuns();
+  const run = currentRun(), info = describe(run);
+  const reports = [...run.reports].sort(byOrder);
+  state.tab = tab || (info.active && !reports.length ? "progress" : reports.includes(state.tab) ? state.tab : reports[0] || "progress");
+  updateRun(false);
+  showThread(id);
+}
+
+// Draw the header and tabs for the selected run; redraw the open tab only if something changed.
+function updateRun(keepScroll = true) {
+  const run = currentRun();
+  if (!run) return;
+  const info = describe(run);
+  const reports = [...run.reports].sort(byOrder);
+  if (state.tab === "progress" && !info.active && reports.length) state.tab = reports[0];  // finished: show the results
+  if (state.tab !== "progress" && state.tab !== "info" && !reports.includes(state.tab)) state.tab = info.active ? "progress" : reports[0] || "info";
+
+  $("title").textContent = info.name;
+  $("meta").textContent = [info.when, info.inputs.length && "Input: " + info.inputs.join(", ")].filter(Boolean).join(" · ");
+  $("status").replaceChildren(...info.agents.map((a) => {
+    const chip = document.createElement("span");
+    chip.className = "chip " + a.status;
+    chip.innerHTML = a.status === "running" ? '<span class="spin"></span>' : "";
+    chip.append(label(a.name) + (a.time ? " · " + a.time : a.status === "waiting" ? " · waiting" : ""));
+    if (a.detail && a.status === "failed") chip.title = a.detail;
+    return chip;
+  }));
+  const tabs = [...(info.active ? ["progress"] : []), ...reports, "info"];
+  $("tabs").replaceChildren(...tabs.map((name) => {
+    const tab = document.createElement("button");
+    tab.className = "tab" + (name === state.tab ? " active" : "");
+    tab.textContent = name === "progress" ? "Progress" : name === "info" ? "Run info" : label(name);
+    tab.onclick = () => showTab(name);
+    return tab;
+  }));
+  const signature = state.tab + "|" + (state.tab === "progress" || state.tab === "info" ? run.info : run.reports.join());
+  if (signature !== state.shown) {
+    state.shown = signature;
+    showTab(state.tab, keepScroll);
+  }
+}
+
+async function showTab(name, keepScroll = false) {
+  state.tab = name;
+  for (const tab of $("tabs").children) tab.classList.toggle("active", tab.textContent === (name === "progress" ? "Progress" : name === "info" ? "Run info" : label(name)));
+  const run = currentRun();
+  if (name === "progress") {
+    renderProgress(run);
+  } else if (name === "info") {
+    $("doc").innerHTML = '<pre class="info"></pre>';
+    $("doc").firstChild.textContent = run.info || "No run_info.txt in this run.";
+  } else {
+    const response = await fetch(`/api/runs/${encodeURIComponent(run.id)}/${encodeURIComponent(name)}`);
+    if (state.tab !== name || state.run !== run.id) return;  // the user moved on while loading
+    $("doc").innerHTML = response.ok ? markdown(await response.text()) : '<p class="placeholder">This report could not be loaded.</p>';
+  }
+  if (!keepScroll) $("report").scrollTop = 0;
+}
+
+function renderProgress(run) {
+  const info = describe(run);
+  $("doc").innerHTML = '<h1></h1><p class="meta" id="elapsed"></p><ul class="steps"></ul>';
+  $("doc").querySelector("h1").textContent = `Analysing ${info.inputs[0] || info.name}`;
+  $("doc").querySelector(".steps").replaceChildren(...info.agents.map((a) => {
+    const item = document.createElement("li");
+    item.className = a.status;
+    const icon = { saved: "✓", failed: "✕", stopped: "✕", waiting: "…", running: '<span class="spin"></span>' }[a.status];
+    item.innerHTML = `<span class="icon">${icon}</span><span class="text"><b></b><small></small></span><span class="when"></span>`;
+    item.querySelector("b").textContent = label(a.name);
+    item.querySelector("small").textContent = a.status === "failed" ? a.detail : STEPS[a.name] || "";
+    const when = item.querySelector(".when");
+    if (a.status === "saved" && run.reports.includes(a.name)) {
+      const link = document.createElement("a");
+      link.textContent = `Read · ${a.time}`;
+      link.onclick = () => showTab(a.name);
+      when.append(link);
+    } else {
+      when.textContent = { running: "Working", waiting: "Waiting", failed: a.time, stopped: "Stopped", saved: a.time }[a.status];
+    }
+    return item;
+  }));
+  tick();
+}
+
+function tick() {  // live "running for" line on the progress tab
+  const run = currentRun(), el = $("elapsed");
+  if (!run || !el) return;
+  const info = describe(run);
+  el.textContent = info.active && info.started
+    ? `Running for ${duration((Date.now() - info.started) / 1000)}. You can read finished reports while the rest run.`
+    : "Finished.";
+}
+
+// New analysis: upload one file, which starts all agents on it.
+async function upload(file) {
+  if (!file) return;
+  if (!FILE_TYPES.some((type) => file.name.toLowerCase().endsWith(type))) {
+    toast("Use a PDF, text, Markdown or image file. Save Word files as PDF first.");
+    return;
+  }
+  toast(`Starting the analysis of ${file.name}…`);
+  const response = await fetch(`/api/runs?name=${encodeURIComponent(file.name)}`, { method: "POST", body: file });
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    toast(result.detail || "The analysis could not be started.", 8000);
+    return;
+  }
+  await loadRuns(true);
+  selectRun(result.id, "progress");
+  toast(`Analysing ${file.name}. The reports appear here as each agent finishes.`);
+}
+
+$("new").onclick = () => $("file").click();
+$("file").onchange = () => { upload($("file").files[0]); $("file").value = ""; };
+let dragDepth = 0;
+window.addEventListener("dragenter", (e) => {
+  if (!e.dataTransfer.types.includes("Files")) return;
+  dragDepth++;
+  $("drop").classList.add("show");
+});
+window.addEventListener("dragleave", () => { if (--dragDepth <= 0) { dragDepth = 0; $("drop").classList.remove("show"); } });
+window.addEventListener("dragover", (e) => e.preventDefault());
+window.addEventListener("drop", (e) => {
+  e.preventDefault();
+  dragDepth = 0;
+  $("drop").classList.remove("show");
+  const files = e.dataTransfer.files;
+  if (files.length > 1) toast("Only the first file is used.");
+  upload(files[0]);
+});
+
+// Chat: one thread per run, kept while the page is open.
+function showThread(id) {
+  if (!state.threads[id]) {
+    const thread = document.createElement("div");
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "Ask anything about this run. For example:";
+    for (const text of SUGGESTIONS) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = text;
+      button.onclick = () => send(text);
+      empty.append(button);
+    }
+    thread.append(empty);
+    state.threads[id] = thread;
+  }
+  $("messages").replaceChildren(state.threads[id]);
+}
+
+function addMessage(thread, role) {
+  const message = document.createElement("div");
+  message.className = "msg " + role;
+  thread.append(message);
+  return message;
+}
+
+function setBusy(busy) {
+  state.busy = busy;
+  $("send").disabled = busy;
+  $("input").disabled = busy;
+  $("reset").disabled = busy;
+}
+
+async function send(text) {
+  if (state.busy || !text.trim() || !state.run) return;
+  const run = state.run, thread = state.threads[run];
+  thread.querySelector(".empty")?.remove();
+  addMessage(thread, "user").textContent = text;
+  const reply = addMessage(thread, "assistant");
+  reply.innerHTML = '<div class="typing"><i></i><i></i><i></i></div>';
+  const scroll = () => { $("messages").scrollTop = $("messages").scrollHeight; };
+  scroll();
+  setBusy(true);
+
+  let segment = null, segmentText = "", edited = [];  // chips of the files the assistant changed
+  const handle = (event) => {
+    reply.querySelector(".typing")?.remove();
+    if (event.type === "text") {
+      if (!segment) { segment = document.createElement("div"); segment.className = "md"; reply.append(segment); segmentText = ""; }
+      segmentText += event.text;
+      segment.innerHTML = markdown(segmentText);
+    } else if (event.type === "tool") {
+      const chip = document.createElement("div");
+      chip.className = "tool";
+      chip.dataset.id = event.id;
+      chip.textContent = `${TOOL_LABELS[event.name] || event.name} ${event.detail}`;
+      chip.title = chip.textContent;
+      reply.append(chip);
+      segment = null;
+      if (event.name === "Edit" || event.name === "Write") edited.push(chip);
+    } else if (event.type === "tool_failed") {
+      reply.querySelector(`.tool[data-id="${CSS.escape(event.id)}"]`)?.classList.add("failed");
+    } else if (event.type === "error") {
+      const error = document.createElement("div");
+      error.className = "error";
+      error.textContent = "Something went wrong: " + event.text;
+      reply.append(error);
+    }
+    scroll();
+  };
+
+  try {
+    const view = state.tab === "progress" || state.tab === "info" ? null : state.tab;
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ run, message: text, viewing: view }),
+    });
+    if (!response.ok) throw new Error(await response.text());
+    const reader = response.body.getReader(), decoder = new TextDecoder();
+    let buffer = "";
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+      for (const line of lines) if (line.trim()) handle(JSON.parse(line));
+    }
+  } catch (error) {
+    handle({ type: "error", text: error.message });
+  }
+  reply.querySelector(".typing")?.remove();
+  setBusy(false);
+  $("input").focus();
+  const changed = edited.filter((chip) => !chip.classList.contains("failed"));
+  if (changed.length && state.run === run) {  // show the edited report straight away
+    const name = changed.at(-1).textContent.split(" ").pop().replace(/\.md$/, "");
+    state.shown = "";
+    await loadRuns(true);
+    if (currentRun().reports.includes(name) && name !== state.tab) selectRun(run, name);
+  }
+}
+
+$("composer").onsubmit = (e) => {
+  e.preventDefault();
+  const text = $("input").value;
+  $("input").value = "";
+  $("input").style.height = "";
+  send(text);
+};
+$("input").onkeydown = (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("composer").requestSubmit(); }
+};
+$("input").oninput = () => {
+  $("input").style.height = "";
+  $("input").style.height = $("input").scrollHeight + "px";
+};
+$("reset").onclick = async () => {
+  if (!state.run || state.busy) return;
+  await fetch(`/api/chat/${encodeURIComponent(state.run)}/reset`, { method: "POST" });
+  delete state.threads[state.run];
+  showThread(state.run);
+};
+
+loadRuns();
+setInterval(loadRuns, 4000);  // picks up progress, and runs started from the command line
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
