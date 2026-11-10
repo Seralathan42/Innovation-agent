@@ -1,0 +1,34 @@
+{
+  "field": "Condition monitoring and leak detection for underground district heating pipe networks",
+  "problem": "Water leaks in buried district heating pipes are hard to find and locate, causing heat and water losses and long, costly excavation work.",
+  "product_type": "Pipe network monitoring system with sensors and software for leak detection and location",
+  "applications": [
+    "Leak detection in district heating networks",
+    "Pipe network maintenance planning",
+    "Reducing water and heat losses in utility networks"
+  ],
+  "customer_types": [
+    "District heating operators",
+    "Energy utilities",
+    "Municipal infrastructure owners",
+    "Pipe network maintenance contractors"
+  ],
+  "search_keywords": [
+    "district heating leak detection",
+    "pre-insulated pipe leak monitoring",
+    "acoustic leak detection pipes",
+    "leak location buried pipes",
+    "district heating network monitoring",
+    "alarm wire district heating",
+    "leak noise correlator",
+    "ground microphone leak finding",
+    "thermal imaging pipe leak survey",
+    "district heating network heat loss"
+  ],
+  "patent_classes": [
+    "G01M3/24",
+    "F17D5/02",
+    "F24D10/00",
+    "G01M3/28"
+  ]
+}

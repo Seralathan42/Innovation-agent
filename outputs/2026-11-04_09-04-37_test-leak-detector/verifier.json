@@ -1,0 +1,23 @@
+[
+  {
+    "score": 58,
+    "summary": "The four reports match the disclosure closely, state their gaps openly, and the spot-checks support their key facts: the R2B autumn 2026 call closed on 16 September with decisions in January 2027, the next call is likely in early March 2027 but unconfirmed, and Itron's US11788919 does cover coordinated acoustic sampling at low flow. Two scores rest on searches that were too narrow or read the funding timing too harshly: market size looked only at Finland, and funding availability treated a call due in about four months as a weak option.",
+    "issues": [
+      {
+        "criterion": "market_size",
+        "problem": "The score rests on Finnish hardware parts cost only (about 2.5 to 6.7 million euros), which is the wrong measure for a sensor-plus-service business. The report also says no European pipe length was found, but Euroheat & Power gives about 190,000 km across about 17,000 networks, and another source gives about 199,000 km. At 1.5 to 4 sensors per km that is roughly 0.3 to 0.75 million sensor positions in Europe. Even with modest unit prices and service fees, that is a niche but meaningful market in the hundreds of millions of euros.",
+        "suggested_score": 3
+      },
+      {
+        "criterion": "funding_availability",
+        "problem": "A well-fitting, grant-based route (R2B, 80% of eligible costs) is very likely open with a deadline around early March 2027, about four months away. Past spring deadlines were 6 March 2024 and 5 March 2025, and Business Finland says its 2027 R&D budget will rise to nearly 1 billion euros. That timing suits the planned IP filing and customer interviews. Scoring this 2 treats the closed autumn round as more important than it is.",
+        "suggested_score": 3
+      },
+      {
+        "criterion": "benefits",
+        "problem": "The 2.1 m versus 9.4 m result comes from only 3 known leaks on one 2.3 km network. The reports do not ask whether the manual correlator was given good sound-speed values, which would make the comparison fair. Battery life and unit cost are estimates, and there were 2 false alarms in 4 months. A 4 is at the generous end, and confidence should be low rather than medium.",
+        "suggested_score": 3
+      }
+    ]
+  }
+]

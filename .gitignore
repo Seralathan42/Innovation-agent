@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+.claude/
+_previous_version/
+library/patents.db*
+docs/Aalto Innovations brief.pdf

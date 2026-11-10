@@ -1,0 +1,12 @@
+{
+  "funding_availability": {
+    "score": 2,
+    "confidence": "medium",
+    "evidence": "The autumn 2026 Business Finland R2B call has closed and the RCF Proof of Concept call has closed with possibly no 2027 round, so the main fit is a likely spring 2027 R2B round whose dates are unconfirmed."
+  },
+  "funding_fit": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "A validated field trial and a customer interested in a pilot fit R2B well, but there is no IP filing or business lead, and the RCF Proof of Concept and Horizon Proof of market calls do not fit the project's funding history."
+  }
+}

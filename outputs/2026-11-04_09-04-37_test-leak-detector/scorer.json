@@ -1,0 +1,29 @@
+[
+  {
+    "score": 56,
+    "reasons": [
+      "Real pain point with strong field evidence: 2.1 m mean error against 9.4 m for a manual correlator, and 3 of 3 known leaks found. A host utility has asked for a 2027 pilot, and hardware costs about \u20ac120 per sensor.",
+      "Novelty is only partly supported. Older patents use active pulses and calibration, and the field is crowded with Itron, Xylem and Kamstrup. No patent search has been done, and the conference paper decision in December 2026 could destroy novelty before filing.",
+      "The team has no business experience and the only founder candidate is free in 2027. The evidence is thin (6 sensors, 3 leaks, one network), and there is no market sizing or pricing. Business Finland R2B is a plausible funding route."
+    ],
+    "biggest_risk": "Public disclosure through the conference paper before a priority patent filing could destroy novelty, and the claim is already narrow given prior art on active-pulse calibration."
+  },
+  {
+    "score": 57,
+    "reasons": [
+      "Real pain point with strong early evidence: the field trial gave 2.1 m mean error against 9.4 m for a manual correlator, and the host utility has asked about a 2027 pilot. But the trial was small, with 3 leaks and 6 sensors.",
+      "Novelty is only partly supported. Active pulses for calibration appear in older patents, no patent search has been done, and the conference paper decision in December 2026 could destroy novelty if the paper becomes public first.",
+      "The team has no business lead and the only founder candidate is free only from 2027. The market is unsized, there has been one customer contact, and Business Finland R2B funding is a plausible route."
+    ],
+    "biggest_risk": "Novelty could be lost through publication before a priority patent filing, and the claims may be narrow given prior art on active pulses and acoustic correlators."
+  },
+  {
+    "score": 56,
+    "reasons": [
+      "There is a real pain point and measurable field evidence at about TRL 5. Mean position error was 2.1 m against 9.4 m for a manual correlator. A host utility has asked about a 2027 pilot.",
+      "The core idea is only partly novel. Active calibration pulses and location without a known sound speed both appear in older patents, so any claim will be narrow. No patent search has been done, and the conference paper decision in December 2026 puts novelty at risk.",
+      "The team has no business experience, and the only founder candidate is not free until 2027. The market is small in Finland, with no pricing or willingness-to-pay data. Business Finland R2B funding is a good fit, but the next round is probably March 2027."
+    ],
+    "biggest_risk": "Novelty could be lost through the conference paper before any patent is filed, and the claims may be narrow because of existing prior art, which would leave a team with no business lead without a defensible position."
+  }
+]

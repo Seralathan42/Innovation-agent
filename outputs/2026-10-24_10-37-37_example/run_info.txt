@@ -1,6 +1,6 @@
 Started: 2026-10-24 10:37:37
 Inputs:
-  <PROJECT_DIR>/disclosures/example.md
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/example.md
 
 [funding] saved funding.md (149 s)
 [ip] saved ip.md (130 s)

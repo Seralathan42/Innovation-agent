@@ -1,0 +1,17 @@
+{
+  "need": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "The problem is credible, with weak or missing alternatives in older networks and an operator asking for a pilot, but the disclosure gives no figures for leak costs or market size."
+  },
+  "benefits": {
+    "score": 4,
+    "confidence": "medium",
+    "evidence": "Field trial error of 2.1 m against 9.4 m for a manual correlator, with about 120 EUR parts per sensor, but only 3 leaks were tested and total customer cost and savings are not stated."
+  },
+  "team": {
+    "score": 2,
+    "confidence": "high",
+    "evidence": "Two researchers with solid technical results, but no business experience, the staff scientist will not lead, and the only founder candidate is free only after 2027."
+  }
+}

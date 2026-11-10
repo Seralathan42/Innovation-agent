@@ -1,5 +1,5 @@
 Started: 2026-10-23 19:01:00
 Inputs:
-  <PROJECT_DIR>/disclosures/example.md
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/example.md
 
 [nabc] saved nabc.md (35 s)

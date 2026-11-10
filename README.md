@@ -14,7 +14,75 @@ Everything for the project lives here:
 | `agents/` | One file per agent |
 | `disclosures/` | Input disclosures |
 | `outputs/` | One folder per run with the reports |
-| `docs/` | The project brief, plus notes on [data sources](docs/data-sources.md) and [confidentiality](docs/confidentiality.md) |
+| `docs/` | The project brief, plus notes on [data sources](docs/data-sources.md), [confidentiality](docs/confidentiality.md) and [meeting requests](docs/meeting-requests.md) |
+| `firewall/` | Prototype: research the field from keywords only, so the disclosure stays in a secure zone ([how it works](firewall/README.md)) |
+| `terminal.py`, `terminal.html` | The market terminal (see below) |
+| `library.py`, `sectors.json`, `library/` | The sector knowledge library behind the terminal |
+| `patents.py`, `epo.py` | The patent database and the European Patent Office client |
+
+## Market terminal
+
+A dashboard of market knowledge for the sectors behind Aalto's main research areas. Start it with:
+
+```bash
+.venv/bin/python terminal.py
+```
+
+Then open http://127.0.0.1:8001. It runs next to the disclosure app (port 8000), so both can be open at once.
+
+- **Tabs:**
+  - Overview: all sectors with outlook and headline.
+  - Sector: one sector in detail, with key metrics, signals, open funding calls, companies, Aalto links, patents, the full memory file and a list of every source.
+  - Companies and Patents across all sectors.
+  - The Companies tab lists every applicant in the patent database, together with the 6 to 12 companies the sector agent profiles for each sector, so it grows as the patent backfill runs. A profiled company is matched to its applicant name (for example Oura and OURA HEALTH OY) and keeps its description and link. Other applicants link to their patents on Espacenet.
+    - Filters: Sector, Source (profiled or patent applicant only), Organisation type (company, university or research, person or other), Country, Finnish, Aalto connection (co-applicant on Aalto patents, or Aalto mentioned), Patents stored and Latest patent year. Plus search within results and four sort orders, with Most patents first by default.
+    - Click a patent count to open the Patents tab filtered to that applicant.
+    - Organisation type is guessed from the applicant name, and applicant names are kept as the EPO writes them, so one company can appear under a few spellings (NOKIA TECHNOLOGIES OY and NOKIA TECH OY).
+  - The Patents tab filters every stored patent the way Patsnap does:
+    - a facet sidebar: Sector, Aalto, Authority, Patent type, Publication year, Applicant, Applicant country, Inventor, CPC classification (choose the level: section, class, subclass or group) and Added to store;
+    - each facet shows its values with counts and a More link, and long facets have their own search box;
+    - tick values and press Refine to keep only those, or Exclude to remove them. Values in one facet combine with "or", and different facets combine with "and";
+    - active filters show as chips above the results (red for exclusions) with Clear all, plus search within results and four sort orders.
+
+    Each sector's patents panel links to the tab with that sector already selected. Legal status, citation counts and patent value are not in the filters yet, because they need extra EPO calls per patent.
+- **Breaking news** below the tabs rotates through the newest signals from all sectors.
+- **Sources:** every figure, news item, call and company links to its source, and the memory files cite their sources inline. The Sources panel lists every link behind a sector.
+- **Chat** (right side, toggle with the Chat button):
+  - Ask about any sector; it reads the library, can check facts with web search and the data tools, and always gives source links. Follow-up questions keep the context. New chat starts over.
+  - Ask for a new sector dataset (for example "Add a sector on space technology"). The chat agrees the scope with you, adds it to `sectors.json` and starts building it.
+  - It can only read `library/`. It cannot change other files.
+- **Patents** come from the European Patent Office (OPS). Put your EPO keys in a `.env` file in this folder:
+  ```
+  EPO_KEY=your consumer key
+  EPO_SECRET=your consumer secret
+  ```
+  The terminal then builds a patent database, `library/patents.db` (SQLite), with every EP and WO patent in each sector's field, not just a sample:
+  - **New patents:** every 6 hours it pulls everything published since the last pull, with a week of overlap for late indexing.
+  - **Older patents:** it keeps filling in the past, one week at a time, until 5 years are covered (`BACKFILL_MONTHS` in `patents.py`). Rounds run a minute apart while older weeks are missing, then once an hour. Each sector's panel shows how far back its patents go.
+  - **Aalto's patents** in each field are pulled in full every time.
+  - **EPO allowance:** the backfill pauses when this week's EPO usage reaches 3,000 MB of the free 4,000 MB (`WEEKLY_BUDGET_MB`) and carries on after the weekly reset, so new patents and chat searches always have room. Searches are spaced 12 seconds apart to stay under EPO's busy-time limit.
+  - All eight sectors publish about 100,000 EP and WO patents a year, so 5 years is about half a million patents. That takes about a day of background pulling, longer if the weekly budget pauses it.
+  - Filtering on the Patents tab runs in the database, so the page stays fast however large it gets. Patent pulls use no Claude allowance. To run one round from the command line: `.venv/bin/python patents.py`.
+
+  How fresh the data is: the EPO database had last week's publications on 10 November 2026 (EP applications are published on Wednesdays, WO applications on Thursdays). Patent applications are usually published about 18 months after they are filed, so the newest patents show inventions from about a year and a half ago. The chat and the sector agent can search EPO too. How OPS works, its query language and its limits are in [docs/epo-ops.md](docs/epo-ops.md).
+
+**The library** is one folder per sector in `library/<sector>/`, plus the shared patent database `library/patents.db`:
+- `memory.md`: the knowledge file.
+- `data.json`: the figures shown in the terminal.
+- `history/`: a dated copy of every update.
+
+Each update starts from the previous memory, so knowledge builds up instead of being rewritten. While the terminal runs, it updates every sector older than 3 days, one at a time, checking once an hour. **Refresh** on a sector updates it now.
+
+You can also update from the command line:
+
+```bash
+.venv/bin/python library.py              # all sectors older than 3 days
+.venv/bin/python library.py energy       # one sector now
+```
+
+**Sectors** are in [sectors.json](sectors.json): eight sectors mapped to Aalto's key research areas (digitalisation and AI, energy, materials, health, living environments, art and design). Add, remove or edit entries there; the terminal picks them up on restart.
+
+**Usage:** one sector update took about 2 minutes of research and uses a fair share of your Claude Pro allowance. Eight sectors every 3 days adds up, so lower the number of sectors or raise `MAX_AGE_DAYS` in `library.py` if you hit your limits. The library uses only public information, so the confidentiality rules for disclosures don't apply to it.
 | `CLAUDE.md` | Project notes that Claude Code reads when it works in this folder |
 | `.claude/launch.json` | Starts the app in Claude's browser pane |
 | `.venv/` | The Python environment |

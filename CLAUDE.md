@@ -19,6 +19,13 @@ Aalto course project TU-E700002 (Future Interfaces Project: AI agents and the re
 - `app.py` and `ui.html`: the local web app at http://127.0.0.1:8000. Drop a disclosure to start a run, watch progress, read the reports, and chat. The chat may only edit `outputs/<run>/**`, enforced by the rule `Edit(./outputs/<run>/**)`.
 - `outputs/<date>_<time>_<disclosure>/`: one folder per run, holding the reports and `run_info.txt`.
 - `disclosures/`: input files. Files dropped on the page are saved here.
+- **Main focus since 2026-11-05: the market terminal.**
+  - `terminal.py` and `terminal.html` (port 8001): a terminal-style dashboard with tabs (Overview, Sector, Companies, Patents), breaking news, sector panels, a sources panel, and a chat that reads only `library/` and can add sectors with its `add_sector` tool.
+  - `epo.py`: European Patent Office OPS client (OAuth token, CQL search, 12 s between searches, weekly usage from the reply headers). Keys `EPO_KEY` and `EPO_SECRET` live in `.env` (gitignored). `tools.py` has an `epo_patents` tool. Details in `docs/epo-ops.md`.
+  - `patents.py`: the patent database `library/patents.db` (SQLite) with every EP and WO patent in each sector's field. A daemon thread in the terminal pulls new publications every 6 hours and backfills older weeks until 5 years are covered, pausing at 3,000 MB of EPO usage a week. `search()` does the Patents tab's filtering and facet counts in SQL. `build_companies()` rebuilds a companies table (every applicant, merged with the companies in each sector's `data.json`) after each round, and `company_search()` filters it for the Companies tab.
+  - `library.py`: a sector analyst agent with structured output keeps `library/<sector>/memory.md`, `data.json` and `history/` up to date, building on the previous memory each time.
+  - Sectors are in `sectors.json`, mapped to Aalto's key research areas. Stale sectors (older than 3 days) update in the background while the terminal runs.
+- `firewall/`: standalone prototype of the keyword firewall, not yet merged into the app. A secure-zone model turns the disclosure into a public brief plus secret terms; after human review, cloud research agents work only from the brief, with no file access; then the secure zone compares their findings with the disclosure. `secure_model()` in `firewall/pipeline.py` is a Claude stand-in for a future local model. See [firewall/README.md](firewall/README.md).
 
 ## Testing
 

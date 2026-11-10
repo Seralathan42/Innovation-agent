@@ -1,0 +1,249 @@
+{
+  "headline": "Finland's wireless and electronics sector is strong on 6G and AI-driven network demand, while the EU's Chips Act 2.0 and the January 2027 6G call are still pending.",
+  "outlook": "positive",
+  "outlook_reason": "Nokia sales are growing on AI and cloud demand, the EU and Business Finland are putting money into 6G, chips and photonics, and Finnish deep-tech startups keep closing rounds, though Chips Act 2.0 is still undecided.",
+  "metrics": [
+    {
+      "label": "Nokia Q3 net sales",
+      "value": "€5,154M, up 10%",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "Nokia Network Infrastructure growth (constant currency); AI and cloud customer sales growth",
+      "value": "+15%; +123%",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "Nokia 2026 comparable operating profit outlook",
+      "value": "€2.1–2.6B",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "SNS JU 6G projects funded in October 2026",
+      "value": "5 projects, about €22M",
+      "year": "2026",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "label": "Reported next SNS JU 6G call (not verified, not yet in the EU call database)",
+      "value": "about €220M, January 2027",
+      "year": "2026",
+      "source": "https://www.techzine.eu/news/infrastructure/145223/europe-aims-to-increase-its-influence-on-6g-with-e220-million/"
+    },
+    {
+      "label": "Vexlum round (semiconductor lasers, Tampere): €6M equity, €2.4M EIC grant, €1.6M loan",
+      "value": "€10M",
+      "year": "2026",
+      "source": "https://www.eu-startups.com/2026/02/vexlum-raises-e10-million-to-scale-semiconductor-laser-manufacturing-for-quantum-and-space-applications/"
+    },
+    {
+      "label": "Agate Sensors round (Aalto spin-out): €4M seed plus €1.6M Business Finland grants",
+      "value": "€5.6M",
+      "year": "2025",
+      "source": "https://arcticstartup.com/agate-sensors-raises-e5-6-million/"
+    },
+    {
+      "label": "Finnish startup venture capital, all sectors, year to 23 Sept 2026 (teaser figure, not sector-specific)",
+      "value": "$1.9B across 110 rounds",
+      "year": "2026",
+      "source": "https://dealroom.co/news/169137-finland-launches-three-growth-projects-to-boost-space-chips-and-factory/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-03",
+      "title": "Business Finland launches growth projects for space, semiconductors and photonics, and AI in manufacturing",
+      "detail": "The semiconductor and photonics project is a coordination and market-access vehicle: it helps firms find partners, join EU cooperation and reach pilot lines. It is not a direct funding award, and no budget was stated.",
+      "impact": "positive",
+      "source": "https://dealroom.co/news/169137-finland-launches-three-growth-projects-to-boost-space-chips-and-factory/"
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Nokia Q3 2026 results",
+      "detail": "Net sales were €5,154M (+10%). AI and cloud customer sales rose 123%, IP Networks 43% and Optical 18%. Operating profit outlook for 2026 is €2.1–2.6B. The date is the report date, not checked against the release page.",
+      "impact": "positive",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "SNS JU funds five 6G projects worth about €22M",
+      "detail": "The projects turn 6G research into industrial innovation. A further call of about €220M is reported for January 2027. The exact publication date was not checked, so this date is approximate.",
+      "impact": "positive",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Chips Act 2.0 still in early negotiation",
+      "detail": "The Council held a policy debate at the Competitiveness Council; one source says 24 September, another 24 October. Member States are divided on budget, technology priorities, EU preference and advanced manufacturing. ITRE reportedly named MEP Oliver Schenk as rapporteur. No Council general approach or Parliament position was found. The date is approximate.",
+      "impact": "neutral",
+      "source": "https://www.semi.org/sites/semi.org/files/2026-09/SEMI_Europe_July-August_EU_Policy_Brief.pdf"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "Nokia expands 6G and defence network R&D in Finland with Business Finland support",
+      "detail": "Reported in search results and not checked on the page (the Nokia page returned an error). Amount unknown. This is older than 30 days and is kept from the search results for context.",
+      "impact": "positive",
+      "source": "https://www.nokia.com/nokia-expands-6g-and-defense-network-rd-in-finland-with-support-from-business-finland/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-AI1-SG",
+      "title": "AI chip demonstrators for EU compute infrastructure",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-JU-CHIPS-2026-AI1-SG"
+    },
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-SG-JAPAN",
+      "title": "International collaboration EU and Japan on semiconductors",
+      "deadline": "2026-12-08",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-JU-CHIPS-2026-SG-JAPAN"
+    },
+    {
+      "id": "HORIZON-CL4-2025-03-DATA-11",
+      "title": "Open Internet Stack: open-source 3C building blocks (RIA)",
+      "deadline": "2027-01-03",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2025-03-DATA-11"
+    },
+    {
+      "id": "HORIZON-CL4-2024-DATA-01-03",
+      "title": "Piloting emerging Smart IoT Platforms and decentralized intelligence (IA)",
+      "deadline": "2027-01-14",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2024-DATA-01-03"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey",
+      "deadline": "2027-01-28",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-02-05"
+    },
+    {
+      "id": "HORIZON-CL4-2027-05-DIGITAL-EMERGING-03",
+      "title": "Advanced integrated photonic devices for extended features and ultra-low power consumption (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-05-DIGITAL-EMERGING-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-HUMAN-01",
+      "title": "Advanced and innovative hardware components for Virtual Worlds (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-HUMAN-01"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-08",
+      "title": "Demand-side 3C pilot demonstrators on converged Telco Edge Cloud Infrastructure (IA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DATA-08"
+    },
+    {
+      "id": "HORIZON-MSCA-2026-DN-01-01",
+      "title": "MSCA Doctoral Networks 2026 (industrial doctorates possible)",
+      "deadline": "2026-11-24",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-MSCA-2026-DN-01-01"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Nokia",
+      "country": "Finland",
+      "what": "Network equipment and 6G leader. Q3 2026 net sales were €5,154M, driven by AI and cloud demand for IP and optical networks.",
+      "link": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "name": "Ericsson",
+      "country": "Sweden",
+      "what": "Main European competitor to Nokia in mobile networks and 6G.",
+      "link": "https://www.ericsson.com"
+    },
+    {
+      "name": "Agate Sensors",
+      "country": "Finland",
+      "what": "Aalto spin-out in Espoo with single-pixel spectral vision sensors. Raised €5.6M in 2025.",
+      "link": "https://www.agatesensors.com/blog/agate-sensors-raises-5.6m"
+    },
+    {
+      "name": "Vexlum",
+      "country": "Finland",
+      "what": "Tampere maker of vertical-external-cavity semiconductor lasers for quantum and space. Raised €10M in 2026.",
+      "link": "https://www.eu-startups.com/2026/02/vexlum-raises-e10-million-to-scale-semiconductor-laser-manufacturing-for-quantum-and-space-applications/"
+    },
+    {
+      "name": "Detection Technology Oyj",
+      "country": "Finland",
+      "what": "Listed Espoo maker of X-ray detector electronics. Found in the trade register under electronic components.",
+      "link": "https://www.detectiontechnology.com"
+    },
+    {
+      "name": "Aspocomp Group Oyj",
+      "country": "Finland",
+      "what": "Listed Espoo printed circuit board maker, found in the trade register.",
+      "link": "https://www.aspocomp.com"
+    },
+    {
+      "name": "QID Oy",
+      "country": "Finland",
+      "what": "Helsinki electronic components company registered in 2023. Its business is not verified.",
+      "link": "https://www.qidtec.com"
+    },
+    {
+      "name": "Emberion",
+      "country": "Finland",
+      "what": "Espoo graphene and nanomaterial photodetector (infrared sensor) company. Not rechecked this run.",
+      "link": "https://www.emberion.com"
+    },
+    {
+      "name": "Comptek Solutions",
+      "country": "Finland",
+      "what": "Finnish semiconductor technology company. Details unverified.",
+      "link": "https://www.comptek-solutions.com"
+    },
+    {
+      "name": "Polar Light Technologies",
+      "country": "Sweden",
+      "what": "Nordic microLED developer.",
+      "link": "https://www.polarlighttechnologies.com"
+    },
+    {
+      "name": "Infineon Technologies Nordic (Espoo branch)",
+      "country": "Finland",
+      "what": "Branch of the German chipmaker in Espoo, found in the trade register.",
+      "link": "https://www.infineon.com"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Centre for Knowledge and Innovation Research (CKIR): analysis of Finland's and Europe's choices in the 6G era",
+      "link": "https://ckir.aalto.fi/from-networks-to-data-from-openness-to-fragmentation-finlands-and-europes-choices-in-the-6g-era/"
+    },
+    {
+      "what": "Agate Sensors, an Aalto spin-out in Espoo",
+      "link": "https://www.agatesensors.com"
+    },
+    {
+      "what": "Aalto Department of Electronics and Nanoengineering (radio, photonics, sensors, and passive 6G surfaces)",
+      "link": "https://www.aalto.fi/en/department-of-electronics-and-nanoengineering"
+    },
+    {
+      "what": "Aalto Department of Information and Communications Engineering (wireless and communications research)",
+      "link": "https://www.aalto.fi/en/department-of-information-and-communications-engineering"
+    },
+    {
+      "what": "6G Flagship (University of Oulu), the Finnish 6G research programme in which Aalto takes part",
+      "link": "https://www.6gflagship.com"
+    }
+  ],
+  "updated": "2026-11-09T18:46",
+  "patents": null
+}

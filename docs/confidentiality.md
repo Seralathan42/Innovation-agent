@@ -41,6 +41,7 @@ One good sign: FileVault disk encryption is on.
 9. **Two zones:**
    - A **secret zone** inside SECDATA, running a local model. It reads the full disclosure, writes the NABC summary, and writes a cleaned public brief (field, problem, product type, general search words; no inventive step, names or numbers). A person checks the brief.
    - A **research zone** in the cloud, where the market, IP and funding agents only see the public brief.
+   A working prototype of this design, with a Claude stand-in for the local model, is in [firewall/](../firewall/README.md).
 10. **Use Aalto's AI services for the research zone.** They are approved up to Confidential.
 11. **File before exposing.** The European Patent Office requires absolute novelty and has no general grace period. Law firms say the risk depends on whether the AI input stayed confidential, and no court has ruled on it yet. File a priority patent application before a disclosure is used anywhere outside a confidential setting.
 

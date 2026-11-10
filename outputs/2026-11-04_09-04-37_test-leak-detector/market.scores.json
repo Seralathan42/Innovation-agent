@@ -1,0 +1,17 @@
+{
+  "market_size": {
+    "score": 2,
+    "confidence": "low",
+    "evidence": "Finnish network is 16,690 km (Finnish Energy 2024), so full-coverage hardware is only a few million euros, and I found no European market-size figures or Eurostat data."
+  },
+  "route_to_market": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "A host energy company has asked about a 2027 pilot and DH utilities are a concentrated buyer group, but the team has no business experience and utilities buy slowly."
+  },
+  "competition": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "Alarm wires, drones, manual correlators and some acoustic DH patents exist and the self-calibrating pulse approach looks new, but no patent search has been done."
+  }
+}

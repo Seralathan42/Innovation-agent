@@ -1,0 +1,216 @@
+{
+  "headline": "European wireless and electronics is in a policy-driven upswing: 6G is being pulled forward to about 2029, Nokia's network business is growing on AI demand, and the Chips Act 2.0 is moving through the EU legislative process, while Finnish photonics and sensor startups keep raising seed rounds.",
+  "outlook": "positive",
+  "outlook_reason": "6G timelines, EU photonics and chip calls, and Finnish deep-tech funding rounds all point upward, though the Chips Act 2.0 has no new headline budget and Nokia's shares fell about 10% after its Q3 report.",
+  "metrics": [
+    {
+      "label": "Nokia group net sales, Q3",
+      "value": "€5,154 million (+10% reported)",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "Nokia Network Infrastructure net sales growth, Q3 (constant currency)",
+      "value": "+15% (IP Networks +43%, Optical +18%)",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "Nokia 2026 comparable operating profit outlook",
+      "value": "€2.1–2.6 billion",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "SNS JU funding for five new 6G projects",
+      "value": "about €22 million",
+      "year": "2026",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "label": "Next (final Horizon Europe) SNS JU call, reported size",
+      "value": "about €220 million, opening January 2027",
+      "year": "2026",
+      "source": "https://www.techzine.eu/news/infrastructure/145223/europe-aims-to-increase-its-influence-on-6g-with-e220-million/"
+    },
+    {
+      "label": "Vexlum (Tampere) semiconductor laser funding round",
+      "value": "€10 million",
+      "year": "2026",
+      "source": "https://roboticsandautomationnews.com/2026/02/08/vexlum-raises-e10-million-to-scale-semiconductor-and-laser-manufacturing/98757"
+    },
+    {
+      "label": "Agate Sensors (Aalto spin-out) round",
+      "value": "€5.6 million (€4M seed + €1.6M Business Finland grants)",
+      "year": "2025",
+      "source": "https://parsers.vc/news/250909-agate-sensors-unleashes--superhuman--vision"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-03",
+      "title": "Helsinki summit: commercial 6G could arrive in 2029",
+      "detail": "Industry speakers at a 6G summit in Helsinki said the first commercial 6G networks are now expected in 2029, two years earlier than planned. Non-terrestrial networks (satellites) become part of the radio access itself.",
+      "impact": "positive",
+      "source": "https://www.6gflagship.com/news/6g-is-coming-sooner-than-planned-industry-tells-helsinki-summit/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Ericsson and Telia Sweden sign 6G MoU",
+      "detail": "The two companies signed a memorandum of understanding to speed up 6G development, per eeNews Europe's coverage. I did not open the original article.",
+      "impact": "positive",
+      "source": "https://www.eenewseurope.com/en/news/"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "SNS JU funds five new 6G projects (about €22M)",
+      "detail": "The projects include HEMES-6G, a large-scale experimentation platform across eight testbed sites in six EU countries. The date is approximate, taken from a search summary.",
+      "impact": "positive",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "Nokia Q3: AI and cloud drive growth, shares fall about 10%",
+      "detail": "Group sales were €5.15B (+10%). AI and cloud customer sales grew 123%, and the 2026 Network Infrastructure growth outlook was raised to 12–14%. Shares still dropped almost 10% in Helsinki on the day.",
+      "impact": "neutral",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "date": "2026-06-03",
+      "title": "Commission adopts Chips Act 2.0 proposal",
+      "detail": "The proposal (2026/0139(COD)) adds strategic projects, demand accelerators, expanded pilot lines and a Semiconductor Region of Excellence label, and favours procurement of local startup chips. It has no new headline funding figure. A Council debate was planned for 24 September 2026. It is older than 30 days but is the main regulatory item in the sector.",
+      "impact": "neutral",
+      "source": "https://aeneas-office.org/2026/06/03/european-commission-unveils-proposed-chips-act-2-0/"
+    },
+    {
+      "date": "2026-06-15",
+      "title": "Aalto metacrystal panels for 6G",
+      "detail": "Aalto researchers reported passive 3D-printed panels that guide wireless signals without electronics or power. The date is approximate (June 2026). This is research, not yet a company.",
+      "impact": "positive",
+      "source": "https://www.brightsurf.com/news/LVDJ3EYL/low-tech-solution-to-the-6g-problem-metacrystal-panels-offer-cheap-way-to-guide-wireless-signals-around-corners.html"
+    },
+    {
+      "date": "2026-02-08",
+      "title": "Vexlum raises €10M",
+      "detail": "The Tampere-based semiconductor laser maker raised funding to scale chip and laser manufacturing. It may be the largest Nordic photonics seed round. The date is that of the article.",
+      "impact": "positive",
+      "source": "https://roboticsandautomationnews.com/2026/02/08/vexlum-raises-e10-million-to-scale-semiconductor-and-laser-manufacturing/98757"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL4-2027-05-DIGITAL-EMERGING-03",
+      "title": "Advanced integrated photonic devices for extended features and ultra-low power consumption (RIA, Photonics Partnership)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-05-DIGITAL-EMERGING-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-HUMAN-01",
+      "title": "Advanced and innovative hardware components for Virtual Worlds (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-HUMAN-01"
+    },
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-AI1-SG",
+      "title": "AI chip demonstrators for EU compute infrastructure (Simple Grant)",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-JU-CHIPS-2026-AI1-SG"
+    },
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-SG-JAPAN",
+      "title": "International collaboration EU and Japan on semiconductors (Simple Grant)",
+      "deadline": "2026-12-08",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-JU-CHIPS-2026-SG-JAPAN"
+    },
+    {
+      "id": "HORIZON-CL4-2025-03-DATA-11",
+      "title": "Open Internet Stack: open-source 3C building blocks (RIA)",
+      "deadline": "2027-01-03",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2025-03-DATA-11"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey (IA)",
+      "deadline": "2027-01-28",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-02-05"
+    },
+    {
+      "id": "DIGITAL-2023-SKILLS-04-SEMICONDUCTORS",
+      "title": "Reinforcing skills in semiconductors",
+      "deadline": "2027-06-30",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-2023-SKILLS-04-SEMICONDUCTORS"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Nokia",
+      "country": "Finland",
+      "what": "Mobile and network infrastructure vendor and 6G standards leader. Q3 2026 sales were €5.15B, driven by AI and cloud demand.",
+      "link": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "name": "Ericsson",
+      "country": "Sweden",
+      "what": "Mobile network vendor. Signed a 6G MoU with Telia Sweden in November 2026.",
+      "link": "https://www.eenewseurope.com/en/news/"
+    },
+    {
+      "name": "Vexlum",
+      "country": "Finland",
+      "what": "Tampere-based maker of vertical-external-cavity semiconductor lasers. Raised €10M in 2026.",
+      "link": "https://roboticsandautomationnews.com/2026/02/08/vexlum-raises-e10-million-to-scale-semiconductor-and-laser-manufacturing/98757"
+    },
+    {
+      "name": "Agate Sensors",
+      "country": "Finland",
+      "what": "Aalto spin-out (Espoo, founded 2024). Builds smart spectral sensors for consumer material analysis. Raised €5.6M.",
+      "link": "https://parsers.vc/news/250909-agate-sensors-unleashes--superhuman--vision"
+    },
+    {
+      "name": "Emberion",
+      "country": "Finland",
+      "what": "Maker of graphene and quantum-dot infrared image sensors. Closed a funding round in July 2025.",
+      "link": "https://photonics.com/Articles/Emberion-Funding-Round-Fuels-Production-Expansion/p4/a71184"
+    },
+    {
+      "name": "Comptek Solutions",
+      "country": "Finland",
+      "what": "Photonics and semiconductor materials company. Raised an $8.7M Series A (date not verified).",
+      "link": "https://photonics.com/Articles/Related_Comptek_Secures_87M_Series_A_Funding/ar69246"
+    },
+    {
+      "name": "Polar Light Technologies",
+      "country": "Sweden",
+      "what": "MicroLED developer. Raised more than €5M to commercialise its technology.",
+      "link": "https://news.cision.com/polar-light-technologies-ab"
+    },
+    {
+      "name": "Photoncycle",
+      "country": "Finland (unverified)",
+      "what": "A CB Insights profile lists a $17.4M Series A in March 2026 with Lifeline Ventures. Its business and the round are not confirmed by a primary source.",
+      "link": "https://www.cbinsights.com/company/photoncycle/financials"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto photonics group (Prof. Zhipei Sun), Department of Electronics and Nanoengineering. Source of the Agate Sensors spin-out.",
+      "link": "https://parsers.vc/news/250909-agate-sensors-unleashes--superhuman--vision"
+    },
+    {
+      "what": "Aalto metacrystal research on passive 3D-printed panels that steer wireless signals for 6G (June 2026).",
+      "link": "https://www.brightsurf.com/news/LVDJ3EYL/low-tech-solution-to-the-6g-problem-metacrystal-panels-offer-cheap-way-to-guide-wireless-signals-around-corners.html"
+    },
+    {
+      "what": "6G Finland (6G Flagship) ecosystem. Aalto is a member alongside Oulu, Tampere, Helsinki and LUT universities, VTT and Nokia Bell Labs.",
+      "link": "https://www.6gflagship.com/news/6g-is-coming-sooner-than-planned-industry-tells-helsinki-summit/"
+    }
+  ],
+  "updated": "2026-11-05T14:28"
+}

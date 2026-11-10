@@ -16,6 +16,8 @@ from datetime import date
 
 from claude_agent_sdk import ToolAnnotations, tool
 
+import epo
+
 READ_ONLY = ToolAnnotations(readOnlyHint=True)  # lets an agent run several lookups at once
 
 
@@ -312,7 +314,27 @@ async def research_projects(args):
     return _reply("\n".join(lines))
 
 
+# ---------- Patents: European Patent Office (OPS) ----------
+
+@tool(
+    "epo_patents",
+    "Search published patents worldwide in the European Patent Office database (needs EPO keys in .env). "
+    "The query uses CQL, for example: ta=\"solid state battery\" and pd>=2024, cpc=H01M10 and pa=aalto, "
+    "or ti all \"lignin binder\". Fields: ti title, ab abstract, ta title or abstract, pa applicant, in inventor, "
+    "cpc class, pd publication date, pn publication number or country (pn=EP). Returns the hit count and up to "
+    "25 patents with number, date, applicants, CPC classes, abstract and an Espacenet link.",
+    {"query": str},
+    annotations=READ_ONLY,
+)
+async def epo_patents(args):
+    total, found = await asyncio.to_thread(epo.search, args["query"], 25)
+    lines = [f"{total} patents match. Showing {len(found)}:"]
+    lines += [f"- {p['number']} ({p['date']}) {p['title']}. Applicants: {', '.join(p['applicants']) or 'not given'}. "
+              f"CPC: {', '.join(p['cpc'])}. {p['link']}\n  {p['abstract']}" for p in found]
+    return _reply("\n".join(lines))
+
+
 TOOLS = {t.name: t for t in [
     google_patent, search_papers, eu_funding_calls, eu_call_details,
-    finnish_companies, eurostat_search, eurostat_data, research_projects,
+    finnish_companies, eurostat_search, eurostat_data, research_projects, epo_patents,
 ]}

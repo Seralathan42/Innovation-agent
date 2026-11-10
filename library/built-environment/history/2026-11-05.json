@@ -1,0 +1,278 @@
+{
+  "headline": "European construction is in a fragile recovery (EU output +2.3% in 2025, Finland +6.1% off a low base), with AI/robotics construction tech attracting seed funding and EU Horizon calls steering toward circular, low-carbon and renovation solutions.",
+  "outlook": "positive",
+  "outlook_reason": "Finnish and EU construction output turned up in 2025 and non-residential permits are rising, and EU regulation (EPBD recast) and Horizon calls favour renovation, smart-building and circular technologies, though Finnish residential building is still weak.",
+  "metrics": [
+    {
+      "label": "EU27 construction production, annual change (calendar adjusted)",
+      "value": "+2.3% (index 105.1, 2021=100)",
+      "year": "2025",
+      "source": "Eurostat sts_copr_a, https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/"
+    },
+    {
+      "label": "Finland construction production, annual change (calendar adjusted)",
+      "value": "+6.1% (index 97.5, 2021=100; still below 2021 level)",
+      "year": "2025",
+      "source": "Eurostat sts_copr_a, https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/"
+    },
+    {
+      "label": "Finland construction of buildings, annual change",
+      "value": "+4.3% in 2025 after -14.5% (2023) and -7.2% (2024); index 83.0 vs 100 in 2021",
+      "year": "2025",
+      "source": "Eurostat sts_copr_a, https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/"
+    },
+    {
+      "label": "EU27 civil engineering production, annual change",
+      "value": "+2.2% (index 115.4, 2021=100)",
+      "year": "2025",
+      "source": "Eurostat sts_copr_a, https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/"
+    },
+    {
+      "label": "Finland specialised construction activities (incl. installation and renovation trades), annual change",
+      "value": "+9.0% (index 107.6)",
+      "year": "2025",
+      "source": "Eurostat sts_copr_a, https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/"
+    },
+    {
+      "label": "Finland building permits for new buildings, 12-month cubic volume",
+      "value": "about 37 million m3; +19% year on year in August 2026, driven by non-residential (residential permits were -7% in March 2026)",
+      "year": "2026",
+      "source": "Statistics Finland, https://stat.fi/en/publication/cmfxlb8z094ck07w33f2j03gr"
+    },
+    {
+      "label": "Finland construction output growth forecast 2026-2029 (paid market report, treat with caution)",
+      "value": "3.4% average annual growth",
+      "year": "2025",
+      "source": "ResearchAndMarkets via GlobeNewswire, https://www.globenewswire.com/de/news-release/2025/03/03/3035341/28124/en/Finland-Construction-Industry-Report-2025-Output-to-Register-an-AAGR-of-3-4-During-2026-2029-Driven-by-Government-s-Focus-on-the-Development-of-Infrastructure-and-Energy-and-Utilit.html"
+    },
+    {
+      "label": "Investor intent to maintain or raise construction-tech funding in 2026 (survey, share of investors)",
+      "value": "84%; 67% prioritise AI",
+      "year": "2026",
+      "source": "Zacua Ventures survey as reported by ccstartup.com, https://ccstartup.com/blog/2026/04/29/all3-raises-25m-to-automate-construction-with-legged-robots/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-04-29",
+      "title": "All3 raises $25M seed for AI/legged-robot construction automation",
+      "detail": "Berlin/Zug startup All3 announced a $25M seed round for construction robotics and AI design platform.",
+      "impact": "positive",
+      "source": "https://ccstartup.com/blog/2026/04/29/all3-raises-25m-to-automate-construction-with-legged-robots/"
+    },
+    {
+      "date": "2026-07-13",
+      "title": "Sodex Innovations raises €4M",
+      "detail": "Construction-tech startup Sodex Innovations raised €4M led by Capmont Technology. The sources found did not say where it is based.",
+      "impact": "positive",
+      "source": "https://www.pulse.bot/ai/deals/construction-tech-startup-raises-850000-pre-seed-after-irish-move-1783eb20-9c45-4ef1-88ce-0f89a886f16d"
+    },
+    {
+      "date": "2026-08-26",
+      "title": "Skanska to build €77M data centre in Finland",
+      "detail": "Core and shell work starts Q4 2026, completes Q3 2027. This follows a €100M Espoo data centre expansion started in April 2026. Data centres are a main driver of Finnish non-residential construction and of demand for heat recovery and building energy tech.",
+      "impact": "positive",
+      "source": "https://www.skanska.com/group/en/media/press-releases/2026/skanska-to-build-data-center-in-finland-for-eur-77m-about-sek-830m"
+    },
+    {
+      "date": "2026-08-31",
+      "title": "Finland building permits up 19% in volume (12-month, August 2026)",
+      "detail": "Growth is non-residential-led. Residential recovery lags, and B+L does not expect a sustainable residential recovery before 2027.",
+      "impact": "positive",
+      "source": "https://stat.fi/en/publication/cmfxlb8z094ck07w33f2j03gr"
+    },
+    {
+      "date": "2026-05-29",
+      "title": "EPBD recast transposition deadline passed; Finland's implementation not complete",
+      "detail": "A FINVAC/REHVA report says Finland's EPBD implementation would not be ready by 29 May 2026. Finland is splitting it across several statutes. Energy requirements will tighten by 10%. I did not find the Environment Ministry's final timeline, so verify before advising.",
+      "impact": "neutral",
+      "source": "https://www.rehva.eu/rehva-journal/chapter/implementation-of-epbd-still-ongoing-in-finland"
+    },
+    {
+      "date": "2026-04-20",
+      "title": "YIT restructures Finnish residential and building construction; wins Tikkurila school (€77M)",
+      "detail": "YIT began change negotiations to move to function-based teams, showing cost pressure in the incumbents. It also started a €77M educational building in Tikkurila.",
+      "impact": "neutral",
+      "source": "https://www.inderes.dk/releases/yit-oyj-yit-selected-as-main-contractor-for-kouvola-data-centre-project"
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Italian construction-tech startup Pillar raises seed round (€12M-€15.2M, reports differ)",
+      "detail": "Pillar is building a digital platform for site and project data. The reports give different totals, and I could not reconcile them.",
+      "impact": "positive",
+      "source": "https://europe-re.com/milan-construction-tech-startup-pillar-raises-15-2m-to-wire-europe-s-most-underdigitised-industry/74583"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-NEB-2026-01-REGEN-01",
+      "title": "Sustainable, inclusive, affordable and beautiful solutions for thermal comfort in buildings (IA)",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-REGEN-01"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-REGEN-02",
+      "title": "Advancing sustainable maintenance and repair measures for existing buildings (IA)",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-REGEN-02"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-REGEN-03",
+      "title": "Innovative solutions for the sustainable and beautiful use of vertical space (IA)",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-REGEN-03"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-BUSINESS-03",
+      "title": "Approaches to reuse vacant, obsolete or underutilised spaces (RIA)",
+      "deadline": "2026-12-01",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-BUSINESS-03"
+    },
+    {
+      "id": "HORIZON-CL6-2024-CLIMATE-01-5",
+      "title": "Climate-smart use of wood in the construction sector to support the New European Bauhaus",
+      "deadline": "2026-12-15",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2024-CLIMATE-01-5"
+    },
+    {
+      "id": "HORIZON-CL5-2021-D2-01-16",
+      "title": "Co-Funded Partnership: Driving Urban Transitions to a sustainable future (DUT)",
+      "deadline": "2027-04-15",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2021-D2-01-16"
+    },
+    {
+      "id": "HORIZON-CL5-2027-05-D4-05",
+      "title": "On-site robotic and automated techniques for building renovation and new construction (IA)",
+      "deadline": "2027-09-15",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2027-05-D4-05"
+    },
+    {
+      "id": "HORIZON-CL5-2027-05-D4-07",
+      "title": "Integrating circularity in LCA-based modelling frameworks for renovation of buildings (Built4People) (IA)",
+      "deadline": "2027-09-15",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2027-05-D4-07"
+    },
+    {
+      "id": "HORIZON-CL6-2027-02-CLIMATE-01-two-stage",
+      "title": "Open topic: Innovative solutions for the European Water Resilience Strategy (IA, two-stage)",
+      "deadline": "2027-09-14",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2027-02-CLIMATE-01-two-stage"
+    },
+    {
+      "id": "HORIZON-MISS-2027-07-CLIMA-CIT-CCRI-02",
+      "title": "Deploying innovative wastewater management, treatment and valorisation solutions in European cities and regions",
+      "deadline": "2027-09-22",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-MISS-2027-07-CLIMA-CIT-CCRI-02"
+    },
+    {
+      "id": "HORIZON-MISS-2027-04-CIT-03",
+      "title": "Inclusive and climate resilient multimodal passenger hubs enhancing modal shift (IA)",
+      "deadline": "2027-10-07",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-MISS-2027-04-CIT-03"
+    },
+    {
+      "id": "HORIZON-NEB-2027-01-BUSINESS-01",
+      "title": "Mass customisation of offsite manufactured modular construction components (IA)",
+      "deadline": "2027-12-01",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2027-01-BUSINESS-01"
+    },
+    {
+      "id": "HORIZON-EIT-2025-KIC-IBA-UM",
+      "title": "EIT Urban Mobility Business Plan 2026 (innovation and startup support)",
+      "deadline": "2028-03-08",
+      "budget": "Not retrieved (see call page)",
+      "link": "https://eiturbanmobility.eu"
+    }
+  ],
+  "companies": [
+    {
+      "name": "YIT",
+      "country": "Finland",
+      "what": "Largest Finnish builder/developer. Restructuring Finnish residential and building construction in 2026. Active in data centres, light rail and campus projects.",
+      "link": "https://www.yit.fi"
+    },
+    {
+      "name": "Skanska Finland",
+      "country": "Finland/Sweden",
+      "what": "Contractor building data centres in Espoo and elsewhere in Finland (€77M and €100M projects), plus a Garmin facility (€29M) in Jyväskylä.",
+      "link": "https://www.skanska.com/group/en/media/press-releases/2026/skanska-to-build-data-center-in-finland-for-eur-77m-about-sek-830m"
+    },
+    {
+      "name": "Kone",
+      "country": "Finland",
+      "what": "Global elevator and escalator maker, with smart-building and urban-flow digital services. I found no October 2026 news on it.",
+      "link": "https://www.kone.com"
+    },
+    {
+      "name": "Caverion",
+      "country": "Finland",
+      "what": "Building technical services and smart-building/HVAC services company, a likely partner for building-tech pilots.",
+      "link": "https://www.caverion.com"
+    },
+    {
+      "name": "Kemira",
+      "country": "Finland",
+      "what": "Water chemistry and water-treatment solutions provider. Relevant for the water-systems part of the sector (no 2026 data retrieved).",
+      "link": "https://www.kemira.com"
+    },
+    {
+      "name": "All3",
+      "country": "Germany/Switzerland",
+      "what": "AI-driven design and robotic construction. $25M seed in April 2026.",
+      "link": "https://ccstartup.com/blog/2026/04/29/all3-raises-25m-to-automate-construction-with-legged-robots/"
+    },
+    {
+      "name": "Conxai",
+      "country": "Germany",
+      "what": "Agentic no-code AI for construction projects. About €5M raised in 2026.",
+      "link": "https://www.pulse.bot/proptech/news/conxai-secures-5m-to-deploy-agentic-nocode-ai-across-construction-projects-22906d9c-7e9e-4051-a756-0f1383571245"
+    },
+    {
+      "name": "Pillar",
+      "country": "Italy",
+      "what": "Digital platform to connect construction sites and project data. Seed round of €12M-€15.2M in 2026 (reports differ).",
+      "link": "https://europe-re.com/milan-construction-tech-startup-pillar-raises-15-2m-to-wire-europe-s-most-underdigitised-industry/74583"
+    },
+    {
+      "name": "Sitegeist",
+      "country": "Germany",
+      "what": "Modular AI robots for construction sites. €4M pre-seed in February 2026.",
+      "link": "https://www.pulse.bot/robotics/news/sitegeist-secures-4m-pre-seed-for-ai-modular-robots-in-construction-f1b2c7bb-7ce0-427c-88b8-b86cb6e83d9f"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Department of Built Environment, with groups including Water and Environmental Engineering (building, urban and water research)",
+      "link": "https://www.aalto.fi/en/department-of-built-environment"
+    },
+    {
+      "what": "Smart building research and professors of practice (Ihasalo, Ketomäki) in building services engineering",
+      "link": "https://aalto.fi/en/news/solutions-for-buildings-through-smart-building-services-engineering"
+    },
+    {
+      "what": "User-centred approach to smart building research",
+      "link": "https://aalto.fi/en/news/a-user-centred-approach-to-smart-building-research"
+    },
+    {
+      "what": "New cooperation agreements in the fields of the built environment",
+      "link": "https://aalto.fi/en/news/new-cooperation-agreements-in-the-fields-of-the-built-environment"
+    },
+    {
+      "what": "DIWA - Digital Waters Flagship programme (digital water resource management), which Aalto participates in",
+      "link": "https://www.aalto.fi/en/department-of-built-environment"
+    }
+  ],
+  "updated": "2026-11-05T14:32"
+}

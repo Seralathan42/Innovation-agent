@@ -1,0 +1,275 @@
+{
+  "headline": "European AI funding is strong, led by defence and physical AI and by growth rounds such as Helsing's $1.8bn. Finnish firms use AI at about twice the EU rate, and new Horizon Europe AI and robotics calls open on 17 November 2026.",
+  "outlook": "positive",
+  "outlook_reason": "Capital, the Q3 2026 VC rebound, high Finnish AI adoption and a wave of Horizon Europe Apply AI calls all point up, while the AI Act delays reduce near-term compliance pressure.",
+  "metrics": [
+    {
+      "label": "Enterprise AI use, Finland (firms with 10+ staff)",
+      "value": "37.82%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table"
+    },
+    {
+      "label": "Enterprise AI use, EU27 (firms with 10+ staff)",
+      "value": "19.95%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table"
+    },
+    {
+      "label": "Finnish tech funding, H1 (53 deals; ICEYE was €900m of it)",
+      "value": "about €1.3bn",
+      "year": "2026",
+      "source": "https://tech.eu"
+    },
+    {
+      "label": "European VC, Q3 (1,300+ rounds, best quarter since Q2 2024)",
+      "value": "€13.7bn",
+      "year": "2026",
+      "source": "https://dig.watch"
+    },
+    {
+      "label": "European AI companies' funding through early July (159 rounds)",
+      "value": "€6.0bn",
+      "year": "2026",
+      "source": "https://funding.tech.eu/sectors/ai/2026"
+    },
+    {
+      "label": "Helsing Series E (post-money valuation $18bn, closed 2026-07-13)",
+      "value": "$1.8bn",
+      "year": "2026",
+      "source": "https://thenextweb.com/news/helsing-1-8-billion-series-e-18-billion-valuation"
+    },
+    {
+      "label": "European AI rounds in October 2025 (27 rounds), a base for year-on-year comparison. No October 2026 total was found.",
+      "value": "€446m",
+      "year": "2025",
+      "source": "https://funding.tech.eu/sectors/ai/2025/10"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-05",
+      "title": "Saidot raises a funding round led by BackingMinds",
+      "detail": "The Helsinki AI governance platform closed a round led by BackingMinds, with Crowberry Capital and Ventic taking part. The amount was not disclosed. The money funds European growth, entry to the US and policy-as-code features.",
+      "impact": "positive",
+      "source": "https://www.thesaasnews.com/news/saidot-secures-funding-round/"
+    },
+    {
+      "date": "2026-07-13",
+      "title": "Helsing closes $1.8bn Series E at an $18bn valuation",
+      "detail": "Dragoneer led, with Lightspeed. This resolves the earlier open question: the round closed, and at $1.8bn it came in above the $1.2bn reported in May. One outlet gave euro figures (€1.6bn at €16bn), which look like a currency-conversion difference.",
+      "impact": "positive",
+      "source": "https://thenextweb.com/news/helsing-1-8-billion-series-e-18-billion-valuation"
+    },
+    {
+      "date": "2026-07-27",
+      "title": "AI Act Digital Omnibus (Regulation (EU) 2026/1744) in force",
+      "detail": "It was published in the Official Journal on 2026-07-24. It postpones the high-risk obligations to December 2027 and August 2028 and adds bans on AI that generates non-consensual intimate imagery and child sexual abuse material, applying from 2026-12-02. Secondary sources disagree on some GPAI dates, so check the EUR-Lex text.",
+      "impact": "neutral",
+      "source": "https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act"
+    },
+    {
+      "date": "2026-10-31",
+      "title": "October 2026 European AI seed and Series A rounds",
+      "detail": "Reported rounds include Machenta (London, robot learning from one demonstration, $40m seed), Duvo (London, $32m Series A), Enact Intelligence (Zurich, $30m pre-seed), Ravical (Ghent, $17m seed) and Tendos (Munich, €12m seed). The source is a mixed listing and no total was given, so this is only indicative. The date is approximate.",
+      "impact": "positive",
+      "source": "https://vestbee.com/insights/articles/top-european-funding-rounds-closed-in-october-2026"
+    },
+    {
+      "date": "2026-06-10",
+      "title": "Rotomate raises €2.1m pre-seed",
+      "detail": "The Finnish industrial machine-data AI company raised €2.1m. The source gives the date as 2026-06-10, outside the window for this update, but it is the first confirmed figure. Aalto links are still unconfirmed.",
+      "impact": "positive",
+      "source": "https://www.arctictoday.com/%F0%9F%87%AB%F0%9F%87%AE-rotomate-raises-e2-1m-to-turn-european-industrys-machine-data-into-billion-euro-output-gains/"
+    },
+    {
+      "date": "2026-08-12",
+      "title": "STRGY AI raises €1m",
+      "detail": "The Helsinki AI strategy-execution platform raised a small angel and seed round.",
+      "impact": "neutral",
+      "source": "https://tech.eu/2026/08/12/strgy-ai-raises-eur1m-to-scale-its-ai-powered-strategy-execution-platform/"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Aalto ranks third in Europe for university spinout funding (H1 2026)",
+      "detail": "Aalto ranked behind Oxford and Cambridge. It aims to raise spin-offs from historically 0–5 a year to as many as 25 a year by 2030. The Aalto Startup Center name is being retired. The date is the update date, because the article's publication date was not shown.",
+      "impact": "positive",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-05",
+      "title": "Apply AI: AI-driven robotics for industry, system integration and adoption (IA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-05"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-04",
+      "title": "Apply AI: Challenge-driven AI innovation booster (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-04"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-11",
+      "title": "EU Frontier AI Initiative: safe and computationally efficient frontier AI (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-11"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-03",
+      "title": "Decentralised, federated and sustainable AI data processing (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DATA-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-09",
+      "title": "Energy efficiency and sustainability of AI data processing in data centres (IA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DATA-09"
+    },
+    {
+      "id": "HORIZON-CL4-2025-03-DIGITAL-EMERGING-07",
+      "title": "Robust and trustworthy generative AI for robotics and industrial automation (RIA)",
+      "deadline": "2027-02-10",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2025-03-DIGITAL-EMERGING-07"
+    },
+    {
+      "id": "HORIZON-CL4-2027-02-DIGITAL-EMERGING-52-two-stage",
+      "title": "New approaches for human/AI collaboration for the workforce of the future (RIA)",
+      "deadline": "2027-09-02",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-02-DIGITAL-EMERGING-52-two-stage"
+    },
+    {
+      "id": "HORIZON-RAISE-2027-01-01",
+      "title": "Automated scientific discovery, materials science (RAISE pilot, RIA)",
+      "deadline": "2027-02-02",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-RAISE-2027-01-01"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey (a route to commercialise research results)",
+      "deadline": "2027-01-28",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-02-05"
+    },
+    {
+      "id": "DIGITAL-ECCC-2027-DEPLOY-CYBER-11-CYBERAI",
+      "title": "Cybersecure tools, technologies and services relying on AI",
+      "deadline": "2027-01-14",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-ECCC-2027-DEPLOY-CYBER-11-CYBERAI"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-01",
+      "title": "Artificial intelligence for cybersecurity applications (RIA)",
+      "deadline": "2027-09-15",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL3-2027-02-CS-ECCC-01"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Verda (ex-DataCrunch)",
+      "country": "Finland",
+      "what": "AI cloud and GPU infrastructure; raised about $117m.",
+      "link": "https://verda.com"
+    },
+    {
+      "name": "NestAI",
+      "country": "Finland",
+      "what": "Defence and sovereign AI; raised about €100m in November 2025, led by Tesi and Nokia.",
+      "link": "https://mezha.net/eng/bukvy/nestai-raises-eu100m-for-ai-and-defense-innovation-in-finland/"
+    },
+    {
+      "name": "QuTwo",
+      "country": "Finland",
+      "what": "AI and quantum company founded by Peter Sarlin; €25m angel round at a $380m valuation.",
+      "link": "https://dealroom.co/news/131094-qutwo-raises-25m-angel-round-at-380m-valuation/"
+    },
+    {
+      "name": "Saidot",
+      "country": "Finland",
+      "what": "AI governance and compliance platform; new round led by BackingMinds on 2026-11-05.",
+      "link": "https://www.thesaasnews.com/news/saidot-secures-funding-round/"
+    },
+    {
+      "name": "Rotomate",
+      "country": "Finland",
+      "what": "AI that turns industrial machine data into output gains; €2.1m pre-seed. Aalto link unconfirmed.",
+      "link": "https://www.arctictoday.com/%F0%9F%87%AB%F0%9F%87%AE-rotomate-raises-e2-1m-to-turn-european-industrys-machine-data-into-billion-euro-output-gains/"
+    },
+    {
+      "name": "Helsing",
+      "country": "Germany",
+      "what": "Defence AI; $1.8bn Series E at an $18bn valuation, July 2026.",
+      "link": "https://thenextweb.com/news/helsing-1-8-billion-series-e-18-billion-valuation"
+    },
+    {
+      "name": "Mistral AI",
+      "country": "France",
+      "what": "European frontier models; €3bn Series D at a valuation above €21bn (from the earlier memory, not re-verified).",
+      "link": "https://mistral.ai"
+    },
+    {
+      "name": "Silo AI",
+      "country": "Finland",
+      "what": "Applied AI consultancy. The AMD acquisition is not verified here.",
+      "link": "https://www.silo.ai"
+    },
+    {
+      "name": "Machenta",
+      "country": "United Kingdom",
+      "what": "Robotics AI that learns tasks from one demonstration; $40m seed, October 2026.",
+      "link": "https://vestbee.com/insights/articles/top-european-funding-rounds-closed-in-october-2026"
+    },
+    {
+      "name": "RealYou AI",
+      "country": "Finland",
+      "what": "Aalto pre-business spin-off building personalised AI decision assistants based on preference learning.",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/realyou-ai"
+    },
+    {
+      "name": "Automous Oy",
+      "country": "Finland",
+      "what": "Aalto spin-off with an energy-optimisation SaaS; €575k pre-seed. Whether it uses AI is unconfirmed.",
+      "link": "https://startupcenter.aalto.fi/automous-oy-secures-a-pre-seed-investment-round-of-575000eu"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Innovation: spin-off and commercialisation services",
+      "link": "https://www.aalto.fi/en/aalto-innovation/aalto-university-innovation-services"
+    },
+    {
+      "what": "Aalto innovation portfolio: RealYou AI (AI decision assistants)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/realyou-ai"
+    },
+    {
+      "what": "Aalto innovation portfolio: Automous Oy (energy-optimisation SaaS)",
+      "link": "https://aalto.fi/en/innovation-portfolio/automous-oy"
+    },
+    {
+      "what": "Aalto spin-off funding ranking, H1 2026: third in Europe",
+      "link": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    },
+    {
+      "what": "Aalto innovation postdoc in AI (open call)",
+      "link": "https://www.aalto.fi/en/news/applications-open-for-innovation-postdoc-in-ai"
+    },
+    {
+      "what": "Aalto Intelligent Robotics group (the group named in the earlier memory; link not checked this run)",
+      "link": "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation"
+    }
+  ],
+  "updated": "2026-11-09T18:43",
+  "patents": null
+}

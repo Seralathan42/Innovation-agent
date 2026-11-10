@@ -1,0 +1,11 @@
+Started: 2026-11-04 09:04:37
+Inputs:
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/test-leak-detector.pdf
+
+[funding] saved funding.md (63 s)
+[ip] saved ip.md (48 s)
+[market] saved market.md (56 s)
+[nabc] saved nabc.md (27 s)
+[scorer] saved scorer.json, 3 of 3 runs (17 s)
+[verifier] saved verifier.json, 1 of 1 runs (36 s)
+[score] saved score.md (0 s)

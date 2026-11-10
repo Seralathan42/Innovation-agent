@@ -1,0 +1,240 @@
+{
+  "headline": "Europe's design and creative sector is in a split market: games are consolidating and cutting jobs, including the proposed closure of Ubisoft's Finnish RedLynx studio, while EU textile-circularity rules and Horizon creative-economy calls are creating new openings for research-based ventures.",
+  "outlook": "neutral",
+  "outlook_reason": "Games funding and jobs are under pressure and venture money is concentrating in AI and dev tools, but EU textile EPR, circularity and creative-economy programmes give university spin-offs policy and grant tailwinds.",
+  "metrics": [
+    {
+      "label": "Finnish games industry turnover",
+      "value": "about €2.85 bn; about 4,300 staff; 270 active studios (latest full report)",
+      "year": "2024",
+      "source": "https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon"
+    },
+    {
+      "label": "Finnish games industry operating result",
+      "value": "about €400m, down from about €800m in 2023",
+      "year": "2024",
+      "source": "https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon"
+    },
+    {
+      "label": "Finnish games industry 2025 revenue",
+      "value": "Neogames' preliminary estimate says revenue grew; no euro figure found",
+      "year": "2025",
+      "source": "https://neogames.fi/?p=27145"
+    },
+    {
+      "label": "EU-27 cultural sectors turnover",
+      "value": "€363.3 bn (1.47% of the business economy); value added €146.6 bn (2.26%)",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "Finland cultural sectors turnover",
+      "value": "€7.08 bn (1.79% of business economy); value added €3.0 bn (2.88%)",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "Finland computer game publishing turnover",
+      "value": "€2.21 bn; value added €862.5m",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "EU-27 specialised design activities turnover",
+      "value": "€20.8 bn (Finland €279m)",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "Global gaming M&A and private funding, Q3",
+      "value": "M&A $2.4 bn over 45 deals; private funding $1.6 bn+ over 106 rounds, more than 80% to AI and dev tools (secondary source, unverified)",
+      "year": "2026",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-10-14",
+      "title": "Ubisoft proposes closing Finnish studio RedLynx",
+      "detail": "Ubisoft issued notices for the proposed closure of RedLynx (up to 52 positions) and cut about 70 roles in Singapore. Figures come from an aggregator.",
+      "impact": "negative",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "date": "2026-10-19",
+      "title": "More European studio closures and restructurings",
+      "detail": "Liquid Swords is closing, DON'T NOD is under court protection (up to 85 jobs at risk), and Supermassive cut more than 70 jobs. Aggregator report, to be verified.",
+      "impact": "negative",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Horizon call on textile circularity opens (Textiles for the Future)",
+      "detail": "HORIZON-CL4-2027-01-MAT-PROD-08 is an Innovation Action call on advanced processing and manufacturing for textile circularity, due 2027-02-02.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-01-MAT-PROD-08"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "CREA news and media calls open",
+      "detail": "CREA calls on journalism partnerships, media literacy and media freedom open, with deadlines from 2027-01-20 to 2027-02-04.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2027-MEDIALITERACY"
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Textile EPR fact sheet published; national transposition ahead",
+      "detail": "The revised Waste Framework Directive entered into force on 2025-10-16. Member states must transpose it by June 2027, and schemes are due by April 2028 (sources differ on the exact dates). Brands will pay eco-modulated fees based on durability and recyclability.",
+      "impact": "positive",
+      "source": "https://euratex.eu/sustainable-businesses/circular-economy/textiles-epr-europe/"
+    },
+    {
+      "date": "2026-03-17",
+      "title": "Neogames outlook: 2026 expected to be strong, funding tight",
+      "detail": "Neogames expects a strong 2026, citing releases such as Housemarque's Saros and Remedy's Control Resonant. Venture capital and public innovation funding for mobile studios are limited, and 75 new startups were founded in three years.",
+      "impact": "neutral",
+      "source": "https://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "CREA-CULT-2025-COOP-UA-2",
+      "title": "Fostering Ukrainians' access to culture and cultural heritage",
+      "deadline": "2026-11-10",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-2"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-PARTICIPATION-02",
+      "title": "Innovative approaches for the spatial design of neighbourhoods (New European Bauhaus)",
+      "deadline": "2026-12-01",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-PARTICIPATION-02"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-BUSINESS-02",
+      "title": "Understanding capital market dynamics for increased investment in New European Bauhaus projects",
+      "deadline": "2026-12-01",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-BUSINESS-02"
+    },
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-08",
+      "title": "Textile circularity through advanced processing and manufacturing technologies (Textiles for the Future)",
+      "deadline": "2027-02-02",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-01-MAT-PROD-08"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-02",
+      "title": "AI4Creatives Support Platform: embracing a fair AI revolution (opens 2027-05-13)",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-02"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-05",
+      "title": "Re-imagining the creative economy: creative sectors and the social economy (opens 2027-05-13)",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-05"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-03",
+      "title": "Crafting routes to a circular economy (opens 2027-05-13)",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-03"
+    },
+    {
+      "id": "HORIZON-CL2-2027-02-HERITAGE-09-two-stage",
+      "title": "Open topic: impact-driven research on cultural heritage, arts and cultural and creative industries (opens 2027-03-02)",
+      "deadline": "2027-09-30",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-02-HERITAGE-09-two-stage"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Supercell",
+      "country": "Finland",
+      "what": "Mobile games leader. It closed Squad Busters in 2025, its first shutdown of a live game.",
+      "link": "https://supercell.com"
+    },
+    {
+      "name": "Remedy Entertainment",
+      "country": "Finland",
+      "what": "Console and PC studio. Control Resonant is a key 2026 release.",
+      "link": "https://www.remedygames.com"
+    },
+    {
+      "name": "Housemarque",
+      "country": "Finland",
+      "what": "PlayStation studio that released Saros in 2026.",
+      "link": "https://housemarque.com"
+    },
+    {
+      "name": "Rovio",
+      "country": "Finland",
+      "what": "Angry Birds maker, now part of Sega.",
+      "link": "https://www.rovio.com"
+    },
+    {
+      "name": "RedLynx (Ubisoft)",
+      "country": "Finland",
+      "what": "Trials developer. Ubisoft proposed closing it on 2026-10-14.",
+      "link": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "name": "Fingersoft",
+      "country": "Finland",
+      "what": "Hill Climb Racing, which passed 2 billion downloads.",
+      "link": "https://fingersoft.com"
+    },
+    {
+      "name": "Marimekko",
+      "country": "Finland",
+      "what": "Design and textile brand. It ran a capsule collection with Spinnova fibre.",
+      "link": "https://www.marimekko.com/at_de/m/nachhaltigkeit/marimekko-x-spinnova"
+    },
+    {
+      "name": "Spinnova",
+      "country": "Finland",
+      "what": "Wood-based textile fibre. It bought Suzano's stake in Woodspin in October 2025 and has announced a restructuring (date unverified).",
+      "link": "https://en.wikipedia.org/wiki/Spinnova"
+    },
+    {
+      "name": "Woamy",
+      "country": "Finland",
+      "what": "Aalto University spin-out making a cellulose foam alternative to polystyrene.",
+      "link": "https://www.goodnewsfinland.com/en/articles/five-from-finland/2025/finland-academic-spinouts/"
+    },
+    {
+      "name": "Ubisoft",
+      "country": "France",
+      "what": "Large publisher currently restructuring, with layoffs in several countries.",
+      "link": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "name": "DON'T NOD",
+      "country": "France",
+      "what": "Narrative games studio under court protection while it restructures.",
+      "link": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Media Lab (since 1994, now in Otaniemi), within the Department of Art and Media",
+      "link": "https://www.aalto.fi/en/aalto-media-lab/about-us"
+    },
+    {
+      "what": "Aalto Department of Media",
+      "link": "https://www.aalto.fi/en/department-of-media/our-story"
+    },
+    {
+      "what": "Woamy, Aalto spin-out making a cellulose foam alternative to polystyrene",
+      "link": "https://www.goodnewsfinland.com/en/articles/five-from-finland/2025/finland-academic-spinouts/"
+    }
+  ],
+  "updated": "2026-11-05T14:33"
+}

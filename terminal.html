@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<style>
+  :root {
+    --bg: #fff; --text: #2d2d2d; --muted: #6b6b6b; --line: #d9d9d9; --soft: #f4f4f4;
+    --black: #111; --accent: #ffcd00; --up: #0a7d38; --down: #c8102e; --flat: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  .app { display: grid; grid-template-rows: auto auto auto minmax(0, 1fr); height: 100vh; }
+
+  /* Top bar */
+  .top { display: flex; align-items: center; gap: 20px; padding: 14px 28px; border-bottom: 1px solid var(--line); }
+  .brand { font-weight: 700; font-size: 22px; letter-spacing: -0.03em; }
+  .brand span { color: var(--accent); }
+  .spacer { flex: 1; }
+
+
+  /* Tabs: bold, underlined with a thick bar */
+  .tabs { display: flex; gap: 6px; padding: 0 28px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+  .tab { padding: 14px 12px 11px; border: 0; border-bottom: 4px solid transparent; background: none; font-weight: 700; font-size: 16px; white-space: nowrap; color: var(--muted); }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--text); border-bottom-color: var(--black); }
+
+  /* Breaking news: a black feature block */
+  .breaking { display: flex; justify-content: center; padding: 16px 28px; }
+  .breaking .box { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 20px; align-items: center; width: min(1200px, 100%); padding: 18px 24px; background: var(--black); color: #fff; }
+  .breaking[hidden] { display: none; }
+  .breaking .close { position: absolute; top: 4px; right: 6px; padding: 2px 6px; border: 0; background: none; color: #9e9e9e; font-size: 14px; line-height: 1; }
+  .breaking .close:hover { color: #fff; }
+  .breaking .label { padding: 5px 10px; background: var(--down); color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; }
+  .breaking .label.latest { background: var(--accent); color: var(--black); }
+  .breaking .news { min-width: 0; }
+  .breaking .news a { font-weight: 700; font-size: 21px; line-height: 1.3; letter-spacing: -0.01em; }
+  .breaking .news .meta { color: #bdbdbd; font-size: 13px; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .breaking .positive { color: #4cd486; } .breaking .negative { color: #ff6b6b; }
+  .breaking .dots { display: flex; gap: 7px; }
+  .breaking .dots button { width: 10px; height: 10px; padding: 0; border: 1px solid #fff; background: none; }
+  .breaking .dots button.on { background: var(--accent); border-color: var(--accent); }
+
+  /* Body */
+  .body { display: grid; grid-template-columns: 250px minmax(0, 1fr) 380px; min-height: 0; border-top: 1px solid var(--line); }
+  .body.nochat { grid-template-columns: 250px minmax(0, 1fr); }
+  .body.nochat .chat { display: none; }
+  .toggle { padding: 7px 14px; border: 0; background: var(--black); color: #fff; font-weight: 700; }
+  .toggle.off { background: var(--soft); color: var(--text); }
+
+  /* Chat */
+  .chat { display: flex; flex-direction: column; min-height: 0; border-left: 1px solid var(--line); }
+  .chat-head { display: flex; justify-content: space-between; gap: 10px; padding: 16px 18px 12px; border-bottom: 1px solid var(--line); }
+  .chat-head h3 { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
+  .chat-head p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  .ghost { align-self: flex-start; padding: 6px 10px; border: 1px solid var(--text); background: none; font-weight: 700; font-size: 13px; }
+  .messages { flex: 1; overflow-y: auto; padding: 14px 18px; }
+  .msg { margin-bottom: 14px; font-size: 14px; }
+  .msg.user { margin-left: 30px; padding: 9px 12px; background: var(--black); color: #fff; white-space: pre-wrap; }
+  .msg.assistant { padding: 10px 12px; background: var(--soft); }
+  .msg.assistant p { margin: 6px 0; }
+  .msg.assistant table { font-size: 12px; }
+  .msg.assistant th, .msg.assistant td { border: 1px solid var(--line); padding: 3px 6px; }
+  .step { display: block; color: var(--muted); font-size: 12px; margin: 3px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .step::before { content: "→ "; }
+  .suggest { display: block; width: 100%; margin-top: 8px; padding: 8px 10px; border: 1px solid var(--line); background: none; text-align: left; font-size: 13px; }
+  .suggest:hover { border-color: var(--text); }
+  .composer { display: flex; gap: 8px; align-items: flex-end; padding: 12px 18px 16px; border-top: 1px solid var(--line); }
+  .composer textarea { flex: 1; resize: none; border: 0; border-bottom: 2px solid var(--text); padding: 6px 2px; font: inherit; font-size: 14px; outline: none; background: none; }
+  .composer button { padding: 9px 14px; border: 0; background: var(--accent); font-weight: 700; }
+  .composer button:disabled { opacity: 0.5; cursor: default; }
+  .pf { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 20px; border-top: 2px solid var(--text); padding-top: 14px; }
+  .pf-side { border-right: 1px solid var(--line); padding-right: 14px; }
+  .pf-side-head { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .pf-facet { border-bottom: 1px solid var(--line); padding: 4px 0 8px; }
+  .pf-head { width: 100%; padding: 8px 0 4px; border: 0; background: none; text-align: left; font-weight: 700; font-size: 14px; }
+  .pf-head b { background: var(--accent); padding: 0 6px; font-size: 12px; }
+  .pf-val { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 3px 0; font-size: 13px; cursor: pointer; }
+  .pf-val span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pf-val b { font-weight: 400; color: var(--muted); font-size: 12px; }
+  .pf-find, .pf-level { width: 100%; margin: 4px 0 6px; padding: 5px 7px; border: 1px solid var(--line); font: inherit; font-size: 13px; background: var(--bg); color: var(--text); }
+  .pf-actions { display: flex; gap: 6px; margin-top: 6px; }
+  .pf-actions button { flex: 1; padding: 5px 0; border: 1px solid var(--text); background: var(--bg); font-weight: 700; font-size: 12px; }
+  .pf-actions button[data-act="refine"]:not(:disabled) { background: var(--black); color: #fff; }
+  .pf-actions button:disabled { opacity: 0.35; cursor: default; }
+  .pf-link { padding: 4px 0; border: 0; background: none; font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .pf-bar { display: flex; gap: 10px; }
+  .pf-bar input, .pf-bar select { padding: 8px 10px; border: 1px solid var(--text); font: inherit; font-size: 14px; background: var(--bg); color: var(--text); }
+  .pf-bar input { flex: 1; }
+  .pf-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 10px; }
+  .chip-f { display: inline-flex; align-items: center; gap: 6px; padding: 3px 4px 3px 9px; background: var(--black); color: #fff; font-size: 12px; font-weight: 700; }
+  .chip-f.not { background: var(--down); }
+  .chip-f button { border: 0; background: none; color: inherit; font-size: 12px; padding: 0 4px; }
+  @media (max-width: 1100px) { .pf { grid-template-columns: 1fr; } .pf-side { border-right: 0; padding-right: 0; } }
+  .patent-stats { display: flex; gap: 28px; padding: 10px 0 6px; }
+  .patent-stats div { font-size: 13px; color: var(--muted); }
+  .patent-stats b { display: block; font-size: 26px; color: var(--text); letter-spacing: -0.02em; }
+  .source-list { columns: 2; column-gap: 28px; font-size: 13px; }
+  .source-list div { break-inside: avoid; padding: 4px 0; }
+  .sectors { border-right: 1px solid var(--line); overflow-y: auto; }
+  .sector { display: grid; grid-template-columns: 54px 1fr auto; gap: 8px; width: 100%; padding: 12px 20px; border: 0; border-bottom: 1px solid var(--line); background: none; text-align: left; }
+  .sector:hover { background: var(--soft); }
+  .sector.active { background: var(--black); color: #fff; }
+  .sector.active small { color: #bdbdbd; }
+  .sector .code { font-weight: 700; }
+  .sector.active .code { color: var(--accent); }
+  .sector .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sector small { grid-column: 2 / 4; color: var(--muted); font-size: 12px; }
+  .positive { color: var(--up); } .negative { color: var(--down); } .neutral { color: var(--flat); }
+  .sector.active .positive { color: #4cd486; } .sector.active .negative { color: #ff6b6b; } .sector.active .neutral { color: #bdbdbd; }
+
+  .main { overflow-y: auto; padding: 24px 28px 40px; }
+  .head { display: flex; align-items: flex-start; gap: 20px; padding: 0 0 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .head h1 { margin: 0; font-size: 44px; line-height: 1.05; font-weight: 700; letter-spacing: -0.04em; }
+  .head h1 span { margin-right: 12px; background: var(--accent); padding: 0 8px; }
+  .head .area { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .head .headline { font-size: 18px; line-height: 1.45; margin-top: 14px; max-width: 900px; font-weight: 700; letter-spacing: -0.01em; }
+  .head .reason { font-size: 15px; font-weight: 400; color: var(--muted); margin-top: 6px; max-width: 900px; }
+  .badge { display: inline-block; padding: 2px 8px; border: 2px solid currentColor; font-size: 12px; font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .refresh { margin-left: auto; padding: 11px 18px; border: 0; background: var(--black); color: #fff; font-weight: 700; white-space: nowrap; }
+  .refresh:hover { background: #333; }
+  .refresh:disabled { opacity: 0.5; cursor: default; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .panel { border: 1px solid var(--text); min-width: 0; }
+  .panel.wide { grid-column: 1 / -1; }
+  .panel h2 { margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 700; letter-spacing: -0.01em; text-transform: capitalize; }
+  .panel h2 b { display: inline-block; min-width: 22px; padding: 0 6px; margin-left: 6px; background: var(--accent); font-size: 13px; text-align: center; }
+  .panel .content { padding: 4px 16px 12px; max-height: 360px; overflow-y: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { font-weight: 700; }
+  .metrics td:first-child { width: 45%; }
+  td.dim, .dim { color: var(--muted); }
+  .item { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .item:last-child { border-bottom: 0; }
+  .item .meta { color: var(--muted); font-size: 13px; }
+  .item > a:first-child::before, .breaking .news a::before { content: "→ "; text-decoration: none; display: inline-block; margin-right: 4px; }
+  .empty { color: var(--muted); padding: 12px 0; }
+  .memory { font-size: 15px; line-height: 1.65; max-width: 900px; }
+  .memory h1 { font-size: 26px; letter-spacing: -0.02em; }
+  .memory h2 { font-size: 20px; margin: 24px 0 6px; padding: 0; border: 0; letter-spacing: -0.01em; text-transform: none; }
+  .memory th, .memory td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+  .start { padding: 70px 20px; text-align: center; color: var(--muted); font-size: 17px; }
+
+  .wide-table td { font-size: 14px; }
+  .wide-table td.num, .wide-table td.dim { white-space: nowrap; }
+  .wide-table tr.click { cursor: pointer; }
+  .wide-table tr.click:hover td { background: var(--soft); }
+  .wide-table th { text-align: left; padding: 10px 10px 8px 0; font-size: 13px; font-weight: 700; border-bottom: 2px solid var(--text); }
+  .code-cell { font-weight: 700; }
+
+  .ask { border-top: 1px solid var(--line); }
+  .answer { display: none; max-height: 40vh; overflow-y: auto; padding: 16px 28px; border-bottom: 1px solid var(--line); background: var(--soft); }
+  .answer.show { display: block; }
+  .answer .q { font-weight: 700; margin-bottom: 6px; }
+  .answer th, .answer td { border: 1px solid var(--line); padding: 4px 8px; }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 12px 28px; }
+  .bar label { font-weight: 700; background: var(--accent); padding: 4px 10px; }
+  .bar input { flex: 1; border: 0; border-bottom: 2px solid var(--text); padding: 6px 2px; outline: none; color: var(--text); font: inherit; font-size: 15px; background: none; }
+  .bar .close { border: 0; background: none; color: var(--muted); font-size: 16px; }
+
+  @media (max-width: 900px) {
+    .top, .tabs, .breaking, .main, .bar { padding-left: 16px; padding-right: 16px; }
+    .body { grid-template-columns: 1fr; }
+    .sectors { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+    .sector { min-width: 210px; border-right: 1px solid var(--line); }
+    .grid { grid-template-columns: 1fr; }
+    .head { flex-wrap: wrap; }
+    .head h1 { font-size: 32px; }
+    .breaking .box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">Aalto Innovation<span>.</span></div>
+    <div class="spacer"></div>
+    <button class="toggle" id="togglechat" type="button">Chat</button>
+  </header>
+  <nav class="tabs" id="tabs"></nav>
+  <section class="breaking" id="breaking"></section>
+  <div class="body" id="body">
+    <nav class="sectors" id="sectors"></nav>
+    <main class="main" id="main"></main>
+    <aside class="chat">
+      <div class="chat-head"><div><h3>Assistant</h3><p>Ask about any sector, or ask for a new sector dataset.</p></div>
+        <button class="ghost" id="newchat" type="button">New chat</button></div>
+      <div class="messages" id="messages"></div>
+      <form class="composer" id="composer">
+        <textarea id="input" rows="2" placeholder="e.g. Which sector has the most open EU funding? or Add a sector on space technology"></textarea>
+        <button id="send" type="submit">Send</button>
+      </form>
+    </aside>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const state = { sectors: [], current: null, memories: {}, tab: "sector", news: 0, session: null, busy: false };
+const TABS = [["overview", "OVERVIEW"], ["sector", "SECTOR"], ["companies", "COMPANIES"], ["patents", "PATENTS"]];
+const BREAKING_DAYS = 3;  // signals newer than this are shown as breaking, older ones as latest
+const ARROW = { positive: "▲", negative: "▼", neutral: "■" };
+
+DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+  if (node.tagName === "A") { node.setAttribute("target", "_blank"); node.setAttribute("rel", "noopener"); }
+});
+const markdown = (text) => DOMPurify.sanitize(marked.parse(text || ""));
+const esc = (text) => String(text ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const link = (url, text) => (/^https?:\/\//.test(url || "") ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text));
+const daysSince = (iso) => Math.floor((Date.now() - new Date(iso)) / 86400000);
+const daysUntil = (day) => Math.ceil((new Date(day) - Date.now()) / 86400000);
+const age = (iso) => { const d = daysSince(iso); return d === 0 ? "today" : `${d}d ago`; };
+
+async function load() {
+  const response = await fetch("/api/sectors").catch(() => null);
+  if (!response?.ok) return;
+  const raw = await response.text();
+  if (raw === state.raw) return;  // nothing changed since the last check
+  state.raw = raw;
+  state.sectors = JSON.parse(raw);
+  if (!state.current) state.current = (state.sectors.find((s) => s.data) || state.sectors[0]).id;
+  renderTabs();
+  renderSectors();
+  renderBreaking();
+  renderMain();
+}
+
+// Every item of one kind (signals, funding_calls, companies) across all sectors, tagged with its sector.
+const everything = (kind) => state.sectors.flatMap((s) => (s.data?.[kind] || []).map((x) => ({ ...x, sector: s })));
+
+function renderTabs() {
+  $("tabs").innerHTML = TABS.map(([id, label]) => `<button class="tab${id === state.tab ? " active" : ""}" data-tab="${id}">${label}</button>`).join("");
+  for (const button of $("tabs").children) button.onclick = () => { state.tab = button.dataset.tab; renderTabs(); renderMain(true); };
+}
+
+function renderBreaking() {
+  if (state.newsClosed) { $("breaking").hidden = true; return; }  // closed until the page is reloaded
+  const news = everything("signals").filter((x) => daysSince(x.date) >= 0).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 6);
+  if (!news.length) { $("breaking").innerHTML = '<div class="box"><span class="label latest">NEWS</span><div class="news dim">No news yet. Sectors fill in as the background updates finish.</div></div>'; return; }
+  const n = news[state.news % news.length], fresh = daysSince(n.date) <= BREAKING_DAYS;
+  $("breaking").innerHTML = `<div class="box"><button class="close" type="button" title="Close">✕</button><span class="label${fresh ? "" : " latest"}">${fresh ? "BREAKING" : "LATEST"}</span>
+    <div class="news">${link(n.source, n.title)}<div class="meta"><span class="${esc(n.impact)}">${ARROW[n.impact] || "■"}</span> ${esc(n.sector.code)} · ${esc(n.date)} · ${esc(n.detail)}</div></div>
+    <div class="dots">${news.map((_, i) => `<button class="${i === state.news % news.length ? "on" : ""}" data-i="${i}" title="Story ${i + 1}"></button>`).join("")}</div></div>`;
+  $("breaking").querySelector(".close").onclick = () => { state.newsClosed = true; renderBreaking(); };
+  for (const dot of $("breaking").querySelectorAll(".dots button")) dot.onclick = () => { state.news = +dot.dataset.i; renderBreaking(); };
+}
+
+function openSector(id) { state.current = id; state.tab = "sector"; renderTabs(); renderSectors(); renderMain(true); }
+
+function renderTab() {  // the cross-sector tabs
+  const none = '<div class="empty">Nothing in the library yet.</div>';
+  const row = (s) => `class="click" data-id="${s.id}"`;
+  let title, body;
+  if (state.tab === "overview") {
+    title = "ALL SECTORS";
+    body = `<table class="wide-table"><tr><th>CODE</th><th>SECTOR</th><th>OUTLOOK</th><th>HEADLINE</th><th>SIGNALS</th><th>CALLS</th><th>UPDATED</th></tr>${state.sectors.map((s) => {
+      const d = s.data;
+      return `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td>${esc(s.name)}</td><td class="${d?.outlook || "dim"}">${d ? ARROW[d.outlook] + " " + d.outlook : "·"}</td>
+        <td>${d ? esc(d.headline) : `<span class="dim">${s.updating ? "updating…" : "no data yet"}</span>`}</td><td class="num">${d ? d.signals.length : ""}</td><td class="num">${d ? d.funding_calls.length : ""}</td><td class="dim">${d ? age(d.updated) : ""}</td></tr>`;
+    }).join("")}</table>`;
+  } else if (state.tab === "patents") {
+    const withData = state.sectors.filter((s) => s.patents);
+    title = `EP AND WO PATENTS, LAST 12 MONTHS`;
+    {  // the summary lists sectors with a finished pull; the filters search whatever the database holds
+      body = !withData.length ? '<div class="empty">The first patent pull is still running. The table fills in as each sector finishes.</div>' : `<table class="wide-table"><tr><th>SECTOR</th><th>PUBLISHED, 12 MONTHS</th><th>AALTO PATENTS IN FIELD</th><th>STORED</th><th>BACK TO</th><th>PULLED</th><th>QUERY</th></tr>${withData.map((s) => `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td class="num">${s.patents.recent_total.toLocaleString()}</td><td class="num">${s.patents.aalto_total}</td><td class="num">${s.patents.stored.toLocaleString()}</td><td class="dim">${esc(s.patents.covered_from || "")}</td><td class="dim">${age(s.patents.fetched)}</td><td class="dim">${esc(s.patents.query)}</td></tr>`).join("")}</table>
+`;
+      body += `<h2 style="border:0;padding:24px 0 10px">All stored patents</h2>${filterLayout()}`;
+    }
+  } else {
+    title = "COMPANIES AND PATENT APPLICANTS";
+    body = filterLayout();
+  }
+  $("main").innerHTML = `<section class="panel"><h2>${title}</h2><div class="content" style="max-height:none">${body}</div></section>`;
+  for (const tr of $("main").querySelectorAll("tr.click")) tr.onclick = () => openSector(tr.dataset.id);
+  if ($("pf-results")) setupFilters();
+}
+
+function renderSectors() {
+  $("sectors").innerHTML = state.sectors.map((s) => {
+    const d = s.data;
+    const outlook = d ? `<span class="${d.outlook}">${ARROW[d.outlook]}</span>` : '<span class="dim">·</span>';
+    const note = s.updating ? "updating…" : d ? `updated ${age(d.updated)}` : "no data yet";
+    return `<button class="sector${s.id === state.current ? " active" : ""}" data-id="${s.id}">
+      <span class="code">${esc(s.code)}</span><span class="name">${esc(s.name)}</span>${outlook}<small>${note}</small></button>`;
+  }).join("");
+  for (const button of $("sectors").children) button.onclick = () => openSector(button.dataset.id);
+}
+
+const NO_PATENTS = '<div class="empty">No patent data yet. Add your EPO keys to the .env file (see docs/epo-ops.md); patents are fetched within the hour.</div>';
+
+function patentTable(items, withSector = false) {
+  return items.length ? `<table class="wide-table"><tr><th>PUBLISHED</th>${withSector ? "<th>SECTOR</th>" : ""}<th>PATENT</th><th>APPLICANTS</th></tr>${items.map((p) => `<tr><td class="dim">${esc(p.date)}</td>${withSector ? `<td class="num code-cell">${esc(p.sector.code)}</td>` : ""}<td>${link(p.link, p.title || p.number)}<div class="meta dim">${esc(p.number)} · ${esc(p.cpc.join(", "))}</div></td><td>${esc(p.applicants.join(", "))}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>';
+}
+
+// Every source behind a sector: the links in its data and the Markdown links in its memory file.
+function sources(d, memory) {
+  const found = new Map();
+  const add = (url, label) => { if (/^https?:\/\//.test(url || "") && !found.has(url)) found.set(url, label); };
+  d.metrics.forEach((m) => add(m.source, m.label));
+  d.signals.forEach((x) => add(x.source, x.title));
+  d.funding_calls.forEach((c) => add(c.link, c.title));
+  d.companies.forEach((c) => add(c.link, c.name));
+  d.aalto_links.forEach((a) => add(a.link, a.what));
+  for (const [, label, url] of (memory || "").matchAll(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g)) add(url, label);
+  return [...found].map(([url, label]) => `<div>${link(url, new URL(url).hostname.replace(/^www\./, ""))} <span class="dim">${esc(label)}</span></div>`).join("");
+}
+
+// Patents tab, filtered like Patsnap: facets with counts; tick values, then Refine (keep only) or Exclude.
+// Values in one facet combine with OR, facets combine with AND, excluded values are removed.
+const CPC_LEVELS = { section: 1, class: 3, subclass: 4, group: 99 };
+state.cpcLevel = "subclass";
+
+// The two filtered lists, both filtered and counted by the server. Each has facets, sort orders and a result table.
+const FILTERS = {
+  patents: {
+    noun: "stored patents",
+    search: "Search within results: title, abstract, number, applicant, inventor",
+    open: ["sector", "aalto", "authority", "type", "year", "applicant"],
+    sorts: { "Publication date, newest": "newest", "Publication date, oldest": "oldest", "Title A to Z": "title", "Recently added to store": "seen" },
+    async query(pf) {
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, cpc_level: state.cpcLevel,
+        sort: this.sorts[pf.sort] };
+      const r = await (await fetch("/api/patents/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+      return { total: r.total, all: r.stored, items: r.items.map((p) => ({ ...p, sector: { code: p.sectors.join(", ") } })), facets: r.facets };
+    },
+    table: (items) => patentTable(items, true),
+    facets: [
+      { id: "sector", label: "Sector" },
+      { id: "aalto", label: "Aalto" },
+      { id: "authority", label: "Authority" },
+      { id: "type", label: "Patent type" },
+      { id: "year", label: "Publication year" },
+      { id: "applicant", label: "Applicant", search: true },
+      { id: "applicant_country", label: "Applicant country" },
+      { id: "inventor", label: "Inventor", search: true },
+      { id: "cpc", label: "CPC classification", search: true, levels: true },
+      { id: "added", label: "Added to store" },
+    ],
+  },
+  companies: {
+    noun: "companies and applicants",
+    search: "Search within results: name, applicant name or what they do",
+    open: ["sector", "source", "type", "country", "aalto"],
+    sorts: { "Most patents": "patents", "Name A to Z": "name", "Latest patent": "latest", "Profiled first": "profiled" },
+    async query(pf) {
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort] };
+      const r = await (await fetch("/api/companies/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+      return { total: r.total, all: r.stored, items: r.items, facets: r.facets };
+    },
+    table: (items) => items.length ? `<table class="wide-table"><tr><th>COMPANY</th><th>COUNTRY</th><th>TYPE</th><th>SECTORS</th><th>PATENTS</th><th>LATEST</th><th>WHAT THEY DO</th></tr>${items.map((c) => `<tr><td>${link(c.link, c.name)}${c.profiled && c.applicant && c.applicant !== c.name ? `<div class="meta dim">${esc(c.applicant)}</div>` : ""}</td><td class="dim">${esc(c.country)}</td><td class="dim">${esc(c.type)}</td><td class="num code-cell">${esc(c.sectors.join(", "))}</td><td class="num">${c.patents ? `<button class="pf-link" data-applicant="${esc(c.applicant)}">${c.patents}</button>` : '<span class="dim">·</span>'}</td><td class="dim">${esc(c.latest || "")}</td><td>${c.what ? esc(c.what) : '<span class="dim">Patent applicant</span>'}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>',
+    facets: [
+      { id: "sector", label: "Sector" },
+      { id: "source", label: "Source" },
+      { id: "type", label: "Organisation type" },
+      { id: "country", label: "Country", search: true },
+      { id: "finnish", label: "Finnish" },
+      { id: "aalto", label: "Aalto connection" },
+      { id: "patents", label: "Patents stored" },
+      { id: "latest", label: "Latest patent year" },
+    ],
+  },
+};
+state.filters = {};  // filter settings per tab, kept while the page is open
+const blankFilters = (cfg) => ({ q: "", sort: Object.keys(cfg.sorts)[0], include: {}, exclude: {}, ticks: {}, more: {}, find: {}, shown: 50, open: Object.fromEntries(cfg.open.map((id) => [id, true])) });
+
+function filterLayout() {
+  const cfg = FILTERS[state.tab];
+  return `<div class="pf"><aside class="pf-side" id="pf-side"></aside><div class="pf-main">
+    <div class="pf-bar"><input id="pf-q" type="search" placeholder="${cfg.search}"><select id="pf-sort">${Object.keys(cfg.sorts).map((k) => `<option>${k}</option>`).join("")}</select></div>
+    <div class="pf-chips" id="pf-chips"></div><div class="dim" id="pf-count" style="margin:8px 0 4px"></div><div id="pf-results"></div></div></div>`;
+}
+
+async function setupFilters() {
+  const cfg = FILTERS[state.tab], pf = state.filters[state.tab] ||= blankFilters(cfg);
+  $("pf-q").value = pf.q; $("pf-sort").value = pf.sort;
+  $("pf-q").oninput = () => { pf.q = $("pf-q").value; pf.shown = 50; applyFilters(); };
+  $("pf-sort").oninput = () => { pf.sort = $("pf-sort").value; applyFilters(); };
+  applyFilters();
+}
+
+async function applyFilters() {
+  const cfg = FILTERS[state.tab], pf = state.filters[state.tab];
+  const run = (state.filterRun = (state.filterRun || 0) + 1);
+  const r = await cfg.query(pf);
+  if (run !== state.filterRun || !$("pf-side")) return;  // a newer request or another tab took over
+  $("pf-side").innerHTML = `<div class="pf-side-head">Filters</div>` + cfg.facets.map((f) => {
+    const values = r.facets[f.id] || [];
+    const limit = pf.more[f.id] ? 50 : 6, ticks = pf.ticks[f.id] || [];
+    const active = (pf.include[f.id] || []).length + (pf.exclude[f.id] || []).length;
+    const body = !pf.open[f.id] ? "" : `
+      ${f.levels ? `<select class="pf-level" data-f="${f.id}">${Object.keys(CPC_LEVELS).map((l) => `<option ${l === state.cpcLevel ? "selected" : ""} value="${l}">Level: ${l}</option>`).join("")}</select>` : ""}
+      ${f.search ? `<input class="pf-find" data-f="${f.id}" placeholder="Find ${f.label.toLowerCase()}" value="${esc(pf.find[f.id] || "")}">` : ""}
+      ${values.slice(0, limit).map(([v, n]) => `<label class="pf-val"><input type="checkbox" data-f="${f.id}" data-v="${esc(v)}" ${ticks.includes(v) ? "checked" : ""}><span>${esc(v)}</span><b>${n}</b></label>`).join("") || '<div class="dim">No values</div>'}
+      ${values.length > limit || pf.more[f.id] ? `<button class="pf-link" data-more="${f.id}">${pf.more[f.id] ? "Show fewer" : `More (${values.length - limit})`}</button>` : ""}
+      <div class="pf-actions"><button data-act="refine" data-f="${f.id}" ${ticks.length ? "" : "disabled"}>Refine</button><button data-act="exclude" data-f="${f.id}" ${ticks.length ? "" : "disabled"}>Exclude</button></div>`;
+    return `<section class="pf-facet"><button class="pf-head" data-open="${f.id}">${pf.open[f.id] ? "−" : "+"} ${f.label}${active ? ` <b>${active}</b>` : ""}</button>${body}</section>`;
+  }).join("");
+  // Active filters as chips
+  const chips = cfg.facets.flatMap((f) => [
+    ...(pf.include[f.id] || []).map((v) => `<span class="chip-f">${f.label}: ${esc(v)}<button data-rm="include|${f.id}|${esc(v)}">✕</button></span>`),
+    ...(pf.exclude[f.id] || []).map((v) => `<span class="chip-f not">NOT ${f.label}: ${esc(v)}<button data-rm="exclude|${f.id}|${esc(v)}">✕</button></span>`)]);
+  $("pf-chips").innerHTML = chips.length ? chips.join("") + `<button class="pf-link" id="pf-clear">Clear all</button>` : "";
+  // Results
+  $("pf-count").textContent = `${r.total.toLocaleString()} of ${r.all.toLocaleString()} ${cfg.noun}`;
+  $("pf-results").innerHTML = cfg.table(r.items) + (r.total > r.items.length ? `<button class="pf-link" id="pf-showmore">Show 50 more</button>` : "");
+  wireFilters();
+}
+
+function wireFilters() {
+  const cfg = FILTERS[state.tab], pf = state.filters[state.tab], side = $("pf-side");
+  side.querySelectorAll("[data-open]").forEach((b) => b.onclick = () => { pf.open[b.dataset.open] = !pf.open[b.dataset.open]; applyFilters(); });
+  side.querySelectorAll("[data-more]").forEach((b) => b.onclick = () => { pf.more[b.dataset.more] = !pf.more[b.dataset.more]; applyFilters(); });
+  side.querySelectorAll(".pf-val input").forEach((c) => c.onchange = () => {
+    const list = pf.ticks[c.dataset.f] = (pf.ticks[c.dataset.f] || []).filter((v) => v !== c.dataset.v);
+    if (c.checked) list.push(c.dataset.v);
+    applyFilters();
+  });
+  side.querySelectorAll("[data-act]").forEach((b) => b.onclick = () => {
+    const f = b.dataset.f, target = b.dataset.act === "refine" ? pf.include : pf.exclude;
+    target[f] = [...new Set([...(target[f] || []), ...pf.ticks[f]])];
+    pf.ticks[f] = []; pf.shown = 50; applyFilters();
+  });
+  side.querySelectorAll(".pf-find").forEach((input) => input.oninput = () => {
+    pf.find[input.dataset.f] = input.value;
+    applyFilters().then(() => {
+      const again = $("pf-side")?.querySelector(`.pf-find[data-f="${input.dataset.f}"]`);
+      if (again) { again.focus(); again.setSelectionRange(input.value.length, input.value.length); }
+    });
+  });
+  side.querySelectorAll(".pf-level").forEach((sel) => sel.onchange = () => { state.cpcLevel = sel.value; pf.include.cpc = []; pf.exclude.cpc = []; pf.ticks.cpc = []; applyFilters(); });
+  $("pf-chips").querySelectorAll("[data-rm]").forEach((b) => b.onclick = () => {
+    const [kind, f, v] = b.dataset.rm.split("|"); pf[kind][f] = (pf[kind][f] || []).filter((x) => x !== v); applyFilters();
+  });
+  if ($("pf-clear")) $("pf-clear").onclick = () => { state.filters[state.tab] = { ...blankFilters(cfg), open: pf.open }; setupFilters(); };
+  if ($("pf-showmore")) $("pf-showmore").onclick = () => { pf.shown += 50; applyFilters(); };
+  $("pf-results").querySelectorAll("[data-applicant]").forEach((b) => b.onclick = () => openPatents(null, b.dataset.applicant));
+}
+
+function openPatents(sectorId, applicant) {  // the Patents tab filtered to one sector or one applicant
+  const code = state.sectors.find((s) => s.id === sectorId)?.code;
+  state.tab = "patents";
+  state.filters.patents = { ...(state.filters.patents || blankFilters(FILTERS.patents)), include: applicant ? { applicant: [applicant] } : { sector: [code] }, exclude: {} };
+  renderTabs(); renderMain(true);
+}
+
+function panel(title, count, body, wide = false) {
+  return `<section class="panel${wide ? " wide" : ""}"><h2>${title}${count !== null ? ` <b>${count}</b>` : ""}</h2><div class="content">${body}</div></section>`;
+}
+
+async function renderMain(scrollTop = false) {
+  if (scrollTop) $("main").scrollTop = 0;
+  if (state.tab !== "sector") return renderTab();
+  const s = state.sectors.find((x) => x.id === state.current), d = s.data;
+  const head = `<div class="head"><div><h1><span>${esc(s.code)}</span>${esc(s.name)}</h1>
+      <div class="area">Aalto research area: ${esc(s.aalto_area)} · ${esc(s.scope)}</div>
+      ${d ? `<div class="headline"><span class="badge ${d.outlook}">${ARROW[d.outlook]} ${d.outlook}</span>${esc(d.headline)}</div>
+             <div class="reason">${esc(d.outlook_reason)}</div>` : ""}</div>
+    <button class="refresh" id="refresh" ${s.updating ? "disabled" : ""}>${s.updating ? "Updating…" : d ? `Refresh · ${age(d.updated)}` : "Build now"}</button></div>`;
+  if (!d) {
+    $("main").innerHTML = head + `<div class="start">${s.updating ? "Researching this sector now. It appears here when the update is done." : "This sector is not in the library yet."}</div>`;
+  } else {
+    const none = '<div class="empty">Nothing found in this update.</div>';
+    const metrics = d.metrics.length ? `<table class="metrics">${d.metrics.map((m) => `<tr><td>${esc(m.label)}</td><td class="num">${esc(m.value)}</td><td class="dim">${esc(m.year)}</td><td>${link(m.source, "source")}</td></tr>`).join("")}</table>` : none;
+    const signals = [...d.signals].sort((a, b) => b.date.localeCompare(a.date)).map((x) => `<div class="item"><span class="${esc(x.impact)}">${ARROW[x.impact] || "■"}</span> ${link(x.source, x.title)}<div class="meta">${esc(x.date)} · ${esc(x.detail)}</div></div>`).join("") || none;
+    const calls = [...d.funding_calls].sort((a, b) => a.deadline.localeCompare(b.deadline)).map((c) => {
+      const left = daysUntil(c.deadline);
+      return `<tr><td>${link(c.link, c.title)}<div class="meta dim">${esc(c.id)} · ${esc(c.budget)}</div></td><td class="num">${esc(c.deadline)}</td><td class="num ${left < 30 ? "negative" : ""}">${isNaN(left) ? "" : left + "d"}</td></tr>`;
+    }).join("");
+    const companies = d.companies.map((c) => `<div class="item">${link(c.link, c.name)} <span class="dim">${esc(c.country)}</span><div class="meta">${esc(c.what)}</div></div>`).join("") || none;
+    const aalto = d.aalto_links.map((a) => `<div class="item">${link(a.link, a.what)}</div>`).join("") || none;
+    $("main").innerHTML = head + `<div class="grid">
+      ${panel("KEY METRICS", d.metrics.length, metrics)}
+      ${panel("SIGNALS", d.signals.length, signals)}
+      ${panel("OPEN FUNDING CALLS", d.funding_calls.length, calls ? `<table>${calls}</table>` : none)}
+      ${panel("COMPANIES", d.companies.length, companies)}
+      ${panel("AALTO LINKS", d.aalto_links.length, aalto, true)}
+      ${panel("PATENTS (EPO)", s.patents ? s.patents.recent_total : null, s.patents ? `<div class="patent-stats"><div><b>${s.patents.recent_total.toLocaleString()}</b>EP and WO patents published in the last 12 months</div><div><b>${s.patents.aalto_total}</b>Aalto patents in this field</div><div><b>${s.patents.stored}</b>patents stored for this sector</div></div>
+        ${patentTable(s.patents.recent.slice(0, 10))}${s.patents.aalto.length ? `<h3>Aalto patents</h3>${patentTable(s.patents.aalto)}` : ""}<div class="meta dim">EPO query: ${esc(s.patents.query)} · last pulled ${age(s.patents.fetched)}, new patents every 6 hours, stored back to ${esc(s.patents.covered_from || "")} · <a href="#" onclick="openPatents('${s.id}'); return false">Filter all ${s.patents.stored} stored patents</a></div>` : NO_PATENTS, true)}
+      ${panel("SECTOR MEMORY", null, '<div class="memory" id="memory">Loading…</div>', true)}
+      ${panel("SOURCES", null, '<div class="source-list" id="sources"></div>', true)}</div>`;
+    const key = s.id + d.updated;
+    if (!state.memories[key]) state.memories[key] = (await (await fetch(`/api/sectors/${s.id}/memory`)).json()).memory;
+    if ($("memory")) $("memory").innerHTML = markdown(state.memories[key]);
+    if ($("sources")) $("sources").innerHTML = sources(d, state.memories[key]) || '<div class="empty">No links found.</div>';
+  }
+  $("refresh").onclick = async () => { await fetch(`/api/sectors/${s.id}/refresh`, { method: "POST" }); state.raw = ""; load(); };
+  if (scrollTop) $("main").scrollTop = 0;
+}
+
+const SUGGESTIONS = ["Which sector has the most open EU funding right now?", "Compare the outlook of energy and quantum, with sources.", "Add a sector on space technology."];
+
+function emptyChat() {
+  $("messages").innerHTML = '<div class="dim" style="font-size:13px">Ask about any sector, or ask for a new one. For example:</div>' +
+    SUGGESTIONS.map((q) => `<button class="suggest" type="button">${esc(q)}</button>`).join("");
+  for (const b of $("messages").querySelectorAll(".suggest")) b.onclick = () => send(b.textContent);
+}
+
+async function send(text) {
+  if (state.busy || !text.trim()) return;
+  state.busy = true; $("send").disabled = true;
+  $("messages").querySelector(".suggest") && ($("messages").innerHTML = "");
+  $("messages").insertAdjacentHTML("beforeend", `<div class="msg user">${esc(text)}</div><div class="msg assistant"><span class="dim">Thinking…</span></div>`);
+  const reply = $("messages").lastElementChild, scroll = () => { $("messages").scrollTop = $("messages").scrollHeight; };
+  scroll();
+  let answer = "", steps = "", addedSector = false;
+  const draw = () => { reply.innerHTML = steps + markdown(answer); scroll(); };
+  try {
+    const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, session: state.session, sector: state.tab === "sector" ? state.current : null }) });
+    const reader = response.body.getReader(), decoder = new TextDecoder();
+    let buffer = "";
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n"); buffer = lines.pop();
+      for (const line of lines.filter(Boolean)) {
+        const e = JSON.parse(line);
+        if (e.text) answer += e.text;
+        if (e.tool) { steps += `<span class="step">${esc(e.tool)} ${esc(e.detail)}</span>`; addedSector ||= e.tool === "add_sector"; }
+        if (e.session) state.session = e.session;
+        if (e.error) answer += `\n\n**Something went wrong:** ${e.error}`;
+        draw();
+      }
+    }
+  } catch (error) { answer += `\n\n**Something went wrong:** ${error.message}`; draw(); }
+  state.busy = false; $("send").disabled = false;
+  if (addedSector) { state.raw = ""; load(); }
+}
+
+$("composer").onsubmit = (e) => { e.preventDefault(); const t = $("input").value; $("input").value = ""; send(t); };
+$("input").onkeydown = (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("composer").requestSubmit(); } };
+$("newchat").onclick = () => { if (!state.busy) { state.session = null; emptyChat(); } };
+$("togglechat").onclick = () => { const off = $("body").classList.toggle("nochat"); $("togglechat").classList.toggle("off", off); };
+emptyChat();
+
+setInterval(() => load().then(() => {}), 10000);  // picks up finished background updates
+setInterval(() => { state.news++; renderBreaking(); }, 8000);  // rotate the breaking news
+load();
+</script>
+</body>
+</html>

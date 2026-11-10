@@ -1,0 +1,229 @@
+{
+  "headline": "Design and creative industries are polarised: Finnish games are restructuring (RedLynx closure proposed, Metacore cuts) while grants and bio-based textile work (Spinnova) keep advancing under EU circularity policy.",
+  "outlook": "neutral",
+  "outlook_reason": "Games funding and jobs are weak and capital is concentrated in AI and dev tools, but EU creative-economy, New European Bauhaus and textile circularity programmes give research-based ventures real grant routes.",
+  "metrics": [
+    {
+      "label": "Finnish games industry turnover",
+      "value": "about €2.85 bn (second-highest on record; down 4.9% over two years per one summary)",
+      "year": "2024",
+      "source": "https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon"
+    },
+    {
+      "label": "Finnish games operating result",
+      "value": "about €400m (from about €800m in 2023)",
+      "year": "2024",
+      "source": "https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon"
+    },
+    {
+      "label": "Finnish games staff and studios",
+      "value": "about 4,300 staff, 270 studios",
+      "year": "2024",
+      "source": "https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon"
+    },
+    {
+      "label": "New Finnish game startups",
+      "value": "75 in the last three years; about 60 commercial games released in 2025",
+      "year": "2025",
+      "source": "http://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/"
+    },
+    {
+      "label": "EU-27 cultural sectors turnover / value added",
+      "value": "€363.3 bn (1.47% of business economy) / €146.6 bn (2.26%)",
+      "year": "2020",
+      "source": "Eurostat cult_ent_val"
+    },
+    {
+      "label": "Finland cultural sectors turnover / value added",
+      "value": "€7.08 bn (1.79%) / €3.0 bn (2.88%)",
+      "year": "2020",
+      "source": "Eurostat cult_ent_val"
+    },
+    {
+      "label": "Global gaming M&A and private funding, Q3",
+      "value": "M&A $2.4 bn over 45 deals; private funding $1.6 bn+ over 106 rounds (secondary source, per Drake Star data)",
+      "year": "2026",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-05",
+      "title": "Spinnova signs letter of intent with Outlast Technologies",
+      "detail": "Non-binding LOI to develop Spinnova fibre for insulation and temperature regulation. Spinnova's Woodspin demo factory is in trial runs, with larger-scale production targeted to restart during 2026, depending on trial results.",
+      "impact": "positive",
+      "source": "https://www.textileworld.com/?p=112068"
+    },
+    {
+      "date": "2026-10-14",
+      "title": "Ubisoft proposes closing RedLynx (Trials, Helsinki)",
+      "detail": "Part of a wider restructuring that includes about 70 roles in Singapore and about 100 in Germany. Subject to Finnish change negotiations; reports put the affected Finnish headcount at up to about 52.",
+      "impact": "negative",
+      "source": "https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Q3 2026 gaming deal flow concentrated in AI and dev tools",
+      "detail": "Reported M&A of $2.4 bn over 45 deals and $1.6 bn+ over 106 funding rounds, mostly to AI and tools. Secondary source, not verified against Drake Star.",
+      "impact": "neutral",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "Metacore (Merge Mansion) confirms 159 layoffs and closes Germany and Sweden offices",
+      "detail": "The Helsinki mobile studio cut staff after its flagship title stagnated. The exact publication date was not confirmed; June 2026 is approximate.",
+      "impact": "negative",
+      "source": "https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/"
+    },
+    {
+      "date": "2026-02-03",
+      "title": "Neogames: 2026 expected to be strong, but no 2025 turnover figure",
+      "detail": "Neogames Finland reports 75 new startups in three years and about 60 games released in 2025. It gives no turnover or staff figures.",
+      "impact": "neutral",
+      "source": "http://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "CREA-CULT-2025-COOP-UA-2",
+      "title": "Fostering Ukrainians' access to culture and cultural heritage",
+      "deadline": "2026-11-10",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-2"
+    },
+    {
+      "id": "HORIZON-EIT-2025-KIC-IBA-CC",
+      "title": "EIT Culture & Creativity Business Plan 2026",
+      "deadline": "2026-11-16",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIT-2025-KIC-IBA-CC"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-PARTICIPATION-02",
+      "title": "Innovative approaches for the spatial design of neighbourhoods (New European Bauhaus)",
+      "deadline": "2026-12-01",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-PARTICIPATION-02"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-BUSINESS-02",
+      "title": "Understanding capital market dynamics for increased investment in NEB projects",
+      "deadline": "2026-12-01",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-NEB-2026-01-BUSINESS-02"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-03",
+      "title": "Crafting routes to a circular economy",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-03"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-05",
+      "title": "Re-imagining the creative economy: cultural and creative sectors and the social economy",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-05"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-02",
+      "title": "AI4Creatives Support Platform: embracing a fair AI revolution",
+      "deadline": "2027-09-23",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-02"
+    },
+    {
+      "id": "HORIZON-CL2-2027-02-HERITAGE-09-two-stage",
+      "title": "Open topic: impact-driven research on cultural heritage, arts and cultural and creative industries",
+      "deadline": "2027-09-30",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-02-HERITAGE-09-two-stage"
+    },
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-08",
+      "title": "Textile and material innovation topic (carried over from the previous run; not re-checked)",
+      "deadline": "2027-02-02",
+      "budget": "not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-01-MAT-PROD-08"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Supercell",
+      "country": "Finland",
+      "what": "Mobile games leader (Clash, Brawl Stars); drove Finnish turnover in 2024",
+      "link": "https://supercell.com"
+    },
+    {
+      "name": "Remedy Entertainment",
+      "country": "Finland",
+      "what": "AAA console studio (Control, Alan Wake)",
+      "link": "https://www.remedygames.com"
+    },
+    {
+      "name": "Housemarque",
+      "country": "Finland",
+      "what": "Sony-owned console studio",
+      "link": "https://housemarque.com"
+    },
+    {
+      "name": "Rovio (Sega)",
+      "country": "Finland",
+      "what": "Angry Birds mobile games",
+      "link": "https://www.rovio.com"
+    },
+    {
+      "name": "Metacore",
+      "country": "Finland",
+      "what": "Merge Mansion maker; 159 layoffs in 2026",
+      "link": "https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/"
+    },
+    {
+      "name": "Ubisoft RedLynx",
+      "country": "Finland",
+      "what": "Trials studio; closure proposed in 2026-10",
+      "link": "https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/"
+    },
+    {
+      "name": "Marimekko",
+      "country": "Finland",
+      "what": "Design and fashion brand that has worked with Spinnova on wood-based textiles",
+      "link": "https://www.marimekko.com"
+    },
+    {
+      "name": "Spinnova",
+      "country": "Finland",
+      "what": "Wood-pulp textile fibre; LOI with Outlast in 2026-11",
+      "link": "https://spinnovagroup.com"
+    },
+    {
+      "name": "Woamy",
+      "country": "Finland",
+      "what": "Aalto spin-out in materials-led design",
+      "link": "https://www.aalto.fi"
+    },
+    {
+      "name": "Ubisoft",
+      "country": "France",
+      "what": "Restructuring across European studios",
+      "link": "https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Media Lab, Department of Media (media technology, games, interactive media)",
+      "link": "https://www.aalto.fi/en/department-of-art-and-design"
+    },
+    {
+      "what": "Aalto Department of Art and Design (design, fashion, textile research); spin-offs not re-verified",
+      "link": "https://www.aalto.fi/en/department-of-art-and-design"
+    },
+    {
+      "what": "Woamy: Aalto materials-led spin-out",
+      "link": "https://www.aalto.fi"
+    }
+  ],
+  "updated": "2026-11-09T18:52",
+  "patents": null
+}

@@ -1,0 +1,247 @@
+{
+  "headline": "European quantum is moving from research to industrial scale, led by Finland's IQM (listed on Nasdaq and Nasdaq Helsinki in July 2026) and a heavy EU call round, but private capital still lags the US.",
+  "outlook": "positive",
+  "outlook_reason": "IQM's listing and €102M backlog, a large EU/EuroHPC call round closing in November 2026 and growing Finnish ecosystem funding point to rising demand, although the EU private-capital gap and an unconfirmed Quantum Act remain risks.",
+  "metrics": [
+    {
+      "label": "IQM H1 2026 revenue",
+      "value": "€8.9M (operating loss €60.5M)",
+      "year": "2026",
+      "source": "https://thequantuminsider.com/2026/08/04/iqm-confirms-2026-outlook-after-public-listing-citing-more-than-e102-million-in-orders"
+    },
+    {
+      "label": "IQM order backlog",
+      "value": ">€102.1M",
+      "year": "2026",
+      "source": "https://thequantuminsider.com/2026/08/04/iqm-confirms-2026-outlook-after-public-listing-citing-more-than-e102-million-in-orders"
+    },
+    {
+      "label": "IQM–CSC contract for quantum computer in LUMI AI Factory",
+      "value": "€33.0M",
+      "year": "2026",
+      "source": "https://quantumcomputingreport.com/iqm-quantum-computers-reports-first-earnings-as-public-company-h1-2026-results-record-backlog-and-fy-2026-guidance/"
+    },
+    {
+      "label": "IQM Espoo cleanroom expansion",
+      "value": ">€40M, capacity up to 30 full-stack systems/year",
+      "year": "2026",
+      "source": "https://quantumcomputingreport.com/iqm-quantum-computers-reports-first-earnings-as-public-company-h1-2026-results-record-backlog-and-fy-2026-guidance/"
+    },
+    {
+      "label": "Share of private capital going to European quantum computing firms (vs ~50% US), per Commission data as cited by media",
+      "value": "5%",
+      "year": "2026",
+      "source": "https://newswav.com/article/europe-urged-to-boost-quantum-investment-amid-funding-gap-A2603_ea1Z9q"
+    },
+    {
+      "label": "Quantonation fund closed",
+      "value": "€220M",
+      "year": "2026",
+      "source": "https://thenextweb.com/news/vc-quantonation-closes-e220m-fund-to-back-next-gen-physics-tech"
+    },
+    {
+      "label": "Cumulative EU + national public quantum investment (secondary guide, unverified)",
+      "value": ">€15B",
+      "year": "2026",
+      "source": "https://postquantum.com/quantum-computing/quantum-europe-eu/"
+    },
+    {
+      "label": "Finnish quantum business network size",
+      "value": ">25 companies (from ~3 in 2018)",
+      "year": "2026",
+      "source": "https://dealroom.co/charts/finland-startups-2026"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-08-04",
+      "title": "IQM reports first results as public company",
+      "detail": "H1 revenue €8.9M, operating loss €60.5M, backlog above €102.1M, full-year outlook confirmed. 26 systems sold, 17 delivered.",
+      "impact": "positive",
+      "source": "https://thequantuminsider.com/2026/08/04/iqm-confirms-2026-outlook-after-public-listing-citing-more-than-e102-million-in-orders"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "IQM wins €33M CSC contract for LUMI AI Factory",
+      "detail": "Quantum computer to be integrated into LUMI AI Factory (July 2026; exact day not confirmed). IQM also listed on Nasdaq and Nasdaq Helsinki in July.",
+      "impact": "positive",
+      "source": "https://quantumcomputingreport.com/iqm-quantum-computers-reports-first-earnings-as-public-company-h1-2026-results-record-backlog-and-fy-2026-guidance/"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "IQM Q3 2026 results due today",
+      "detail": "Date moved from 3 Nov to 5 Nov. Figures were not available at the time of this update.",
+      "impact": "neutral",
+      "source": "https://www.placera.se/pressmeddelanden/iqm-quantum-computers-iqm-quantum-computers-will-change-the-release-date-of-the-interim-report-for-january-september-2026-20261005"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Bluefors and Verda become Finnish unicorns",
+      "detail": "Dealroom lists Bluefors (cryogenics) among September 2026 new unicorns (exact day not given); Algorithmiq raised a €18M Series B in May 2026.",
+      "impact": "positive",
+      "source": "https://dealroom.co/charts/finland-startups-2026"
+    },
+    {
+      "date": "2026-06-22",
+      "title": "Nordic Quantum Alliance launched",
+      "detail": "Nordic quantum organisations from DK, FI, NO, SE formed an alliance.",
+      "impact": "positive",
+      "source": "https://thequantuminsider.com/tag/finland/"
+    },
+    {
+      "date": "2026-04-07",
+      "title": "First private-enterprise IQM sale",
+      "detail": "Poland's Galaxy Systemy Informatyczne buys a 54-qubit system, delivery Q4 2026.",
+      "impact": "positive",
+      "source": "https://stocks.observer-reporter.com/observerreporter/article/bizwire-2026-4-7-polands-galaxy-systemy-informatyczne-becomes-first-private-enterprise-to-buy-quantum-computer-from-iqm"
+    },
+    {
+      "date": "2026-05-07",
+      "title": "Scaleup Europe Fund first investment: Quantum Motion $160M",
+      "detail": "First deal of the EU fund went to a UK silicon-spin quantum company.",
+      "impact": "positive",
+      "source": "https://thenextweb.com/news/quantum-motion-160m-eu-scaleup-europe-fund-first-investment"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "EU Quantum Act status unconfirmed",
+      "detail": "Proposal was planned for Q2 2026 in the Commission work programme. I found no confirmation that it has been adopted; check the Commission's page.",
+      "impact": "neutral",
+      "source": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-quantum-act"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-QEXP-14-01",
+      "title": "Quantum Experimental Pilot Lines for Quantum Technologies",
+      "deadline": "2026-11-17",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-EUROHPC-2026-QEXP-14-01"
+    },
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-QTI-13-01",
+      "title": "Quantum-Testing Infrastructure for Quantum Technologies",
+      "deadline": "2026-11-17",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-EUROHPC-2026-QTI-13-01"
+    },
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-NAPT-11-01",
+      "title": "Neutral-Atom Platform Technologies",
+      "deadline": "2026-11-17",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-EUROHPC-2026-NAPT-11-01"
+    },
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-NQKD-12-01",
+      "title": "Next-Generation QKD Systems",
+      "deadline": "2026-11-17",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-EUROHPC-2026-NQKD-12-01"
+    },
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-QML-07-01",
+      "title": "Quantum Machine Learning",
+      "deadline": "2027-01-28",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-EUROHPC-2026-QML-07-01"
+    },
+    {
+      "id": "HORIZON-CL4-2027-SPACE-03-71",
+      "title": "Quantum Space Gravimetry (opens 2027-03-09)",
+      "deadline": "2027-09-02",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-SPACE-03-71"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-04",
+      "title": "New primitives and protocols for future hybrid classical-quantum networks (opens 2027-03-02)",
+      "deadline": "2027-09-15",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL3-2027-02-CS-ECCC-04"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-03",
+      "title": "Secure PQC implementations, cryptanalysis and post-quantum digital trust (opens 2027-03-02)",
+      "deadline": "2027-09-15",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL3-2027-02-CS-ECCC-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-05-DIGITAL-EMERGING-03",
+      "title": "Advanced integrated photonic devices (relevant to photonic quantum; opens 2026-11-17)",
+      "deadline": "2027-03-18",
+      "budget": "not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-05-DIGITAL-EMERGING-03"
+    }
+  ],
+  "companies": [
+    {
+      "name": "IQM Quantum Computers",
+      "country": "Finland",
+      "what": "Superconducting quantum computers, Aalto/VTT-origin, Espoo fab; listed on Nasdaq and Nasdaq Helsinki July 2026; installed a 20-qubit system at Aalto.",
+      "link": "https://investors.iqm.tech/"
+    },
+    {
+      "name": "Bluefors",
+      "country": "Finland",
+      "what": "Dilution refrigerators and cryogenic systems for quantum computers; Aalto-linked; reported as new unicorn Sept 2026.",
+      "link": "https://bluefors.com"
+    },
+    {
+      "name": "Algorithmiq",
+      "country": "Finland",
+      "what": "Quantum algorithms and software for life sciences; €18M Series B in May 2026 (per Dealroom).",
+      "link": "https://algorithmiq.fi"
+    },
+    {
+      "name": "SemiQon",
+      "country": "Finland",
+      "what": "Cryo-CMOS and silicon quantum devices, VTT spin-off (details not verified in this run).",
+      "link": "https://semiqon.com"
+    },
+    {
+      "name": "QMill",
+      "country": "Finland",
+      "what": "Quantum software and algorithms, Aalto-linked; demonstrated quantum-enhanced mobile network encryption with Telia (May 2026).",
+      "link": "https://www.qmill.com"
+    },
+    {
+      "name": "Quantum Motion",
+      "country": "UK",
+      "what": "Silicon spin qubits; $160M round, first investment of EU Scaleup Europe Fund.",
+      "link": "https://thenextweb.com/news/quantum-motion-160m-eu-scaleup-europe-fund-first-investment"
+    },
+    {
+      "name": "Pasqal",
+      "country": "France",
+      "what": "Neutral-atom quantum computers, IQM's European peer.",
+      "link": "https://www.pasqal.com"
+    },
+    {
+      "name": "Quantonation",
+      "country": "France",
+      "what": "Deep-physics VC; closed €220M fund Feb 2026; potential investor for spin-offs.",
+      "link": "https://thenextweb.com/news/vc-quantonation-closes-e220m-fund-to-back-next-gen-physics-tech"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto University Department of Applied Physics – Quantum Computing and Devices / Quantum Dynamics groups (research hub behind IQM, Bluefors links)",
+      "link": "https://www.aalto.fi/en/department-of-applied-physics"
+    },
+    {
+      "what": "OtaNano research infrastructure (Micronova/Nanomicroscopy), national cleanroom and cryogenic facility with VTT",
+      "link": "https://otanano.fi"
+    },
+    {
+      "what": "Finnish Quantum Institute (InstituteQ), Aalto, Helsinki and VTT network",
+      "link": "https://instituteq.fi"
+    },
+    {
+      "what": "IQM 20-qubit computer deployed at Aalto University",
+      "link": "https://quantumcomputingreport.com/iqm-deploys-20-qubit-quantum-computer-at-aalto-university/amp/"
+    }
+  ],
+  "updated": "2026-11-05T14:27"
+}

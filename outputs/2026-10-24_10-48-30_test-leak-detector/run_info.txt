@@ -1,6 +1,6 @@
 Started: 2026-10-24 10:48:30
 Inputs:
-  <PROJECT_DIR>/disclosures/test-leak-detector.pdf
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/test-leak-detector.pdf
 
 [funding] saved funding.md (187 s)
 [ip] failed: cancelled by the user (223 s)

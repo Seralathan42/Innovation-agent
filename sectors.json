@@ -1,0 +1,10 @@
+[
+  {"id": "ai-software", "code": "AISW", "name": "AI and software", "aalto_area": "Digitalisation and AI", "scope": "Artificial intelligence, machine learning, data platforms, robotics software and industrial software", "patent_query": "cpc=G06N"},
+  {"id": "quantum", "code": "QNTM", "name": "Quantum technology", "aalto_area": "Digitalisation and AI", "scope": "Quantum computing hardware and software, quantum sensing and cryogenics", "patent_query": "cpc=G06N10"},
+  {"id": "wireless-electronics", "code": "WRLS", "name": "Wireless and electronics", "aalto_area": "Digitalisation and AI", "scope": "6G and mobile communications, semiconductors, photonics, sensors and electronics", "patent_query": "cpc=H04W"},
+  {"id": "energy", "code": "ENRG", "name": "Energy and storage", "aalto_area": "Energy solutions", "scope": "Batteries and energy storage, renewable energy, hydrogen, smart grids and district heating", "patent_query": "(cpc=H01M or cpc=H02J)"},
+  {"id": "bio-materials", "code": "BIOM", "name": "Bio-based and advanced materials", "aalto_area": "Materials", "scope": "Forest-based materials, cellulose and lignin products, bio-based chemicals, advanced and circular materials", "patent_query": "(cpc=D21H or cpc=C08H or cpc=C08B)"},
+  {"id": "health-tech", "code": "HLTH", "name": "Health technology", "aalto_area": "Health and well-being", "scope": "Medical devices, diagnostics and imaging, digital health and brain technology", "patent_query": "(cpc=A61B5 or cpc=G16H)"},
+  {"id": "built-environment", "code": "BLTE", "name": "Built environment", "aalto_area": "Living environments", "scope": "Construction technology, smart buildings, urban mobility and water systems", "patent_query": "(cpc=E04B or cpc=Y02B)"},
+  {"id": "design-creative", "code": "DSGN", "name": "Design and creative industries", "aalto_area": "Art and design", "scope": "Design-driven products, games, media technology, fashion and textile innovation", "patent_query": "(cpc=A63F13 or cpc=D03D or cpc=A41D)"}
+]

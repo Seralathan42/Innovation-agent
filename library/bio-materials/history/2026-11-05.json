@@ -1,0 +1,217 @@
+{
+  "headline": "Europe's bio-based and advanced materials sector is policy-supported but commercially stretched: the large Nordic forest companies are restructuring around packaging while the EU builds demand-side support for bio-based content.",
+  "outlook": "neutral",
+  "outlook_reason": "EU policy (Bioeconomy Strategy, upcoming Biotech Act II, PPWR) and Horizon calls are favourable, but incumbents report weak, cost-inflated markets and bio-based content targets are not yet binding.",
+  "metrics": [
+    {
+      "label": "EU27 circular material use rate",
+      "value": "12.2 %",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/env_ac_cur"
+    },
+    {
+      "label": "Finland circular material use rate (down from 5.8 % in 2022)",
+      "value": "2.0 %",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/env_ac_cur"
+    },
+    {
+      "label": "Stora Enso Q3 adjusted operating profit (+28 % y/y)",
+      "value": "EUR 161 million",
+      "year": "2026",
+      "source": "https://www.prnewswire.com/news-releases/stora-enso-interim-report-januaryseptember-2026-introducing-bergslagets-skogar-while-building-a-stronger-stora-enso-302924711.html"
+    },
+    {
+      "label": "Stora Enso Biomaterials Q3 profit (vs EUR 38 million a year earlier)",
+      "value": "EUR 52 million",
+      "year": "2026",
+      "source": "https://www.investing.com/news/earnings/stora-enso-q3-adjusted-operating-profit-up-28-beats-forecast-4985909"
+    },
+    {
+      "label": "UPM Q3 comparable EBIT (vs EUR 153 million a year earlier)",
+      "value": "EUR 141 million",
+      "year": "2026",
+      "source": "https://finance.yahoo.com/markets/stocks/articles/upm-interim-report-q3-2026-082900876.html"
+    },
+    {
+      "label": "Bio-based Europe Alliance voluntary purchase pledge for bio-based materials by 2030",
+      "value": "EUR 10 billion",
+      "year": "2025-2030",
+      "source": "https://www.european-bioplastics.org/newsletter/press-release-eu-bioeconomy-strategy-puts-bioplastics-at-the-heart-of-europes-industrial-transition/?frame=0"
+    },
+    {
+      "label": "FinnCERES flagship (Aalto/VTT) Academy of Finland funding, up to",
+      "value": "EUR 10.7 million",
+      "year": "2022-2026",
+      "source": "https://www.aalto.fi/en/news/world-leading-research-on-bio-based-materials-continues-in-finland"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-10-29",
+      "title": "Stora Enso Q3: forest demerger plan and packaging focus",
+      "detail": "Adjusted EBIT rose 28 % to EUR 161 million but missed forecasts. The board approved separating Swedish forest assets into a new listed company (Bergslagets Skogar), expected in H1 2027. Biomaterials profit rose on higher prices.",
+      "impact": "neutral",
+      "source": "https://www.prnewswire.com/news-releases/stora-enso-interim-report-januaryseptember-2026-introducing-bergslagets-skogar-while-building-a-stronger-stora-enso-302924711.html"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "UPM Q3: strong cash flow amid destocking and cost inflation",
+      "detail": "Comparable EBIT EUR 141 million vs 153 million a year earlier. Biofuels and energy carried results, which shows weak demand in the graphic and fibre businesses.",
+      "impact": "neutral",
+      "source": "https://finance.yahoo.com/markets/stocks/articles/upm-interim-report-q3-2026-082900876.html"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Horizon Europe bridging and advanced-materials calls open",
+      "detail": "Calls on circular advanced materials (MAT-PROD-06) and on valorising project results opened in October 2026. Both suit university commercialisation.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    },
+    {
+      "date": "2026-06-10",
+      "title": "VTT/LUT F3 project: fully cellulose-based films and coatings",
+      "detail": "Reported oxygen barrier OTR below 1 cc/m2/day for films and below 0.2 for coatings, with grease barrier KIT 12. An industry partner says it can now commercialise them on paper and board. The date comes from the VTT announcement, which may differ slightly from the press date.",
+      "impact": "positive",
+      "source": "https://www.vttresearch.com/en/news-and-ideas/finnish-bio-based-materials-project-advances-100-cellulose-based-film-and-coating"
+    },
+    {
+      "date": "2026-06-10",
+      "title": "Biotech Act II call for evidence closed",
+      "detail": "The Commission is preparing a second Biotech Act that includes lead markets for industrial biotech and bio-based materials. A proposal is pending.",
+      "impact": "positive",
+      "source": "https://errin.eu/news/biotech-act-ii-call-evidence-open"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "Cefic backs a single biomass-content target per product group",
+      "detail": "Cefic's June 2026 position counts both bio-based and bio-attributed inputs. This shows that definitions of bio-based content are still contested. The exact date is approximate.",
+      "impact": "neutral",
+      "source": "https://www.indianchemicalnews.com/sustainability/cefic-urges-eu-biomass-content-targets-to-unlock-bioeconomy-investment-30813"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-JU-CBE-2024-CSA-01",
+      "title": "New forms of cooperation in agriculture and the forest-based sector (CBE JU)",
+      "deadline": "2026-12-31",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-JU-CBE-2024-CSA-01"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey",
+      "deadline": "2027-01-28",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-02-05"
+    },
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-06",
+      "title": "Circular innovative advanced materials: from design to markets (RIA)",
+      "deadline": "2027-02-02",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-01-MAT-PROD-06"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-06-02",
+      "title": "Valorising Horizon project results via innovation ecosystems",
+      "deadline": "2027-02-16",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-06-02"
+    },
+    {
+      "id": "HORIZON-CL6-2025-01-CIRCBIO-15",
+      "title": "European partnership: Forests and Forestry for a Sustainable Future",
+      "deadline": "2027-06-02",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2025-01-CIRCBIO-15"
+    },
+    {
+      "id": "HORIZON-CL6-2027-01-CIRCBIO-09",
+      "title": "Increasing the circularity of bio-based sector: upcycling and recycling for higher value (opens 2027-04-20)",
+      "deadline": "2027-09-22",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2027-01-CIRCBIO-09"
+    },
+    {
+      "id": "HORIZON-CL6-2027-01-CIRCBIO-03",
+      "title": "Novel recycling technologies for complex plastics using biotech (opens 2027-04-20)",
+      "deadline": "2027-09-22",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL6-2027-01-CIRCBIO-03"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Stora Enso",
+      "country": "Finland/Sweden",
+      "what": "Packaging and biomaterials (lignin, cellulose); demerging Swedish forest assets in 2027.",
+      "link": "https://www.storaenso.com"
+    },
+    {
+      "name": "UPM",
+      "country": "Finland",
+      "what": "Pulp, biofuels and biochemicals; Q3 2026 supported by decarbonisation businesses.",
+      "link": "https://www.upm.com"
+    },
+    {
+      "name": "Spinnova Oyj",
+      "country": "Finland",
+      "what": "Wood-based textile fibre without chemical dissolving; Jyväskylä, listed.",
+      "link": "https://www.spinnova.fi"
+    },
+    {
+      "name": "Metsä Group",
+      "country": "Finland",
+      "what": "Forest-industry cooperative with pulp, board and next-generation fibre products; reported a small loss.",
+      "link": "https://www.metsagroup.com"
+    },
+    {
+      "name": "Kemira",
+      "country": "Finland",
+      "what": "Water and bio-based chemicals for pulp and paper.",
+      "link": "https://www.kemira.com"
+    },
+    {
+      "name": "Woamy",
+      "country": "Finland",
+      "what": "Aalto spin-out (ex-Foamwood) with bio-based foam to replace plastic foams; raised a EUR 1 million seed round (date not confirmed).",
+      "link": "https://www.woamy.com"
+    },
+    {
+      "name": "Sulapac",
+      "country": "Finland",
+      "what": "Bio-based, microplastic-free packaging materials; active in EU bioeconomy policy debate.",
+      "link": "https://www.sulapac.com"
+    },
+    {
+      "name": "VTT",
+      "country": "Finland",
+      "what": "Research partner for cellulose films and coatings (F3 project).",
+      "link": "https://www.vttresearch.com"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "FinnCERES materials bioeconomy flagship (Aalto and VTT)",
+      "link": "https://www.aalto.fi/en/collaboration/finnceres"
+    },
+    {
+      "what": "Prof. Monika Österberg's team: bio-based packaging funding",
+      "link": "https://aalto.fi/en/news/professor-monika-osterbergs-team-received-funding-for-the-development-of-bio-based-packaging"
+    },
+    {
+      "what": "Aalto Innovation: Business Finland funded projects (PCMI, CirPa bio-based insulation)",
+      "link": "https://www.aalto.fi/en/news/aalto-university-innovation-groups-receive-over-eu4m-funding-for-sustainable-innovations"
+    },
+    {
+      "what": "Aalto Bioinnovation Centre (BIC) annual report 2025",
+      "link": "https://www.aalto.fi/sites/default/files/2026-02/BIC-annual-report-2025.pdf"
+    },
+    {
+      "what": "Aalto Innovation news and open application for R2B",
+      "link": "https://innovation.aalto.fi/open-application"
+    }
+  ],
+  "updated": "2026-11-05T14:29"
+}

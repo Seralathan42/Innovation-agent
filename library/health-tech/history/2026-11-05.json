@@ -1,0 +1,205 @@
+{
+  "headline": "European and Finnish health technology is active, with a big wearables IPO story and heavy public support for digital health. EU rules for devices and medical AI are being simplified but are still unsettled, and I found no reliable current market-size figure.",
+  "outlook": "positive",
+  "outlook_reason": "Public funding is rising (Business Finland Health 360, Horizon Europe HLTH 2027 calls) and the proposed MDR/IVDR simplification should lower regulatory cost, though legislative and AI Act uncertainty remains.",
+  "metrics": [
+    {
+      "label": "Business Finland funding to Finnish health-related projects",
+      "value": "over EUR 65 million (of EUR 785 million total granted to 2,500+ companies)",
+      "year": "2025",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    },
+    {
+      "label": "Health 360 Finland programme budget",
+      "value": "EUR 20 million per year, EUR 85 million in total by 2028",
+      "year": "2024-2028",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    },
+    {
+      "label": "Oura funding round",
+      "value": "more than USD 900 million",
+      "year": "2025",
+      "source": "https://www.bioworld.com/articles/724916-oura-rings-in-900m-fundraising-round-for-global-expansion"
+    },
+    {
+      "label": "Gosta Labs (Finnish AI health) seed round",
+      "value": "EUR 7.5 million, led by Voima Ventures",
+      "year": "2025",
+      "source": "https://www.pulse.bot/venture-capital/news/gosta-labs-raises-75m-in-seed-funding-1e368452-2bd1-43cd-a57b-5029dbaac379/"
+    },
+    {
+      "label": "Nexstim therapy systems installed worldwide",
+      "value": "154 (57 in the US, 97 in Europe and elsewhere)",
+      "year": "2026 (Q3)",
+      "source": "https://www.inderes.fi/releases/nexstim-plc-business-update-q3-2026"
+    },
+    {
+      "label": "Research Council of Finland clinical research call",
+      "value": "EUR 25 million per round, every two years (2026 call opened March)",
+      "year": "2026",
+      "source": "https://www.aka.fi/en/about-the-rcf/whats-new/blog2/2026/2025-call-for-clinical-research-funded-wide-range-of-research-projects--new-call-opens-in-march-2026/"
+    },
+    {
+      "label": "European medtech market size",
+      "value": "Not found. MedTech Europe's 'European Medical Technology in Figures 2026' (updated 2026-10-06) exists, but the numbers were not readable. Older sources give roughly EUR 100-110 billion (2014-2015), which is outdated.",
+      "year": "n/a",
+      "source": "https://www.medtecheurope.org/datahub/introduction/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-10-29",
+      "title": "Horizon Europe HLTH 2027 calls open",
+      "detail": "Calls opened including point-of-care diagnostics (two-stage, deadline 2027-09-16) and disabilities and independent living (deadline 2027-02-17).",
+      "impact": "positive",
+      "source": "https://www.businessfinland.fi/en/services/funding/calls/"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Nexstim Q3 2026 business update",
+      "detail": "154 systems installed worldwide, 57 of them in the US. Joint neurosurgery marketing with Brainlab continues. A 10-system NBS 6 distributor order was announced in July 2026.",
+      "impact": "positive",
+      "source": "https://www.inderes.fi/releases/nexstim-plc-business-update-q3-2026"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "MedTech Europe publishes 'European Medical Technology in Figures 2026'",
+      "detail": "New edition of the sector data hub. I could not read the headline figures.",
+      "impact": "neutral",
+      "source": "https://www.medtecheurope.org/datahub/introduction/"
+    },
+    {
+      "date": "2026-06-25",
+      "title": "MDR/IVDR revision negotiations at a critical stage",
+      "detail": "The Commission proposal (COM(2025) 1023, 16 Dec 2025) is still in Council and Parliament. It reclassifies some devices, digitalises submissions and narrows AI Act overlap. BioMed Alliance warns about weaker clinical evidence and transparency requirements. I found no adopted text.",
+      "impact": "positive",
+      "source": "https://www.biomedeurope.org/?p=275923"
+    },
+    {
+      "date": "2026-05-07",
+      "title": "Provisional AI Act omnibus deal",
+      "detail": "Medical devices stay under the AI Act's high-risk rules, but the dates are pushed back: reportedly 2 Aug 2028 for AI in devices and 2 Dec 2027 for standalone high-risk systems. MedTech Europe wanted more. Dates come from secondary law-firm sources and are unverified.",
+      "impact": "neutral",
+      "source": "https://www.dqsglobal.com/en/about/newsroom/eu-ai-act-parliament-and-council-align-on-postponing-high-risk-ai-obligations"
+    },
+    {
+      "date": "2026-02-16",
+      "title": "Business Finland reports Health 360 results",
+      "detail": "Over EUR 65 million went to health projects in 2025. 7 term sheet offers came from North American pitching via the Amplify platform.",
+      "impact": "positive",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    },
+    {
+      "date": "2026-03-01",
+      "title": "Research Council of Finland clinical research call and Proof of Concept call",
+      "detail": "The clinical research call (EUR 25 million) opened in March 2026. The spring 2026 Proof of Concept call was aimed at national strategic choices. The date is approximate.",
+      "impact": "positive",
+      "source": "https://www.aka.fi/en/about-the-rcf/whats-new/press-releases/2026/research-council-of-finland-gearing-spring-2026-proof-of-concept-call-towards-national-strategic-choices/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-HLTH-2027-01-STAYHLTH-01",
+      "title": "Addressing disabilities through the life course to support independent living and inclusion",
+      "deadline": "2027-02-17",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-01-STAYHLTH-01"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-02-IND-02-two-stage",
+      "title": "Portable and versatile point-of-care diagnostics (Innovation Action)",
+      "deadline": "2027-09-16",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-02-IND-02-two-stage"
+    },
+    {
+      "id": "HORIZON-CL2-2027-02-TRANSFO-09-two-stage",
+      "title": "Improving socio-economic outcomes for persons with dementia and informal caregivers",
+      "deadline": "2027-09-30",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-02-TRANSFO-09-two-stage"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-04",
+      "title": "Culture, heritage and creative industries for health and well-being",
+      "deadline": "2027-09-23",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL2-2027-01-HERITAGE-04"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Oura",
+      "country": "Finland",
+      "what": "Smart ring and health wearables. Raised more than USD 900 million in 2025. Reported to have filed confidentially for an IPO (unconfirmed).",
+      "link": "https://ouraring.com"
+    },
+    {
+      "name": "Nexstim",
+      "country": "Finland",
+      "what": "Navigated TMS for brain stimulation therapy and neurosurgery mapping. 154 therapy systems installed. NBS 6 received MDR certification for post-operative rehabilitation.",
+      "link": "https://www.nexstim.com"
+    },
+    {
+      "name": "Bittium",
+      "country": "Finland",
+      "what": "Medical-grade ECG and remote monitoring devices alongside secure communications. Not checked for recent news.",
+      "link": "https://www.bittium.com"
+    },
+    {
+      "name": "Revenio Group",
+      "country": "Finland",
+      "what": "Eye-care diagnostics (iCare tonometers and imaging). Not checked for recent news.",
+      "link": "https://www.revenio.fi"
+    },
+    {
+      "name": "Planmeca",
+      "country": "Finland",
+      "what": "Dental imaging and digital dentistry equipment. Not checked for recent news.",
+      "link": "https://www.planmeca.com"
+    },
+    {
+      "name": "Gosta Labs",
+      "country": "Finland",
+      "what": "AI health company that raised a EUR 7.5 million seed round led by Voima Ventures.",
+      "link": "https://www.pulse.bot/venture-capital/news/gosta-labs-raises-75m-in-seed-funding-1e368452-2bd1-43cd-a57b-5029dbaac379/"
+    },
+    {
+      "name": "Medicubex",
+      "country": "Finland",
+      "what": "eHealth Stations. Secured a EUR 4 million supply contract in Finland, backed by Finnvera and Business Finland.",
+      "link": "https://www.txfnews.com/news/71947/Finnvera-Business-Finland-Back-4m-health-tech-expansion"
+    },
+    {
+      "name": "Soihtu DTx",
+      "country": "Finland",
+      "what": "Brain-health digital therapeutics start-up with over EUR 3 million raised. No Aalto link found.",
+      "link": "https://www.seedtable.com/best-health-tech-startups-in-finland"
+    },
+    {
+      "name": "RoboMed",
+      "country": "Finland",
+      "what": "Aalto spin-off (founded 2020) developing a robotic capsule for medical diagnostics.",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/robomed"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto innovation portfolio entry for RoboMed (robotic diagnostic capsule spin-off)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/robomed"
+    },
+    {
+      "what": "Aalto Innovation Services: news and open application for commercialisation support",
+      "link": "https://innovation.aalto.fi/news"
+    },
+    {
+      "what": "Aalto at Slush 2026: 12 new innovations, including joint replacement surgery",
+      "link": "https://www.aalto.fi/en/advancing-entrepreneurship-and-innovations/aalto-at-slush-2026-these-solutions-are-revolutionising-the-insulation-market-joint-replacement"
+    },
+    {
+      "what": "Aalto Startup Center: includes the Maculaser spin-off (2019 release, current status unknown)",
+      "link": "https://startupcenter.aalto.fi/aalto-startup-center-innovation-services-esa-bic-finland-involved-artic15/"
+    }
+  ],
+  "updated": "2026-11-05T14:30"
+}

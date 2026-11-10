@@ -1,0 +1,196 @@
+{
+  "headline": "Finnish and European health technology is active, with Oura's postponed US IPO, Horizon Europe 2027 calls open and the MDR/IVDR revision still in Parliament, but no reliable European market-size figure was found.",
+  "outlook": "positive",
+  "outlook_reason": "Capital, public funding and a possible lighter MDR regime support commercialisation, though regulatory timing and IPO-market volatility remain uncertain.",
+  "metrics": [
+    {
+      "label": "Business Finland funding granted (all sectors)",
+      "value": "EUR 785 million to 2,500+ companies; over EUR 65 million to health projects",
+      "year": "2025",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    },
+    {
+      "label": "Health 360 Finland programme budget",
+      "value": "EUR 20 million per year, EUR 85 million in total by 2028",
+      "year": "2026",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    },
+    {
+      "label": "Oura private fundraising",
+      "value": "More than USD 900 million",
+      "year": "2025",
+      "source": "https://www.bioworld.com/articles/724916-oura-rings-in-900m-fundraising-round-for-global-expansion"
+    },
+    {
+      "label": "Oura IPO terms (postponed)",
+      "value": "50 million shares at USD 40-44 (about USD 2.1-2.2 billion); valuation about USD 15.6 billion",
+      "year": "2026",
+      "source": "https://www.techrepublic.com/article/news-oura-ipo-15-6-billion-valuation/"
+    },
+    {
+      "label": "Oura revenue, 12 months to 30 June 2026 (prospectus, as reported by a secondary source)",
+      "value": "About USD 1.43 billion revenue, USD 59 million net income",
+      "year": "2026",
+      "source": "https://www.channelnews.com.au/oura-ipo-draws-heavy-investor-demand-ahead-of-nasdaq-debut/"
+    },
+    {
+      "label": "Expected annual savings from the MDR/IVDR revision (industry estimate)",
+      "value": "About EUR 3.3 billion per year",
+      "year": "2026",
+      "source": "https://www.medtecheurope.org/2026/05/05/medtech-europe-backs-eu-device-regulation-overhaul-but-asks-key-changes/"
+    },
+    {
+      "label": "Nexstim installed systems",
+      "value": "154 systems, 57 in the US (Q3 2026)",
+      "year": "2026",
+      "source": "https://www.nexstim.com/"
+    },
+    {
+      "label": "Aalto spin-offs launched in just over two years",
+      "value": "18 (17 under the new model); Aalto ranked 3rd in Europe for spinout funding in H1 2026",
+      "year": "2026",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-09-29",
+      "title": "Oura postpones US IPO",
+      "detail": "Oura set terms (50 million shares at USD 40-44, valuation about USD 15.6 billion, Nasdaq ticker OURA) but a BusinessDay headline of 29 Sept reports it postponed the listing. I saw only the headline, not the article text, so the reason and any new date are unconfirmed.",
+      "impact": "neutral",
+      "source": "https://www.businessday.co.za/world/international-companies/2026-09-29-smart-ring-maker-oura-becomes-the-latest-us-ipo-hopeful-to-postpone-listing/"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "European Parliament SANT draft report on MDR/IVDR revision",
+      "detail": "The rapporteur's draft report has over 130 amendments. IMCO has published a draft opinion. A Parliament vote is forecast for Q1 2027 (secondary source). I found no Council general approach.",
+      "impact": "neutral",
+      "source": "https://www.mondaq.com/product-liability-safety/1827990/how-will-the-eu-parliament-shape-the-mdrivdr-revision-draft-report-indicates-how-parliament-may-seek-to-amend-commissions-proposals"
+    },
+    {
+      "date": "2026-07-15",
+      "title": "Aalto spinout Cornea Sense raises over EUR 1.1 million pre-seed",
+      "detail": "Non-invasive ophthalmic device measuring corneal hydration.",
+      "impact": "positive",
+      "source": "https://www.startupresearcher.com/news/cornea-sense-secures-over-1-1-million-in-pre-seed-funding-for-ophthalmic-diagnostics"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Horizon Europe HLTH 2027 calls open",
+      "detail": "Calls include point-of-care diagnostics, AI biomarkers, disabilities and independent living, and virtual human twins.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-HLTH-2027-02-IND-02-two-stage",
+      "title": "Portable and versatile Point-of-care diagnostics (IA)",
+      "deadline": "2027-09-16",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-02-IND-02-two-stage"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-02-TOOL-01-two-stage",
+      "title": "Predictive biomarkers of disease progression using AI for chronic NCDs (RIA)",
+      "deadline": "2027-09-16",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-02-TOOL-01-two-stage"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-01-STAYHLTH-01",
+      "title": "Addressing disabilities through the life course to support independent living and inclusion (RIA)",
+      "deadline": "2027-02-17",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-01-STAYHLTH-01"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-03-TOOL-04",
+      "title": "Virtual Human Twins for integrated clinical decision support (RIA)",
+      "deadline": "2027-09-16",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-HLTH-2027-03-TOOL-04"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey (IA)",
+      "deadline": "2027-01-28",
+      "budget": "Not checked",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-02-05"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Oura",
+      "country": "Finland",
+      "what": "Smart ring maker. Raised over USD 900 million in 2025. US IPO planned at about a USD 15.6 billion valuation, reportedly postponed.",
+      "link": "https://ouraring.com/"
+    },
+    {
+      "name": "Nexstim",
+      "country": "Finland",
+      "what": "Navigated TMS brain stimulation and mapping, an Aalto-origin company. 154 systems installed.",
+      "link": "https://www.nexstim.com/"
+    },
+    {
+      "name": "Bittium",
+      "country": "Finland",
+      "what": "Biosignal monitoring (ECG) and secure communications. No recent news found.",
+      "link": "https://www.bittium.com/"
+    },
+    {
+      "name": "Revenio",
+      "country": "Finland",
+      "what": "Eye diagnostics (iCare tonometers). No recent news found.",
+      "link": "https://www.revenio.fi/"
+    },
+    {
+      "name": "Planmeca",
+      "country": "Finland",
+      "what": "Dental imaging and equipment. No recent news found.",
+      "link": "https://www.planmeca.com/"
+    },
+    {
+      "name": "Cornea Sense",
+      "country": "Finland",
+      "what": "Aalto spinout, ophthalmic diagnostics. Raised over EUR 1.1 million pre-seed.",
+      "link": "https://www.startupresearcher.com/news/cornea-sense-secures-over-1-1-million-in-pre-seed-funding-for-ophthalmic-diagnostics"
+    },
+    {
+      "name": "Synoste",
+      "country": "Finland",
+      "what": "Aalto-linked limb-lengthening implant developer, acquired by Globus Medical.",
+      "link": "https://aalto.fi/en/innovation-portfolio/synoste"
+    },
+    {
+      "name": "Gosta Labs",
+      "country": "Finland",
+      "what": "Dementia care technology, EUR 7.5 million seed.",
+      "link": "https://www.gostalabs.com/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Innovation portfolio, including Symptonic (preparing a 2026 spin-out), Surgify Medical and Otoscreen",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/symptonic"
+    },
+    {
+      "what": "Aalto Innovation services",
+      "link": "https://www.aalto.fi/en/aalto-innovation/aalto-university-innovation-services"
+    },
+    {
+      "what": "Aalto ranked 3rd in Europe for spinout funding",
+      "link": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    },
+    {
+      "what": "Nexstim, the Aalto-launched brain stimulation company listed on the stock exchange",
+      "link": "https://aalto.fi/en/news/aalto-university-launched-brain-stimulation-company-lists-on-the-stock-exchange"
+    },
+    {
+      "what": "AI-assisted digital stethoscope research",
+      "link": "https://www.aalto.fi/en/news/new-artificial-intelligence-assisted-device-could-soon-replace-traditional-stethoscope-and"
+    }
+  ],
+  "updated": "2026-11-09T18:50",
+  "patents": null
+}

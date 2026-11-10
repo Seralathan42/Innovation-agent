@@ -1,0 +1,17 @@
+{
+  "novelty": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "Active pulses, speed-free localisation and acoustic district heating monitoring are each known, but I found no source combining autonomous per-section speed and damping learning with permanent clamp-on sensors; only snippets of most patents were read."
+  },
+  "freedom_to_operate": {
+    "score": 3,
+    "confidence": "low",
+    "evidence": "No patent found that clearly blocks the concept, but active Itron (US11788919, to about 2041) and Kamstrup families partly overlap and no professional FTO search or country-level status check has been done."
+  },
+  "technical_maturity": {
+    "score": 3,
+    "confidence": "medium",
+    "evidence": "Lab rig and a 4-month field trial on 2.3 km with 6 sensors show a working prototype (about TRL 5 by my estimate), but with only 3 known leaks and estimated battery life and cost."
+  }
+}

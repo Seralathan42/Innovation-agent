@@ -1,0 +1,238 @@
+{
+  "headline": "European and Finnish AI are in a funding boom (Mistral €3bn, Finland's NestAI and Verda), enterprise AI use is rising, and the AI Act's high-risk rules have been delayed to 2027–2028.",
+  "outlook": "positive",
+  "outlook_reason": "Capital, enterprise adoption (Finland 37.8% of firms use AI) and new EU \"Apply AI\" calls are all growing, and the AI Act delay eases near-term compliance costs. Defence and physical AI are the strongest areas.",
+  "metrics": [
+    {
+      "label": "Enterprises (10+ staff) using at least one AI technology, Finland",
+      "value": "37.82%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table"
+    },
+    {
+      "label": "Enterprises (10+ staff) using at least one AI technology, EU27",
+      "value": "19.95%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table"
+    },
+    {
+      "label": "Finnish tech funding, H1 (53 deals; ICEYE €900m of it)",
+      "value": "~€1.3bn",
+      "year": "2026",
+      "source": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "label": "Verda (ex-DataCrunch, Finnish AI cloud) round",
+      "value": "$117m",
+      "year": "2026",
+      "source": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "label": "European VC raised in Q3 (1,300+ rounds)",
+      "value": "€13.7bn",
+      "year": "2026",
+      "source": "https://dig.watch/?p=233165"
+    },
+    {
+      "label": "Mistral AI Series D (valuation above €21bn)",
+      "value": "€3bn",
+      "year": "2026",
+      "source": "https://w.media/mistral-ai-raises-e3-billion-in-record-european-tech-funding-round/"
+    },
+    {
+      "label": "European AI companies' funding through early July (152 companies, 159 rounds)",
+      "value": "€6.0bn",
+      "year": "2026",
+      "source": "https://funding.tech.eu/sectors/ai/2026"
+    },
+    {
+      "label": "Global or European AI market size",
+      "value": "Not found from a reliable source; not estimated",
+      "year": "2026",
+      "source": "n/a"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-07-27",
+      "title": "AI Act Digital Omnibus in force",
+      "detail": "Regulation (EU) 2026/1744 postpones high-risk obligations: Annex III systems to 2027-12-02 and Annex I embedded systems to 2028-08-02. GPAI and transparency rules are unchanged. Date and regulation number come from a single secondary source (Cloud Security Alliance note); verify against EUR-Lex.",
+      "impact": "positive",
+      "source": "https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-deadline-omnibus-20260/"
+    },
+    {
+      "date": "2026-09-17",
+      "title": "Finland H1 2026 tech funding review",
+      "detail": "About €1.3bn across 53 deals, with space dominant. AI infrastructure Verda ($117m), Qutwo (€25m) and Capalo AI (€11m) were the main AI-related rounds.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "date": "2026-09-01",
+      "title": "Mistral AI raises €3bn Series D",
+      "detail": "Reported as Europe's largest AI round, at a valuation above €21bn. The month comes from a September report, so the exact date is approximate.",
+      "impact": "positive",
+      "source": "https://w.media/mistral-ai-raises-e3-billion-in-record-european-tech-funding-round/"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "European Q3 VC rebound",
+      "detail": "€13.7bn raised across 1,300+ rounds, the best quarter since Q2 2024, led by growth rounds. The date is the quarter end.",
+      "impact": "positive",
+      "source": "https://dig.watch/?p=233165"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Horizon Europe 'Apply AI' calls open",
+      "detail": "Calls on AI-driven robotics, frontier AI, federated AI and data-centre efficiency open on this date, with deadlines on 2027-03-18.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    },
+    {
+      "date": "2025-11-01",
+      "title": "NestAI €100m round (Tesi, Nokia) for defence physical AI",
+      "detail": "Older than 30 days, kept as background on the Finnish defence-AI trend. The date is approximate.",
+      "impact": "positive",
+      "source": "https://www.startuphub.ai/news/nestai-secures-100m-to-forge-europes-physical-ai-defense-backbone"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-05",
+      "title": "Apply AI: AI-Driven Robotics for Industry (IA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-05"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-04",
+      "title": "Apply AI: Challenge-Driven AI Innovation Booster (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-04"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DIGITAL-EMERGING-11",
+      "title": "EU Frontier AI Initiative: safe, compute-efficient frontier AI (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DIGITAL-EMERGING-11"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-03",
+      "title": "Decentralised, federated and sustainable AI data processing (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DATA-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-09",
+      "title": "Energy efficiency and sustainability of AI data processing in data centres (IA)",
+      "deadline": "2027-03-18",
+      "budget": "Not retrieved (opens 2026-11-17)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-04-DATA-09"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-01-09",
+      "title": "EU AI Media Platform (IA), Apply AI",
+      "deadline": "2027-02-16",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-BRIDGING-2027-01-09"
+    },
+    {
+      "id": "DIGITAL-ECCC-2027-DEPLOY-CYBER-11-CYBERAI",
+      "title": "Cybersecure tools, technologies and services relying on AI (Simple Grants)",
+      "deadline": "2027-01-14",
+      "budget": "Not retrieved",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/DIGITAL-ECCC-2027-DEPLOY-CYBER-11-CYBERAI"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-01",
+      "title": "AI for Cybersecurity applications (RIA)",
+      "deadline": "2027-09-15",
+      "budget": "Not retrieved (opens 2027-03-02)",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL3-2027-02-CS-ECCC-01"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Silo AI (Oy)",
+      "country": "Finland",
+      "what": "Helsinki AI consultancy and model developer, registered 2017. It is registered in the trade register, and a web search also describes its acquisition by AMD (not verified here).",
+      "link": "https://silo.ai"
+    },
+    {
+      "name": "Verda (formerly DataCrunch)",
+      "country": "Finland",
+      "what": "AI cloud and GPU infrastructure, raised $117m in H1 2026.",
+      "link": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "name": "NestAI",
+      "country": "Finland",
+      "what": "Defence physical AI, €100m round led by Tesi and Nokia.",
+      "link": "https://www.startuphub.ai/news/nestai-secures-100m-to-forge-europes-physical-ai-defense-backbone"
+    },
+    {
+      "name": "Qutwo",
+      "country": "Finland",
+      "what": "AI and quantum computing, €25m raised in 2026.",
+      "link": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "name": "Capalo AI",
+      "country": "Finland",
+      "what": "AI-powered virtual power plant and battery storage optimisation, €11m Series A.",
+      "link": "https://www.startupreporter.eu/finnish-energytech-capalo-ai-raises-e11m-for-battery-storage/"
+    },
+    {
+      "name": "Rotomate",
+      "country": "Finland",
+      "what": "AI software for industrial maintenance, with an Aalto-linked CTO (condition-monitoring AI).",
+      "link": "https://inforcapital.com/news/finnish-startup-rotomate-raises-21m-pre-seed-to-develop-ai-software-for-industrial-maintenance/"
+    },
+    {
+      "name": "Saidot",
+      "country": "Finland",
+      "what": "AI governance and AI Act compliance software.",
+      "link": "https://www.finsmes.com/category/finland/page/3"
+    },
+    {
+      "name": "Quanscient",
+      "country": "Finland",
+      "what": "Cloud simulation software, €10m in H1 2026.",
+      "link": "https://tech.eu/2026/09/17/finlands-top-funded-tech-companies-in-h1-2026/"
+    },
+    {
+      "name": "Mistral AI",
+      "country": "France",
+      "what": "Foundation model company, €3bn Series D.",
+      "link": "https://w.media/mistral-ai-raises-e3-billion-in-record-european-tech-funding-round/"
+    },
+    {
+      "name": "Helsing",
+      "country": "Germany",
+      "what": "Defence AI. A $1.2bn raise at an $18bn valuation was reported in June 2026 and is unconfirmed.",
+      "link": "https://funding.tech.eu/sectors/ai/2026"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Intelligent Robotics group (Ville Kyrki), part of House of AI, hiring in physical AI",
+      "link": "https://www.aalto.fi/en/open-positions/postdoctoral-positions-intelligent-robotics-house-of-ai"
+    },
+    {
+      "what": "Aalto innovation portfolio (inventions and spin-offs, e.g. Oinride, whose Aalto link is unconfirmed)",
+      "link": "https://aalto.fi/en/innovation-portfolio/oinride-oy"
+    },
+    {
+      "what": "Aalto Founder School trend reports",
+      "link": "https://www.aalto.fi/fi/founder-school/trend-reports"
+    },
+    {
+      "what": "Finnish Center for Artificial Intelligence (FCAI), co-hosted by Aalto, University of Helsinki and VTT (not verified this run)",
+      "link": "https://fcai.fi"
+    }
+  ],
+  "updated": "2026-11-05T14:26"
+}
