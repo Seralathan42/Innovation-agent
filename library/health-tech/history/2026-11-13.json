@@ -1,0 +1,336 @@
+{
+  "headline": "European medtech is a roughly EUR 173 billion market growing about 5-6% a year, Finnish health technology product exports hit a record EUR 2.79 billion in 2025, and the Horizon Europe 2027 health calls are now open while the MDR/IVDR revision is still not law.",
+  "metrics": [
+    {
+      "label": "European medical technology market size (MedTech Europe estimate)",
+      "value": "about EUR 173 billion",
+      "year": "2025",
+      "source": "https://www.medtecheurope.org/datahub/market"
+    },
+    {
+      "label": "European medical device market average annual growth over the past 10 years (IVD: 3.6% per year)",
+      "value": "5.6% per year",
+      "year": "2025",
+      "source": "https://www.medtecheurope.org/datahub/market"
+    },
+    {
+      "label": "EU-27 enterprises manufacturing medical and dental instruments and supplies (NACE C32.5); about 580,000 persons employed",
+      "value": "62,000 enterprises",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "Finland, manufacture of medical and dental instruments (NACE C32.5): net turnover, 434 enterprises, 2,529 persons employed (excludes electromedical equipment and software)",
+      "value": "EUR 447.5 million (up 17.4% from EUR 381.1 million in 2023)",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "Finland exports of medical, surgical and electro-medical instruments (HS 9018); imports EUR 654.7 million",
+      "value": "EUR 1.487 billion (up 14.1% from EUR 1.303 billion in 2024)",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "EU-27 extra-EU exports of medical instruments (HS 9018); imports EUR 28.3 billion, surplus about EUR 7.3 billion",
+      "value": "EUR 35.6 billion (up 2.7% from 2024)",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "Finnish health technology product exports (Healthtech Finland, customs data, excludes software and digital services); trade surplus EUR 1.2 billion",
+      "value": "EUR 2.79 billion (up 8%, record)",
+      "year": "2025",
+      "source": "https://teknologiateollisuus.fi/healthtech/terveysteknologia-osana-terveysalaa/vientitilastot/"
+    },
+    {
+      "label": "Business Finland funding to health projects (of EUR 785 million granted in total)",
+      "value": "more than EUR 65 million",
+      "year": "2025",
+      "source": "https://www.businessfinland.fi/en/whats-new/news/2026/business-finlands-new-strategy-accelerates-health-innovation-health-360-finland-program-already-delivering-strong-impact/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-12",
+      "title": "Revenio Q3: sales more than double after Visionix acquisition, guidance narrowed",
+      "detail": "Q3 net sales EUR 58.8 million (up 127.5%), January-September EUR 125.4 million (up 59.8%). Growth came from Visionix, consolidated since June 2026; other reporting describes organic sales as flat. Full-year 2026 guidance was narrowed to EUR 190-200 million from EUR 190-205 million. A rights issue of about EUR 80 million was oversubscribed and repaid the acquisition bridge loan.",
+      "impact": "neutral",
+      "source": "https://www.inderes.fi/en/releases/revenio-group-corporation-interim-report-january-1-september-30-2026"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Oura to buy AI primary care company Counsel Health for USD 625 million",
+      "detail": "All-cash deal, reported to close before the end of 2026 (one outlet says 2027). It moves Oura from wearables into medical care services, weeks after it postponed its IPO indefinitely. Press reports give Oura quarterly revenue of USD 533 million to 30 September, up 153%. Figures are from news reports; the article itself could not be opened.",
+      "impact": "positive",
+      "source": "https://www.fiercehealthcare.com/digital-health/oura-acquire-ai-virtual-primary-care-partner-counsel-health-625m"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Nightingale Health gets first New York State approvals for laboratory-developed tests",
+      "detail": "The company calls it a US milestone. In the same fortnight it announced a UK Biobank neurodegenerative disease study of 80,000 samples with Alamar Biosciences (2 Nov), two USD 1 million proteomics agreements (28 Oct), and new clinic customers in the UK and the Netherlands. Titles were read from the Inderes release list, not the full releases.",
+      "impact": "positive",
+      "source": "https://www.inderes.fi/en/companies/Nightingale-Health"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Aalto: eight research-based spinouts launched so far in 2026",
+      "detail": "Aalto spinouts raised over EUR 500 million in H1 2026, mostly ICEYE, placing Aalto third in Europe behind Oxford and Cambridge. The target is 20 spinouts a year. The article says there are promising health technology teams but names none.",
+      "impact": "positive",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Horizon Europe Cluster 1 Health 2027 calls opened",
+      "detail": "Topics opened on 29 October 2026. First-stage or single-stage deadlines are 17 February 2027, including point-of-care diagnostics (EUR 39.3 million), AI-based predictive biomarkers (EUR 44.2 million) and disabilities and independent living (EUR 39.3 million). Second-stage deadlines are 16 September 2027.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-02-ind-02-two-stage"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Bittium Medical segment returns to profit and launches Faros Pro ECG",
+      "detail": "Medical net sales were EUR 5.1 million in Q3 (up 18.5%) and EUR 15.1 million for January-September, with operating profit of EUR 1.1 million against a loss a year earlier. Faros Pro long-term ECG and the EasyFlex patch launched in August 2026. Talks with strategic partners for the sleep business continue, with first results expected by the end of 2026.",
+      "impact": "positive",
+      "source": "https://www.inderes.fi/en/releases/bittium-oyj-bittium-corporations-business-review-january-september-2026"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Horizon Europe HLTH 2027 calls open",
+      "detail": "Calls include point-of-care diagnostics, AI biomarkers, disabilities and independent living, and virtual human twins.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Horizon Europe HLTH 2027 calls open",
+      "detail": "Calls opened including point-of-care diagnostics (two-stage, deadline 2027-09-16) and disabilities and independent living (deadline 2027-02-17).",
+      "impact": "positive",
+      "source": "https://www.businessfinland.fi/en/services/funding/calls/"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Nexstim signs letter of intent with Sinaptica for 10-year exclusive Alzheimer's arrangement",
+      "detail": "The planned worldwide arrangement covers a precision neuromodulation system for Alzheimer's disease and MCI, and depends on definitive agreements being signed before the end of 2026. Therapy system deliveries doubled to 6 in January-September (3 a year earlier); 17 systems are in the order backlog. Nexstim also reports growing interest in its system for brain-computer interface research.",
+      "impact": "positive",
+      "source": "https://www.inderes.fi/en/releases/nexstim-plc-business-update-q3-2026"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Nexstim Q3 2026 business update",
+      "detail": "154 systems installed worldwide, 57 of them in the US. Joint neurosurgery marketing with Brainlab continues. A 10-system NBS 6 distributor order was announced in July 2026.",
+      "impact": "positive",
+      "source": "https://www.inderes.fi/releases/nexstim-plc-business-update-q3-2026"
+    },
+    {
+      "date": "2026-10-21",
+      "title": "UK confirms long-term acceptance of CE-marked medical devices",
+      "detail": "The MHRA said Great Britain will keep accepting CE-marked devices and IVDs with no additional approval route. This removes the need for a separate UKCA route for EU-certified spin-off products. No effective date was given in the release.",
+      "impact": "positive",
+      "source": "https://www.gov.uk/government/news/government-confirms-indefinite-recognition-of-ce-marked-medical-devices"
+    },
+    {
+      "date": "2026-10-12",
+      "title": "Stryker invests about USD 400 million in CMR Surgical with an option to acquire",
+      "detail": "Preferred equity investment in the Cambridge (UK) surgical robotics company, with an exclusive option to buy 100% later and exclusive US sales rights for the Versius system. It shows large strategics still paying for European surgical robotics.",
+      "impact": "positive",
+      "source": "https://www.mddionline.com/ma/stryker-invests-400m-in-cmr-surgical-secures-option-to-acquire-soft-tissue-robotics-rival"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "MedTech Europe publishes 'European Medical Technology in Figures 2026'",
+      "detail": "New edition of the sector data hub. I could not read the headline figures.",
+      "impact": "neutral",
+      "source": "https://www.medtecheurope.org/datahub/introduction/"
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Oura postpones US IPO",
+      "detail": "Oura set terms (50 million shares at USD 40-44, valuation about USD 15.6 billion, Nasdaq ticker OURA) but a BusinessDay headline of 29 Sept reports it postponed the listing. I saw only the headline, not the article text, so the reason and any new date are unconfirmed.",
+      "impact": "neutral",
+      "source": "https://www.businessday.co.za/world/international-companies/2026-09-29-smart-ring-maker-oura-becomes-the-latest-us-ipo-hopeful-to-postpone-listing/"
+    },
+    {
+      "date": "2026-07-24",
+      "title": "AI Act omnibus published as Regulation (EU) 2026/1744 (newly confirmed for this file)",
+      "detail": "Reported as published in the Official Journal on 24 July 2026 and in force from 27 July 2026. High-risk rules for AI in products under Annex I law apply from 2 August 2028 and Annex III systems from 2 December 2027. That medical devices fall under the 2028 date is my reading of Annex I, not stated in the sources; the Official Journal text itself was not read.",
+      "impact": "neutral",
+      "source": "https://www.nicfab.eu/en/posts/digital-omnibus-ai-official-journal/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey (Innovation Action; must build on a completed Horizon Europe Pillar II project; max 6 partners)",
+      "deadline": "2027-01-28",
+      "budget": "EUR 32,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-06-02",
+      "title": "Valorising Horizon project results via innovation ecosystems (for knowledge intermediaries such as tech transfer offices; Health is thematic area C)",
+      "deadline": "2027-02-16",
+      "budget": "EUR 20,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-06-02"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-02-IND-02-two-stage",
+      "title": "Portable and versatile Point-of-care diagnostics (Innovation Action; first stage 2027-02-17, second stage 2027-09-16)",
+      "deadline": "2027-02-17",
+      "budget": "EUR 39,300,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-02-ind-02-two-stage"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-02-TOOL-01-two-stage",
+      "title": "Predictive biomarkers of disease progression and treatment response using AI for chronic non-communicable diseases (RIA; first stage 2027-02-17, second stage 2027-09-16)",
+      "deadline": "2027-02-17",
+      "budget": "EUR 44,200,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-02-tool-01-two-stage"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-01-STAYHLTH-01",
+      "title": "Addressing disabilities through the life course to support independent living and inclusion (RIA; includes assistive and rehabilitation technologies)",
+      "deadline": "2027-02-17",
+      "budget": "EUR 39,300,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-01-stayhlth-01"
+    },
+    {
+      "id": "EIC-ACCELERATOR-2027",
+      "title": "EIC Accelerator 2027 (start-ups and SMEs; full-proposal cut-offs reported as 20 Jan, 17 Mar, 1 Sep and 4 Nov 2027, from secondary sources, verify on the EIC site)",
+      "deadline": "2027-01-20",
+      "budget": "not published",
+      "link": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en"
+    },
+    {
+      "id": "EIC-TRANSITION-2027",
+      "title": "EIC Transition 2027 (single entity or small consortium; builds on results of an eligible EU project; grants up to EUR 2.5 million)",
+      "deadline": "2027-09-14",
+      "budget": "EUR 92 million total",
+      "link": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en"
+    },
+    {
+      "id": "HORIZON-HLTH-2027-03-TOOL-04",
+      "title": "Virtual Human Twins for integrated clinical decision support in prevention and diagnosis (RIA; opens 2027-06-03)",
+      "deadline": "2027-09-16",
+      "budget": "EUR 39,300,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-03-tool-04"
+    },
+    {
+      "id": "HORIZON-MISS-2027-02-CANCER-05",
+      "title": "Pre-commercial procurement of affordable cancer technologies, medical devices or medicines (funds procurer consortia; spin-offs can later bid as suppliers; opens 2027-02-10)",
+      "deadline": "2027-09-16",
+      "budget": "EUR 26,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-miss-2027-02-cancer-05"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Oura",
+      "country": "Finland",
+      "what": "Smart ring and health platform; IPO postponed in September 2026, agreed in November 2026 to buy Counsel Health for USD 625 million",
+      "link": "https://ouraring.com/"
+    },
+    {
+      "name": "Nexstim",
+      "country": "Finland",
+      "what": "Navigated TMS for brain diagnostics and therapy; company launched from Aalto (then TKK) research; 154 therapy-capable systems installed",
+      "link": "https://www.nexstim.com/"
+    },
+    {
+      "name": "Revenio Group",
+      "country": "Finland",
+      "what": "Ophthalmic diagnostics (iCare); merged with Visionix in 2026, guiding EUR 190-200 million sales",
+      "link": "https://www.reveniogroup.com/"
+    },
+    {
+      "name": "Bittium",
+      "country": "Finland",
+      "what": "Medical segment sells ECG, EEG and sleep monitoring devices (Faros Pro launched 2026); partner of Boston Scientific",
+      "link": "https://www.bittium.com/"
+    },
+    {
+      "name": "Nightingale Health",
+      "country": "Finland",
+      "what": "Blood-based disease risk detection; listed on Nasdaq Helsinki; first New York State test approvals in November 2026",
+      "link": "https://nightingalehealth.com/"
+    },
+    {
+      "name": "Planmeca",
+      "country": "Finland",
+      "what": "Dental and medical imaging equipment; large privately held group (no recent news found)",
+      "link": "https://www.planmeca.com/"
+    },
+    {
+      "name": "Cornea Sense",
+      "country": "Finland",
+      "what": "Aalto spin-off; terahertz-based corneal hydration diagnostics; over EUR 1.1 million pre-seed",
+      "link": "https://www.startupresearcher.com/news/cornea-sense-secures-over-1-1-million-in-pre-seed-funding-for-ophthalmic-diagnostics"
+    },
+    {
+      "name": "Synoste",
+      "country": "Finland",
+      "what": "Aalto-origin limb-lengthening implant company, acquired by Globus Medical",
+      "link": "https://aalto.fi/en/innovation-portfolio/synoste"
+    },
+    {
+      "name": "CurifyLabs",
+      "country": "Finland",
+      "what": "3D-printing-based medicine compounding; EUR 12 million Series A in July 2026",
+      "link": "https://www.eu-startups.com/2026/07/finlands-curifylabs-raises-e12-million-to-expand-3d-printing-based-medicine-compounding/"
+    },
+    {
+      "name": "CMR Surgical",
+      "country": "United Kingdom",
+      "what": "Versius soft-tissue surgical robot; about USD 400 million investment and acquisition option from Stryker in October 2026",
+      "link": "https://www.mddionline.com/ma/stryker-invests-400m-in-cmr-surgical-secures-option-to-acquire-soft-tissue-robotics-rival"
+    },
+    {
+      "name": "Brainlab",
+      "country": "Germany",
+      "what": "Surgical planning and navigation software; integrates with Nexstim NBS 6 for neurosurgery",
+      "link": "https://www.brainlab.com/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Department of Neuroscience and Biomedical Engineering (NBE): neuroimaging, neurostimulation, biophysics and biomedical engineering; hosts Biodesign Finland",
+      "link": "https://www.aalto.fi/en/department-of-neuroscience-and-biomedical-engineering"
+    },
+    {
+      "what": "TMS group at NBE: TMS instrumentation and TMS-EEG analysis (origin of Nexstim's technology)",
+      "link": "https://www.aalto.fi/en/department-of-neuroscience-and-biomedical-engineering/transcranial-magnetic-stimulation-tms"
+    },
+    {
+      "what": "MEG-MRI brain imaging group at NBE",
+      "link": "https://www.aalto.fi/en/department-of-neuroscience-and-biomedical-engineering/meg-mri-brain-imaging-group"
+    },
+    {
+      "what": "Aalto Health Platform, neuroscience and neurotechnology area (lists the professors active in the field)",
+      "link": "https://aalto.fi/en/aalto-health-platform/neuroscience-and-neurotechnology"
+    },
+    {
+      "what": "Electromagnetics in Health Technology group (computational modelling of non-invasive brain stimulation)",
+      "link": "https://www.aalto.fi/department-of-electrical-engineering-and-automation/electromagnetics-in-health-technology"
+    },
+    {
+      "what": "Aalto patent application: labour induction and monitoring device (WO2026109832A1, May 2026)",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DWO2026109832A1"
+    },
+    {
+      "what": "Aalto patent application: automated speech-based health analysis (WO2025229258A1, November 2025)",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DWO2025229258A1"
+    },
+    {
+      "what": "Aalto patent application: corneal water content by terahertz measurement (WO2025052036A1), the basis of spin-off Cornea Sense",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DWO2025052036A1"
+    },
+    {
+      "what": "Synoste, Aalto innovation portfolio (limb-lengthening implant, acquired by Globus Medical)",
+      "link": "https://aalto.fi/en/innovation-portfolio/synoste"
+    },
+    {
+      "what": "Aalto spinout model: eight research-based spinouts in 2026, third in Europe for spinout funding in H1 2026",
+      "link": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    }
+  ],
+  "updated": "2026-11-13T03:51"
+}

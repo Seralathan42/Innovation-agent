@@ -5,5 +5,6 @@ __pycache__/
 .env
 .claude/
 _previous_version/
-library/patents.db*
+library/*.db*
+library/*.new
 docs/Aalto Innovations brief.pdf

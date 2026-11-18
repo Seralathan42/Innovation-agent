@@ -189,18 +189,15 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const LABELS = { overview: "Overview", score: "Score", scorer: "Scorer", verifier: "Verifier", nabc: "NABC summary", ip: "Technology & IP", market: "Market", funding: "Funding" };
+const LABELS = { overview: "Overview", nabc: "NABC summary", ip: "Technology & IP", market: "Market", funding: "Funding" };
 const STEPS = {
   overview: "Sums up all reports once the others are done",
   nabc: "Writes the NABC summary from the disclosure",
   ip: "Searches patents, papers and research projects",
   market: "Researches the market, statistics and Finnish companies",
   funding: "Finds EU calls and earlier funded projects",
-  scorer: "Gives an overall opinion score, 3 times",
-  verifier: "Re-scores on its own and checks the sub-scores",
-  score: "Combines the sub-scores into the final score",
 };
-const ORDER = ["overview", "score", "nabc", "ip", "market", "funding"];
+const ORDER = ["overview", "nabc", "ip", "market", "funding"];
 const FILE_TYPES = [".pdf", ".md", ".txt", ".png", ".jpg", ".jpeg", ".gif", ".webp"];
 const STALE_MINUTES = 60;  // a run still "running" after this long was stopped (for example the app was closed)
 const TOOL_LABELS = {

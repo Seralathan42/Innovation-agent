@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Market Terminal</title>
+<title>Aalto Innovation Knowledge Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -20,12 +20,13 @@
   a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { text-decoration-thickness: 2px; }
   button { font: inherit; color: inherit; cursor: pointer; }
-  .app { display: grid; grid-template-rows: auto auto auto minmax(0, 1fr); height: 100vh; }
+  .app { display: flex; flex-direction: column; height: 100vh; }  /* the body takes whatever height is left, news or not */
 
   /* Top bar */
   .top { display: flex; align-items: center; gap: 20px; padding: 14px 28px; border-bottom: 1px solid var(--line); }
   .brand { font-weight: 700; font-size: 22px; letter-spacing: -0.03em; }
   .brand span { color: var(--accent); }
+  .brand .hub { color: var(--muted); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: 14px; padding-left: 14px; border-left: 2px solid var(--text); vertical-align: 3px; }
   .spacer { flex: 1; }
 
 
@@ -52,7 +53,7 @@
   .breaking .dots button.on { background: var(--accent); border-color: var(--accent); }
 
   /* Body */
-  .body { display: grid; grid-template-columns: 250px minmax(0, 1fr) 380px; min-height: 0; border-top: 1px solid var(--line); }
+  .body { flex: 1; display: grid; grid-template-columns: 250px minmax(0, 1fr) 380px; min-height: 0; border-top: 1px solid var(--line); }
   .body.nochat { grid-template-columns: 250px minmax(0, 1fr); }
   .body.nochat .chat { display: none; }
   .toggle { padding: 7px 14px; border: 0; background: var(--black); color: #fff; font-weight: 700; }
@@ -85,6 +86,23 @@
   .pf-facet { border-bottom: 1px solid var(--line); padding: 4px 0 8px; }
   .pf-head { width: 100%; padding: 8px 0 4px; border: 0; background: none; text-align: left; font-weight: 700; font-size: 14px; }
   .pf-head b { background: var(--accent); padding: 0 6px; font-size: 12px; }
+  .pf-side.counting { opacity: 0.45; }
+  .profile { max-width: 1000px; }
+  .profile-bar { display: flex; justify-content: space-between; margin-bottom: 14px; }
+  .profile-head { display: flex; gap: 20px; align-items: center; }
+  .profile h1 { margin: 0 0 4px; font-size: 38px; line-height: 1.05; letter-spacing: -0.03em; }
+  .profile h3 { font-size: 12px; letter-spacing: 0.04em; margin: 26px 0 8px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
+  .profile .lead { font-size: 18px; line-height: 1.5; margin: 20px 0 0; }
+  .avatar { position: relative; flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: var(--soft); color: var(--muted); font-weight: 700; }
+  .avatar::before { content: attr(data-initials); }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+  .avatar.big { width: 104px; height: 104px; font-size: 30px; }
+  .avatar.logo { border-radius: 10px; border: 1px solid var(--line); }
+  .avatar.logo img { object-fit: contain; padding: 8px; }
+  .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+  .person { display: flex; gap: 14px; }
+  .person a { font-weight: 700; }
+  .person p { margin: 6px 0 0; font-size: 14px; line-height: 1.5; }
   .pf-val { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 3px 0; font-size: 13px; cursor: pointer; }
   .pf-val span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .pf-val b { font-weight: 400; color: var(--muted); font-size: 12px; }
@@ -102,6 +120,15 @@
   .chip-f.not { background: var(--down); }
   .chip-f button { border: 0; background: none; color: inherit; font-size: 12px; padding: 0 4px; }
   @media (max-width: 1100px) { .pf { grid-template-columns: 1fr; } .pf-side { border-right: 0; padding-right: 0; } }
+  .paper { position: relative; border: 2px solid var(--text); padding: 16px 18px; margin: 0 0 22px; }
+  .paper h3 { font-size: 12px; letter-spacing: 0.04em; margin: 18px 0 6px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
+  .paper .close { position: absolute; top: 10px; right: 12px; border: 0; background: none; font-size: 16px; }
+  .summary { margin: 16px 0 6px; padding: 4px 18px 10px; border-left: 4px solid var(--accent); background: var(--soft); }
+  .summary h3 { font-size: 12px; letter-spacing: 0.04em; margin: 12px 0 4px; }
+  .summary h1, .summary h2, .summary h4 { font-size: 15px; margin: 12px 0 4px; }
+  .sim-text { width: 100%; padding: 10px; border: 1px solid var(--text); font: inherit; font-size: 14px; background: var(--bg); color: var(--text); margin-bottom: 8px; }
+  .sim-stats { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-top: 10px; }
+  .sim-stats h3 { font-size: 12px; letter-spacing: 0.04em; margin: 0 0 6px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
   .patent-stats { display: flex; gap: 28px; padding: 10px 0 6px; }
   .patent-stats div { font-size: 13px; color: var(--muted); }
   .patent-stats b { display: block; font-size: 26px; color: var(--text); letter-spacing: -0.02em; }
@@ -125,8 +152,6 @@
   .head h1 span { margin-right: 12px; background: var(--accent); padding: 0 8px; }
   .head .area { color: var(--muted); font-size: 14px; margin-top: 8px; }
   .head .headline { font-size: 18px; line-height: 1.45; margin-top: 14px; max-width: 900px; font-weight: 700; letter-spacing: -0.01em; }
-  .head .reason { font-size: 15px; font-weight: 400; color: var(--muted); margin-top: 6px; max-width: 900px; }
-  .badge { display: inline-block; padding: 2px 8px; border: 2px solid currentColor; font-size: 12px; font-weight: 700; margin-right: 10px; vertical-align: 2px; }
   .refresh { margin-left: auto; padding: 11px 18px; border: 0; background: var(--black); color: #fff; font-weight: 700; white-space: nowrap; }
   .refresh:hover { background: #333; }
   .refresh:disabled { opacity: 0.5; cursor: default; }
@@ -186,7 +211,7 @@
 <body>
 <div class="app">
   <header class="top">
-    <div class="brand">Aalto Innovation<span>.</span></div>
+    <div class="brand">Aalto Innovation<span>.</span><span class="hub">Knowledge Hub</span></div>
     <div class="spacer"></div>
     <button class="toggle" id="togglechat" type="button">Chat</button>
   </header>
@@ -210,12 +235,12 @@
 <script>
 const $ = (id) => document.getElementById(id);
 const state = { sectors: [], current: null, memories: {}, tab: "sector", news: 0, session: null, busy: false };
-const TABS = [["overview", "OVERVIEW"], ["sector", "SECTOR"], ["companies", "COMPANIES"], ["patents", "PATENTS"]];
+const TABS = [["overview", "OVERVIEW"], ["sector", "SECTOR"], ["companies", "COMPANIES"], ["patents", "PATENTS"], ["similar", "SIMILAR"], ["research", "RESEARCH"]];
 const BREAKING_DAYS = 3;  // signals newer than this are shown as breaking, older ones as latest
 const ARROW = { positive: "▲", negative: "▼", neutral: "■" };
 
 DOMPurify.addHook("afterSanitizeAttributes", (node) => {
-  if (node.tagName === "A") { node.setAttribute("target", "_blank"); node.setAttribute("rel", "noopener"); }
+  if (node.tagName === "A" && !(node.getAttribute("href") || "").startsWith("#")) { node.setAttribute("target", "_blank"); node.setAttribute("rel", "noopener"); }
 });
 const markdown = (text) => DOMPurify.sanitize(marked.parse(text || ""));
 const esc = (text) => String(text ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -239,11 +264,12 @@ async function load() {
 }
 
 // Every item of one kind (signals, funding_calls, companies) across all sectors, tagged with its sector.
+const openCalls = (d) => d.funding_calls.filter((c) => !(daysUntil(c.deadline) < 0));  // a deadline can pass between updates
 const everything = (kind) => state.sectors.flatMap((s) => (s.data?.[kind] || []).map((x) => ({ ...x, sector: s })));
 
 function renderTabs() {
   $("tabs").innerHTML = TABS.map(([id, label]) => `<button class="tab${id === state.tab ? " active" : ""}" data-tab="${id}">${label}</button>`).join("");
-  for (const button of $("tabs").children) button.onclick = () => { state.tab = button.dataset.tab; renderTabs(); renderMain(true); };
+  for (const button of $("tabs").children) button.onclick = () => { state.tab = button.dataset.tab; state.profile = null; renderTabs(); renderMain(true); };
 }
 
 function renderBreaking() {
@@ -258,7 +284,49 @@ function renderBreaking() {
   for (const dot of $("breaking").querySelectorAll(".dots button")) dot.onclick = () => { state.news = +dot.dataset.i; renderBreaking(); };
 }
 
-function openSector(id) { state.current = id; state.tab = "sector"; renderTabs(); renderSectors(); renderMain(true); }
+function openSector(id) { state.current = id; state.tab = "sector"; state.profile = null; renderTabs(); renderSectors(); renderMain(true); }
+
+// Company and person profiles: any link to #company/Name or #person/Name opens one in the middle. A profile is built
+// by a Sonnet agent the first time it is opened and stored after that.
+document.addEventListener("click", (event) => {
+  const a = event.target.closest('a[href^="#company/"], a[href^="#person/"]');
+  if (!a) return;
+  event.preventDefault();
+  const [kind, ...name] = a.getAttribute("href").slice(1).split("/");
+  const context = a.dataset.context || (a.closest("p, li, td") || a.parentElement).innerText.slice(0, 500);
+  state.profile = { kind, name: decodeURIComponent(name.join("/")), context };
+  renderMain(true);
+});
+const profileLink = (kind, name, context = "") => `<a href="#${kind}/${encodeURIComponent(name)}" data-context="${esc(context)}">${esc(name)}</a>`;
+const avatar = (src, name, extra = "") => `<span class="avatar ${extra}" data-initials="${esc((name || "?").split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase())}">${/^https:\/\//.test(src || "") ? `<img src="${esc(src)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
+const known = (x) => x && !/^not found/i.test(x);
+
+async function renderProfile(update = false) {
+  const pr = state.profile, ask = (body) => fetch("/api/profile", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then((r) => r.json());
+  let r = await (await fetch(`/api/profile?kind=${pr.kind}&name=${encodeURIComponent(pr.name)}`)).json();
+  if (r.status === "missing" || update) r = await ask({ kind: pr.kind, name: pr.name, context: pr.context, update });
+  if (state.profile !== pr) return;
+  const d = r.data, bar = `<div class="profile-bar"><button class="pf-link" id="profile-back">← Back</button>${r.status === "ready" ? `<button class="pf-link" id="profile-update">Update</button>` : ""}</div>`;
+  let body;
+  if (r.status === "building") body = `<h1>${esc(pr.name)}</h1><div class="empty">Building the profile from public sources. This takes about a minute, and it is saved for next time.</div>`;
+  else if (r.status === "failed") body = `<h1>${esc(pr.name)}</h1><div class="empty">The profile could not be built: ${esc(r.error)}</div><button class="pf-link" id="profile-update">Try again</button>`;
+  else if (pr.kind === "company") body = `<div class="profile-head">${avatar(d.logo, d.name, "big logo")}<div><h1>${esc(d.name)}</h1>
+      <div class="dim">${[known(d.website) ? link(d.website, d.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) : "", known(d.founded) ? `Founded ${esc(d.founded)}` : "", known(d.headquarters) ? esc(d.headquarters) : "", known(d.size) ? esc(d.size) : ""].filter(Boolean).join(" · ")}</div></div></div>
+    <p class="lead">${esc(d.summary)}</p><h3>WHAT THEY ARE BUILDING</h3><p>${esc(d.building)}</p>
+    ${known(d.funding) ? `<h3>FUNDING</h3><p>${esc(d.funding)}</p>` : ""}
+    <h3>KEY PEOPLE</h3><div class="people">${d.people.map((x) => `<div class="person">${avatar(x.photo, x.name)}<div>${profileLink("person", x.name, `${x.role} at ${d.name}`)}
+      <div class="dim">${esc(x.role)}</div><p>${esc(x.background)}</p></div></div>`).join("") || '<div class="empty">None found.</div>'}</div>`;
+  else body = `<div class="profile-head">${avatar(d.photo, d.name, "big")}<div><h1>${esc(d.name)}</h1><div class="dim">${esc(d.headline)}</div></div></div>
+    <p class="lead">${esc(d.summary)}</p>
+    <h3>CURRENT ROLES</h3>${d.current.map((x) => `<div class="item"><b>${esc(x.role)}</b>, ${profileLink("company", x.organisation, `${pr.name} works there as ${x.role}`)}${known(x.since) ? ` <span class="dim">since ${esc(x.since)}</span>` : ""}</div>`).join("") || '<div class="empty">None found.</div>'}
+    <h3>EARLIER WORK</h3>${d.past.map((x) => `<div class="item"><b>${esc(x.role)}</b>, ${profileLink("company", x.organisation, `${pr.name} worked there as ${x.role}`)} <span class="dim">${esc(x.years)}</span><div class="meta">${esc(x.highlight)}</div></div>`).join("") || '<div class="empty">None found.</div>'}`;
+  if (d) body += `<h3>SOURCES</h3>${d.sources.map((x) => `<div>${link(x.link, x.title)}</div>`).join("")}<p class="dim">Built ${esc(r.built)} from public sources by Sonnet. Check important facts in the sources.</p>`;
+  $("main").innerHTML = `<section class="profile">${bar}${body}</section>`;
+  $("profile-back").onclick = () => { state.profile = null; renderMain(true); };
+  if ($("profile-update")) $("profile-update").onclick = () => renderProfile(true);
+  clearTimeout(state.profileTimer);
+  if (r.status === "building") state.profileTimer = setTimeout(() => state.profile === pr && renderProfile(), 5000);
+}
 
 function renderTab() {  // the cross-sector tabs
   const none = '<div class="empty">Nothing in the library yet.</div>';
@@ -266,19 +334,29 @@ function renderTab() {  // the cross-sector tabs
   let title, body;
   if (state.tab === "overview") {
     title = "ALL SECTORS";
-    body = `<table class="wide-table"><tr><th>CODE</th><th>SECTOR</th><th>OUTLOOK</th><th>HEADLINE</th><th>SIGNALS</th><th>CALLS</th><th>UPDATED</th></tr>${state.sectors.map((s) => {
+    body = `<table class="wide-table"><tr><th>CODE</th><th>SECTOR</th><th>HEADLINE</th><th>SIGNALS</th><th>CALLS</th><th>UPDATED</th></tr>${state.sectors.map((s) => {
       const d = s.data;
-      return `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td>${esc(s.name)}</td><td class="${d?.outlook || "dim"}">${d ? ARROW[d.outlook] + " " + d.outlook : "·"}</td>
-        <td>${d ? esc(d.headline) : `<span class="dim">${s.updating ? "updating…" : "no data yet"}</span>`}</td><td class="num">${d ? d.signals.length : ""}</td><td class="num">${d ? d.funding_calls.length : ""}</td><td class="dim">${d ? age(d.updated) : ""}</td></tr>`;
+      return `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td>${esc(s.name)}</td>
+        <td>${d ? esc(d.headline) : `<span class="dim">${s.updating ? "updating…" : "no data yet"}</span>`}</td><td class="num">${d ? d.signals.length : ""}</td><td class="num">${d ? openCalls(d).length : ""}</td><td class="dim">${d ? age(d.updated) : ""}</td></tr>`;
     }).join("")}</table>`;
   } else if (state.tab === "patents") {
     const withData = state.sectors.filter((s) => s.patents);
     title = `EP AND WO PATENTS, LAST 12 MONTHS`;
     {  // the summary lists sectors with a finished pull; the filters search whatever the database holds
-      body = !withData.length ? '<div class="empty">The first patent pull is still running. The table fills in as each sector finishes.</div>' : `<table class="wide-table"><tr><th>SECTOR</th><th>PUBLISHED, 12 MONTHS</th><th>AALTO PATENTS IN FIELD</th><th>STORED</th><th>BACK TO</th><th>PULLED</th><th>QUERY</th></tr>${withData.map((s) => `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td class="num">${s.patents.recent_total.toLocaleString()}</td><td class="num">${s.patents.aalto_total}</td><td class="num">${s.patents.stored.toLocaleString()}</td><td class="dim">${esc(s.patents.covered_from || "")}</td><td class="dim">${age(s.patents.fetched)}</td><td class="dim">${esc(s.patents.query)}</td></tr>`).join("")}</table>
+      body = !withData.length ? '<div class="empty">The first patent pull is still running. The table fills in as each sector finishes.</div>' : `<table class="wide-table"><tr><th>SECTOR</th><th>PUBLISHED, 12 MONTHS</th><th>AALTO PATENTS IN FIELD</th><th>STORED</th><th>BACK TO</th><th>PULLED</th></tr>${withData.map((s) => `<tr ${row(s)}><td class="num code-cell">${esc(s.code)}</td><td class="num">${s.patents.recent_total.toLocaleString()}</td><td class="num">${s.patents.aalto_total}</td><td class="num">${s.patents.stored.toLocaleString()}</td><td class="dim">${esc(s.patents.covered_from || "")}</td><td class="dim">${age(s.patents.fetched)}</td></tr>`).join("")}</table>
 `;
       body += `<h2 style="border:0;padding:24px 0 10px">All stored patents</h2>${filterLayout()}`;
     }
+  } else if (state.tab === "similar") {
+    title = "FIND SIMILAR PATENTS";
+    body = `<p class="dim" style="margin:0 0 10px">Describe the research or paste an abstract to see the closest stored patents, who files in that area and when.</p>
+      <textarea id="sim-text" class="sim-text" rows="5" placeholder="e.g. A cellulose-based foam that replaces polystyrene in packaging">${esc(state.similarText || "")}</textarea>
+      <div class="pf-actions" style="max-width:440px"><button id="sim-go" data-act="refine">Find similar patents</button><button id="sim-sum">Summarise</button></div>
+      <div class="dim">Summarise sends the text to Claude, so use it only for public topics.</div><div id="sim-summary"></div><div id="sim-results"></div>`;
+  } else if (state.tab === "research") {
+    title = "AALTO RESEARCH: MISSED OPPORTUNITIES";
+    body = `<p class="dim" style="margin:0 0 10px">Earlier Aalto papers compared with today's patents and companies, to find research that others have since turned into business.</p>
+      <div id="paper-card"></div>${filterLayout()}`;
   } else {
     title = "COMPANIES AND PATENT APPLICANTS";
     body = filterLayout();
@@ -286,15 +364,104 @@ function renderTab() {  // the cross-sector tabs
   $("main").innerHTML = `<section class="panel"><h2>${title}</h2><div class="content" style="max-height:none">${body}</div></section>`;
   for (const tr of $("main").querySelectorAll("tr.click")) tr.onclick = () => openSector(tr.dataset.id);
   if ($("pf-results")) setupFilters();
+  if ($("sim-go")) setupSimilar();
+  if ($("paper-card")) showPaper();
+}
+
+const VERDICT_CLASS = { "Missed opportunity": "negative", "Partly missed": "neutral", "Followed up by Aalto or the authors": "positive" };
+const verdictChip = (p) => p.analysing ? '<span class="dim">Being analysed…</span>'
+  : p.verdict ? `<b class="${VERDICT_CLASS[p.verdict] || "dim"}">${esc(p.verdict)}</b>` : '<span class="dim">Not analysed</span>';
+const pct = (x) => `${Math.round((x || 0) * 100)}%`;
+
+async function openPaper(id) {
+  state.paper = await (await fetch(`/api/research/${encodeURIComponent(id)}`)).json();
+  showPaper();
+  $("paper-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function showPaper() {
+  const p = state.paper, box = $("paper-card");
+  if (!box) return;
+  if (!p) { box.innerHTML = ""; return; }
+  const a = p.analysis, rows = (items, head, row) => items?.length ? `<table class="wide-table"><tr>${head}</tr>${items.map(row).join("")}</table>` : '<div class="empty">None found.</div>';
+  const matches = rows(p.matches, "<th>OVERLAP</th><th>PATENT</th><th>APPLICANTS</th><th>FIRST FILED</th>", (m) => `<tr><td class="num">${pct(m.closeness)}</td>
+    <td>${link(m.link, m.title || m.number)}<div class="meta dim">${esc(m.number)}${m.own ? " · <b>an author is an inventor</b>" : ""}${m.aalto ? " · <b>Aalto patent</b>" : ""}</div></td>
+    <td>${esc(m.applicants.join(", "))}</td><td class="dim">${esc(m.priority || m.date)}</td></tr>`);
+  const analysis = p.analysing ? '<div class="empty">Sonnet is checking patents worldwide, companies and Aalto\'s follow-up. This takes a few minutes.</div>'
+    : !a ? `<div class="pf-actions" style="max-width:260px"><button id="paper-go" data-act="refine">Analyse</button></div><div class="dim">Takes a few minutes.</div>`
+    : `<div class="headline" style="margin:6px 0">${verdictChip(p)} <span class="dim">· ${esc(a.confidence)} confidence · ${esc(p.analysed)}</span></div>
+      <p>${esc(a.summary)}</p><p><b>What it could be sold as:</b> ${esc(a.what_it_is)}</p>
+      <h3>SIMILAR PATENTS</h3>${rows(a.similar_patents, "<th>PATENT</th><th>OWNER</th><th>FIRST FILED</th><th>STATUS</th><th>WHY SIMILAR</th>", (x) => `<tr><td>${link(x.link, x.number)}</td><td>${esc(x.owner)}</td><td class="dim">${esc(x.first_filed)}</td><td>${esc(x.status)}</td><td>${esc(x.why_similar)}</td></tr>`)}
+      ${a.similar_research ? `<h3>SIMILAR RESEARCH</h3>${rows(a.similar_research, "<th>RESEARCH</th><th>WHO</th><th>YEAR</th><th>HOW IT RELATES</th>", (x) => `<tr><td>${link(x.link, x.title)}</td><td>${esc(x.who)}</td><td class="dim">${esc(x.year)}</td><td>${esc(x.relation)}</td></tr>`)}` : ""}
+      <h3>COMPANIES</h3>${rows(a.companies, "<th>COMPANY</th><th>WHAT THEY SELL</th><th>SIGN OF SUCCESS</th>", (x) => `<tr><td>${link(x.link, x.name)}</td><td>${esc(x.what)}</td><td>${esc(x.success)}</td></tr>`)}
+      <h3>AALTO'S OWN FOLLOW-UP</h3><p>${esc(a.aalto_follow_up)}</p><h3>WHAT AALTO COULD DO NOW</h3><p>${esc(a.today)}</p>`;
+  box.innerHTML = `<section class="paper"><button class="close" id="paper-close" title="Close">✕</button>
+    <h2 style="border:0;padding:0 30px 4px 0">${link(p.link, p.title)}</h2>
+    <div class="dim">${esc(p.year)} · ${esc(p.area || "department not given")} · cited ${p.citations} times (Scopus) · ${esc(p.authors.slice(0, 6).join(", "))}${p.authors.length > 6 ? ` and ${p.authors.length - 6} more` : ""}</div>
+    <h3>IN-DEPTH ANALYSIS</h3>${analysis}
+    <h3>ABSTRACT</h3><p>${esc(p.abstract.length > 700 ? p.abstract.slice(0, 700) + "…" : p.abstract)}</p>
+    <h3>COMPANIES WITH CLOSE PATENTS</h3>${p.companies_found?.length ? `<p>${p.companies_found.map((c) => profileLink("company", c, `Patent applicant with a patent similar to the research "${p.title}"`)).join(" · ")}</p>` : '<div class="empty">None in the stored patents.</div>'}
+    <h3>CLOSEST STORED PATENTS</h3>${matches}</section>`;
+  $("paper-close").onclick = () => { state.paper = null; showPaper(); };
+  if ($("paper-go")) $("paper-go").onclick = async () => {
+    await fetch(`/api/research/${encodeURIComponent(p.id)}/analyse`, { method: "POST" });
+    state.paper = { ...p, analysing: 1 }; showPaper(); applyFilters(); waitForPaper(p.id);
+  };
+  if (p.analysing) waitForPaper(p.id);
+}
+
+function waitForPaper(id) {  // check every 15 seconds until the analysis is saved
+  clearTimeout(state.paperTimer);
+  state.paperTimer = setTimeout(async () => {
+    if (state.paper?.id !== id) return;
+    const p = await (await fetch(`/api/research/${encodeURIComponent(id)}`)).json();
+    if (state.paper?.id !== id) return;
+    state.paper = p;
+    if (!p.analysing) { showPaper(); if ($("pf-results")) applyFilters(); } else waitForPaper(id);
+  }, 15000);
+}
+
+function setupSimilar() {
+  $("sim-text").oninput = () => { state.similarText = $("sim-text").value; };
+  $("sim-sum").onclick = async () => {
+    const text = $("sim-text").value.trim();
+    if (!text) return;
+    $("sim-summary").innerHTML = '<div class="empty">Writing the summary…</div>';
+    const r = await fetch("/api/patents/summary", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text }) });
+    state.similarSummary = r.ok ? (await r.json()).summary : "The summary could not be written. Try again in a moment.";
+    if (!$("sim-results").innerHTML) $("sim-go").click();  // show the patents it is based on too
+    showSummary();
+  };
+  showSummary();
+  $("sim-go").onclick = async () => {
+    $("sim-results").innerHTML = '<div class="empty">Searching…</div>';
+    state.similarFound = await (await fetch("/api/patents/similar", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: $("sim-text").value }) })).json();
+    showSimilar();
+  };
+  showSimilar();
+}
+
+function showSummary() {
+  if ($("sim-summary") && state.similarSummary) $("sim-summary").innerHTML = `<div class="summary"><h3>SUMMARY</h3>${markdown(state.similarSummary)}</div>`;
+}
+
+function showSimilar() {
+  const r = state.similarFound;
+  if (!r || !$("sim-results")) return;
+  if (!r.items.length) { $("sim-results").innerHTML = '<div class="empty">No stored patent shares these words. Try more or different words.</div>'; return; }
+  const list = (title, rows) => `<div><h3>${title}</h3>${rows.map(([v, n]) => `<div class="pf-val"><span>${esc(v)}</span><b>${n}</b></div>`).join("")}</div>`;
+  $("sim-results").innerHTML = `<div class="dim" style="margin:14px 0 4px">Words searched: ${esc(r.words.join(", "))}</div>
+    <div class="dim">Counted over the ${r.years.reduce((n, y) => n + y[1], 0)} closest inventions:</div>
+    <div class="sim-stats">${list("TOP APPLICANTS", r.applicants)}${list("FIRST FILED, BY YEAR", r.years)}${list("CPC CLASSES", r.classes)}</div>
+    <h2 style="border:0;padding:20px 0 10px">Closest patents, best match first</h2>${patentTable(r.items.map((p) => ({ ...p, sector: { code: p.sectors.join(", ") } })), true)}`;
 }
 
 function renderSectors() {
   $("sectors").innerHTML = state.sectors.map((s) => {
     const d = s.data;
-    const outlook = d ? `<span class="${d.outlook}">${ARROW[d.outlook]}</span>` : '<span class="dim">·</span>';
     const note = s.updating ? "updating…" : d ? `updated ${age(d.updated)}` : "no data yet";
     return `<button class="sector${s.id === state.current ? " active" : ""}" data-id="${s.id}">
-      <span class="code">${esc(s.code)}</span><span class="name">${esc(s.name)}</span>${outlook}<small>${note}</small></button>`;
+      <span class="code">${esc(s.code)}</span><span class="name">${esc(s.name)}</span><small>${note}</small></button>`;
   }).join("");
   for (const button of $("sectors").children) button.onclick = () => openSector(button.dataset.id);
 }
@@ -302,7 +469,7 @@ function renderSectors() {
 const NO_PATENTS = '<div class="empty">No patent data yet. Add your EPO keys to the .env file (see docs/epo-ops.md); patents are fetched within the hour.</div>';
 
 function patentTable(items, withSector = false) {
-  return items.length ? `<table class="wide-table"><tr><th>PUBLISHED</th>${withSector ? "<th>SECTOR</th>" : ""}<th>PATENT</th><th>APPLICANTS</th></tr>${items.map((p) => `<tr><td class="dim">${esc(p.date)}</td>${withSector ? `<td class="num code-cell">${esc(p.sector.code)}</td>` : ""}<td>${link(p.link, p.title || p.number)}<div class="meta dim">${esc(p.number)} · ${esc(p.cpc.join(", "))}</div></td><td>${esc(p.applicants.join(", "))}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>';
+  return items.length ? `<table class="wide-table"><tr><th>PUBLISHED</th>${withSector ? "<th>SECTOR</th>" : ""}<th>PATENT</th><th>APPLICANTS</th></tr>${items.map((p) => `<tr><td class="dim">${esc(p.date)}</td>${withSector ? `<td class="num code-cell">${esc(p.sector.code)}</td>` : ""}<td>${link(p.link, p.title || p.number)}<div class="meta dim">${esc((p.numbers || [p.number]).join(", "))}${p.priority ? ` · first filed ${esc(p.priority)}` : ""} · ${esc(p.cpc.slice(0, 6).join(", "))}${p.cpc.length > 6 ? ` +${p.cpc.length - 6}` : ""}</div></td><td>${esc(p.applicants.join(", "))}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>';
 }
 
 // Every source behind a sector: the links in its data and the Markdown links in its memory file.
@@ -329,11 +496,14 @@ const FILTERS = {
     noun: "stored patents",
     search: "Search within results: title, abstract, number, applicant, inventor",
     open: ["sector", "aalto", "authority", "type", "year", "applicant"],
-    sorts: { "Publication date, newest": "newest", "Publication date, oldest": "oldest", "Title A to Z": "title", "Recently added to store": "seen" },
-    async query(pf) {
-      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, cpc_level: state.cpcLevel,
-        sort: this.sorts[pf.sort] };
+    sorts: { "Publication date, newest": "newest", "Publication date, oldest": "oldest", "First filed, newest": "priority", "Title A to Z": "title", "Recently added to store": "seen" },
+    split: true,  // list first, counts after
+    async query(pf, part) {
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, cpc_level: state.cpcLevel, facets: Object.keys(pf.open).filter((id) => pf.open[id]),
+        sort: this.sorts[pf.sort], part };
       const r = await (await fetch("/api/patents/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+      if (part === "facets") return r;
+      if (r.building) return { total: 0, all: 0, items: [], facets: {} };
       return { total: r.total, all: r.stored, items: r.items.map((p) => ({ ...p, sector: { code: p.sectors.join(", ") } })), facets: r.facets };
     },
     table: (items) => patentTable(items, true),
@@ -350,17 +520,42 @@ const FILTERS = {
       { id: "added", label: "Added to store" },
     ],
   },
+  research: {
+    noun: "Aalto papers",
+    search: "Search within results: title, abstract or author",
+    open: ["verdict", "overlap", "own", "companies", "area", "year"],
+    sorts: { "Most promising first": "promising", "Strongest patent overlap": "overlap", "Most companies": "companies", "Most cited": "cited", "Recently analysed": "analysed", "Newest first": "year" },
+    async query(pf) {
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort], facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
+      const r = await (await fetch("/api/research/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+      state.acris = r.connected; state.waiting = r.waiting;
+      return { total: r.total, all: r.stored, items: r.items, facets: r.facets };
+    },
+    table: (items) => items.length ? `<table class="wide-table"><tr><th>PAPER</th><th>CLOSEST PATENT</th><th>CLOSE PATENTS</th><th>COMPANIES</th><th>VERDICT</th></tr>${items.map((p) => `<tr class="click" data-paper="${esc(p.id)}">
+      <td>${esc(p.title)}<div class="meta dim">${esc(p.year)} · ${esc(p.area || "department not given")} · cited ${p.citations}${p.own_patent ? " · <b>patented by the authors</b>" : ""}</div></td>
+      <td class="num">${pct(p.closeness)}</td><td class="num">${p.close_patents}</td><td class="num">${p.companies}</td><td>${verdictChip(p)}</td></tr>`).join("")}</table>`
+      : `<div class="empty">${state.acris ? (state.waiting ? `No papers match yet. ${state.waiting.toLocaleString()} more papers are loading from ACRIS in the background.` : "No papers match.") : "No papers yet. Put your ACRIS key in the .env file as ACRIS_API_KEY=... and restart the terminal; papers then load in the background."}</div>`,
+    facets: [
+      { id: "verdict", label: "Verdict" },
+      { id: "overlap", label: "Closest patent overlap" },
+      { id: "own", label: "Patented by the authors" },
+      { id: "companies", label: "Companies on close patents" },
+      { id: "area", label: "Department", search: true },
+      { id: "year", label: "Year" },
+    ],
+  },
   companies: {
     noun: "companies and applicants",
     search: "Search within results: name, applicant name or what they do",
     open: ["sector", "source", "type", "country", "aalto"],
+    hidden: { type: ["Person or other"] },  // excluded to start with; remove the chip to see them
     sorts: { "Most patents": "patents", "Name A to Z": "name", "Latest patent": "latest", "Profiled first": "profiled" },
     async query(pf) {
-      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort] };
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort], facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
       const r = await (await fetch("/api/companies/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
       return { total: r.total, all: r.stored, items: r.items, facets: r.facets };
     },
-    table: (items) => items.length ? `<table class="wide-table"><tr><th>COMPANY</th><th>COUNTRY</th><th>TYPE</th><th>SECTORS</th><th>PATENTS</th><th>LATEST</th><th>WHAT THEY DO</th></tr>${items.map((c) => `<tr><td>${link(c.link, c.name)}${c.profiled && c.applicant && c.applicant !== c.name ? `<div class="meta dim">${esc(c.applicant)}</div>` : ""}</td><td class="dim">${esc(c.country)}</td><td class="dim">${esc(c.type)}</td><td class="num code-cell">${esc(c.sectors.join(", "))}</td><td class="num">${c.patents ? `<button class="pf-link" data-applicant="${esc(c.applicant)}">${c.patents}</button>` : '<span class="dim">·</span>'}</td><td class="dim">${esc(c.latest || "")}</td><td>${c.what ? esc(c.what) : '<span class="dim">Patent applicant</span>'}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>',
+    table: (items) => items.length ? `<table class="wide-table"><tr><th>COMPANY</th><th>COUNTRY</th><th>TYPE</th><th>SECTORS</th><th>PATENTS</th><th>LATEST</th></tr>${items.map((c) => `<tr><td>${link(c.link, c.name)}${c.profiled && c.applicant && c.applicant !== c.name ? `<div class="meta dim">${esc(c.applicant)}</div>` : ""}</td><td class="dim">${esc(c.country)}</td><td class="dim">${esc(c.type)}</td><td class="num code-cell">${esc(c.sectors.join(", "))}</td><td class="num">${c.patents ? `<button class="pf-link" data-applicant="${esc(c.applicant)}">${c.patents}</button>` : '<span class="dim">·</span>'}</td><td class="dim">${esc(c.latest || "")}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>',
     facets: [
       { id: "sector", label: "Sector" },
       { id: "source", label: "Source" },
@@ -374,7 +569,7 @@ const FILTERS = {
   },
 };
 state.filters = {};  // filter settings per tab, kept while the page is open
-const blankFilters = (cfg) => ({ q: "", sort: Object.keys(cfg.sorts)[0], include: {}, exclude: {}, ticks: {}, more: {}, find: {}, shown: 50, open: Object.fromEntries(cfg.open.map((id) => [id, true])) });
+const blankFilters = (cfg) => ({ q: "", sort: Object.keys(cfg.sorts)[0], include: {}, exclude: structuredClone(cfg.hidden || {}), ticks: {}, more: {}, find: {}, shown: 50, open: Object.fromEntries(cfg.open.map((id) => [id, true])) });
 
 function filterLayout() {
   const cfg = FILTERS[state.tab];
@@ -394,20 +589,41 @@ async function setupFilters() {
 async function applyFilters() {
   const cfg = FILTERS[state.tab], pf = state.filters[state.tab];
   const run = (state.filterRun = (state.filterRun || 0) + 1);
-  const r = await cfg.query(pf);
-  if (run !== state.filterRun || !$("pf-side")) return;  // a newer request or another tab took over
+  const stale = () => run !== state.filterRun || !$("pf-side");  // a newer request or another tab took over
+  if (!cfg.split) {
+    const r = await cfg.query(pf);
+    if (stale()) return;
+    showResults(cfg, pf, r); showSide(cfg, pf, r.facets); wireFilters();
+    return;
+  }
+  const counting = cfg.query(pf, "facets");  // the counts take longer, so the list is shown first
+  const r = await cfg.query(pf, "items");
+  if (stale()) return;
+  showResults(cfg, pf, r);
+  if ($("pf-side").innerHTML) $("pf-side").classList.add("counting"); else showSide(cfg, pf, null);
+  wireFilters();
+  const c = await counting;
+  if (stale()) return;
+  showSide(cfg, pf, c.facets); wireFilters();
+}
+
+function showSide(cfg, pf, facets) {  // facets null: still counting
+  $("pf-side").classList.remove("counting");
   $("pf-side").innerHTML = `<div class="pf-side-head">Filters</div>` + cfg.facets.map((f) => {
-    const values = r.facets[f.id] || [];
+    const values = facets?.[f.id] || [];
     const limit = pf.more[f.id] ? 50 : 6, ticks = pf.ticks[f.id] || [];
     const active = (pf.include[f.id] || []).length + (pf.exclude[f.id] || []).length;
     const body = !pf.open[f.id] ? "" : `
       ${f.levels ? `<select class="pf-level" data-f="${f.id}">${Object.keys(CPC_LEVELS).map((l) => `<option ${l === state.cpcLevel ? "selected" : ""} value="${l}">Level: ${l}</option>`).join("")}</select>` : ""}
       ${f.search ? `<input class="pf-find" data-f="${f.id}" placeholder="Find ${f.label.toLowerCase()}" value="${esc(pf.find[f.id] || "")}">` : ""}
-      ${values.slice(0, limit).map(([v, n]) => `<label class="pf-val"><input type="checkbox" data-f="${f.id}" data-v="${esc(v)}" ${ticks.includes(v) ? "checked" : ""}><span>${esc(v)}</span><b>${n}</b></label>`).join("") || '<div class="dim">No values</div>'}
+      ${values.slice(0, limit).map(([v, n]) => `<label class="pf-val"><input type="checkbox" data-f="${f.id}" data-v="${esc(v)}" ${ticks.includes(v) ? "checked" : ""}><span>${esc(v)}</span><b>${n}</b></label>`).join("") || `<div class="dim">${facets ? "No values" : "Counting…"}</div>`}
       ${values.length > limit || pf.more[f.id] ? `<button class="pf-link" data-more="${f.id}">${pf.more[f.id] ? "Show fewer" : `More (${values.length - limit})`}</button>` : ""}
       <div class="pf-actions"><button data-act="refine" data-f="${f.id}" ${ticks.length ? "" : "disabled"}>Refine</button><button data-act="exclude" data-f="${f.id}" ${ticks.length ? "" : "disabled"}>Exclude</button></div>`;
     return `<section class="pf-facet"><button class="pf-head" data-open="${f.id}">${pf.open[f.id] ? "−" : "+"} ${f.label}${active ? ` <b>${active}</b>` : ""}</button>${body}</section>`;
   }).join("");
+}
+
+function showResults(cfg, pf, r) {
   // Active filters as chips
   const chips = cfg.facets.flatMap((f) => [
     ...(pf.include[f.id] || []).map((v) => `<span class="chip-f">${f.label}: ${esc(v)}<button data-rm="include|${f.id}|${esc(v)}">✕</button></span>`),
@@ -416,7 +632,6 @@ async function applyFilters() {
   // Results
   $("pf-count").textContent = `${r.total.toLocaleString()} of ${r.all.toLocaleString()} ${cfg.noun}`;
   $("pf-results").innerHTML = cfg.table(r.items) + (r.total > r.items.length ? `<button class="pf-link" id="pf-showmore">Show 50 more</button>` : "");
-  wireFilters();
 }
 
 function wireFilters() {
@@ -447,6 +662,7 @@ function wireFilters() {
   if ($("pf-clear")) $("pf-clear").onclick = () => { state.filters[state.tab] = { ...blankFilters(cfg), open: pf.open }; setupFilters(); };
   if ($("pf-showmore")) $("pf-showmore").onclick = () => { pf.shown += 50; applyFilters(); };
   $("pf-results").querySelectorAll("[data-applicant]").forEach((b) => b.onclick = () => openPatents(null, b.dataset.applicant));
+  $("pf-results").querySelectorAll("[data-paper]").forEach((tr) => tr.onclick = () => openPaper(tr.dataset.paper));
 }
 
 function openPatents(sectorId, applicant) {  // the Patents tab filtered to one sector or one applicant
@@ -462,12 +678,13 @@ function panel(title, count, body, wide = false) {
 
 async function renderMain(scrollTop = false) {
   if (scrollTop) $("main").scrollTop = 0;
+  else if ($("main").contains(document.activeElement) && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;  // typing: redraw later
+  if (state.profile) return renderProfile();
   if (state.tab !== "sector") return renderTab();
   const s = state.sectors.find((x) => x.id === state.current), d = s.data;
   const head = `<div class="head"><div><h1><span>${esc(s.code)}</span>${esc(s.name)}</h1>
       <div class="area">Aalto research area: ${esc(s.aalto_area)} · ${esc(s.scope)}</div>
-      ${d ? `<div class="headline"><span class="badge ${d.outlook}">${ARROW[d.outlook]} ${d.outlook}</span>${esc(d.headline)}</div>
-             <div class="reason">${esc(d.outlook_reason)}</div>` : ""}</div>
+      ${d ? `<div class="headline">${esc(d.headline)}</div>` : ""}</div>
     <button class="refresh" id="refresh" ${s.updating ? "disabled" : ""}>${s.updating ? "Updating…" : d ? `Refresh · ${age(d.updated)}` : "Build now"}</button></div>`;
   if (!d) {
     $("main").innerHTML = head + `<div class="start">${s.updating ? "Researching this sector now. It appears here when the update is done." : "This sector is not in the library yet."}</div>`;
@@ -475,7 +692,7 @@ async function renderMain(scrollTop = false) {
     const none = '<div class="empty">Nothing found in this update.</div>';
     const metrics = d.metrics.length ? `<table class="metrics">${d.metrics.map((m) => `<tr><td>${esc(m.label)}</td><td class="num">${esc(m.value)}</td><td class="dim">${esc(m.year)}</td><td>${link(m.source, "source")}</td></tr>`).join("")}</table>` : none;
     const signals = [...d.signals].sort((a, b) => b.date.localeCompare(a.date)).map((x) => `<div class="item"><span class="${esc(x.impact)}">${ARROW[x.impact] || "■"}</span> ${link(x.source, x.title)}<div class="meta">${esc(x.date)} · ${esc(x.detail)}</div></div>`).join("") || none;
-    const calls = [...d.funding_calls].sort((a, b) => a.deadline.localeCompare(b.deadline)).map((c) => {
+    const calls = openCalls(d).sort((a, b) => a.deadline.localeCompare(b.deadline)).map((c) => {
       const left = daysUntil(c.deadline);
       return `<tr><td>${link(c.link, c.title)}<div class="meta dim">${esc(c.id)} · ${esc(c.budget)}</div></td><td class="num">${esc(c.deadline)}</td><td class="num ${left < 30 ? "negative" : ""}">${isNaN(left) ? "" : left + "d"}</td></tr>`;
     }).join("");
@@ -484,7 +701,7 @@ async function renderMain(scrollTop = false) {
     $("main").innerHTML = head + `<div class="grid">
       ${panel("KEY METRICS", d.metrics.length, metrics)}
       ${panel("SIGNALS", d.signals.length, signals)}
-      ${panel("OPEN FUNDING CALLS", d.funding_calls.length, calls ? `<table>${calls}</table>` : none)}
+      ${panel("OPEN FUNDING CALLS", openCalls(d).length, calls ? `<table>${calls}</table>` : none)}
       ${panel("COMPANIES", d.companies.length, companies)}
       ${panel("AALTO LINKS", d.aalto_links.length, aalto, true)}
       ${panel("PATENTS (EPO)", s.patents ? s.patents.recent_total : null, s.patents ? `<div class="patent-stats"><div><b>${s.patents.recent_total.toLocaleString()}</b>EP and WO patents published in the last 12 months</div><div><b>${s.patents.aalto_total}</b>Aalto patents in this field</div><div><b>${s.patents.stored}</b>patents stored for this sector</div></div>
@@ -500,7 +717,7 @@ async function renderMain(scrollTop = false) {
   if (scrollTop) $("main").scrollTop = 0;
 }
 
-const SUGGESTIONS = ["Which sector has the most open EU funding right now?", "Compare the outlook of energy and quantum, with sources.", "Add a sector on space technology."];
+const SUGGESTIONS = ["Which sector has the most open EU funding right now?", "Compare patent activity in energy and quantum, with sources.", "Add a sector on space technology."];
 
 function emptyChat() {
   $("messages").innerHTML = '<div class="dim" style="font-size:13px">Ask about any sector, or ask for a new one. For example:</div>' +

@@ -16,13 +16,3 @@ Write a report with these sections:
 5. Recommended funding path: the order to apply in, with a rough timeline, and what the team must have in place first.
 
 Give a link for every call and project. Say clearly when eligibility or dates need checking with the funder.
-
-After the report, end your reply with a scorecard in a fenced block tagged `scorecard`, containing one JSON object with these criteria:
-funding_availability: how much suitable funding is open or coming (1 = nothing fits, 5 = several strong options)
-funding_fit: how well the invention and team meet the eligibility of those options (1 = poor, 5 = clear fit)
-
-Give each criterion a "score" from 1 to 5, a "confidence" (low, medium or high; use low when the disclosure or your sources say little) and one sentence of "evidence". Be honest and use the full scale; most early inventions score 2 or 3 on several criteria. Example:
-
-```scorecard
-{"funding_availability": {"score": 3, "confidence": "medium", "evidence": "One sentence."}}
-```

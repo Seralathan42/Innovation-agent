@@ -17,7 +17,6 @@ import asyncio
 import functools
 import json
 import os
-import re
 import shutil
 import subprocess
 import sys
@@ -28,7 +27,6 @@ from pathlib import Path
 import claude_agent_sdk
 from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, create_sdk_mcp_server, query
 
-import score
 from tools import TOOLS
 
 # Each of these would make Claude Code bill per token or send requests somewhere other than Anthropic.
@@ -49,9 +47,7 @@ TASK = """Input files (read them all first):
 The invention disclosure is confidential and unpublished. When searching the web or using data tools, \
 use general terms (field, product type, company names) and never paste distinctive details of the invention.
 
-{reply}"""
-REPLY_REPORT = "Reply with your finished report in Markdown as your final message."
-REPLY_JSON = "Reply with only the JSON object described in your instructions, and nothing else."
+Reply with your finished report in Markdown as your final message."""
 
 
 @functools.cache
@@ -66,6 +62,9 @@ def check_subscription():
         )
 
 
+MODEL = "claude-sonnet-5-5"  # every agent uses this unless its file names another model: it uses less of the allowance
+
+
 def agent_options(system_prompt, tool_names, allowed=None, **extra):
     """Options for one agent: Read plus the named tools and nothing else.
 
@@ -74,6 +73,7 @@ def agent_options(system_prompt, tool_names, allowed=None, **extra):
     """
     built_in = ["Read"] + [n for n in tool_names if n not in TOOLS]
     data_tools = [TOOLS[n] for n in tool_names if n in TOOLS]
+    extra["model"] = extra.get("model") or MODEL
     return ClaudeAgentOptions(
         system_prompt=system_prompt,
         tools=built_in,
@@ -110,8 +110,7 @@ def load_agent(name):
 async def run_agent(name, files):
     """Run one agent on the input files and return its final reply."""
     check_subscription()
-    reply = REPLY_JSON if read_agent(name)[0].get("output") == "json" else REPLY_REPORT
-    prompt = TASK.format(files="\n".join(f"- {Path(f).resolve()}" for f in files), reply=reply)
+    prompt = TASK.format(files="\n".join(f"- {Path(f).resolve()}" for f in files))
     result = None
     async for message in query(prompt=prompt, options=load_agent(name)):
         if isinstance(message, ResultMessage):
@@ -121,29 +120,10 @@ async def run_agent(name, files):
     return result.result
 
 
-def parse_json(text):
-    return json.loads(text[text.index("{"): text.rindex("}") + 1])
-
-
-def split_scorecard(report):
-    """Return the report without its ```scorecard block, and the block's JSON (None if missing or invalid)."""
-    found = re.search(r"```scorecard\s*(\{.*?\})\s*```", report, re.S)
-    if not found:
-        return report, None
-    try:
-        card = json.loads(found.group(1))
-    except ValueError:
-        return report, None
-    return (report[:found.start()] + report[found.end():]).strip() + "\n", card
-
-
 def start_run(files, agents):
     """Create the run folder and return it with the coroutine that runs the agents.
 
     Agents with 'after: reports' in their header wait until the others are done and also get their reports.
-    Reports end with a scorecard, which is saved as <agent>.scores.json. Agents with 'output: json' reply with JSON,
-    saved as <agent>.json ('runs: 3' runs the agent 3 times and keeps every valid answer), and 'scorecards: yes'
-    also gives an agent the scorecards. When everything is done, score.py combines the scores into score.md.
     run_info.txt is rewritten whenever an agent starts or finishes, so it always shows the current progress.
     """
     started = datetime.now()
@@ -152,7 +132,6 @@ def start_run(files, agents):
     later = [a for a in agents if read_agent(a)[0].get("after") == "reports"]
     first = [a for a in agents if a not in later]
     status = {a: f"[{a}] {'waiting' if a in later else 'running'}" for a in agents}
-    status["score"] = "[score] waiting"
     inputs = "\n".join(f"  {Path(f).resolve()}" for f in files)
 
     def save_status():
@@ -164,27 +143,9 @@ def start_run(files, agents):
         status[name] = f"[{name}] running"
         save_status()
         start = time.monotonic()
-        config = read_agent(name)[0]
         try:
-            if config.get("output") == "json":
-                runs = int(config.get("runs", 1))
-                replies = await asyncio.gather(*(run_agent(name, agent_files) for _ in range(runs)), return_exceptions=True)
-                answers = []
-                for reply in replies:
-                    try:
-                        answers.append(parse_json(reply))
-                    except (TypeError, ValueError) as error:  # a failed run (an exception) or a reply without JSON
-                        problem = reply if isinstance(reply, Exception) else error
-                if not answers:
-                    raise RuntimeError(problem)
-                (out_dir / f"{name}.json").write_text(json.dumps(answers, indent=2))
-                result = f"saved {name}.json, {len(answers)} of {runs} runs"
-            else:
-                report, card = split_scorecard(await run_agent(name, agent_files))
-                (out_dir / f"{name}.md").write_text(report)
-                if card:
-                    (out_dir / f"{name}.scores.json").write_text(json.dumps(card, indent=2))
-                result = f"saved {name}.md"
+            (out_dir / f"{name}.md").write_text(await run_agent(name, agent_files))
+            result = f"saved {name}.md"
         except Exception as error:
             result = f"failed: {error}"
         status[name] = f"[{name}] {result} ({time.monotonic() - start:.0f} s)"
@@ -194,20 +155,7 @@ def start_run(files, agents):
     async def run_all():
         await asyncio.gather(*(run_and_save(a, files) for a in first))
         reports = [str(out_dir / f"{a}.md") for a in first if (out_dir / f"{a}.md").exists()]
-        cards = [str(p) for p in sorted(out_dir.glob("*.scores.json"))]
-        await asyncio.gather(*(
-            run_and_save(a, files + reports + (cards if read_agent(a)[0].get("scorecards") == "yes" else []))
-            for a in later
-        ))
-        start = time.monotonic()
-        try:
-            (out_dir / "score.md").write_text(score.build(out_dir))
-            result = "saved score.md"
-        except ValueError:
-            result = "failed: no agent gave a scorecard"
-        status["score"] = f"[score] {result} ({time.monotonic() - start:.0f} s)"
-        print(status["score"])
-        save_status()
+        await asyncio.gather(*(run_and_save(a, files + reports) for a in later))
 
     save_status()
     return out_dir, run_all()

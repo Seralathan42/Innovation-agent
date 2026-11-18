@@ -5,6 +5,7 @@ While it runs, it pulls new EPO patents every 6 hours, keeps filling in older on
 """
 
 import asyncio
+from datetime import date
 import json
 import re
 import threading
@@ -18,13 +19,15 @@ from pydantic import BaseModel
 
 import library
 import patents
+import profiles
+import research
 from run import ROOT, agent_options, check_subscription
 
 CHAT_PROMPT = """You are the assistant in Aalto Innovation's market terminal. You answer questions about market \
 sectors and can add new sectors to the library.
 
 The sector library is in ./library: one folder per sector, each with memory.md (the full knowledge file with \
-sources), data.json (metrics, signals, funding calls, companies) and the patent database behind the Patents tab (use epo_patents for patent questions). Current sectors: {sectors}.
+sources), data.json (metrics, signals, funding calls, companies) and the patent database behind the Patents tab. For patent questions use epo_patents (worldwide search) and epo_patent (one patent's family, grant status, legal events and claims); research_trend shows how active a research topic is. Current sectors: {sectors}.
 
 - Read the relevant library files before answering. Use web search, epo_patents and the other data tools to check \
 or add recent facts.
@@ -32,7 +35,10 @@ or add recent facts.
 - When someone asks for a new sector dataset, agree on a short name and scope with them if it is unclear, then call \
 add_sector. Pick an id (lowercase-with-dashes), a 4-letter code, the closest Aalto research area (Digitalisation and \
 AI, Materials, Art and design, Business and economics, Energy solutions, Living environments, Health and well-being) \
-and an EPO CQL patent query such as cpc=H01M or ta="vertical farming". Tell them it takes a few minutes to build."""
+and an EPO CQL patent query such as cpc=H01M or ta="vertical farming". Tell them it takes a few minutes to build.
+- The first time you name a company or a person, write the name as a link so it can be clicked for a profile: \
+[Nokia](#company/Nokia) or [Antti Laaksonen](#person/Antti%20Laaksonen), with %20 for spaces. Use these links only \
+for companies and people, and keep normal source links as they are."""
 
 updating = set()  # sector ids being updated right now
 
@@ -67,6 +73,8 @@ async def keep_fresh():  # one sector at a time, so the subscription usage stays
 async def lifespan(app):
     task = asyncio.create_task(keep_fresh())  # sector updates while running
     threading.Thread(target=patents.keep_pulling, daemon=True).start()  # EPO only, no Claude usage; ends with the app
+    threading.Thread(target=research.keep_up, daemon=True).start()  # ACRIS papers, screened here; analysed when asked
+    profiles.reset()
     yield
     task.cancel()
 
@@ -109,6 +117,51 @@ class PatentQuery(BaseModel):
     cpc_level: str = "subclass"
     find: dict = {}
     limit: int = 50
+    facets: list | None = None  # the facets open on the page; the others are not counted
+    part: str = "all"  # "items" or "facets", so the page can show patents before the counts
+
+
+class Similar(BaseModel):
+    text: str
+
+
+@app.post("/api/patents/similar")
+def similar_patents(query: Similar):
+    """The stored patents closest to a description. Searched on this computer; the text is not sent anywhere."""
+    return patents.similar(query.text)
+
+
+SUMMARY_PROMPT = """You summarise a technology topic for an innovation advisor at Aalto Innovation, in plain language \
+and without em dashes. Write about 200 words in Markdown, with no title or headings (bold lead-ins are fine): what the topic covers and where it is used, what the \
+patents below show is being protected and by whom (main applicants and countries), how filing activity has changed \
+over the years, and where there may be room for new research or a new company. Base what you say about patents \
+only on the list below, and say so if the list looks off-topic. Today is {today}.
+
+Topic as written: {text}
+
+Top applicants among the 100 closest stored patents: {applicants}
+First filings per year: {years}
+Main CPC classes: {classes}
+Closest patents:
+{items}"""
+
+
+@app.post("/api/patents/summary")
+async def similar_summary(request: Similar):
+    """A short Sonnet summary of the topic written in the Similar tab, based on the closest stored patents."""
+    check_subscription()
+    found = patents.similar(request.text)
+    items = "\n".join(f"- {p['title']} ({p['number']}, first filed {p['priority'] or p['date']}), {', '.join(p['applicants'][:3])}"
+                      for p in found["items"][:30])
+    prompt = SUMMARY_PROMPT.format(today=date.today(), text=request.text[:2000], items=items or "(none found)",
+                                   **{k: ", ".join(f"{v} ({n})" for v, n in found[k]) for k in ("applicants", "years", "classes")})
+    result = None
+    async for message in query(prompt=prompt, options=agent_options("You write short, plain summaries.", [], disallowed_tools=["Read"])):
+        if isinstance(message, ResultMessage):
+            result = message
+    if result is None or result.is_error:
+        raise HTTPException(502, "The summary could not be written. Try again in a moment.")
+    return {"summary": result.result}
 
 
 @app.post("/api/patents/search")
@@ -124,12 +177,78 @@ class CompanyQuery(BaseModel):
     sort: str = "patents"
     find: dict = {}
     limit: int = 50
+    facets: list | None = None
 
 
 @app.post("/api/companies/search")
 def company_search(query: CompanyQuery):
     """Filtered companies (patent applicants and profiled companies) and facet counts for the Companies tab."""
     return patents.company_search(**query.model_dump())
+
+
+class PaperQuery(BaseModel):
+    q: str = ""
+    include: dict = {}
+    exclude: dict = {}
+    sort: str = "promising"
+    find: dict = {}
+    limit: int = 50
+    facets: list | None = None
+
+
+@app.post("/api/research/search")
+def research_search(query: PaperQuery):
+    """Filtered Aalto papers and facet counts for the Research tab."""
+    return research.search(**query.model_dump())
+
+
+@app.get("/api/research/{paper_id}")
+def research_paper(paper_id: str):
+    found = research.paper(paper_id)
+    if not found:
+        raise HTTPException(404, "No such paper")
+    return found
+
+
+@app.post("/api/research/{paper_id}/analyse")
+async def research_analyse(paper_id: str):
+    """Start the in-depth check of one paper (Sonnet, a few minutes). The page polls the paper until it is done."""
+    found = research.paper(paper_id)
+    if not found:
+        raise HTTPException(404, "No such paper")
+    if not found["analysing"]:
+        async def run():
+            try:
+                await research.analyse(paper_id)
+            except Exception as error:
+                print(f"[research] {paper_id} failed: {error}")
+        asyncio.create_task(run())
+    return {"analysing": True}
+
+
+class ProfileRequest(BaseModel):
+    kind: str  # company or person
+    name: str
+    context: str = ""  # the text around the name, so the agent finds the right one
+    update: bool = False
+
+
+@app.get("/api/profile")
+def profile(kind: str, name: str):
+    """A stored company or person profile and its status: missing, building, ready or failed."""
+    return profiles.get(kind, name)
+
+
+@app.post("/api/profile")
+async def profile_build(request: ProfileRequest):
+    """Build a profile when it is clicked for the first time (or on Update). The page polls until it is ready."""
+    if request.kind not in profiles.SCHEMAS or not request.name.strip():
+        raise HTTPException(400, "Unknown profile")
+    found = profiles.get(request.kind, request.name)
+    if found["status"] in ("missing", "failed") or (request.update and found["status"] != "building"):
+        asyncio.create_task(profiles.build(request.kind, request.name.strip(), request.context[:600]))
+        return {"status": "building"}
+    return found
 
 
 @app.get("/api/sectors/{sector_id}/memory")
@@ -151,7 +270,7 @@ async def refresh_now(sector_id: str):
 async def chat(message: Message):
     check_subscription()
     names = ", ".join(f"{s['name']} ({s['id']})" for s in library.sectors())
-    data_tools = ["WebSearch", "WebFetch", "epo_patents", "eurostat_search", "eurostat_data", "finnish_companies",
+    data_tools = ["WebSearch", "WebFetch", "epo_patents", "epo_patent", "research_trend", "eurostat_search", "eurostat_data", "finnish_companies",
                   "eu_funding_calls", "research_projects", "search_papers"]
     options = agent_options(CHAT_PROMPT.format(sectors=names), data_tools,
                             allowed=["Read(./library/**)", "WebSearch", "WebFetch"],  # reads only the library

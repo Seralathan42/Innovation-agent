@@ -16,7 +16,7 @@ Bottlenecks found while building the prototype (agents, web app, keyword firewal
 
 **3. Patent search access: Patsnap**
 - A trial **Patsnap API or MCP key** (Discovery / Eureka) for the project, and confirmation that its terms allow automated use by AI agents.
-- Why: Google Patents has no search API and forbids automated searching, and we were asked not to use EPO OPS. Today agents find patents through general web search, which is the weakest part of the IP analysis.
+- Why: we now search patents through the European Patent Office's free service (EPO OPS), which covers published applications well. Patsnap would add what it lacks: legal status at a glance, citation counts, patent value and cleaned-up company names.
 
 **4. How the process works today**
 - A 1-hour interview with an advisor (Juha Siivola or Janne Raula), or sitting in on one case review.

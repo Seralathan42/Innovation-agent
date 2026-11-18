@@ -99,3 +99,16 @@ Our use is far below these limits. The terminal makes one search per sector ever
 - We may **not** make the raw data available to the public, or copy and redistribute it as such.
 - The key and secret must be kept private, which is why they live in `.env`.
 - The EPO may monitor usage and block misuse.
+
+## One patent in depth
+
+`epo.details(number)` (the `epo_patent` tool) makes two calls for one publication number such as `EP3544099`:
+
+- `family/publication/epodoc/<number>/legal`: every publication in the patent family, each with its legal events (code, date, description). A family member with kind B is a granted patent. Events show refusals, withdrawals, lapses and fee payments.
+- `published-data/publication/epodoc/<number>/claims`: the claims as text. Available for EP and WO and some national offices.
+
+The search service returns applications (kinds A1 and A2) only, so this lookup is how to tell whether a patent was granted.
+
+## What the terminal stores
+
+`patents.py` keeps, for each search hit: number, kind, family ID, publication date, priority date (the earliest filing in the priority claims), applicants, inventors, all CPC classes and the full abstract. `pa=aalto` also matches people named Aalto, so a patent counts as Aalto's only when an applicant has AALTO together with UNIV or KORKEAKOULU.

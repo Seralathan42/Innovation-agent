@@ -1,62 +1,231 @@
-# Design and creative industries: knowledge file (updated 2026-11-09)
+# Design and creative industries: knowledge file (updated 2026-11-16)
 
 ## Overview
-Scope: design-driven products, games, media technology, fashion and textile innovation. Europe and Finland focus. Games are Finland's largest commercial creative export. Textile and fashion innovation is shaped by EU circularity policy. Research-based ventures face a tight games funding market but have grant openings in textiles and the creative economy.
+Scope: design-driven products, games, media technology, fashion and textile innovation. Europe and Finland focus.
+
+- **Games** are Finland's largest commercial creative export.
+- **Textile and fashion innovation** is shaped by EU circularity policy.
+- **Research-based ventures** face a tight games funding market but have grant openings in textiles, media technology and the creative economy.
+
+State in mid-November 2026:
+- The two listed Finnish bellwethers reported growth (Remedy, Marimekko), while smaller game studios keep closing.
+- The Commission formally adopted the Digital Fairness Act proposal on 2026-11-11. It targets in-game currencies and pay-to-win mechanics for minors and backs enforcement with fines of up to 6% of turnover.
+- Textile innovation is still pre-commercial (Spinnova, Infinited Fiber) but has the best-fitting open EU grant.
 
 ## Market size and growth
-- Finnish games industry 2024: turnover about €2.85 bn (second-highest on record; one summary says down 4.9% over two years), about 4,300 staff (3,800 in Finland, 500 abroad), 270 studios (record), operating result about €400m (down from about €800m in 2023). Neogames blames recession, inflation and a post-COVID slowdown. [PocketGamer.biz, 2025](https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon). Some sources print $2.85 bn, so the currency is worth checking against the original Neogames report.
-- 2025: [Neogames/PocketGamer.biz, 2026-02-03](http://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/) gives no turnover or staff figure. It reports about 60 commercial games released in 2025, 75 new startups in three years, 18 IGDA Finland hubs, and says 2026 "will be brilliant". No euro figure for 2025 was found.
-- Eurostat 2020 (still the latest found in cult_ent_val): EU-27 cultural sectors turnover €363.3 bn (1.47% of the business economy) and value added €146.6 bn (2.26%). Finland: turnover €7.08 bn (1.79%) and value added €3.0 bn (2.88%). Finnish computer game publishing turnover €2.21 bn. EU specialised design turnover €20.8 bn. These figures are dated.
-- Global gaming Q3 2026: M&A $2.4 bn over 45 deals; private funding $1.6 bn+ over 106 rounds, mostly to AI and dev tools. Secondary source, verify: [Tech Insider](https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/).
+- **EU cultural employment 2025**: 8.886 million people, 4.3% of total employment (2024: 8.771 million, 4.2%). Finland: 121,100 people, 4.6% (2024: 120,500). [Eurostat cult_emp_sex](https://ec.europa.eu/eurostat/databrowser/view/cult_emp_sex/default/table)
+- **Eurostat enterprise data, 2020** (still the latest; the datasets cult_ent_val and cult_ent_num end in 2020). [Eurostat cult_ent_val](https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table). These figures are dated.
+  - EU-27 cultural sectors: turnover €363.3 bn (1.47% of the business economy), value added €146.6 bn (2.26%).
+  - Finland: turnover €7.08 bn (1.79%), value added €3.0 bn (2.88%).
+  - Finnish computer game publishing: turnover €2.21 bn, value added €0.86 bn.
+  - Specialised design: EU turnover €20.8 bn, Finland €279 m.
+- **European games market 2025**: €29.7 bn consumer spending across 16 markets, 199 million players, 123,000 industry employees, 8,700 studios. [Video Games Europe](https://www.videogameseurope.eu/publication/2025-all-about-video-games-european-key-facts/). Secondary coverage says the five original markets fell 4% to €25.7 bn; not checked in the report.
+- **Finnish games industry 2024**: turnover €2.85 bn, about 4,300 staff, 270 studios (record), operating result about €400 m (about €800 m in 2023). [Neogames report 2024](https://neogames.fi/wp-content/uploads/2025/08/FinnishGameIndustryReport2024.pdf); [PocketGamer.biz](https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon). Sources citing the report give the figure in euros.
+- **Finnish games 2025**: still no turnover figure.
+  - [Neogames, February 2026](http://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/) reports about 60 commercial games released in 2025, 75 new startups in three years and 18 IGDA Finland hubs.
+  - Supercell paid €216.4 m in Finnish corporate income tax for 2025 (group level), second in the country ([Neogames Weekly News 46/26](https://neogames.fi/weekly-news-46-26/)).
+- **EU textile and clothing industry (EURATEX 2026 edition)**: turnover €166 bn, about 1.2 million jobs (down 2.8%), nearly 200,000 companies, exports €61 bn (down 2.9%), imports €122 bn. [EURATEX](https://euratex.eu/facts-and-key-figures/). Third consecutive year of contraction according to EURATEX coverage.
+- **Company figures**:
+  - Marimekko January–September 2026: net sales €137.5 m (up 2%), comparable operating profit €23.4 m (17.0%); 2025 net sales €189.6 m ([Marimekko interim report](https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales)).
+  - Remedy January–September 2026: revenue €62.9 m (up 48.2%), EBIT -€2.3 m ([Remedy business review](https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date)).
+- **Global gaming Q3 2026**: M&A $2.4 bn over 45 deals; private funding $1.6 bn+ over 106 rounds, mostly to AI and dev tools. Secondary source, still unverified: [Tech Insider](https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/).
+- **Research activity**: papers on textile recycling and cellulose fibre grew from 572 (2017) to 2,396 (2025). Aalto is the third most active institution worldwide with 174 papers (OpenAlex, via the research_trend tool).
+- **DFA consumer impact**: the Commission estimates the consumer package will save EU consumers up to €13.7 bn a year ([Commission press release via EuropaWire, 2026-11-12](https://news.europawire.eu/european-commission-proposes-digital-fairness-act-and-stronger-eu-consumer-law-enforcement/eu-press-release/2026/11/12/15/28/04/187330/)).
 
 ## Key players
-- Finnish games: Supercell, Remedy, Housemarque, Rovio (Sega), Fingersoft (Hill Climb Racing, 2bn downloads), Metacore, RedLynx (Ubisoft, closure proposed).
-- Fashion and textile: Marimekko, Spinnova.
-- Aalto: Woamy spin-out; Media Lab and the Department of Media; Department of Art and Design.
-- Europe: Ubisoft and DON'T NOD are restructuring.
+- **Finnish games**:
+  - Supercell, Remedy, Housemarque, Rovio (Sega), Fingersoft (Hill Climb Racing), Metacore, HypeHype, Iceflake Studios (Paradox).
+  - Nitro Games: work-for-hire; €1.1 m follow-on order, about €5.2 m in total from one customer ([Neogames 45/26](https://neogames.fi/weekly-news-45-26/)).
+  - RedLynx (Ubisoft): closure proposed.
+  - Silent But Deadly: new studio founded by Supercell and Remedy veterans, backed by Sisu Game Ventures.
+- **Games investors active in Finland**: Play Ventures, Sisu Game Ventures, Supercell Investments (strategic), Nuard Ventures. The investor panel at Neogames/Xamk "Get Funded 2026" on 2026-11-04 included Supercell Investments, Nuard Ventures and Sisu Game Ventures ([Neogames 43/26](https://neogames.fi/weekly-news-43-26/)).
+- **Fashion and textile**: Marimekko, Spinnova, Infinited Fiber Company, Ioncell Oy; in Europe, Lenzing.
+  - Secto Design (Finnish lighting design brand) has invested in Aalto spin-off Woamy's bio-based packaging production ([Secto Design](https://www.sectodesign.fi/news/news-events/secto-design-invests-in-bio-based-packaging-production); date not checked). This is an example of a design brand backing an Aalto materials spin-off.
+- **Aalto**:
+  - Aalto Innovation: the umbrella commercialisation unit, replacing the Aalto Startup Center name.
+  - Department of Design: MELANGE project, Professor Maarit Salolainen.
+  - Ioncell: Aalto is a co-founder of Ioncell Oy.
+  - Woamy spin-out: Woamy Oy, business ID 3289841-7, registered 2022-06-02 in Espoo. It makes cellulose biofoam for packaging, insoles and building panels, and closed a €1 m seed round in January 2023 ([Aalto innovation portfolio](https://www.aalto.fi/en/innovation-portfolio/woamy); [Aalto Innovation](https://innovation.aalto.fi/woamy-oy-closes-eu1-million-seed-round)).
+  - Game research: Annakaisa Kultima, GN! Event Week.
+- **Europe**: Ubisoft and DON'T NOD are restructuring.
 
 ## Trends
-- Games: consolidation, layoffs and studio closures in autumn 2026. Metacore cut 159 jobs and closed offices in Germany and Sweden (about June 2026; [PocketGamer.biz](https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/)). Ubisoft proposed closing RedLynx on 2026-10-14 ([PocketGamer.biz](https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/)); this is a proposal under change negotiations and the outcome is unknown. Capital is concentrating in AI and dev tools. Play Finland says access to funding has got harder ([Play Finland](https://playfinland.fi/access-to-funding)). Small indie hits (My Winter Car, The Last Care Taker) show a hit-driven indie niche.
-- Textiles: the shift to circular, bio-based fibres and EPR-driven design for durability and recyclability. Spinnova signed a non-binding LOI with Outlast on 2026-11-05 for insulation and thermoregulation fibres ([Textile World](https://www.textileworld.com/?p=112068)). Its Woodspin demo factory is in trial runs, and larger-scale production is targeted for 2026 but depends on the trials.
-- Public funding is moving toward the creative economy, AI for creatives and the New European Bauhaus.
+- **Games, a two-speed market**:
+  - Hits: Remedy's Q3 2026 revenue rose 226% to €39.6 m, and CONTROL Resonant sold one million copies in three weeks ([Remedy](https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date)). DragDrop Games' Moon Sweepers reached 600,000 players in its first week ([Neogames 45/26](https://neogames.fi/weekly-news-45-26/)).
+  - Closures and cuts: Playnest (Helsinki) is ceasing operations, and Rovio cut about 20 jobs at Ruby Games in Türkiye ([Neogames 46/26](https://neogames.fi/weekly-news-46-26/)). Metacore cut 159 jobs earlier in 2026 ([PocketGamer.biz](https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/)).
+  - RedLynx: Ubisoft proposed closing the studio on 2026-10-14, affecting up to 52 positions ([PocketGamer.biz](https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/), [Game Developer](https://www.gamedeveloper.com/business/ubisoft-to-close-trials-studio-redlynx-downsize-ubisoft-singapore)). No outcome had been published as of 2026-11-16 (search found only the original announcement).
+- **Games capital**: money goes to AI and tools and to veteran-founded teams.
+  - Supercell joined a $5M pre-seed round for Anorak (generative-video formats), co-led by Play Ventures and Backed VC ([Neogames 46/26](https://neogames.fi/weekly-news-46-26/)).
+  - Play Finland says access to funding has got harder ([Play Finland](https://playfinland.fi/access-to-funding)). A Yle piece on financing difficulties for small developers was flagged in Neogames' roundup; only the headline was seen.
+  - No Finnish game studio round was found for November 2026.
+  - Slush runs on 2026-11-18/19 with about 5,800 startups and 3,300 investors expected ([Slush](https://slush.org/startups)); check for creative-sector deals afterwards.
+- **Textiles**: the shift to circular, bio-based fibres and design for durability and recyclability continues, but commercialisation is slow.
+  - **Spinnova financials**: H1 2026 revenue €286,000 and operating loss €6.9 m, per secondary coverage ([Portugal Têxtil](https://portugaltextil.com/en/spinnova-moves-ahead-with-us-stock-market-listing/)). Cash of €38.5 m according to an [Inderes analyst note](https://www.inderes.fi/en/research/spinnova-h126-path-to-commercialization-moves-forward-little-by-little).
+  - **Spinnova operations**: Woodspin demo plant in trial runs since April 2026 ([Textile World](https://www.textileworld.com/textile-world/fiber-world/2026/04/spinnova-begins-trial-runs-at-woodspin-demo-factory-and-prepares-to-restart-production/)).
+  - **Spinnova deals**:
+    - Tearfil: non-binding LOI on 2026-09-17 to buy the Portuguese yarn spinner (initial valuation €500,000, €1.5 m bridge loan, completion targeted for Q1 2027; [Textile World](https://www.textileworld.com/textile-world/2026/09/spinnova-signs-letter-of-intent-regarding-potential-acquisition-of-tearfil-and-related-eur-1-5-million-bridge-loan-financing/)).
+    - Outlast: non-binding LOI on 2026-11-05 to develop SPINNOVA fibre for insulation and temperature regulation, now confirmed on the primary newswire ([MFN](https://mfn.se/a/spinnova/spinnova-signs-letter-of-intent-with-outlast-to-develop-spinnova-r-fibre-for-insulation-and-temperature-regulation)).
+  - **Spinnova Nasdaq listing claim**: a US Nasdaq listing application is still unverified.
+  - **Infinited Fiber**:
+    - Sahil Kaushik became CEO on 2026-01-09, and the board was realigned on 2026-02-09 ([investor news](https://investors.infinitedfiber.com/investor-news/)).
+    - The Kemi environmental permit went to the statutory appeal phase on 2026-03-23 ([Infinited Fiber](https://infinitedfiber.com/?p=7774)).
+    - Per trade-press snippets, the conditional lease with Stora Enso for the Veitsiluoto site expired because preconditions were not met, but the company remains committed to Kemi. The date is not verified.
+    - Commercial deliveries from Kemi, once targeted for January 2026, have not started.
+    - A reported €10 m raise in April 2026 is still unverified.
+- **Design brands**: Marimekko's growth is international (up 11% in January–September 2026) while Finland declines (down 6%) ([Marimekko](https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales)).
+- **Public funding** is moving toward the creative economy, AI for creatives, virtual worlds and the New European Bauhaus. The NEB 2027 neighbourhood topics are now listed with a 2027-12-01 deadline.
+- **Aalto commercialisation push**: third in Europe for spinout funding in H1 2026 (over €500 m, mostly ICEYE), eight research-based spinouts in 2026, a target of 20 a year, and a doubling of invention disclosures and patents from 2025 to 2030 ([Aalto](https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new)).
 
 ## Regulation and policy
-- The EU textile EPR rules came through the revised Waste Framework Directive, in force 2025-10-16. Transposition is due by about June 2027 and schemes by about April 2028 (sources conflict on the dates). Fees are eco-modulated. [EURATEX](https://euratex.eu/sustainable-businesses/circular-economy/textiles-epr-europe/)
-- A Circular Economy Act is expected (timing unverified).
-- National schemes: France and the Netherlands are said to be active (single vendor source, unverified).
-- Not researched: the EU AI Act and copyright for creative works, the Digital Product Passport and ecodesign rules.
+- **Digital Fairness Act**: adopted by the Commission as a proposal on 2026-11-11 together with a Simplification Directive and a revision of the Consumer Protection Cooperation (CPC) Regulation ([Commission DFA page](https://commission.europa.eu/law/law-topic/consumer-protection-law/digital-fairness-act_en); [press release via EuropaWire, 2026-11-12](https://news.europawire.eu/european-commission-proposes-digital-fairness-act-and-stronger-eu-consumer-law-enforcement/eu-press-release/2026/11/12/15/28/04/187330/)).
+  - **Targets**: dark patterns, addictive design (consumers can switch it off), overspending prompts, unfair personalisation, influencers, dynamic and misleading pricing, subscription traps, and lack of a human contact in customer service.
+  - **Games provisions**: clearer real-money pricing for virtual in-app currencies; a ban on gambling-like features for minors such as pay-to-win and pay-to-progress; limits on personalised ads and prices aimed at minors.
+  - **Enforcement**: under the CPC revision the Commission could fine up to 6% of worldwide turnover in large cross-border cases.
+  - **Legal form**: trackers list it as a regulation replacing the 2005 Unfair Commercial Practices Directive, reference COM(2026) 1100, procedure 2026/0356(COD) ([MediaLaws tracker](https://www.medialaws.eu/digital-fairness-act-legislative-tracker/); not confirmed on the Commission page).
+  - **Detail readings differ**: press and law-firm readings say purchasable in-game currency would be off by default for under-18s and paid loot boxes banned for minors ([VGTimes](https://vgtimes.com/articles/174761-digital-fairness-act-loot-boxes.html)). Loyalty points sit in the separate EU KIDS Act.
+  - **Industry view**: Neogames reads the text more broadly, as a ban on all in-game purchases by under-18s ([Neogames statement](https://neogames.fi/statement-new-eu-regulation-threatens-the-finnish-game-industry-and-the-european-game-industry/)).
+  - **Next steps**: Parliament and Council; no application date yet.
+- **Textile EPR**: came through the revised Waste Framework Directive, in force 2025-10-16. Transposition is due by about June 2027 and schemes by about April 2028 (sources conflict). Fees are eco-modulated. [EURATEX](https://euratex.eu/sustainable-businesses/circular-economy/textiles-epr-europe/)
+- **Ecodesign and Digital Product Passport for textiles**: the following come from compliance-vendor summaries, not EU documents; verify before use.
+  - The delegated act for textiles had not been adopted as of autumn 2026. It is indicatively expected in the second half of 2027, with compliance about 18 months later.
+  - An EU passport registry reportedly went live on 2026-07-20.
+  - A ban on destroying unsold apparel and footwear has reportedly applied to large companies since July 2026.
+  - The MAT-PROD-08 call text does confirm that recyclability, recycled content and footprint are expected in the textile ecodesign requirements ([EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-08)).
+- **Circular Economy Act**: expected; status and timing still unverified.
+- **National EPR schemes**: France and the Netherlands are said to be active (single vendor source, unverified).
+- **AI and copyright**: the AI4Creatives call text names copyright infrastructure for licensing protected content for AI as an EU aim ([EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-02)). The AI Act's copyright rules were not researched.
 
 ## Opportunities for Aalto inventions
-- Textile and material innovation fits HORIZON-CL4-2027-01-MAT-PROD-08 (due 2027-02-02, not re-checked) and HORIZON-CL2-2027-01-HERITAGE-03 Crafting routes to a circular economy (due 2027-09-23).
-- Media technology and AI tools for creators fit AI4Creatives (HERITAGE-02), HERITAGE-05 on the creative economy, and the open topic HERITAGE-09 (all due 2027-09-23, except HERITAGE-09, due 2027-09-30).
-- Near-term deadlines: EIT Culture & Creativity business plan call (2026-11-16) and New European Bauhaus 2026 calls (2026-12-01). Spatial and design research fits the NEB neighbourhood-design topic.
-- Games technology faces weak VC. Licensing to established studios, or AI and dev-tool positioning, is more realistic than studio spin-offs. Laid-off Finnish developers may create talent and small-team start-up supply.
-- Woamy shows a materials-led spin-out route. Spinnova-type brand and fibre partnerships (Marimekko, Outlast, adidas) show a route for textile inventions.
+- **Textile and material innovation** is the strongest fit.
+  - HORIZON-CL4-2027-01-MAT-PROD-08 is open until 2027-02-02: €16 m, about 3 grants of €4–6 m, TRL 5 to 6–7. Start-up involvement is encouraged, and 10–25% of the budget is passed on to SMEs at up to €150,000 each.
+  - Aalto has research strength and fresh patent filings here (EPO search found 8 Aalto filings since 2025 on textile, fibre or cellulose terms):
+    - elastane detection in textiles, with VTT ([FI20236268A1](https://worldwide.espacenet.com/patent/search?q=pn%3DFI20236268A1));
+    - cellulose and polyester blend separation ([CN121065838A](https://worldwide.espacenet.com/patent/search?q=pn%3DCN121065838A));
+    - ionic liquid purification, cellulose aerogels and bio-based cushioning materials.
+  - HERITAGE-03 Crafting routes to a circular economy (due 2027-09-23, €10.5 m) fits design-led circularity work.
+- **Design research as an entry point to industry**:
+  - MELANGE (Aalto-led, €4 m, with Lenzing and textile mills) is a model for design-led consortia ([Aalto](https://www.aalto.fi/en/news/design-at-the-start-of-the-supply-chain-aalto-university-leads-a-major-eu-project-to-transform)).
+  - The Woamy and Secto Design link shows that Finnish design brands can be investors and customers for Aalto material spin-offs.
+- **Media technology and AI tools for creators**:
+  - Creative Europe MEDIA Innovative tools and business models: due 2027-01-14, €14 m.
+  - Creative Innovation Lab: due 2027-04-22, €7.18 m.
+  - AI4Creatives: due 2027-09-23, €5 m, one grant.
+  - HERITAGE-05: due 2027-09-23, €10.5 m.
+  - HERITAGE-09 open topic: €20 m; first stage 2027-05-04, second stage 2027-09-30.
+  - EU AI Media Platform: due 2027-02-16, one €10 m grant, TRL 6–8. It suits a large consortium more than a spin-off.
+- **XR and immersive hardware**: HORIZON-CL4-2027-04-HUMAN-01 opens 2026-11-17, due 2027-03-18; €39 m, about 8 grants, TRL 3–5.
+- **Games**:
+  - Creative Europe video games and immersive content (due 2027-02-02, €13.5 m; up to €200,000 per narrative project at 60% of costs, per Neogames) is for companies, so it suits a spin-off only once founded.
+  - Weak VC still makes licensing to studios or tool positioning more realistic than studio spin-offs. Laid-off developers keep forming small teams.
+  - The DFA, now a formal proposal with 6% fines, could raise demand for compliant monetisation design, transparent virtual-currency pricing UX, age-assurance, parental-control and "switch off addictive design" tooling, and for design research on dark patterns. This is an inference, not a reported trend. Aalto design, HCI and game research could position here, but the timeline depends on the legislative process (likely years).
+- **Neighbourhood and spatial design (New European Bauhaus)**:
+  - NEB 2026 topics close 2026-12-01 (spatial design of neighbourhoods: €10 m, 2 grants).
+  - NEB 2027 topics open 2027-05-05 and close 2027-12-01. Example: intergenerational neighbourhoods, €10.5 m, about 2 grants of €5.25 m, which explicitly asks for cultural and creative sectors and perceived beauty.
+- **Deep-tech route**:
+  - EIC Accelerator 2027 cut-offs: 20 January, 17 March, 1 September and 4 November 2027 (€428 m Open, €150 m Challenges; [EIC](https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en)).
+  - EIC Transition: due 2027-09-14 (€92 m, up to €2.5 m, single applicants allowed; [EIC](https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en)).
+  - EIC Pathfinder Open is reported as two-stage with stage 1 on 2027-02-25 and about €166 m, according to secondary guides (e.g. [Evolution Europe](https://evolutioneurope.eu/blog/eic-work-programme-2027-draft/)); not confirmed on the official page.
+- **Finnish funders**:
+  - **Research to Business**: call 2/2026 ran 8 June to 16 September 2026, with decisions targeted for January 2027. Business Finland covers 80% of costs; projects are typically €400,000–700,000; €25 m was allocated across the 2026 calls ([Business Finland](https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/); [call 1/2026](https://www.businessfinland.fi/en/services/funding/calls/2026/research-to-business--funding-call-12026/)).
+  - No 2027 R2B call has been published as of 2026-11-16. Call 1/2026 opened on 1 December 2025, so a call opening around December 2026 is likely, but that is an inference.
+  - **Creative industries Co-Innovation call 2026**: €9 m, 2026-01-07 to 2026-04-29, closed. Research organisations get 80% and SMEs 35–50%. A research-organisation project needs at least three companies, and decisions were due in October 2026 ([Business Finland](https://www.businessfinland.fi/en/services/funding/calls/2026/funding-call-co-innovation-creative-industries/)). No 2027 call found.
+  - Business Finland's Rise to Challenge radical-ideas call 2026 exists ([Business Finland](https://www.businessfinland.fi/en/services/funding/calls/2026/rise-to-challenge--funding-call-2026/)); its status was not checked.
+  - Research Council of Finland calls were not checked.
+- **Near-term**: Aalto Innovation Week runs 16–20 November 2026 and Slush 18–19 November 2026.
+- **Spin-out models**: Woamy and Ioncell show materials-led spin-out routes, and Spinnova-type brand and fibre partnerships (Outlast, Tearfil) show a route for textile inventions. Spinnova's slow path to revenue is a caution on scale-up time and capital.
 
 ## Open questions
-- Finnish games turnover for 2025: no figure yet. Is the full Neogames report out?
-- Call budgets were not checked.
-- Aalto Department of Art and Design spin-offs in 2026: none found. Research groups beyond Media Lab were not mapped.
-- Spinnova's restructuring details and date.
-- Patent landscape not searched.
-- Eurostat creative data newer than 2020.
-- Verify the aggregator reports (Q3 funding data) against primary sources. RedLynx closure is confirmed by PocketGamer.biz but its final outcome is pending.
-- Marimekko's Q3 2026 result and Remedy and Supercell news were not found.
+- Finnish games turnover for 2025: still no figure.
+- RedLynx: final outcome of the change negotiations.
+- Digital Fairness Act:
+  - confirm the legal form (regulation) and the exact minors and virtual-currency provisions in COM(2026) 1100;
+  - check whether loot boxes are banned for minors or only switched off by default.
+- Spinnova: Q3 2026 report not found; Nasdaq US listing claim; whether the Tearfil bridge loan was signed (an Inderes note says yes).
+- Infinited Fiber: date of the Stora Enso lease expiry, the new Kemi site plan, and the April 2026 funding.
+- EU documents still to check: textile ecodesign delegated act, Digital Product Passport dates, Circular Economy Act.
+- Aalto School of Arts, Design and Architecture spin-offs in 2026: none identified among the eight 2026 spinouts. Ask Aalto Innovation for the list and for the R2B teams at Slush.
+- Business Finland R2B and creative industries calls for 2027; Research Council of Finland calls.
+- EIC Pathfinder 2027 dates and budget on the official page.
+- Eurostat enterprise data for cultural sectors newer than 2020.
+- Tech Insider Q3 gaming investment figures remain unverified.
 
 ## Changes since last update
-- Added: Spinnova–Outlast LOI (2026-11-05); Metacore layoffs; the Neogames February 2026 report details (no 2025 turnover); EIT Culture & Creativity call and the Ukraine culture call (due 2026-11-10, which is tomorrow and likely too late for new applicants).
-- Corrected: 2024 turnover is flagged for a possible currency mix-up (€ vs $) in secondary sources.
-- Unchanged: market sizes, regulation and the Aalto mapping (not re-researched).
+- **Confirmed**:
+  - The Commission adopted the DFA proposal on 2026-11-11, from the Commission page and the 2026-11-12 press release. This replaces the earlier reliance on Neogames' reading.
+  - New DFA details: fines of up to 6% of global turnover via the CPC revision, consumer savings of up to €13.7 bn a year, the right to switch off addictive design, and a likely regulation form (tracker).
+  - The Spinnova–Outlast LOI (2026-11-05) is confirmed on the primary newswire (MFN).
+- **Added**:
+  - Infinited Fiber CEO date (2026-01-09), board change (2026-02-09), Kemi permit appeal phase (2026-03-23) and the reported expiry of the Stora Enso lease.
+  - Woamy €1 m seed round (2023) and investment by Secto Design.
+  - R2B details: 80% rate, €400,000–700,000 projects, €25 m across 2026.
+  - Business Finland creative industries Co-Innovation call details (closed; decisions October 2026).
+  - NEB 2027 neighbourhood topics (due 2027-12-01, €10.5 m).
+  - Get Funded 2026 investor panel; Slush 2026 scale.
+- **Unchanged**: RedLynx outcome still pending (no news found); no Finnish games 2025 turnover; no 2027 Business Finland calls published; Eurostat enterprise data still 2020.
+- **Removed**: the EIT Culture & Creativity Business Plan 2026 item (due 2026-11-16, internal to the KIC) is no longer listed.
 
 ## Sources
+- https://ec.europa.eu/eurostat/databrowser/view/cult_emp_sex/default/table
+- https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table
+- https://www.videogameseurope.eu/publication/2025-all-about-video-games-european-key-facts/
+- https://neogames.fi/wp-content/uploads/2025/08/FinnishGameIndustryReport2024.pdf
 - https://www.pocketgamer.biz/finnish-games-industrys-revenue-and-profit-declines-in-2024-despite-supercell-boon
 - http://www.pocketgamer.biz/neogames-the-state-of-finlands-games-industry-in-2026/
-- https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/
-- https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/
-- https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/
-- https://www.textileworld.com/?p=112068
-- https://playfinland.fi/access-to-funding
+- https://neogames.fi/weekly-news-46-26/
+- https://neogames.fi/weekly-news-45-26/
+- https://neogames.fi/weekly-news-43-26/
+- https://neogames.fi/statement-new-eu-regulation-threatens-the-finnish-game-industry-and-the-european-game-industry/
+- https://commission.europa.eu/law/law-topic/consumer-protection-law/digital-fairness-act_en
+- https://news.europawire.eu/european-commission-proposes-digital-fairness-act-and-stronger-eu-consumer-law-enforcement/eu-press-release/2026/11/12/15/28/04/187330/
+- https://www.medialaws.eu/digital-fairness-act-legislative-tracker/
+- https://vgtimes.com/articles/174761-digital-fairness-act-loot-boxes.html
+- https://euratex.eu/facts-and-key-figures/
 - https://euratex.eu/sustainable-businesses/circular-economy/textiles-epr-europe/
-- https://neogames.fi/?p=27145
-- Eurostat cult_ent_val (2020 data)
-- EU Funding & Tenders portal topic pages (IDs listed above)
+- https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales
+- https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date
+- https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new
+- https://www.aalto.fi/en/news/design-at-the-start-of-the-supply-chain-aalto-university-leads-a-major-eu-project-to-transform
+- https://www.aalto.fi/en/news/speeding-up-the-textile-revolution-with-ioncellr
+- https://aalto.fi/en/news/aalto-university-becomes-a-founding-partner-in-ioncell-oy
+- https://www.aalto.fi/en/news/aalto-university-and-vtt-collaborate-to-develop-novel-textile-fibres
+- https://www.aalto.fi/en/innovation-portfolio/woamy
+- https://innovation.aalto.fi/woamy-oy-closes-eu1-million-seed-round
+- https://www.aalto.fi/en/news/living-breathing-buildings-bio-foams-could-transform-the-way-we-build
+- https://www.sectodesign.fi/news/news-events/secto-design-invests-in-bio-based-packaging-production
+- https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/
+- https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/
+- https://www.gamedeveloper.com/business/ubisoft-to-close-trials-studio-redlynx-downsize-ubisoft-singapore
+- https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/
+- https://playfinland.fi/access-to-funding
+- https://slush.org/startups
+- https://portugaltextil.com/en/spinnova-moves-ahead-with-us-stock-market-listing/
+- https://www.inderes.fi/en/research/spinnova-h126-path-to-commercialization-moves-forward-little-by-little
+- https://www.textileworld.com/textile-world/fiber-world/2026/04/spinnova-begins-trial-runs-at-woodspin-demo-factory-and-prepares-to-restart-production/
+- https://www.textileworld.com/textile-world/2026/09/spinnova-signs-letter-of-intent-regarding-potential-acquisition-of-tearfil-and-related-eur-1-5-million-bridge-loan-financing/
+- https://mfn.se/a/spinnova/spinnova-signs-letter-of-intent-with-outlast-to-develop-spinnova-r-fibre-for-insulation-and-temperature-regulation
+- https://infinitedfiber.com/?p=7774
+- https://investors.infinitedfiber.com/investor-news/
+- https://worldwide.espacenet.com/patent/search?q=pn%3DFI20236268A1
+- https://worldwide.espacenet.com/patent/search?q=pn%3DCN121065838A
+- https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en
+- https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en
+- https://evolutioneurope.eu/blog/eic-work-programme-2027-draft/
+- https://www.lovguiden.dk/en/det-offentlige/europa-kommissionen-press-corner/2026-11-05-eu-innovation-council-sets-aside-1-8-billion-for-deep-tech-in-2027
+- https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/
+- https://www.businessfinland.fi/en/services/funding/calls/2026/research-to-business--funding-call-12026/
+- https://www.businessfinland.fi/en/services/funding/calls/2026/funding-call-2026-creative-industry-companies/
+- https://www.businessfinland.fi/en/services/funding/calls/2026/funding-call-co-innovation-creative-industries/
+- https://www.businessfinland.fi/en/services/funding/calls/2026/rise-to-challenge--funding-call-2026/
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-08
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-02
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-03
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-05
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-02-heritage-09-two-stage
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-participation-02
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2027-01-participation-02
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-01-09
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-human-01
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-devvgim
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-innovbusmod
+- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2027-innovlab
+- Finnish Trade Register (PRH/YTJ) lookup for Woamy Oy; OpenAlex research trend and EPO patent search via the data tools (no public link)

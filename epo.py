@@ -7,6 +7,7 @@ environment or in a .env file in this folder. See docs/epo-ops.md for how OPS wo
 import base64
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -18,15 +19,20 @@ ENV_FILE = Path(__file__).parent / ".env"
 _token = {"value": None, "expires": 0}
 
 
-def credentials():
-    """EPO_KEY and EPO_SECRET from the environment or .env, or None if they are missing."""
+def setting(name):
+    """A key from the environment or the .env file in this folder, or None."""
     values = dict(os.environ)
     if ENV_FILE.exists():
         for line in ENV_FILE.read_text().splitlines():
             if "=" in line and not line.lstrip().startswith("#"):
                 key, value = line.split("=", 1)
                 values.setdefault(key.strip(), value.strip().strip('"'))
-    key, secret = values.get("EPO_KEY"), values.get("EPO_SECRET")
+    return values.get(name) or None
+
+
+def credentials():
+    """EPO_KEY and EPO_SECRET, or None if they are missing."""
+    key, secret = setting("EPO_KEY"), setting("EPO_SECRET")
     return (key, secret) if key and secret else None
 
 
@@ -76,10 +82,15 @@ def _text(value):
     return " ".join(v.get("$", "") for v in _list(value) if isinstance(v, dict)).strip()
 
 
+def _day(yyyymmdd):
+    return f"{yyyymmdd[:4]}-{yyyymmdd[4:6]}-{yyyymmdd[6:]}" if len(yyyymmdd) == 8 else yyyymmdd
+
+
 def search(cql, count=25, start=1):
     """Search published patents with a CQL query. Returns (total hits, list of patents).
 
-    Each patent: number, kind, title, applicants, inventors, date, cpc, abstract and an Espacenet link.
+    Each patent: number, kind, family (the same for every publication of one invention), title, applicants,
+    inventors, date (published), priority (first filing), cpc, abstract and an Espacenet link.
     OPS returns at most 100 results per request and 2,000 per query; use start to page (1, 101, 201 ...).
     """
     time.sleep(max(0, _token.get("last_search", 0) + 12 - time.time()))  # at most 5 searches a minute, OPS's busiest limit
@@ -91,6 +102,8 @@ def search(cql, count=25, start=1):
     patents = []
     for document in _list(found["ops:search-result"].get("exchange-documents")):
         doc = document["exchange-document"]
+        if not all(k in doc for k in ("@country", "@doc-number", "@kind")):  # OPS sometimes lists an entry it has no data for
+            continue
         biblio = doc.get("bibliographic-data", {})
         number = f"{doc['@country']}{doc['@doc-number']}{doc['@kind']}"
         ids = _list(biblio.get("publication-reference", {}).get("document-id"))
@@ -105,12 +118,32 @@ def search(cql, count=25, start=1):
         for c in _list(biblio.get("patent-classifications", {}).get("patent-classification")):
             parts = [c.get(k, {}).get("$", "") for k in ("section", "class", "subclass", "main-group")]
             cpc.append(f"{''.join(parts[:3])}{parts[3]}/{c.get('subgroup', {}).get('$', '')}")
-        abstracts = _list(doc.get("abstract"))
-        abstract = next((_text(a.get("p")) for a in abstracts if a.get("@lang") == "en"), "")
+        abstracts = _list(doc.get("abstract"))  # English if there is one, otherwise whatever language it has
+        abstract = next((_text(a.get("p")) for a in abstracts if a.get("@lang") == "en"), _text(abstracts[0].get("p")) if abstracts else "")
+        filed = [i["date"]["$"] for claim in _list(biblio.get("priority-claims", {}).get("priority-claim"))
+                 for i in _list(claim.get("document-id")) if "date" in i]
+        filed += [i["date"]["$"] for i in _list(biblio.get("application-reference", {}).get("document-id")) if "date" in i]
         patents.append({
-            "number": number, "kind": doc["@kind"], "title": title, "applicants": applicants, "inventors": inventors,
-            "cpc": sorted(set(cpc))[:5],
-            "date": f"{date[:4]}-{date[4:6]}-{date[6:]}" if len(date) == 8 else date, "abstract": abstract[:500],
+            "number": number, "kind": doc["@kind"], "family": doc.get("@family-id") or number, "title": title,
+            "applicants": applicants, "inventors": inventors, "cpc": sorted(set(cpc)),
+            "date": _day(date), "priority": _day(min(filed, default="")), "abstract": abstract,
             "link": f"https://worldwide.espacenet.com/patent/search?q=pn%3D{number}",
         })
     return int(found.get("@total-result-count", 0)), patents
+
+
+def details(number):
+    """One patent in depth, by publication number (EP3544099A1 or EP3544099): every publication in its family with
+    that publication's legal events, and the claims. A family member with kind B is a granted patent."""
+    epodoc = re.sub(r"[A-Z]\d?$", "", re.sub(r"[^A-Z0-9]", "", number.upper()))
+    family = _get(f"family/publication/epodoc/{epodoc}/legal", {}) or {}
+    members = []
+    for member in _list(family.get("ops:world-patent-data", {}).get("ops:patent-family", {}).get("ops:family-member")):
+        doc = next(i for i in _list(member["publication-reference"]["document-id"]) if i["@document-id-type"] == "docdb")
+        events = [(e.get("ops:L007EP", {}).get("$", ""), e["@code"].strip(), e["@desc"]) for e in _list(member.get("ops:legal"))]
+        members.append({"number": f"{doc['country']['$']}{doc['doc-number']['$']}{doc['kind']['$']}", "kind": doc["kind"]["$"],
+                        "date": _day(doc["date"]["$"]), "events": sorted(events)})
+    text = _get(f"published-data/publication/epodoc/{epodoc}/claims", {}) or {}
+    claims = text.get("ops:world-patent-data", {}).get("ftxt:fulltext-documents", {}).get("ftxt:fulltext-document", {}).get("claims")
+    return {"number": epodoc, "members": sorted(members, key=lambda m: m["date"]),
+            "claims": "\n".join(c["$"] for claim in _list(claims)[:1] for c in _list(claim["claim"]["claim-text"]))}

@@ -7,17 +7,17 @@ Research from 24 October 2026 into free substitutes for the paid tools Aalto Inn
 | Tool | Source | What it gives | Access |
 |---|---|---|---|
 | `google_patent` | Google Patents patent pages | One patent: owner, inventors, dates, legal status, countries, CPC classes, timeline, abstract, claims, cited, citing and similar patents | No key. Google's rules allow `/patent/` pages but forbid automated search, so agents find patent numbers with web search |
-| `search_papers` | OpenAlex | Papers: title, year, citations, authors, institutions, funders, abstract | No key: about 100 searches a day, shared per IP address. Free key (`OPENALEX_API_KEY`): about 1,000 |
+| `search_papers`, `research_trend` | OpenAlex | Papers: title, year, citations, authors, institutions, funders, abstract. Trend: papers per year, most active institutions, Aalto's papers | No key: about 100 searches a day, shared per IP address. Free key (`OPENALEX_API_KEY`): about 1,000 |
 | `eu_funding_calls`, `eu_call_details` | EU Funding & Tenders Portal | Open and upcoming EU calls; full call text, budget and deadlines | No key (public key "SEDIA"), tested. The portal's open/closed labels are unreliable, so the tool filters by deadline |
 | `finnish_companies` | PRH / YTJ trade register | Finnish companies by name, industry code (TOL 2008) or city. No financial figures | No key, tested |
-| `eurostat_search`, `eurostat_data` | Eurostat | Official EU statistics, such as the number of enterprises and turnover per industry. The detailed product-sales data (PRODCOM) is not in this API | No key, tested |
+| `eurostat_search`, `eurostat_data` | Eurostat | Official EU statistics, such as the number of enterprises and turnover per industry. `eurostat_data` also reads two product-level datasets from Eurostat's Comext service: DS-059358 (PRODCOM: sold production, exports and imports per product) and DS-045409 (EU trade per product). Some PRODCOM figures are confidential and come back empty | No key, tested |
+| `epo_patents`, `epo_patent` | EPO Open Patent Services | Worldwide patent search; one patent's publications (granted or not), family, legal events and claims. Also fills the terminal's patent database | Free key in `.env`, 4 GB a week. See [epo-ops.md](epo-ops.md) |
 | `research_projects` | OpenAIRE | Funded projects from the EU, the Research Council of Finland (funder code AKA) and other funders, with amounts | No key: 60 requests an hour. Free token: 7,200. Tested |
 
 ## Free, not connected yet
 
 | Source | What it gives | Access |
 |---|---|---|
-| EPO Open Patent Services | Worldwide patent data, legal status and families | Free key, 4 GB a week. The user chose not to use it |
 | Google Patents on BigQuery | Patent full text with SQL | Free sandbox, 1 TB of queries a month. Full-text searches use that up quickly |
 | USPTO Open Data Portal | US patents and applications | Free key, needs a USPTO.gov account (since June 2026) |
 | Semantic Scholar | Papers and citations | Free key on request, 1 request a second |

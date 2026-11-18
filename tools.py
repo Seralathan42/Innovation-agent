@@ -1,4 +1,4 @@
-"""Free data sources the agents can call as tools. None of them needs an API key.
+"""Free data sources the agents can call as tools. Only the EPO tools need a (free) key, in .env.
 
 To give an agent a tool, add the tool's name to the 'tools:' line at the top of its file in agents/.
 """
@@ -117,6 +117,34 @@ async def search_papers(args):
     return _reply("\n".join(lines))
 
 
+AALTO = "https://ror.org/020hwjq30"  # Aalto University's ID in OpenAlex
+
+
+@tool(
+    "research_trend",
+    "How active a research topic is, from OpenAlex: papers per year for the last 10 years, the institutions that "
+    "publish most on it, and Aalto University's own paper count with its most cited papers. Use short keyword queries. "
+    "Good evidence for whether a field is growing and how strong Aalto is in it.",
+    {"query": str},
+    annotations=READ_ONLY,
+)
+async def research_trend(args):
+    key = {"api_key": os.environ["OPENALEX_API_KEY"]} if os.environ.get("OPENALEX_API_KEY") else {}
+
+    async def works(**params):
+        return json.loads(await _fetch("https://api.openalex.org/works", {"search": args["query"], **params, **key}))
+
+    years, places, aalto = await asyncio.gather(
+        works(group_by="publication_year"), works(group_by="authorships.institutions.id"),
+        works(filter=f"authorships.institutions.ror:{AALTO}", sort="cited_by_count:desc", per_page=5))
+    per_year = sorted((g["key"], g["count"]) for g in years["group_by"])[-10:]
+    lines = [f"{years['meta']['count']} papers match. Per year: " + ", ".join(f"{y}: {n}" for y, n in per_year),
+             "Most active institutions: " + ", ".join(f"{g['key_display_name']} ({g['count']})" for g in places["group_by"][:10]),
+             f"Aalto University: {aalto['meta']['count']} papers. Most cited:"]
+    lines += [f"- {w['display_name']} ({w['publication_year']}, cited {w['cited_by_count']} times) {w['doi'] or w['id']}" for w in aalto["results"]]
+    return _reply("\n".join(lines))
+
+
 # ---------- EU funding calls: Funding & Tenders Portal ----------
 
 @tool(
@@ -185,6 +213,17 @@ Budget:
 {_clean(details.get('description'))[:6000]}
 
 Conditions: {_clean(details.get('conditions'))[:2000]}""")
+
+
+def eu_call_facts(topic_id):
+    """One EU call topic's deadline and budget, straight from the portal: its next deadline (its last one if all have
+    passed) and its total budget. Used to check what an agent wrote about a call."""
+    details = json.loads(_get(f"https://ec.europa.eu/info/funding-tenders/opportunities/data/topicDetails/{topic_id.lower()}.json"))["TopicDetails"]
+    days = sorted(date.fromtimestamp(int(d) / 1000).isoformat() for a in details.get("actions") or [] for d in a.get("deadlineDates") or [])
+    coming = [d for d in days if d >= date.today().isoformat()]
+    budget = sum(int(v) for action in (details.get("budgetOverviewJSONItem") or {}).get("budgetTopicActionMap", {}).values()
+                 for b in action if b["action"].startswith(details["identifier"]) for v in b["budgetYearMap"].values())
+    return {"deadline": coming[0] if coming else days[-1] if days else "", "budget": f"EUR {budget:,}" if budget else ""}
 
 
 # ---------- Finnish companies: PRH / YTJ trade register ----------
@@ -256,7 +295,12 @@ async def eurostat_search(args):
     "eurostat_data",
     "Get numbers from one Eurostat dataset. 'filters' maps dimension codes to values, e.g. "
     '{"geo": ["FI", "SE", "EU27_2020"], "sinceTimePeriod": "2020"}. Start with a narrow request such as '
-    '{"geo": "FI", "lastTimePeriod": "1"} to see the dimensions, then ask for what you need. Returns up to 300 values.',
+    '{"geo": "FI", "lastTimePeriod": "1"} to see the dimensions, then ask for what you need. Returns up to 300 values. '
+    "Two product-level datasets give real market sizes and always need narrow filters: DS-059358 is PRODCOM, sold "
+    'production, exports and imports per product, e.g. {"reporter": "EU27_2020", "product": "27202300", "indicators": '
+    '"PRODVAL", "time": "2023"} with an 8-digit PRODCOM code; DS-045409 is EU trade per product, e.g. {"reporter": "FI", '
+    '"partner": "WORLD", "product": "850760", "flow": "2", "freq": "A", "time": "2025"} with an HS or CN code '
+    "(flow 1 = import, 2 = export). Find product codes with web search.",
     {
         "type": "object",
         "properties": {"dataset": {"type": "string"}, "filters": {"type": "object"}},
@@ -266,7 +310,8 @@ async def eurostat_search(args):
 )
 async def eurostat_data(args):
     data = json.loads(await _fetch(
-        f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{args['dataset']}",
+        f"https://ec.europa.eu/eurostat/api/{'comext/' if args['dataset'].upper().startswith('DS-') else ''}"
+        f"dissemination/statistics/1.0/data/{args['dataset']}",
         {"lang": "en", **(args.get("filters") or {})},
     ))
     dims = [(d, data["dimension"][d]["category"]) for d in data["id"]]
@@ -280,6 +325,8 @@ async def eurostat_data(args):
             if size > 1:
                 parts.append(f"{d}={cat['label'][c[i]]}")
         lines.append(f"{', '.join(reversed(parts))}: {value}")
+    if not data["value"]:
+        lines.append("No values. The figure may be confidential or not collected; check the codes and try other years.")
     return _reply("\n".join(lines))
 
 
@@ -334,7 +381,55 @@ async def epo_patents(args):
     return _reply("\n".join(lines))
 
 
+@tool(
+    "epo_patent",
+    "Look up one patent at the European Patent Office by publication number, e.g. EP3544099A1 or WO2019180077 (needs "
+    "EPO keys in .env). Returns every publication in its patent family (which countries, and whether any was granted: "
+    "kind B), the latest legal events for each (grant, lapse, withdrawal, fees) and the claims. Use it to check whether "
+    "a similar patent was granted and is still in force.",
+    {"number": str},
+    annotations=READ_ONLY,
+)
+async def epo_patent(args):
+    found = await asyncio.to_thread(epo.details, args["number"])
+    if not found["members"]:
+        return _reply(f"No patent family found for {found['number']}.")
+    granted = [m["number"] for m in found["members"] if m["kind"].startswith("B")]
+    lines = [f"{found['number']}: family of {len(found['members'])} publications. "
+             f"Granted: {', '.join(granted) if granted else 'no granted publication in the family yet'}.",
+             f"Link: https://worldwide.espacenet.com/patent/search?q=pn%3D{found['number']}"]
+    for m in found["members"]:
+        events = "; ".join(f"{day} {code} {text}" for day, code, text in m["events"][-6:]) or "none recorded"
+        lines.append(f"- {m['number']} ({m['date']}). Latest legal events: {events}")
+    return _reply("\n".join(lines) + f"\n\nClaims:\n{found['claims'][:6000] or 'not available from the EPO for this publication'}")
+
+
+def images_on(url):
+    """The pictures on a page as (alt text, absolute link), with the page's own preview image (og:image) first."""
+    page = _get(url)
+    found = [("page preview image", m) for m in re.findall(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', page)]
+    found += [("site icon", m) for m in re.findall(r'<link[^>]+rel=["\']apple-touch-icon[^"\']*["\'][^>]+href=["\']([^"\']+)', page)]
+    for tag in re.findall(r"<img\b[^>]*>", page, re.I):
+        src = re.search(r'\s(?:data-src|data-lazy-src|src)=["\']([^"\']+)', tag) or re.search(r'srcset=["\']([^\s"\']+)', tag)
+        alt = re.search(r'\salt=["\']([^"\']*)', tag)
+        if src and not src.group(1).startswith("data:"):
+            found.append((html.unescape(alt.group(1)) if alt else "", urllib.parse.urljoin(url, html.unescape(src.group(1)))))
+    return list(dict.fromkeys((alt, urllib.parse.urljoin(url, html.unescape(src))) for alt, src in found))
+
+
+@tool(
+    "page_images",
+    "List the pictures on a web page with their alt text and full links, for finding photos of people (on team, about "
+    "or press pages, or Wikipedia) or a company logo. Match a photo to a person by the alt text or the file name.",
+    {"url": str},
+    annotations=READ_ONLY,
+)
+async def page_images(args):
+    found = await asyncio.to_thread(images_on, args["url"])
+    return _reply("\n".join(f"- {alt or '(no alt text)'}: {src}" for alt, src in found[:80]) or "No pictures found on this page.")
+
+
 TOOLS = {t.name: t for t in [
-    google_patent, search_papers, eu_funding_calls, eu_call_details,
-    finnish_companies, eurostat_search, eurostat_data, research_projects, epo_patents,
+    google_patent, search_papers, research_trend, eu_funding_calls, eu_call_details,
+    finnish_companies, eurostat_search, eurostat_data, research_projects, epo_patents, epo_patent, page_images,
 ]}

@@ -1,0 +1,364 @@
+{
+  "headline": "European wireless and electronics is riding an AI-driven chip and optical upcycle (global Q3 2026 chip sales $517.7B) while 6G moves earlier to around 2029. Finland is pushing 6G at the ITU and in defence, and Nokia is moving into AI infrastructure through the Nordic-Baltic AI Gigafactory Northern bid (16 November 2026).",
+  "metrics": [
+    {
+      "label": "Finland NACE C26 (computer, electronic and optical products) net turnover",
+      "value": "€17,883.5M (11.5% of manufacturing turnover)",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "Finland NACE C26 enterprises and persons employed",
+      "value": "737 enterprises; 23,042 persons employed (-2.0% on the year)",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "EU27 NACE C26 enterprises and employment",
+      "value": "36,400 enterprises (2023); about 1.1M persons employed; €12,609.5M gross investment in tangible assets (2024)",
+      "year": "2023-2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "Finland trade in integrated circuits (HS 8542)",
+      "value": "Exports €496.4M, imports €522.8M; telecom apparatus (HS 8517) exports €471.5M",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "Nokia net sales Q3 2026",
+      "value": "€5,154M (+10%); AI and cloud customer sales +123%",
+      "year": "2026",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "label": "Global semiconductor sales Q3 2026 (WSTS via SIA)",
+      "value": "$517.7B (+24.1% on Q2); Europe +102.5% year on year in September",
+      "year": "2026",
+      "source": "https://www.eetasia.com/global-semiconductor-sales-up-24-to-517-7b-in-3q-2026/"
+    },
+    {
+      "label": "SNS JU 6G industrial innovation projects funded",
+      "value": "About €22M across 5 projects; final SNS call of about €220M expected January 2027",
+      "year": "2026",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "label": "Aalto spinout funding, all sectors",
+      "value": "Over €500M in H1 2026 (third in Europe); about €2.6B since 2010",
+      "year": "2026",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-16",
+      "title": "Nokia, Nscale, Skeleton, Telia and Verda form AI Gigafactory Northern",
+      "detail": "Five-company consortium plans to bid in the EuroHPC JU AI Gigafactory tender with federated sites in Oulu (FI), Iru (EE), Valmiera (LV) and a Swedish site still to be chosen. VTT and KTH support it. Nokia supplies connectivity and network infrastructure. No investment figure has been published, and the tender has not been awarded.",
+      "impact": "positive",
+      "source": "https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/"
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Nokia signs patent licence with ASUS and ends litigation",
+      "detail": "Multi-year licence covering Nokia's video technologies. Terms are confidential. It confirms Nokia Technologies' licensing revenue model. The Nokia page could not be opened; details come from search summaries.",
+      "impact": "positive",
+      "source": "https://www.nokia.com/newsroom/nokia-signs-patent-license-agreement-with-asus/"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "Nokia donates €1.5M to Aalto and expands joint R&D",
+      "detail": "About €1.3M a year in joint R&D on AI, 6G, semiconductors and radio. Expect more invention disclosures in Aalto's wireless groups.",
+      "impact": "positive",
+      "source": "https://www.mobileeurope.co.uk/nokia-aalto-university/"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Ericsson launches network-based drone detection, trialled in Helsinki",
+      "detail": "Mobile-network sensing trialled with Erillisverkot. Pilots are expected in 2027 and wider roll-out from 2028. This is the first commercial step for 6G-style sensing.",
+      "impact": "positive",
+      "source": "https://evertiq.com/news/2026-11-10-ericsson-turns-mobile-networks-into-drone-detection-systems"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "EIC Accelerator 2027 short-proposal call opens",
+      "detail": "The EU portal shows the 2027 EIC Accelerator short-proposal topic open from 10 November 2026 (continuous submission, portal end date 16 December 2027). EIC Pathfinder Open 2027 (€166M) opens 25 November 2026. A third-party briefing on the draft 2027 work programme reports about €1.8B in total, four Accelerator cut-offs instead of six, and EIC Transition limited to single applicants; these details are provisional. An EIC information day is set for 19 November 2026.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01"
+    },
+    {
+      "date": "2026-11-09",
+      "title": "Finland makes 6G its top priority at the ITU Plenipotentiary in Doha",
+      "detail": "The conference runs from 9 to 27 November 2026. Finland, with industry and partner countries, drafted a resolution supporting global 6G development and roll-out, and is also raising satellite, AI, submarine cable resilience and GNSS/mobile interference from Russia. Nokia is part of the delegation.",
+      "impact": "positive",
+      "source": "https://valtioneuvosto.fi/en/-/1410829/international-telecommunication-union-sets-the-global-direction-for-digital-technologies-"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Global chip sales reach $517.7B in Q3 2026; Europe about doubles",
+      "detail": "WSTS data published by SIA show global sales of $517.7B in Q3 2026 (+24.1% on Q2) and $172.6B in September (+146.8% year on year). Europe's September sales were up 102.5% year on year. ESIA, as reported by Semiconductor Digest, puts European Q3 sales at $28.6B. Memory led European growth (+392%), so the upturn is mostly AI-driven demand and pricing. This predates the last update but was not in the file.",
+      "impact": "positive",
+      "source": "https://www.eetasia.com/global-semiconductor-sales-up-24-to-517-7b-in-3q-2026/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Industry at Helsinki 6G summit expects commercial 6G in 2029",
+      "detail": "That is two years earlier than the earlier 2030-31 plan, which shortens the window for pre-standard 6G inventions to reach standards and products.",
+      "impact": "positive",
+      "source": "https://www.6gflagship.com/news/6g-is-coming-sooner-than-planned-industry-tells-helsinki-summit/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Aalto ranks third in Europe for spinout funding",
+      "detail": "Aalto spinouts raised over €500M in H1 2026 (mostly ICEYE), behind Oxford and Cambridge. Eight research-based spinouts have been launched so far in 2026, and Aalto targets 20 a year and a doubling of invention disclosures and patents between 2025 and 2030. Not in the previous file.",
+      "impact": "positive",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Business Finland launches growth projects for space, semiconductors and photonics, and AI in manufacturing",
+      "detail": "The semiconductor and photonics project is a coordination and market-access vehicle: it helps firms find partners, join EU cooperation and reach pilot lines. It is not a direct funding award, and no budget was stated.",
+      "impact": "positive",
+      "source": "https://dealroom.co/news/169137-finland-launches-three-growth-projects-to-boost-space-chips-and-factory/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Ericsson and Telia Sweden sign 6G MoU",
+      "detail": "The two companies signed a memorandum of understanding to speed up 6G development, per eeNews Europe's coverage. I did not open the original article.",
+      "impact": "positive",
+      "source": "https://www.eenewseurope.com/en/news/"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "6G-VERSUS starts year-long off-grid base station pilot in Arctic Finland",
+      "detail": "Coordinated by the University of Oulu, this is one of six European pilots. It combines solar, wind, battery and hydrogen fuel cell power with AI energy and traffic management, from October 2026 for one year.",
+      "impact": "neutral",
+      "source": "https://www.6gflagship.com/news/off-grid-base-station-pilot-finland/"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "Telia Sweden and Ericsson sign 6G memorandum with upper 6 GHz demo",
+      "detail": "Pre-standard 6G trials are moving into the upper 6 GHz and 7 GHz bands.",
+      "impact": "positive",
+      "source": "https://www.ericsson.com/en/news/2026/11/telia_sweden_and_ericsson_collaborate_on_the_path_to_6g"
+    },
+    {
+      "date": "2026-10-30",
+      "title": "SNS JU presents its last 6G work programme for 2027",
+      "detail": "A third-party summary of an SNS JU presentation in Paris (28 October 2026) reports a 2027 work programme of about €222M across 17 topics, with the call expected to open in January 2027 and close by the end of April 2027, subject to Governing Board adoption expected in December 2026. The page could not be opened this run, so the figures come from the search summary. The call is not yet in the EU call database.",
+      "impact": "positive",
+      "source": "https://www.lovguiden.dk/en/det-offentlige/smart-networks-and-services-joint-undertaking/2026-10-30-sns-ju-praesenterede-6g-midler-og-arbejdsprogram-2027-i-paris"
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Nokia Q3 2026 results",
+      "detail": "Net sales were €5,154M (+10%). AI and cloud customer sales rose 123%, IP Networks 43% and Optical 18%. Operating profit outlook for 2026 is €2.1–2.6B. The date is the report date, not checked against the release page.",
+      "impact": "positive",
+      "source": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/"
+    },
+    {
+      "date": "2026-10-25",
+      "title": "Chips Act 2.0: Irish Presidency compromise text, still no positions",
+      "detail": "Parliament's legislative tracker (updated 25 October 2026) confirms the Council policy debate was on 24 September 2026 and says the Irish Presidency presented a first compromise text on 12 October 2026. ITRE rapporteur Oliver Schenk was appointed on 31 August 2026. No Council general approach or Parliament vote is scheduled. A Council document dated 6 November 2026 exists but could not be read.",
+      "impact": "neutral",
+      "source": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-chips-act-ii"
+    },
+    {
+      "date": "2026-10-21",
+      "title": "Aalto spinout Coherence Quantum raises €2.78M seed",
+      "detail": "Round led by Lifeline Ventures for cryogenic control hardware for solid-state quantum processors.",
+      "impact": "positive",
+      "source": "https://www.aalto.fi/en/news/aalto-universitys-newest-quantum-hardware-spinout-announces-eu28m-seed-funding-round"
+    },
+    {
+      "date": "2026-10-21",
+      "title": "Photon Bridge (Eindhoven) raises €10M for laser sources for AI optical links",
+      "detail": "Co-led by Amadeus APEX Technology Fund and 360 Capital. Samples are due in 2027 and volume production in 2028. This is a benchmark round for European photonics spin-offs.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/10/21/dutch-photonics-startup-photon-bridge-raises-eur10m-to-tackle-ais-looming-laser-bottleneck/"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "SNS JU funds five 6G projects worth about €22M",
+      "detail": "The projects turn 6G research into industrial innovation. A further call of about €220M is reported for January 2027. The exact publication date was not checked, so this date is approximate.",
+      "impact": "positive",
+      "source": "https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Chips Act 2.0 still in early negotiation",
+      "detail": "The Council held a policy debate at the Competitiveness Council; one source says 24 September, another 24 October. Member States are divided on budget, technology priorities, EU preference and advanced manufacturing. ITRE reportedly named MEP Oliver Schenk as rapporteur. No Council general approach or Parliament position was found. The date is approximate.",
+      "impact": "neutral",
+      "source": "https://www.semi.org/sites/semi.org/files/2026-09/SEMI_Europe_July-August_EU_Policy_Brief.pdf"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-MSCA-2026-DN-01-01",
+      "title": "MSCA Doctoral Networks 2026 (incl. Industrial Doctorates)",
+      "deadline": "2026-11-24",
+      "budget": "EUR 1,884,101,538",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-msca-2026-dn-01-01"
+    },
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-AI1-SG",
+      "title": "AI chip demonstrators for EU compute infrastructure",
+      "deadline": "2026-12-01",
+      "budget": "EUR 10,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-ai1-sg"
+    },
+    {
+      "id": "DIGITAL-JU-CHIPS-2026-SG-JAPAN",
+      "title": "International collaboration EU and Japan on semiconductors",
+      "deadline": "2026-12-08",
+      "budget": "EUR 5,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-sg-japan"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research through the innovation journey",
+      "deadline": "2027-01-28",
+      "budget": "EUR 32,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "id": "HORIZON-EIC-2027-PATHFINDEROPEN-two-stage",
+      "title": "EIC Pathfinder Open 2027 (stage 1 2027-02-25, stage 2 2027-09-16)",
+      "deadline": "2027-02-25",
+      "budget": "EUR 166,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage"
+    },
+    {
+      "id": "HORIZON-CL4-2027-05-DIGITAL-EMERGING-03",
+      "title": "Advanced integrated photonic devices for extended features and ultra-low power consumption (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "EUR 25,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-05-digital-emerging-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-HUMAN-01",
+      "title": "Advanced and innovative hardware components for Virtual Worlds (RIA)",
+      "deadline": "2027-03-18",
+      "budget": "EUR 39,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-human-01"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-DATA-08",
+      "title": "Demand-side 3C pilot demonstrators on converged Telco Edge Cloud (IA)",
+      "deadline": "2027-03-18",
+      "budget": "EUR 38,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-data-08"
+    },
+    {
+      "id": "HORIZON-EIC-2027-ACCELERATOR-01",
+      "title": "EIC Accelerator 2027 short proposals (continuous; first full-proposal cut-off reported as 2027-01-20)",
+      "deadline": "2027-12-16",
+      "budget": "not published",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01"
+    },
+    {
+      "id": "HORIZON-EIC-2027-STEP",
+      "title": "EIC STEP Scale Up 2027 (equity €10–30M)",
+      "deadline": "2027-11-24",
+      "budget": "EUR 290,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-step"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Nokia",
+      "country": "Finland",
+      "what": "Mobile networks, optical and IP, 6G research, patent licensing. Q3 2026 sales €5.15B. AI Gigafactory Northern partner and Aalto R&D partner.",
+      "link": "https://www.nokia.com"
+    },
+    {
+      "name": "Ericsson",
+      "country": "Sweden",
+      "what": "Mobile networks; 6G pre-standard trials with Telia; network-based drone detection trialled in Helsinki",
+      "link": "https://www.ericsson.com"
+    },
+    {
+      "name": "Vexlum",
+      "country": "Finland",
+      "what": "Semiconductor (VECSEL) lasers for quantum and space; €10M round in 2026 including an EIC Accelerator grant",
+      "link": "https://www.eu-startups.com/2026/02/vexlum-raises-e10-million-to-scale-semiconductor-laser-manufacturing-for-quantum-and-space-applications/"
+    },
+    {
+      "name": "Agate Sensors",
+      "country": "Finland",
+      "what": "Aalto spin-out; tunable spectral imaging sensors; €5.6M seed and grants (2025)",
+      "link": "https://www.agatesensors.com/blog/agate-sensors-raises-5.6m"
+    },
+    {
+      "name": "Metaktik",
+      "country": "Finland",
+      "what": "Aalto spin-off (2026) making metasurface antennas for satellite and drone links; €1M pre-seed from Maki.vc",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/metaktik"
+    },
+    {
+      "name": "Coherence Quantum",
+      "country": "Finland",
+      "what": "Aalto spin-off (2026) making cryogenic control electronics for quantum processors; €2.78M seed",
+      "link": "https://www.aalto.fi/en/news/aalto-universitys-newest-quantum-hardware-spinout-announces-eu28m-seed-funding-round"
+    },
+    {
+      "name": "Detection Technology",
+      "country": "Finland",
+      "what": "X-ray detector and sensor solutions (listed company)",
+      "link": "https://www.deetee.com"
+    },
+    {
+      "name": "Aspocomp",
+      "country": "Finland",
+      "what": "High-tech PCBs for telecom, semiconductor and defence customers (listed company)",
+      "link": "https://www.aspocomp.com"
+    },
+    {
+      "name": "Photon Bridge",
+      "country": "Netherlands",
+      "what": "Laser sources for AI and telecom optical links; €10M round in October 2026; a benchmark for photonics spin-offs",
+      "link": "https://www.eu-startups.com/2026/10/eindhoven-based-photon-bridge-raises-e10-million-to-build-optical-engines-for-ai-and-telecom/"
+    },
+    {
+      "name": "VTT",
+      "country": "Finland",
+      "what": "State research centre; APECS chiplet and RF packaging pilot line; supports AI Gigafactory Northern",
+      "link": "https://www.eenewseurope.com/en/e29m-for-6g-chiplet-packaging-line-in-finland/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Department of Electronics and Nanoengineering (radio, antennas, metasurfaces, micro- and nanoelectronics)",
+      "link": "https://www.aalto.fi/en/department-of-electronics-and-nanoengineering"
+    },
+    {
+      "what": "Micronova cleanroom (shared with VTT) for semiconductor, MEMS and photonics fabrication",
+      "link": "https://www.micronova.fi"
+    },
+    {
+      "what": "Metaktik: metasurface antenna spin-off from the Space Technology Laboratory via Research to Business",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/metaktik"
+    },
+    {
+      "what": "Coherence Quantum: cryogenic hardware spin-off (2026)",
+      "link": "https://www.aalto.fi/en/news/aalto-universitys-newest-quantum-hardware-spinout-announces-eu28m-seed-funding-round"
+    },
+    {
+      "what": "Agate Sensors: spectral imaging sensor spin-out",
+      "link": "https://www.agatesensors.com/blog/agate-sensors-raises-5.6m"
+    },
+    {
+      "what": "Nokia–Aalto partnership: €1.5M donation and about €1.3M a year joint R&D on AI, 6G, semiconductors and radio",
+      "link": "https://www.mobileeurope.co.uk/nokia-aalto-university/"
+    },
+    {
+      "what": "Aalto Startup Center (incubation for research spin-offs)",
+      "link": "https://startupcenter.aalto.fi/"
+    },
+    {
+      "what": "Aalto patent application: passive metasurface for wireless signals (WO2026162876A1)",
+      "link": "https://patents.google.com/patent/WO2026162876A1/en"
+    }
+  ],
+  "updated": "2026-11-16T15:50"
+}
