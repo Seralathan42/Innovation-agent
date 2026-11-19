@@ -23,9 +23,10 @@ import sqlite3
 import sys
 import time
 import unicodedata
+from collections import Counter
 from datetime import date, datetime, timedelta
 
-from claude_agent_sdk import ResultMessage, query
+from claude_agent_sdk import HookMatcher, ResultMessage, query
 
 import epo
 import library
@@ -38,6 +39,7 @@ YEARS = (2012, 2021)  # old enough to see what happened since
 MAX_AUTHORS = 25  # bigger author lists are mostly international collaborations, not Aalto inventions
 CLOSE = 0.3  # a patent is close when it contains at least 30% of the paper's distinctive words (weighted by rarity)
 ACRIS = "https://research.api.aalto.fi/api/acris/v1"  # Aalto's gateway in front of ACRIS (Pure)
+DEPTH = {"WebSearch": 10, "WebFetch": 4, "epo_patents": 5, "search_papers": 2}  # the least an analysis must search before its verdict
 TYPES = ("contributiontojournal/article", "contributiontobookanthology/conference")  # journal and conference papers
 LIST_FIELDS = ("uuid,title.value,type.uri,publicationStatuses.current,publicationStatuses.publicationDate.year,"
                "totalNumberOfAuthors,totalScopusCitations,managingOrganisationalUnit.name.text.value,"
@@ -57,6 +59,8 @@ FACETS = {  # facet id -> (SQL for its value, JSON list column or None), as in p
 SORTS = {"promising": "p.own_patent ASC, p.closeness * (1 + p.companies) DESC", "overlap": "p.closeness DESC",
          "companies": "p.companies DESC, p.closeness DESC", "cited": "p.citations DESC", "analysed": "p.analysed DESC",
          "year": "p.year DESC"}
+COLUMNS = {"title": "p.title COLLATE NOCASE {d}", "closeness": "p.closeness {d}", "close_patents": "p.close_patents {d}",
+           "companies": "p.companies {d}", "verdict": "p.verdict IS NULL, p.verdict {d}"}
 
 VERDICTS = ["Missed opportunity", "Partly missed", "Followed up by Aalto or the authors", "No commercial use found"]
 ITEM = library.ITEM
@@ -97,6 +101,11 @@ paper's distinctive words that the patent also uses, so treat it as a hint, not 
 The local store is small: recent EP and WO patents in a few fields only. Most of what matters is probably not in it, \
 so do not rely on it. Search online for everything below, whether or not the screening found anything, and describe \
 the idea in several different wordings, since others often use other terms for the same thing.
+
+The advisor asked for this analysis because they want depth, so be thorough: plan on 25 or more searches. Cover every \
+step below, search each one in at least three wordings (technical terms, the application or product, and the \
+problem it solves), and open the most promising pages to read them. A verdict of "No commercial use found" needs the \
+same full search as any other. Your answer is refused until you have searched enough.
 
 Check it properly:
 1. Work out in plain words what the research could be sold as.
@@ -283,6 +292,25 @@ def screen_all(limit=2000):
     return len(papers)
 
 
+def depth_check():
+    """A hook that counts the agent's searches and sends its answer back until each tool in DEPTH was used enough."""
+    used = Counter()
+
+    async def hook(data, tool_use_id, context):
+        name = data["tool_name"].removeprefix("mcp__data__")
+        if name != "StructuredOutput":
+            used[name] += 1
+            return {}
+        short = [f"{tool} {used[tool]} of {least}" for tool, least in DEPTH.items() if used[tool] < least]
+        used["refused"] += 1
+        if not short or used["refused"] > 3:  # give up after three refusals rather than loop
+            return {}
+        return {"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "deny", "permissionDecisionReason":
+                f"Not yet: the search is too shallow for a verdict (searches so far, of the least needed: {', '.join(short)}). "
+                "Keep searching the steps you covered least, in new wordings, then return the result again."}}
+    return {"PreToolUse": [HookMatcher(hooks=[hook])]}, used
+
+
 async def analyse(paper_id):
     """Check one paper in depth with a Sonnet agent and save its verdict."""
     check_subscription()
@@ -297,16 +325,18 @@ async def analyse(paper_id):
         prompt = PROMPT.format(today=date.today(), matches=listed or "(no close patents in the local store)",
                                **{k: paper[k] for k in ("title", "year", "area", "link", "abstract")},
                                authors=", ".join(json.loads(paper["authors"])))
+        hooks, used = depth_check()
         options = agent_options(prompt, ["WebSearch", "WebFetch", "epo_patents", "epo_patent", "google_patent",
                                          "search_papers", "research_trend", "finnish_companies"],
-                                disallowed_tools=["Read"], output_format={"type": "json_schema", "schema": SCHEMA})
+                                disallowed_tools=["Read"], output_format={"type": "json_schema", "schema": SCHEMA},
+                                effort="high", hooks=hooks)
         result = None
         async for message in query(prompt="Review this paper now.", options=options):
             if isinstance(message, ResultMessage):
                 result = message
         if result is None or result.is_error or not result.structured_output:
             raise RuntimeError(result.errors or result.result if result else "no result")
-        found = result.structured_output
+        found = {**result.structured_output, "searches": sum(n for tool, n in used.items() if tool != "refused")}
         con.execute("UPDATE papers SET verdict = ?, analysis = ?, analysed = ? WHERE id = ?",
                     (found["verdict"], json.dumps(found, ensure_ascii=False), datetime.now().isoformat(timespec="minutes"), paper_id))
     finally:
@@ -339,7 +369,7 @@ def search(q="", include=None, exclude=None, sort="promising", find=None, limit=
                                           q, include or {}, exclude or {}, find or {}, only=facets, base="p.abstract IS NOT NULL")
     total = con.execute(f"SELECT count(*) FROM papers p{w}", args).fetchone()[0]
     items = [dict(r) for r in con.execute(f"SELECT id, title, year, area, link, citations, closeness, close_patents, companies, "
-                                          f"own_patent, verdict, analysing FROM papers p{w} ORDER BY {SORTS.get(sort, SORTS['promising'])} "
+                                          f"own_patent, verdict, analysing FROM papers p{w} ORDER BY {patents.order(sort, SORTS, COLUMNS, 'promising')} "
                                           f"LIMIT ?", args + [limit])]
     stored = con.execute("SELECT count(*) FROM papers WHERE abstract IS NOT NULL").fetchone()[0]
     waiting = con.execute("SELECT count(*) FROM papers WHERE abstract IS NULL").fetchone()[0]

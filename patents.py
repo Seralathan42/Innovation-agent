@@ -86,6 +86,18 @@ CPC_LEVEL = {"section": "substr(j.value, 1, 1)", "class": "substr(j.value, 1, 3)
 COUNTRY = "CASE WHEN j.value LIKE '% [__]' THEN substr(j.value, length(j.value) - 2, 2) END"
 SORTS = {"newest": "p.date DESC", "oldest": "p.date ASC", "title": "p.title ASC", "seen": "p.first_seen DESC, p.date DESC",
          "priority": "p.priority DESC"}
+COLUMNS = {"date": "p.date {d}", "sector": "p.sectors {d}", "title": "p.title {d}", "applicants": "p.applicants = '[]', p.applicants {d}"}
+COMPANY_COLUMNS = {"name": "p.name COLLATE NOCASE {d}", "country": "coalesce(p.country, '') = '', p.country {d}",
+                   "type": "p.type {d}", "sectors": "p.sectors {d}", "patents": "p.patents {d}, p.name",
+                   "latest": "coalesce(p.latest, '') = '', p.latest {d}"}
+
+
+def order(sort, sorts, columns, default):
+    """A named sort order, or "column:asc" / "column:desc" from a click on a table heading (empty values last)."""
+    column, _, direction = sort.partition(":")
+    if column in columns and direction in ("asc", "desc"):
+        return columns[column].format(d=direction.upper())
+    return sorts.get(sort, sorts[default])
 
 
 def db():
@@ -374,7 +386,7 @@ def search(q="", include=None, exclude=None, sort="newest", cpc_level="subclass"
         return _counted[key]
     total = con.execute(f"SELECT count(*) FROM families p{w}", args).fetchone()[0]
     items = [family_dict(r, codes) for r in con.execute(
-        f"SELECT * FROM families p{w} ORDER BY {SORTS.get(sort, SORTS['newest'])} LIMIT ?", args + [limit])]
+        f"SELECT * FROM families p{w} ORDER BY {order(sort, SORTS, COLUMNS, 'newest')} LIMIT ?", args + [limit])]
     stored = con.execute("SELECT count(*) FROM families").fetchone()[0]
     return {"total": total, "stored": stored, "items": items, "facets": counts}
 
@@ -455,7 +467,7 @@ def company_search(q="", include=None, exclude=None, sort="patents", find=None, 
     text = "p.name || ' ' || p.applicant || ' ' || p.what || ' ' || p.country"
     w, args, facets, codes = filtered(con, "companies", COMPANY_FACETS, text, "p.rowid", q, include or {}, exclude or {}, find or {}, only=facets)
     total = con.execute(f"SELECT count(*) FROM companies p{w}", args).fetchone()[0]
-    items = [dict(r) for r in con.execute(f"SELECT * FROM companies p{w} ORDER BY {COMPANY_SORTS.get(sort, COMPANY_SORTS['patents'])} "
+    items = [dict(r) for r in con.execute(f"SELECT * FROM companies p{w} ORDER BY {order(sort, COMPANY_SORTS, COMPANY_COLUMNS, 'patents')} "
                                           f"LIMIT ?", args + [limit])]
     for c in items:
         c["sectors"] = [codes.get(s, s) for s in json.loads(c["sectors"])]

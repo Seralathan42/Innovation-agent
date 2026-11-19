@@ -10,6 +10,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <style>
+  th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+  th.sortable span { color: var(--muted); }
+  th.sortable:hover span, th.sorted span { color: var(--text); }
   :root {
     --bg: #fff; --text: #2d2d2d; --muted: #6b6b6b; --line: #d9d9d9; --soft: #f4f4f4;
     --black: #111; --accent: #ffcd00; --up: #0a7d38; --down: #c8102e; --flat: #6b6b6b;
@@ -260,7 +263,7 @@ async function load() {
   renderTabs();
   renderSectors();
   renderBreaking();
-  renderMain();
+  if (["sector", "overview"].includes(state.tab) && !state.profile) renderMain();  // the other tabs do not show sector data, so redrawing them only makes them flash
 }
 
 // Every item of one kind (signals, funding_calls, companies) across all sectors, tagged with its sector.
@@ -389,7 +392,7 @@ function showPaper() {
     <td>${esc(m.applicants.join(", "))}</td><td class="dim">${esc(m.priority || m.date)}</td></tr>`);
   const analysis = p.analysing ? '<div class="empty">Sonnet is checking patents worldwide, companies and Aalto\'s follow-up. This takes a few minutes.</div>'
     : !a ? `<div class="pf-actions" style="max-width:260px"><button id="paper-go" data-act="refine">Analyse</button></div><div class="dim">Takes a few minutes.</div>`
-    : `<div class="headline" style="margin:6px 0">${verdictChip(p)} <span class="dim">· ${esc(a.confidence)} confidence · ${esc(p.analysed)}</span></div>
+    : `<div class="headline" style="margin:6px 0">${verdictChip(p)} <span class="dim">· ${esc(a.confidence)} confidence${a.searches ? ` · ${a.searches} searches` : ''} · ${esc(p.analysed)}</span></div>
       <p>${esc(a.summary)}</p><p><b>What it could be sold as:</b> ${esc(a.what_it_is)}</p>
       <h3>SIMILAR PATENTS</h3>${rows(a.similar_patents, "<th>PATENT</th><th>OWNER</th><th>FIRST FILED</th><th>STATUS</th><th>WHY SIMILAR</th>", (x) => `<tr><td>${link(x.link, x.number)}</td><td>${esc(x.owner)}</td><td class="dim">${esc(x.first_filed)}</td><td>${esc(x.status)}</td><td>${esc(x.why_similar)}</td></tr>`)}
       ${a.similar_research ? `<h3>SIMILAR RESEARCH</h3>${rows(a.similar_research, "<th>RESEARCH</th><th>WHO</th><th>YEAR</th><th>HOW IT RELATES</th>", (x) => `<tr><td>${link(x.link, x.title)}</td><td>${esc(x.who)}</td><td class="dim">${esc(x.year)}</td><td>${esc(x.relation)}</td></tr>`)}` : ""}
@@ -468,8 +471,17 @@ function renderSectors() {
 
 const NO_PATENTS = '<div class="empty">No patent data yet. Add your EPO keys to the .env file (see docs/epo-ops.md); patents are fetched within the hour.</div>';
 
+// A table heading that sorts the filtered list when clicked: ▲ ascending, ▼ descending, ⇅ not sorted by it.
+function th(label, key, first = "asc") {
+  const pf = key && FILTERS[state.tab] && state.filters[state.tab];
+  if (!pf) return `<th>${label}</th>`;
+  const [column, direction] = pf.sort.split(":"), on = column === key;
+  return `<th class="sortable${on ? " sorted" : ""}" data-sort="${key}" data-first="${first}">${label} <span>${on ? (direction === "asc" ? "▲" : "▼") : "⇅"}</span></th>`;
+}
+
 function patentTable(items, withSector = false) {
-  return items.length ? `<table class="wide-table"><tr><th>PUBLISHED</th>${withSector ? "<th>SECTOR</th>" : ""}<th>PATENT</th><th>APPLICANTS</th></tr>${items.map((p) => `<tr><td class="dim">${esc(p.date)}</td>${withSector ? `<td class="num code-cell">${esc(p.sector.code)}</td>` : ""}<td>${link(p.link, p.title || p.number)}<div class="meta dim">${esc((p.numbers || [p.number]).join(", "))}${p.priority ? ` · first filed ${esc(p.priority)}` : ""} · ${esc(p.cpc.slice(0, 6).join(", "))}${p.cpc.length > 6 ? ` +${p.cpc.length - 6}` : ""}</div></td><td>${esc(p.applicants.join(", "))}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>';
+  const key = (k) => (withSector ? k : null);  // only the Patents tab list can be sorted
+  return items.length ? `<table class="wide-table"><tr>${th("PUBLISHED", key("date"), "desc")}${withSector ? th("SECTOR", "sector") : ""}${th("PATENT", key("title"))}${th("APPLICANTS", key("applicants"))}</tr>${items.map((p) => `<tr><td class="dim">${esc(p.date)}</td>${withSector ? `<td class="num code-cell">${esc(p.sector.code)}</td>` : ""}<td>${link(p.link, p.title || p.number)}<div class="meta dim">${esc((p.numbers || [p.number]).join(", "))}${p.priority ? ` · first filed ${esc(p.priority)}` : ""} · ${esc(p.cpc.slice(0, 6).join(", "))}${p.cpc.length > 6 ? ` +${p.cpc.length - 6}` : ""}</div></td><td>${esc(p.applicants.join(", "))}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>';
 }
 
 // Every source behind a sector: the links in its data and the Markdown links in its memory file.
@@ -500,7 +512,7 @@ const FILTERS = {
     split: true,  // list first, counts after
     async query(pf, part) {
       const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, cpc_level: state.cpcLevel, facets: Object.keys(pf.open).filter((id) => pf.open[id]),
-        sort: this.sorts[pf.sort], part };
+        sort: this.sorts[pf.sort] || pf.sort, part };
       const r = await (await fetch("/api/patents/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
       if (part === "facets") return r;
       if (r.building) return { total: 0, all: 0, items: [], facets: {} };
@@ -526,12 +538,12 @@ const FILTERS = {
     open: ["verdict", "overlap", "own", "companies", "area", "year"],
     sorts: { "Most promising first": "promising", "Strongest patent overlap": "overlap", "Most companies": "companies", "Most cited": "cited", "Recently analysed": "analysed", "Newest first": "year" },
     async query(pf) {
-      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort], facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort] || pf.sort, facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
       const r = await (await fetch("/api/research/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
       state.acris = r.connected; state.waiting = r.waiting;
       return { total: r.total, all: r.stored, items: r.items, facets: r.facets };
     },
-    table: (items) => items.length ? `<table class="wide-table"><tr><th>PAPER</th><th>CLOSEST PATENT</th><th>CLOSE PATENTS</th><th>COMPANIES</th><th>VERDICT</th></tr>${items.map((p) => `<tr class="click" data-paper="${esc(p.id)}">
+    table: (items) => items.length ? `<table class="wide-table"><tr>${th("PAPER", "title")}${th("CLOSEST PATENT", "closeness", "desc")}${th("CLOSE PATENTS", "close_patents", "desc")}${th("COMPANIES", "companies", "desc")}${th("VERDICT", "verdict")}</tr>${items.map((p) => `<tr class="click" data-paper="${esc(p.id)}">
       <td>${esc(p.title)}<div class="meta dim">${esc(p.year)} · ${esc(p.area || "department not given")} · cited ${p.citations}${p.own_patent ? " · <b>patented by the authors</b>" : ""}</div></td>
       <td class="num">${pct(p.closeness)}</td><td class="num">${p.close_patents}</td><td class="num">${p.companies}</td><td>${verdictChip(p)}</td></tr>`).join("")}</table>`
       : `<div class="empty">${state.acris ? (state.waiting ? `No papers match yet. ${state.waiting.toLocaleString()} more papers are loading from ACRIS in the background.` : "No papers match.") : "No papers yet. Put your ACRIS key in the .env file as ACRIS_API_KEY=... and restart the terminal; papers then load in the background."}</div>`,
@@ -551,11 +563,11 @@ const FILTERS = {
     hidden: { type: ["Person or other"] },  // excluded to start with; remove the chip to see them
     sorts: { "Most patents": "patents", "Name A to Z": "name", "Latest patent": "latest", "Profiled first": "profiled" },
     async query(pf) {
-      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort], facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
+      const body = { q: pf.q, include: pf.include, exclude: pf.exclude, find: pf.find, limit: pf.shown, sort: this.sorts[pf.sort] || pf.sort, facets: Object.keys(pf.open).filter((id) => pf.open[id]) };
       const r = await (await fetch("/api/companies/search", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
       return { total: r.total, all: r.stored, items: r.items, facets: r.facets };
     },
-    table: (items) => items.length ? `<table class="wide-table"><tr><th>COMPANY</th><th>COUNTRY</th><th>TYPE</th><th>SECTORS</th><th>PATENTS</th><th>LATEST</th></tr>${items.map((c) => `<tr><td>${link(c.link, c.name)}${c.profiled && c.applicant && c.applicant !== c.name ? `<div class="meta dim">${esc(c.applicant)}</div>` : ""}</td><td class="dim">${esc(c.country)}</td><td class="dim">${esc(c.type)}</td><td class="num code-cell">${esc(c.sectors.join(", "))}</td><td class="num">${c.patents ? `<button class="pf-link" data-applicant="${esc(c.applicant)}">${c.patents}</button>` : '<span class="dim">·</span>'}</td><td class="dim">${esc(c.latest || "")}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>',
+    table: (items) => items.length ? `<table class="wide-table"><tr>${th("COMPANY", "name")}${th("COUNTRY", "country")}${th("TYPE", "type")}${th("SECTORS", "sectors")}${th("PATENTS", "patents", "desc")}${th("LATEST", "latest", "desc")}</tr>${items.map((c) => `<tr><td>${link(c.link, c.name)}${c.profiled && c.applicant && c.applicant !== c.name ? `<div class="meta dim">${esc(c.applicant)}</div>` : ""}</td><td class="dim">${esc(c.country)}</td><td class="dim">${esc(c.type)}</td><td class="num code-cell">${esc(c.sectors.join(", "))}</td><td class="num">${c.patents ? `<button class="pf-link" data-applicant="${esc(c.applicant)}">${c.patents}</button>` : '<span class="dim">·</span>'}</td><td class="dim">${esc(c.latest || "")}</td></tr>`).join("")}</table>` : '<div class="empty">None found.</div>',
     facets: [
       { id: "sector", label: "Sector" },
       { id: "source", label: "Source" },
@@ -574,15 +586,15 @@ const blankFilters = (cfg) => ({ q: "", sort: Object.keys(cfg.sorts)[0], include
 function filterLayout() {
   const cfg = FILTERS[state.tab];
   return `<div class="pf"><aside class="pf-side" id="pf-side"></aside><div class="pf-main">
-    <div class="pf-bar"><input id="pf-q" type="search" placeholder="${cfg.search}"><select id="pf-sort">${Object.keys(cfg.sorts).map((k) => `<option>${k}</option>`).join("")}</select></div>
+    <div class="pf-bar"><input id="pf-q" type="search" placeholder="${cfg.search}"><select id="pf-sort">${Object.keys(cfg.sorts).map((k) => `<option>${k}</option>`).join("")}<option value="column" hidden>Sorted by a column</option></select></div>
     <div class="pf-chips" id="pf-chips"></div><div class="dim" id="pf-count" style="margin:8px 0 4px"></div><div id="pf-results"></div></div></div>`;
 }
 
 async function setupFilters() {
   const cfg = FILTERS[state.tab], pf = state.filters[state.tab] ||= blankFilters(cfg);
-  $("pf-q").value = pf.q; $("pf-sort").value = pf.sort;
+  $("pf-q").value = pf.q; $("pf-sort").value = pf.sort.includes(":") ? "column" : pf.sort;
   $("pf-q").oninput = () => { pf.q = $("pf-q").value; pf.shown = 50; applyFilters(); };
-  $("pf-sort").oninput = () => { pf.sort = $("pf-sort").value; applyFilters(); };
+  $("pf-sort").oninput = () => { pf.sort = pf.menu = $("pf-sort").value; applyFilters(); };
   applyFilters();
 }
 
@@ -662,6 +674,12 @@ function wireFilters() {
   if ($("pf-clear")) $("pf-clear").onclick = () => { state.filters[state.tab] = { ...blankFilters(cfg), open: pf.open }; setupFilters(); };
   if ($("pf-showmore")) $("pf-showmore").onclick = () => { pf.shown += 50; applyFilters(); };
   $("pf-results").querySelectorAll("[data-applicant]").forEach((b) => b.onclick = () => openPatents(null, b.dataset.applicant));
+  $("pf-results").querySelectorAll("th[data-sort]").forEach((h) => h.onclick = () => {
+    const [column, direction] = pf.sort.split(":"), key = h.dataset.sort, first = h.dataset.first;
+    const next = column !== key ? first : direction === first ? (first === "asc" ? "desc" : "asc") : null;  // third click: back to normal
+    pf.sort = next ? `${key}:${next}` : pf.menu || Object.keys(cfg.sorts)[0];
+    pf.shown = 50; $("pf-sort").value = next ? "column" : pf.sort; applyFilters();
+  });
   $("pf-results").querySelectorAll("[data-paper]").forEach((tr) => tr.onclick = () => openPaper(tr.dataset.paper));
 }
 
@@ -763,6 +781,15 @@ $("input").onkeydown = (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preven
 $("newchat").onclick = () => { if (!state.busy) { state.session = null; emptyChat(); } };
 $("togglechat").onclick = () => { const off = $("body").classList.toggle("nochat"); $("togglechat").classList.toggle("off", off); };
 emptyChat();
+
+// The F key (when not typing) turns full screen on and off, hiding the browser's tabs and toolbars; Esc also leaves it.
+// Older Safari only knows the webkit names.
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() !== "f" || e.metaKey || e.ctrlKey || e.altKey || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  const root = document.documentElement;
+  if (document.fullscreenElement || document.webkitFullscreenElement) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+  else (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+});
 
 setInterval(() => load().then(() => {}), 10000);  // picks up finished background updates
 setInterval(() => { state.news++; renderBreaking(); }, 8000);  // rotate the breaking news
