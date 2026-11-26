@@ -239,8 +239,8 @@ def compose(length, starts, events):
             put(dry, at, glow(max(chord_at(at)) + 12), 0.045, 0.2, send=0.5)
         elif kind == "zoom":
             put(dry, at, whoosh(1.0, 0.7), 0.035, -0.3, send=0.3)
-        elif kind == "whoosh":
-            put(dry, at, whoosh(1.0, 0.6), 0.06, send=0.4)
+        elif kind == "done":  # an agent finishes its part
+            put(dry, at, tick(1900, 1.4), 0.16, send=0.25)
 
     mix = dry + 0.32 * reverb(wet)
     mix = np.array([band(ch, 35, 20000) for ch in mix])  # no rumble below what speakers play

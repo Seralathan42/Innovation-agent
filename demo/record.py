@@ -11,6 +11,7 @@ the scenes with ffmpeg, adding the soundtrack from sound.py. Start the terminal 
 import base64
 import json
 import os
+import re
 import shutil
 import socket
 import struct
@@ -29,6 +30,7 @@ APP = "http://127.0.0.1:8001"
 W, H, FPS = 1920, 1080, 30
 CLIPS = Path(__file__).parent / "clips"  # one clip per scene, joined by sound.py
 BRIEF = "demo-sleep-radar"  # the brief shown, by its disclosure file name
+SPEEDUP = 30  # its real run is replayed this many times faster in the upload scene
 PAPER = "b7faa01e-fc95-479e-b8f8-8f5f4606f0bd"  # the analysed Aalto paper shown in Past research (lithium recovery, 2018)
 PAPER_SEARCH = "lithium recovery"
 
@@ -105,7 +107,7 @@ class CDP:
 
 
 
-# Pointer, zoom, spotlight, fades, captions and cards, added to the page. The zoom moves the whole app (.app) like a
+# Pointer, zoom, spotlight, captions, cards and the brief's run replayed, added to the page. The zoom moves the whole app (.app) like a
 # camera; the spotlight dims everything but one element. The news bar is frozen so it matches across scenes.
 STAGE = """
 (() => {
@@ -125,11 +127,10 @@ STAGE = """
       padding: 16px 30px; background: #111; color: #fff; font: 700 30px/1.2 Inter, system-ui, sans-serif; letter-spacing: -.01em;
       border-left: 8px solid #ffcd00; box-shadow: 0 12px 40px rgba(0,0,0,.25); transition: all .45s cubic-bezier(.2,.8,.2,1); white-space: nowrap; }
     #d-caption.on { transform: translate(-50%, 0); opacity: 1; }
-    #d-card, #d-fade { position: fixed; inset: 0; z-index: 100000; display: grid; place-content: center; text-align: center;
+    #d-card { position: fixed; inset: 0; z-index: 100000; display: grid; place-content: center; text-align: center;
       font-family: Inter, system-ui, sans-serif; opacity: 0; pointer-events: none; transition: opacity .7s ease; }
     #d-card { background: #111; color: #fff; }
-    #d-fade { background: #fff; color: #111; font-size: 44px; font-weight: 700; letter-spacing: -.02em; }
-    #d-card.on, #d-fade.on { opacity: 1; }
+    #d-card.on { opacity: 1; }
     #d-card > * { animation: d-in .7s cubic-bezier(.2,.8,.2,1) both; }
     @keyframes d-in { from { opacity: 0; transform: translateY(18px); } }
     #d-card .stats { display: grid; grid-template-columns: repeat(4, 370px); gap: 40px; text-align: left; transition: opacity .4s; }
@@ -151,14 +152,14 @@ STAGE = """
   document.body.insertAdjacentHTML('beforeend', `
     <div id="d-cursor"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M3 2 L3 27 L10 20.5 L14.5 31 L19 29 L14.6 18.8 L24 18.8 Z"
       fill="#111" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
-    <div id="d-spot"></div><div id="d-caption"></div><div id="d-card"></div><div id="d-fade"></div>
+    <div id="d-spot"></div><div id="d-caption"></div><div id="d-card"></div>
     <div id="d-file"><b>MD</b><span>demo-sleep-radar.md</span></div>`);
   state.news = 0; renderBreaking(); window.renderBreaking = () => {};
   const app = document.querySelector('.app'), $$ = (sel) => document.querySelector(sel);
   let zoom = { s: 1, x: 0, y: 0 };
   const plain = (r) => ({ x: (r.left - zoom.x) / zoom.s, y: (r.top - zoom.y) / zoom.s, w: r.width / zoom.s, h: r.height / zoom.s });
   window.demo = {
-    events: [],  // [time, kind] of what the soundtrack follows: clicks, highlights, zooms, fades and cards
+    events: [],  // [time, kind] of what the soundtrack follows: clicks, highlights, zooms, cards and finished agents
     log(kind) { this.events.push([Date.now() / 1000, kind]); },
     pos: { x: innerWidth * .62, y: innerHeight * .55 },
     point(x, y) { this.pos = { x, y }; $$('#d-cursor').style.transform = `translate(${x - 3}px, ${y - 2}px)`; },
@@ -188,7 +189,15 @@ STAGE = """
       main.scrollTo({ top: main.scrollTop + el.getBoundingClientRect().top - main.getBoundingClientRect().top - offset, behavior: smooth ? 'smooth' : 'instant' }); },
     caption(text) { const c = $$('#d-caption'); if (text) { c.textContent = text; c.classList.add('on'); } else c.classList.remove('on'); },
     card(html) { const c = $$('#d-card'); if (html) { this.log('card'); c.innerHTML = html; c.classList.add('on'); } else c.classList.remove('on'); },
-    fade(text) { const f = $$('#d-fade'); if (text) { this.log('whoosh'); f.textContent = text; f.classList.add('on'); } else f.classList.remove('on'); },
+    replay(id, times, speed) {  // opens a finished brief as it filled in, speed times faster: times are each agent's [start, end] in seconds
+      const start = Date.now(), url = `/api/briefs/${encodeURIComponent(id)}`, real = window.fetch;
+      window.fetch = async (u, o) => { const r = await real(u, o); if (u !== url) return r;
+        const b = await r.json(), t = (Date.now() - start) / 1000 * speed;
+        for (const [a, [from, to]] of Object.entries(times)) if (t < to) {
+          b.status[a] = t < from ? 'waiting' : 'running'; if (b.scores) delete b.scores[a]; delete b.reports[a]; if (a === 'check') b.check = null; }
+        return new Response(JSON.stringify(b)); };
+      Object.values(times).forEach(([, to]) => setTimeout(() => { this.log('done'); showBrief(); }, to / speed * 1000 + 30));
+      openBrief(id); },
     file(x, y, show) { const f = $$('#d-file'); f.style.transform = `translate(${x}px, ${y}px)`; f.style.opacity = show ? 1 : 0; },
     go(tab) { state.tab = tab; state.profile = null; renderTabs(); renderMain(true); },
   };
@@ -278,6 +287,15 @@ def brief_id():
     return next(b["id"] for b in json.load(urllib.request.urlopen(f"{APP}/api/briefs")) if BRIEF in b["id"])
 
 
+def run_times():
+    """When each agent of the demo brief started and finished, in seconds, from its run_info.txt. The checker starts
+    when the last report is saved."""
+    info = (Path(__file__).parent.parent / "outputs" / brief_id() / "run_info.txt").read_text()
+    took = {a: int(s) for a, s in re.findall(r"^\[(\w+)\] saved .+\((\d+) s\)$", info, re.M)}
+    check, last = took.pop("check"), max(took.values())
+    return {**{a: [0, s] for a, s in took.items()}, "check": [last, last + check]}
+
+
 # Each scene starts exactly where the one before it ended. after(name) rebuilds that end state on a fresh page (not
 # filmed), so any scene can be filmed again on its own. The scenes follow docs/demo-script.md.
 
@@ -347,11 +365,13 @@ def upload(f):
     drop = f.js("(() => { const r = document.getElementById('drop').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()")
     f.do((f"demo.file({drop['x'] - 140}, {drop['y'] - 40}, true); demo.point({drop['x'] + 10}, {drop['y'] + 2})", 1.2),
          ("demo.log('drop'); document.getElementById('drop').classList.add('over')", 0.5),
-         (f"demo.file({drop['x'] - 140}, {drop['y'] - 40}, false); demo.caption(null)", 0.3),
-         ("demo.fade('A few minutes later…')", 0.8))
-    f.js(f"openBrief({json.dumps(brief_id())})")
-    f.load("document.querySelector('.score-card')")
-    f.do(("1", 0.3), ("demo.fade(null)", 0.8))
+         (f"demo.file({drop['x'] - 140}, {drop['y'] - 40}, false); demo.caption(null)", 0.3))
+    times = run_times()
+    minutes = round(max(end for _, end in times.values()) / 60)
+    f.do((f"demo.replay({json.dumps(brief_id())}, {json.dumps(times)}, {SPEEDUP})", 0.5),
+         (f"demo.caption('{minutes} minutes of research, sped up')", 0.1))
+    f.wait_for("document.querySelector('.verdict')")
+    f.do(("1", 0.9), ("demo.caption(null)", 0.6))
 
 
 def result(f):
