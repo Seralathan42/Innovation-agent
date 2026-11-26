@@ -125,10 +125,48 @@
   @media (max-width: 1100px) { .pf { grid-template-columns: 1fr; } .pf-side { border-right: 0; padding-right: 0; } }
   .paper { position: relative; border: 2px solid var(--text); padding: 16px 18px; margin: 0 0 22px; }
   .paper h3 { font-size: 12px; letter-spacing: 0.04em; margin: 18px 0 6px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
+  .glance { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 10px 0 14px; }
+  .glance > div { border: 1px solid var(--line); padding: 12px 14px; }
+  .glance h4 { margin: 0 0 6px; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+  .glance b { display: block; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; }
+  .glance span { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
   .paper .close { position: absolute; top: 10px; right: 12px; border: 0; background: none; font-size: 16px; }
   .summary { margin: 16px 0 6px; padding: 4px 18px 10px; border-left: 4px solid var(--accent); background: var(--soft); }
   .summary h3 { font-size: 12px; letter-spacing: 0.04em; margin: 12px 0 4px; }
   .summary h1, .summary h2, .summary h4 { font-size: 15px; margin: 12px 0 4px; }
+  .drop { display: block; border: 2px dashed var(--text); padding: 26px; text-align: center; cursor: pointer; }
+  .drop.over { background: var(--soft); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 16px 0; }
+  .steps > div { border: 2px solid var(--text); padding: 10px 12px; font-size: 13px; }
+  .steps h4, .score-card h4 { margin: 0 0 4px; font-size: 12px; letter-spacing: 0.04em; color: var(--muted); }
+  .steps .big { font-size: 26px; font-weight: 700; }
+  .chip-s { display: inline-block; margin: 4px 4px 0 0; padding: 2px 8px; border: 1px solid var(--text); font-size: 12px; }
+  .chip-s.saved { background: var(--black); color: #fff; }
+  .chip-s.failed, .chip-s.stopped { border-color: var(--down); color: var(--down); }
+  .scores { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+  .score-card { border: 1px solid var(--line); padding: 12px 14px; font-size: 13px; }
+  .score-card .n { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+  .score-card .n small { font-size: 15px; color: var(--muted); }
+  .score-card p { margin: 6px 0 0; }
+  .score-card .reason { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .score-card .verdict { display: inline-block; margin-top: 10px; padding: 3px 8px; font-weight: 700; font-size: 12px; }
+  .score-card .verdict.agree { background: #e3f3e9; color: var(--up); }
+  .score-card .verdict.differ { background: #fbe4e7; color: var(--down); }
+  .score-card details, .summary details { margin-top: 8px; }
+  .score-card summary, .summary summary { cursor: pointer; font-weight: 700; font-size: 12px; color: var(--muted); }
+  .issues { list-style: none; padding: 0; margin: 8px 0 0; }
+  .issues li { padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
+  .issues .part { display: inline-block; margin-right: 8px; padding: 1px 6px; background: var(--black); color: #fff; font-size: 11px; font-weight: 700; }
+  .issues div { margin-top: 3px; color: var(--muted); }
+  .report-head { font-size: 12px; letter-spacing: 0.04em; margin: 26px 0 0; }
+  .report h1 { font-size: 24px; letter-spacing: -0.02em; margin: 18px 0 8px; }
+  .report h2 { font-size: 18px; margin: 24px 0 8px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
+  .report h3 { font-size: 15px; margin: 16px 0 6px; }
+  .report table { font-size: 13px; border-collapse: collapse; }
+  .report th, .report td { border: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+  .brief-title { margin: 8px 0 2px; font-size: 32px; letter-spacing: -0.03em; }
+  .report-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); margin-top: 18px; }
+  .report { max-width: 900px; }
   .sim-text { width: 100%; padding: 10px; border: 1px solid var(--text); font: inherit; font-size: 14px; background: var(--bg); color: var(--text); margin-bottom: 8px; }
   .sim-stats { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 28px; margin-top: 10px; }
   .sim-stats h3 { font-size: 12px; letter-spacing: 0.04em; margin: 0 0 6px; padding-bottom: 6px; border-bottom: 2px solid var(--text); }
@@ -237,8 +275,8 @@
 
 <script>
 const $ = (id) => document.getElementById(id);
-const state = { sectors: [], current: null, memories: {}, tab: "sector", news: 0, session: null, busy: false };
-const TABS = [["overview", "OVERVIEW"], ["sector", "SECTOR"], ["companies", "COMPANIES"], ["patents", "PATENTS"], ["similar", "SIMILAR"], ["research", "RESEARCH"]];
+const state = { sectors: [], current: null, memories: {}, tab: "brief", news: 0, session: null, busy: false };
+const TABS = [["brief", "BRIEF"], ["overview", "SECTORS"], ["sector", "SECTOR"], ["companies", "COMPANIES"], ["patents", "PATENTS"], ["similar", "SIMILAR PATENTS"], ["research", "PAST RESEARCH"]];
 const BREAKING_DAYS = 3;  // signals newer than this are shown as breaking, older ones as latest
 const ARROW = { positive: "▲", negative: "▼", neutral: "■" };
 
@@ -257,13 +295,14 @@ async function load() {
   if (!response?.ok) return;
   const raw = await response.text();
   if (raw === state.raw) return;  // nothing changed since the last check
+  const first = !state.raw;
   state.raw = raw;
   state.sectors = JSON.parse(raw);
   if (!state.current) state.current = (state.sectors.find((s) => s.data) || state.sectors[0]).id;
   renderTabs();
   renderSectors();
   renderBreaking();
-  if (["sector", "overview"].includes(state.tab) && !state.profile) renderMain();  // the other tabs do not show sector data, so redrawing them only makes them flash
+  if ((first && state.tab !== "brief") || (["sector", "overview"].includes(state.tab) && !state.profile)) renderMain();  // the other tabs do not show sector data, so redrawing them only makes them flash
 }
 
 // Every item of one kind (signals, funding_calls, companies) across all sectors, tagged with its sector.
@@ -313,12 +352,12 @@ async function renderProfile(update = false) {
   let body;
   if (r.status === "building") body = `<h1>${esc(pr.name)}</h1><div class="empty">Building the profile from public sources. This takes about a minute, and it is saved for next time.</div>`;
   else if (r.status === "failed") body = `<h1>${esc(pr.name)}</h1><div class="empty">The profile could not be built: ${esc(r.error)}</div><button class="pf-link" id="profile-update">Try again</button>`;
-  else if (pr.kind === "company") body = `<div class="profile-head">${avatar(d.logo, d.name, "big logo")}<div><h1>${esc(d.name)}</h1>
+  else if (pr.kind === "company") body = `<div class="profile-top"><div class="profile-head">${avatar(d.logo, d.name, "big logo")}<div><h1>${esc(d.name)}</h1>
       <div class="dim">${[known(d.website) ? link(d.website, d.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) : "", known(d.founded) ? `Founded ${esc(d.founded)}` : "", known(d.headquarters) ? esc(d.headquarters) : "", known(d.size) ? esc(d.size) : ""].filter(Boolean).join(" · ")}</div></div></div>
-    <p class="lead">${esc(d.summary)}</p><h3>WHAT THEY ARE BUILDING</h3><p>${esc(d.building)}</p>
-    ${known(d.funding) ? `<h3>FUNDING</h3><p>${esc(d.funding)}</p>` : ""}
+    <p class="lead">${esc(d.summary)}</p>
     <h3>KEY PEOPLE</h3><div class="people">${d.people.map((x) => `<div class="person">${avatar(x.photo, x.name)}<div>${profileLink("person", x.name, `${x.role} at ${d.name}`)}
-      <div class="dim">${esc(x.role)}</div><p>${esc(x.background)}</p></div></div>`).join("") || '<div class="empty">None found.</div>'}</div>`;
+      <div class="dim">${esc(x.role)}</div><p>${esc(x.background)}</p></div></div>`).join("") || '<div class="empty">None found.</div>'}</div></div>
+    <h3>WHAT THEY ARE BUILDING</h3><p>${esc(d.building)}</p>${known(d.funding) ? `<h3>FUNDING</h3><p>${esc(d.funding)}</p>` : ""}`;
   else body = `<div class="profile-head">${avatar(d.photo, d.name, "big")}<div><h1>${esc(d.name)}</h1><div class="dim">${esc(d.headline)}</div></div></div>
     <p class="lead">${esc(d.summary)}</p>
     <h3>CURRENT ROLES</h3>${d.current.map((x) => `<div class="item"><b>${esc(x.role)}</b>, ${profileLink("company", x.organisation, `${pr.name} works there as ${x.role}`)}${known(x.since) ? ` <span class="dim">since ${esc(x.since)}</span>` : ""}</div>`).join("") || '<div class="empty">None found.</div>'}
@@ -335,7 +374,10 @@ function renderTab() {  // the cross-sector tabs
   const none = '<div class="empty">Nothing in the library yet.</div>';
   const row = (s) => `class="click" data-id="${s.id}"`;
   let title, body;
-  if (state.tab === "overview") {
+  if (state.tab === "brief") {
+    title = "INVENTION BRIEF";
+    body = '<div id="brief"></div>';
+  } else if (state.tab === "overview") {
     title = "ALL SECTORS";
     body = `<table class="wide-table"><tr><th>CODE</th><th>SECTOR</th><th>HEADLINE</th><th>SIGNALS</th><th>CALLS</th><th>UPDATED</th></tr>${state.sectors.map((s) => {
       const d = s.data;
@@ -369,6 +411,89 @@ function renderTab() {  // the cross-sector tabs
   if ($("pf-results")) setupFilters();
   if ($("sim-go")) setupSimilar();
   if ($("paper-card")) showPaper();
+  if ($("brief")) showBriefs();
+}
+
+// Invention brief: drop a disclosure, four agents research it (with our stored patents and companies and online
+// searches), each scores its part from 1 to 5, and a checker agent double-checks the work.
+const PARTS = [["market", "Market", "Who would buy it? How big is the market? Who are the competitors?"],
+  ["ip", "Patents", "Is it new? Who owns similar patents? How mature is it?"],
+  ["funding", "Funding", "Which grants fit the next step, and when are the deadlines?"],
+  ["nabc", "Summary", "Need, approach, benefits, competition, and questions to ask the team."]];
+const finalScore = (b, part) => b.check?.parts.find((x) => x.part === part)?.score ?? b.scores?.[part]?.score;
+const overall = (b) => { const s = PARTS.map(([k]) => finalScore(b, k)).filter(Boolean); return s.length ? (s.reduce((a, n) => a + n, 0) / s.length).toFixed(1) : null; };
+const working = (b) => Object.values(b.status).some((s) => s === "running" || s === "waiting");
+
+async function showBriefs() {
+  if (state.brief) return showBrief();
+  const list = await (await fetch("/api/briefs")).json();
+  const box = $("brief");
+  if (!box || state.brief) return;
+  const progress = (b) => {
+    const done = Object.values(b.status).filter((s) => s === "saved").length, all = Object.keys(b.status).length;
+    return working(b) ? `Working, ${done} of ${all} done` : Object.values(b.status).some((s) => s === "failed" || s === "stopped") ? `<span class="negative">Stopped, ${done} of ${all} done</span>` : "Done";
+  };
+  box.innerHTML = `<p class="dim" style="margin:0 0 12px">Drop an invention disclosure and four AI agents research it at the same time, using our stored patents and companies and online searches. Each part gets a score from 1 to 5, and a second AI double-checks the work. It takes about 5 to 10 minutes.</p>
+    <label class="drop" id="drop"><input type="file" id="brief-file" accept=".pdf,.md,.txt" hidden><b>Drop a disclosure here</b> or click to choose a file (PDF, text or Markdown)
+      <div class="dim">Use only fictional or public disclosures until a local model can remove the confidential details.</div></label>
+    <div id="brief-error" class="negative"></div>
+    <div class="steps">${PARTS.map(([, label, question]) => `<div><h4>${label.toUpperCase()}</h4>${question}</div>`).join("")}</div>
+    <h2 style="border:0;padding:18px 0 8px">Briefs</h2>
+    ${list.length ? `<table class="wide-table"><tr><th>INVENTION</th><th>STARTED</th><th>PROGRESS</th><th>SCORE</th></tr>${list.map((b) => `<tr class="click" data-brief="${esc(b.id)}">
+      <td>${esc(b.check?.title || b.file)}<div class="meta dim">${esc(b.file)}</div></td><td class="dim">${esc(b.started.slice(0, 16))}</td><td>${progress(b)}</td>
+      <td class="num">${overall(b) ? `<b>${overall(b)}</b> / 5` : '<span class="dim">·</span>'}</td></tr>`).join("")}</table>` : '<div class="empty">No briefs yet.</div>'}`;
+  const upload = async (file) => {
+    if (!file) return;
+    $("brief-error").textContent = "";
+    $("drop").classList.add("over");
+    const r = await fetch(`/api/briefs?name=${encodeURIComponent(file.name)}`, { method: "POST", body: file });
+    if (!r.ok) { $("drop").classList.remove("over"); $("brief-error").textContent = (await r.json()).detail || "The upload failed."; return; }
+    openBrief((await r.json()).id);
+  };
+  $("brief-file").onchange = () => upload($("brief-file").files[0]);
+  $("drop").ondragover = (e) => { e.preventDefault(); $("drop").classList.add("over"); };
+  $("drop").ondragleave = () => $("drop").classList.remove("over");
+  $("drop").ondrop = (e) => { e.preventDefault(); upload(e.dataTransfer.files[0]); };
+  box.querySelectorAll("[data-brief]").forEach((tr) => tr.onclick = () => openBrief(tr.dataset.brief));
+}
+
+function openBrief(id) {
+  state.brief = id; state.briefPart = "market";
+  showBriefs(); $("main").scrollTop = 0;
+}
+
+async function showBrief() {
+  const id = state.brief, b = await (await fetch(`/api/briefs/${encodeURIComponent(id)}`)).json();
+  const box = $("brief");
+  if (!box || state.brief !== id) return;
+  const mark = (s) => ({ saved: "✓", failed: "✕", stopped: "✕" }[s] || "…");
+  const chip = (k, label) => `<span class="chip-s ${b.status[k] || ""}">${mark(b.status[k])} ${label}</span>`;
+  const step = (n, title, body) => `<div><h4>STEP ${n}</h4><b>${title}</b><div>${body}</div></div>`;
+  const total = overall(b), check = b.check;
+  const cards = PARTS.map(([k, label]) => {
+    const s = b.scores?.[k], c = check?.parts.find((x) => x.part === k);
+    return `<div class="score-card"><h4>${label.toUpperCase()}</h4><div class="n">${s ? `${s.score}<small>/5</small>` : `<span class="dim">${mark(b.status[k])}</span>`}</div>
+      <p class="reason" title="${esc(s?.reason || "")}">${esc(s?.reason || (b.status[k] === "running" ? "Researching…" : ""))}</p>
+      ${c ? `<div class="verdict ${c.score === s?.score ? "agree" : "differ"}">${c.score === s?.score ? "✓ Checker agrees" : `Checker suggests ${c.score}/5`}</div>
+        <details><summary>Checker's note</summary><p>${esc(c.note)}</p></details>` : ""}</div>`;
+  }).join("");
+  const report = b.reports[state.briefPart];
+  box.innerHTML = `<button class="pf-link" id="brief-back">← All briefs</button>
+    <h1 class="brief-title">${esc(check?.title || b.file)}</h1><div class="dim">${esc(b.file)} · started ${esc(b.started.slice(0, 16))}</div>
+    <div class="steps">${step(1, "Upload", `✓ ${esc(b.file)}`)}${step(2, "Research", PARTS.map(([k, label]) => chip(k, label)).join(""))}
+      ${step(3, "Score", b.status.check ? chip("check", b.status.check === "saved" ? "Checked" : b.status.check === "running" ? "Checking" : "Check") : '<span class="dim">Not checked</span>')}
+      ${step(4, "Read", total ? `<span class="big">${total}</span> / 5 ${working(b) ? "so far" : "overall"}` : '<span class="dim">When the work is done</span>')}</div>
+    <div class="scores">${cards}</div>
+    ${b.errors.length ? `<div class="summary negative"><h3>WHY SOME PARTS FAILED</h3>${b.errors.map((e) => `<p>${esc(e)}</p>`).join("")}</div>` : ""}
+    ${check ? `<div class="summary"><h3>CHECKER'S VIEW</h3><p>${esc(check.summary)}</p>
+      ${check.issues.length ? `<details><summary>${check.issues.length} points to check</summary><ul class="issues">${check.issues.map((i) => `<li><span class="part">${PARTS.find(([k]) => k === i.part)?.[1] || i.part}</span><b>${esc(i.claim.replace(/[.\s]+$/, ""))}</b><div>${esc(i.problem)} ${i.link ? link(i.link, "source") : ""}</div></li>`).join("")}</ul></details>` : "<p>No problems found.</p>"}</div>` : ""}
+    <h3 class="report-head">REPORTS</h3><div class="report-tabs">${PARTS.map(([k, label]) => `<button class="tab${k === state.briefPart ? " active" : ""}" data-part="${k}">${label}</button>`).join("")}</div>
+    <div class="report">${report ? markdown(report) : `<div class="empty">${b.status[state.briefPart] === "running" ? "This report is being written." : "No report."}</div>`}</div>
+    <div class="dim" style="margin-top:12px">Ask the assistant on the right about this brief; it reads these reports.</div>`;
+  $("brief-back").onclick = () => { state.brief = null; showBriefs(); };
+  box.querySelectorAll("[data-part]").forEach((x) => x.onclick = () => { state.briefPart = x.dataset.part; showBrief(); });
+  clearTimeout(state.briefTimer);
+  if (working(b)) state.briefTimer = setTimeout(() => state.brief === id && $("brief") && showBrief(), 8000);
 }
 
 const VERDICT_CLASS = { "Missed opportunity": "negative", "Partly missed": "neutral", "Followed up by Aalto or the authors": "positive" };
@@ -382,6 +507,16 @@ async function openPaper(id) {
   $("paper-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function glance(p, a) {  // the analysis in four tiles: verdict, first patent, companies, how much was checked
+  const first = a.similar_patents.filter((x) => /^\d{4}-/.test(x.first_filed)).sort((x, y) => x.first_filed.localeCompare(y.first_filed))[0];
+  const gap = first ? first.first_filed.slice(0, 4) - p.year : 0, short = (n) => n.replace(/\s*\(.*?\)/g, "");
+  const tile = (head, big, small, cls = "") => `<div><h4>${head}</h4><b class="${cls}">${big}</b><span>${small}</span></div>`;
+  return `<div class="glance">${tile("VERDICT", esc(a.verdict), `${esc(a.confidence)} confidence`, VERDICT_CLASS[a.verdict] || "")}
+    ${first ? tile("FIRST PATENTED", first.first_filed.slice(0, 4), `by ${esc(short(first.owner))}, ${gap ? `${Math.abs(gap)} years ${gap < 0 ? "before" : "after"} the paper` : "the year of the paper"}`) : tile("FIRST PATENTED", "None found", "no dated similar patent")}
+    ${tile("SOLD TODAY BY", `${a.companies.length} ${a.companies.length === 1 ? "company" : "companies"}`, esc(a.companies.slice(0, 3).map((c) => short(c.name)).join(", ")))}
+    ${tile("CHECKED", `${a.searches || "?"} searches`, `${a.similar_patents.length} similar patents · ${esc(p.analysed.slice(0, 10))}`)}</div>`;
+}
+
 function showPaper() {
   const p = state.paper, box = $("paper-card");
   if (!box) return;
@@ -392,8 +527,7 @@ function showPaper() {
     <td>${esc(m.applicants.join(", "))}</td><td class="dim">${esc(m.priority || m.date)}</td></tr>`);
   const analysis = p.analysing ? '<div class="empty">Sonnet is checking patents worldwide, companies and Aalto\'s follow-up. This takes a few minutes.</div>'
     : !a ? `<div class="pf-actions" style="max-width:260px"><button id="paper-go" data-act="refine">Analyse</button></div><div class="dim">Takes a few minutes.</div>`
-    : `<div class="headline" style="margin:6px 0">${verdictChip(p)} <span class="dim">· ${esc(a.confidence)} confidence${a.searches ? ` · ${a.searches} searches` : ''} · ${esc(p.analysed)}</span></div>
-      <p>${esc(a.summary)}</p><p><b>What it could be sold as:</b> ${esc(a.what_it_is)}</p>
+    : `${glance(p, a)}<p>${esc(a.summary)}</p><p><b>What it could be sold as:</b> ${esc(a.what_it_is)}</p>
       <h3>SIMILAR PATENTS</h3>${rows(a.similar_patents, "<th>PATENT</th><th>OWNER</th><th>FIRST FILED</th><th>STATUS</th><th>WHY SIMILAR</th>", (x) => `<tr><td>${link(x.link, x.number)}</td><td>${esc(x.owner)}</td><td class="dim">${esc(x.first_filed)}</td><td>${esc(x.status)}</td><td>${esc(x.why_similar)}</td></tr>`)}
       ${a.similar_research ? `<h3>SIMILAR RESEARCH</h3>${rows(a.similar_research, "<th>RESEARCH</th><th>WHO</th><th>YEAR</th><th>HOW IT RELATES</th>", (x) => `<tr><td>${link(x.link, x.title)}</td><td>${esc(x.who)}</td><td class="dim">${esc(x.year)}</td><td>${esc(x.relation)}</td></tr>`)}` : ""}
       <h3>COMPANIES</h3>${rows(a.companies, "<th>COMPANY</th><th>WHAT THEY SELL</th><th>SIGN OF SUCCESS</th>", (x) => `<tr><td>${link(x.link, x.name)}</td><td>${esc(x.what)}</td><td>${esc(x.success)}</td></tr>`)}
@@ -593,7 +727,7 @@ function filterLayout() {
 async function setupFilters() {
   const cfg = FILTERS[state.tab], pf = state.filters[state.tab] ||= blankFilters(cfg);
   $("pf-q").value = pf.q; $("pf-sort").value = pf.sort.includes(":") ? "column" : pf.sort;
-  $("pf-q").oninput = () => { pf.q = $("pf-q").value; pf.shown = 50; applyFilters(); };
+  $("pf-q").oninput = () => { clearTimeout(state.typing); state.typing = setTimeout(() => { pf.q = $("pf-q").value; pf.shown = 50; applyFilters(); }, 250); };
   $("pf-sort").oninput = () => { pf.sort = pf.menu = $("pf-sort").value; applyFilters(); };
   applyFilters();
 }
@@ -754,7 +888,7 @@ async function send(text) {
   const draw = () => { reply.innerHTML = steps + markdown(answer); scroll(); };
   try {
     const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: text, session: state.session, sector: state.tab === "sector" ? state.current : null }) });
+      body: JSON.stringify({ message: text, session: state.session, sector: state.tab === "sector" ? state.current : null, brief: state.tab === "brief" ? state.brief : null }) });
     const reader = response.body.getReader(), decoder = new TextDecoder();
     let buffer = "";
     for (;;) {
@@ -791,6 +925,7 @@ document.addEventListener("keydown", (e) => {
   else (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
 });
 
+renderTabs(); renderMain();  // the Brief tab needs no sector data, so it shows before that arrives
 setInterval(() => load().then(() => {}), 10000);  // picks up finished background updates
 setInterval(() => { state.news++; renderBreaking(); }, 8000);  // rotate the breaking news
 load();

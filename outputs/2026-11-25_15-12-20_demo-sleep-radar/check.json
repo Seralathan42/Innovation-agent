@@ -1,0 +1,104 @@
+{
+  "title": "Bedside radar sleep apnea screening (obstructive vs central)",
+  "summary": "The reports mostly hold up. The IP report is the strongest. I confirmed its main patent facts with the EPO tool, and it correctly finds that the \"split\" is not unique. The market and NABC reports still repeat the researchers' claim that no one else reports the obstructive/central split, which the IP report contradicts. The funding report has the right shape, but it is thin on verification. R2B 1/2027 is an unconfirmed guess, and the report advice to line up a partner conflicts with the call rules. Trust the IP and the overall \"promising but gappy\" picture. Treat the novelty and funding statements elsewhere with care.",
+  "parts": [
+    {
+      "part": "market",
+      "agrees": true,
+      "score": 3,
+      "note": "A 3 is fair: real need, crowded field (Sleepiz and Withings cleared), MDR burden, weak market sizing. The report is honest about weak consultancy figures and does not invent a reachable market. Its \"no one else reports the split\" is unverified and is undercut by the IP report's Chinese filings. The report also lists the R2B 2/2026 call as an open funding option, but that call is closed. Applications ran 8 June to 16 September 2026, and decisions are only expected in January 2027. I did not confirm the Sleepiz FDA letter, because the PDF was unreadable to my tool."
+    },
+    {
+      "part": "ip",
+      "agrees": true,
+      "score": 2,
+      "note": "I agree with a 2. The EPO check confirms CN120616491B is granted (CN only, family of 2). It also confirms CN122767790A is a Chinese application only (published 2026-09-18), and that Neteera's WO2024224391 has pending EP and US filings, with IL granted. Neteera's claim 1 is about AHI and apnea-event counting and does not mention the obstructive/central split, as the report said. The report is clear that this is an abstract-level screening and not an FTO opinion. The advice not to publish in June 2027 is sound. The score could be a 3 only after claim-level review."
+    },
+    {
+      "part": "funding",
+      "agrees": false,
+      "score": 2,
+      "note": "I would give a 2. R2B is the only real fit, and the 1/2027 call is an unconfirmed guess from last year's pattern. Everything else needs a company or consortium that does not exist, and the report itself rates EIT Health a poor fit. The call dates come from library notes and were not re-read on the portal. The report says R2B favours partner co-funding letters. The call 2/2026 page says the commercialising entity must not be known before or during the project. The report also gives R2B budgets of EUR 500-800k, where the call page says EUR 400-700k. Its EIT summary leaves out the consortium requirement of two organisations from different countries. It also leaves out the patient-impact and revenue conditions. I did not check whether a Research Council of Finland project (2024-2027) allows a second funded effort or what the hospital's rights are."
+    },
+    {
+      "part": "nabc",
+      "agrees": false,
+      "score": 3,
+      "note": "A 3 fits the overall case: real need, early data, no IP filed, no regulatory skills. But the Competition section says it found no other contactless method reporting the split and \"agrees with the researchers\". That is wrong or at least unsupported, given the IP report's Chinese filings (CN120616491B granted, CN122767790A). The NABC also did not read the other reports. It suggests the Competition section is the weakest part, and it should be corrected. It also leaves out ResMed Sensor Tech and the Chinese filers. It rightly notes that \"within 4/h\" is a loose accuracy measure."
+    }
+  ],
+  "issues": [
+    {
+      "part": "nabc",
+      "claim": "I did not find another contactless method reporting the obstructive/central split, which agrees with the researchers.",
+      "problem": "Contradicted by the IP report: CN120616491B (granted in CN) is a mmWave radar method that distinguishes apnea type, and CN122767790A extracts thoracoabdominal phase difference and classifies event types. The \"differentiator\" is therefore not unique, at least in patents. Market.md repeats the same claim as \"genuine differentiator\".",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DCN120616491"
+    },
+    {
+      "part": "market",
+      "claim": "The obstructive/central split is a genuine differentiator and nothing found reports it; Sleepiz \"needs checking\".",
+      "problem": "Rests on a limited search and is contradicted by the IP report. The market report did not search Chinese filings or published papers on radar split detection. The market score does not reflect this risk.",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DCN122767790"
+    },
+    {
+      "part": "market",
+      "claim": "Business Finland Research to Business (decisions on call 2/2026 aimed for January 2027) is listed among funding for a spin-off.",
+      "problem": "Call 2/2026 closed on 16 September 2026, so this cannot be applied to. The next call, 1/2027, is not yet published.",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/"
+    },
+    {
+      "part": "funding",
+      "claim": "Call 1/2027 will probably open December 2026 and close early March 2027.",
+      "problem": "This is extrapolated from the previous year and not confirmed (the report admits this). The score and the whole timeline rest on it.",
+      "link": "https://www.businessfinland.fi/en/services/funding/funding-services/cooperation-between-companies-and-research-organisations/research-to-business/"
+    },
+    {
+      "part": "funding",
+      "claim": "Ask the interested companies for a letter of support and a co-funding commitment, which R2B favours.",
+      "problem": "The R2B call page says the commercialising entity must not be known before or during the project, and the project should examine several routes. A named partner commitment could conflict with that. Only a research organisation can apply, and at least 40% of costs must go to commercialisation preparation.",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/"
+    },
+    {
+      "part": "funding",
+      "claim": "R2B budgets are typically EUR 500,000-800,000.",
+      "problem": "The call 2/2026 page says typical total eligible costs are EUR 400,000-700,000 (80% covered). The report's figure came from library notes, not the call page.",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/"
+    },
+    {
+      "part": "funding",
+      "claim": "EIT Health Innovation Validation 2027: deadline 2027-01-13, company must lead, poor fit now.",
+      "problem": "The deadline and the company-lead rule are correct (13 Jan 2027, 16:00 CET). The report omits that consortia need at least two organisations from different countries. It also omits the 150,000-patient impact and 3-year revenue conditions. Its \"4 FTEs and EUR 250,000 raised\" condition was not visible on the page I read.",
+      "link": "https://www.eit.europa.eu/our-activities/opportunities/innovation-validation-call-2027"
+    },
+    {
+      "part": "funding",
+      "claim": "Most call dates and budgets for EIC, Horizon HLTH 2027 and similar come from the library health-tech memory and were not re-read on the portal.",
+      "problem": "Only the report's caveat protects the advisor. Dates, sizes (for example EUR 39.3m and 44.2m) and cut-offs are unverified, and the Horizon fit was not read against sleep apnea.",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2027-02-ind-02-two-stage"
+    },
+    {
+      "part": "market",
+      "claim": "Home sleep apnea testing devices market 2025: USD 0.7-1.6 billion; all sleep apnea devices USD 9.3 billion.",
+      "problem": "Consultancy figures that differ about 2x, with the method unseen and one sourced only from a search summary. No Finnish or Nordic test volume or price is given. The report is honest about this, but the market is unsized.",
+      "link": "https://www.globenewswire.com/news-release/2025/01/16/3010776/0/en/Home-Sleep-Apnea-Testing-Market-to-Surge-from-USD-712-3-Million-in-2025-to-USD-966-1-Million-by-2035-with-a-3-1-of-CAGR-driven-by-Rising-Awareness-and-Advanced-Diagnostic-Solutions.html"
+    },
+    {
+      "part": "ip",
+      "claim": "Only abstracts and one set of claims (Neteera) were read; no full-text claim analysis was done. CN120616491 is closer to the core idea than the others.",
+      "problem": "The EPO tool returned no claims for the Chinese filings, so \"very close to the core idea\" and \"largely known\" come from abstracts only. The score of 2 rests on that. The report says this itself. CN120616491 was granted one month after publication, which is unusually fast and worth checking. ResMed EP4603005A2 and others were not checked for status.",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DCN120616491"
+    },
+    {
+      "part": "market",
+      "claim": "Sleepiz One+ FDA 510(k) clearance, letter dated 2026-01-28.",
+      "problem": "I could not read the FDA PDF with my tool, so I could not confirm the date or the indication. The nabc report only says \"FDA-cleared\". The two reports should be cross-checked with the FDA database before they are quoted.",
+      "link": "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253388.pdf"
+    },
+    {
+      "part": "funding",
+      "claim": "Seminar talk, patent filing and R2B timing.",
+      "problem": "All reports agree a priority filing must come before the June 2027 paper. None checks the seminar talk, which may already count as a disclosure. That is a gap in a key step of all four reports. R2B also requires the project to have sufficient rights to background material. The hospital data and IP ownership are unclear.",
+      "link": ""
+    }
+  ]
+}

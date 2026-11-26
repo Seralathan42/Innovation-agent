@@ -348,7 +348,7 @@ async def research_projects(args):
     params = {"search": args["query"], "pageSize": 15}
     if args.get("funder"):
         params["fundingShortName"] = args["funder"]
-    data = json.loads(await _fetch("https://api.openaire.eu/graph/v1/projects", params))
+    data = json.loads(await _fetch("https://api.openaire.eu/graph/v3/projects", params))
     lines = [f"{data['header']['numFound']} projects found."]
     for project in data["results"]:
         funders = ", ".join(f"{f['name']} ({f.get('jurisdiction') or '?'})" for f in project.get("fundings") or [])
@@ -429,7 +429,52 @@ async def page_images(args):
     return _reply("\n".join(f"- {alt or '(no alt text)'}: {src}" for alt, src in found[:80]) or "No pictures found on this page.")
 
 
+# ---------- Our own database, on this computer ----------
+
+@tool(
+    "stored_patents",
+    "Find the patents in our own database (every EP and WO patent of the last five years in the library's sectors) "
+    "closest to a description of an invention, ranked by the rare words they share with it. It runs on this computer, "
+    "so the full description may be given. Returns the closest patent families, and who files most in that area, "
+    "when and in which CPC classes.",
+    {"description": str},
+    annotations=READ_ONLY,
+)
+async def stored_patents(args):
+    import patents  # here, not at the top: patents imports run, which imports this file
+    found = await asyncio.to_thread(patents.similar, args["description"], 25)
+    if not found["items"]:
+        return _reply("No stored patent shares these words. Try other words.")
+    counted = lambda key: ", ".join(f"{v} ({n})" for v, n in found[key])
+    lines = [f"Among the 100 closest inventions. Top applicants: {counted('applicants')}. First filings per year: "
+             f"{counted('years')}. Main CPC classes: {counted('classes')}.", "Closest patents, best match first:"]
+    lines += [f"- {p['number']} (first filed {p['priority'] or '?'}, published {p['date']}) {p['title']}. Applicants: "
+              f"{', '.join(p['applicants']) or 'not given'}. CPC: {', '.join(p['cpc'][:6])}. {p['link']}\n  {p['abstract'][:400]}"
+              for p in found["items"]]
+    return _reply("\n".join(lines))
+
+
+@tool(
+    "stored_companies",
+    "Look up the companies and patent applicants in our own database by name or words, for example \"Valmet\" or "
+    "\"battery\". Returns each one's country, type, sectors, number of stored patents, latest patent date and, for "
+    "companies our sector research profiled, what they do and a link.",
+    {"query": str},
+    annotations=READ_ONLY,
+)
+async def stored_companies(args):
+    import patents
+    found = await asyncio.to_thread(patents.company_search, q=args["query"], limit=25, facets=[],
+                                    exclude={"type": ["Person or other"]})
+    lines = [f"{found['total']} match. Showing {len(found['items'])}:"]
+    lines += [f"- {c['name']} ({c['country'] or 'country not given'}, {c['type']}). Sectors: {', '.join(c['sectors'])}. "
+              f"Stored patents: {c['patents']}, latest {c['latest'] or 'none'}.{' ' + c['what'] if c['what'] else ''}"
+              f"{' ' + c['link'] if c['link'] else ''}" for c in found["items"]]
+    return _reply("\n".join(lines))
+
+
 TOOLS = {t.name: t for t in [
     google_patent, search_papers, research_trend, eu_funding_calls, eu_call_details,
     finnish_companies, eurostat_search, eurostat_data, research_projects, epo_patents, epo_patent, page_images,
+    stored_patents, stored_companies,
 ]}

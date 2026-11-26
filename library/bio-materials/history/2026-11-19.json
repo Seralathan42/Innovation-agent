@@ -1,0 +1,317 @@
+{
+  "headline": "Bio-based and advanced materials: incumbents are restructuring and trimming risky textile bets while EU and Finnish support and small start-up rounds continue, and no new major deals surfaced this week.",
+  "metrics": [
+    {
+      "label": "EU27 paper and paper products (NACE C17) net turnover; 18,720 enterprises, 630,000 employed",
+      "value": "EUR 221 billion",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_sc_ovw/default/table"
+    },
+    {
+      "label": "Finland paper and paper products (C17) net turnover; 208 enterprises, 18,458 employed",
+      "value": "EUR 17.1 billion",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_sc_ovw/default/table"
+    },
+    {
+      "label": "EU27 chemicals (C20) net turnover; 31,749 enterprises",
+      "value": "EUR 660.8 billion",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_sc_ovw/default/table"
+    },
+    {
+      "label": "Finland exports of pulp (HS 47) and paper/paperboard (HS 48)",
+      "value": "EUR 2.59 billion (4.32 Mt) and EUR 6.38 billion (6.77 Mt)",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "EU27 paper and board production (down 1.6 %); import penetration record 7.7 %",
+      "value": "77.4 million tonnes",
+      "year": "2025",
+      "source": "https://www.cepi.org/press-release-a-slow-drift-new-statistics-report-shows-why-europes-paper-industry-needs-attention-now/"
+    },
+    {
+      "label": "EU27 circular material use rate (Finland 2.0 %)",
+      "value": "12.2 %",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/env_ac_cur/default/table"
+    },
+    {
+      "label": "Metsä Group Jan–Sep sales and comparable EBITDA",
+      "value": "EUR 4,008 million and EUR 357 million",
+      "year": "2026",
+      "source": "https://chemxplore.com/news/metsa-group-third-quarter-2026-results"
+    },
+    {
+      "label": "Kemira FY2026 guidance: revenue EUR 2,600–3,000 million; operative EBITDA EUR 400–500 million (Q3 revenue EUR 708.9 million)",
+      "value": "EUR 400–500 million EBITDA",
+      "year": "2026",
+      "source": "https://www.inderes.fi/releases/kemira-oyjs-january-september-2026-interim-report-revenue-increased-mainly-driven-by-acquisitions-profitability-burdened-by-high-raw-material-costs"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-10",
+      "title": "Stora Enso keeps Central European sawmills and building solutions",
+      "detail": "Strategic review concluded; the business stays in the group. Read from search summaries of the release.",
+      "impact": "neutral",
+      "source": "https://prnewswire.com/news-releases/stora-enso-concludes-strategic-review-for-central-european-sawmills-and-building-solutions-operations-302934841.html"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Spinnova signs non-binding LOI with Outlast",
+      "detail": "Spinnova fibre for insulation and temperature-regulating textiles. A US IPO of at least USD 15 million was still unconfirmed in searches on 2026-11-19: no pricing or closing found.",
+      "impact": "neutral",
+      "source": "https://www.financialcontent.com/article/accwirecq-2026-11-5-spinnova-signs-letter-of-intent-with-outlast-to-develop-spinnovar-fibre-for-insulation-and-temperature-regulation"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "altM (India) raises USD 10.3 million Series A for bio-based specialty chemicals",
+      "detail": "Shows investor appetite for bio-based chemicals outside Europe.",
+      "impact": "positive",
+      "source": "https://www.business-standard.com/amp/companies/news/altm-series-a-funding-rainmatter-mela-ventures-specialty-chemicals-126110500797_1.html"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Stora Enso board approves demerger plan for Swedish forest assets",
+      "detail": "EGM expected 2026-12-15; listing on Nasdaq Stockholm and Helsinki reported for March 2027.",
+      "impact": "neutral",
+      "source": "https://www.pulpapernews.com/20261103/18344/stora-enso-approves-demerger-plan-its-swedish-forest-assets-business"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "WISA Group (former UPM Plywood) listed on Nasdaq Helsinki",
+      "detail": "Demerger registered 2026-10-31; trading was due to start 2026-11-02.",
+      "impact": "neutral",
+      "source": "https://www.prnewswire.com/news-releases/the-partial-demerger-of-upm-kymmene-corporation-has-been-registered-wisa-group-plc-to-be-listed-on-nasdaq-helsinki-302925755.html"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Metsä Group Q3: earnings recover, comparable EBITDA EUR 100 million",
+      "detail": "Sales EUR 1,267 million; Jan–Sep comparable EBITDA EUR 357 million. Softwood pulp demand expected to stay subdued.",
+      "impact": "neutral",
+      "source": "https://chemxplore.com/news/metsa-group-third-quarter-2026-results"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Stora Enso Q3: forest demerger plan and packaging focus",
+      "detail": "Adjusted EBIT rose 28 % to EUR 161 million but missed forecasts. The board approved separating Swedish forest assets into a new listed company (Bergslagets Skogar), expected in H1 2027. Biomaterials profit rose on higher prices.",
+      "impact": "neutral",
+      "source": "https://www.prnewswire.com/news-releases/stora-enso-interim-report-januaryseptember-2026-introducing-bergslagets-skogar-while-building-a-stronger-stora-enso-302924711.html"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "UPM Q3: strong cash flow amid destocking and cost inflation",
+      "detail": "Comparable EBIT EUR 141 million vs 153 million a year earlier. Biofuels and energy carried results, which shows weak demand in the graphic and fibre businesses.",
+      "impact": "neutral",
+      "source": "https://finance.yahoo.com/markets/stocks/articles/upm-interim-report-q3-2026-082900876.html"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Kemira Q3: revenue up on acquisitions, margins hit by raw-material costs",
+      "detail": "Revenue EUR 708.9 million, flat excluding acquisitions; FY2026 guidance kept.",
+      "impact": "neutral",
+      "source": "https://www.inderes.fi/releases/kemira-oyjs-january-september-2026-interim-report-revenue-increased-mainly-driven-by-acquisitions-profitability-burdened-by-high-raw-material-costs"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Horizon Europe bridging calls open",
+      "detail": "HORIZON-BRIDGING-2027-02-05 has EUR 32.5 million for about 13 grants. It funds follow-on innovation from completed Pillar II projects, with a maximum of 6 partners. Deadline 2027-01-28.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Horizon Europe bridging and advanced-materials calls open",
+      "detail": "Calls on circular advanced materials (MAT-PROD-06) and on valorising project results opened in October 2026. Both suit university commercialisation.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    },
+    {
+      "date": "2026-10-19",
+      "title": "UPM inaugurates Leuna wood-to-chemicals biorefinery",
+      "detail": "220,000 t a year; creates European supply of lignin-based fillers and bio-glycols.",
+      "impact": "positive",
+      "source": "https://www.chemeurope.com/en/news/1190108/from-wood-to-chemicals-upm-inaugurates-pioneering-biorefinery-in-germany.html"
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Spinnova shareholders approve dual-listing plan; US IPO not confirmed completed",
+      "detail": "Spinnova has publicly filed an F-1 targeting at least USD 15 million on Nasdaq Capital Market, and reported a EUR 1.5 million bridge financing in early October. I found no report that the IPO has priced or closed.",
+      "impact": "neutral",
+      "source": "https://www.inderes.dk/en/analyst-comments/spinnova-announces-intention-to-pursue-us-ipo-and-dual-listing"
+    },
+    {
+      "date": "2026-09-14",
+      "title": "LignoSphere (Aalto spin-off) extends pre-seed round with TekVentures",
+      "detail": "Espoo-based LignoSphere turns kraft lignin into colloidal particles for adhesives and coatings. Teknor Apex's TekVentures joined the round; Kiilto Ventures and Stephen Industries invested earlier in 2026; Business Finland provided a product-development loan until June 2027. External funding in 2026 totals just over EUR 1.2 million.",
+      "impact": "positive",
+      "source": "https://www.sttinfo.fi/tiedote/72312638/lignosphere-kerasi-yli-12-miljoonaa-mukaan-satavuotias-yhdysvaltalainen-materiaalivalmistaja"
+    },
+    {
+      "date": "2026-08-27",
+      "title": "Spinnova files SEC registration for US IPO",
+      "detail": "Spinnova plans a Nasdaq Capital Market dual listing raising at least USD 15 million, against a market cap of about EUR 27 million. The offering was expected in Sep–Oct 2026. I found no confirmation that it was completed.",
+      "impact": "neutral",
+      "source": "https://www.inderes.se/releases/spinnova-announces-public-filing-of-sec-registration-statement-for-proposed-us-initial-public-offering-and-dual-listing"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-49",
+      "title": "Proof of market to valorise Horizon-generated results (IA)",
+      "deadline": "2027-02-02",
+      "budget": "EUR 4,700,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-49"
+    },
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-06",
+      "title": "Circular advanced materials (recyclable polymers and composites)",
+      "deadline": "2027-02-02",
+      "budget": "EUR 36,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-06"
+    },
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-08",
+      "title": "Textile circularity (bio-based and regenerated fibres)",
+      "deadline": "2027-02-02",
+      "budget": "EUR 16,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-08"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Horizon Europe Bridging (from Pillar II results)",
+      "deadline": "2027-01-28",
+      "budget": "EUR 32,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-06-02",
+      "title": "Bridging for knowledge intermediaries (tech transfer offices)",
+      "deadline": "2027-02-16",
+      "budget": "EUR 20,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-06-02"
+    },
+    {
+      "id": "HORIZON-CL6-2027-01-CIRCBIO-09",
+      "title": "Upcycling and recycling in the bio-based sector (opens 2027-04-20)",
+      "deadline": "2027-09-22",
+      "budget": "EUR 12,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2027-01-circbio-09"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Stora Enso",
+      "country": "Finland/Sweden",
+      "what": "Forest-products group; packaging, biomaterials (lignin binders, MFC, Cellufoam); demerging Swedish forests.",
+      "link": "https://www.storaenso.com/en/investors"
+    },
+    {
+      "name": "UPM",
+      "country": "Finland",
+      "what": "Biorefining, pulp, paper; Leuna wood-to-chemicals plant; plywood spun off as WISA Group.",
+      "link": "https://www.upm.com/investors/"
+    },
+    {
+      "name": "Metsä Group",
+      "country": "Finland",
+      "what": "Pulp and board; Muoto fibre packaging; Rauma CO2 capture; cancelled Kuura textile mill.",
+      "link": "https://www.metsagroup.com/news-and-publications/news/2026/metsa-groups-carbon-dioxide-capture-plant-receives-eur-21-million-in-aid/"
+    },
+    {
+      "name": "Kemira",
+      "country": "Finland",
+      "what": "Water and fibre chemicals; revenue guidance EUR 2.6–3.0 billion in 2026.",
+      "link": "https://www.inderes.fi/releases/kemira-oyjs-january-september-2026-interim-report-revenue-increased-mainly-driven-by-acquisitions-profitability-burdened-by-high-raw-material-costs"
+    },
+    {
+      "name": "Spinnova",
+      "country": "Finland",
+      "what": "Mechanically produced wood-based textile fibre; seeking US IPO; H1 2026 revenue EUR 286 thousand.",
+      "link": "https://www.inderes.fi/en/companies/Spinnova"
+    },
+    {
+      "name": "LignoSphere",
+      "country": "Finland",
+      "what": "Aalto and Häme UAS origin; colloidal lignin particles; raised over EUR 1.2 million in 2026.",
+      "link": "https://www.lignosphere.fi/post/lignosphere-secures-1-2-million-as-us-materials-investor-joins-round"
+    },
+    {
+      "name": "Nordic Bioproducts Group",
+      "country": "Finland",
+      "what": "Aalto spin-off; cellulose deeptech; Oji and Taaleri as investors.",
+      "link": "https://bebeez.eu/2026/01/21/finnish-nordic-bioproducts-secures-strategic-investment-from-oji-to-scale-cellulose-deeptech/"
+    },
+    {
+      "name": "Woamy",
+      "country": "Finland",
+      "what": "Aalto spin-out; bio-based foams; EUR 1 million seed.",
+      "link": "https://innovation.aalto.fi/woamy-oy-closes-eu1-million-seed-round"
+    },
+    {
+      "name": "Ioncell Oy",
+      "country": "Finland",
+      "what": "Commercialising Aalto/Helsinki Ioncell cellulose fibre.",
+      "link": "https://www.just-style.com/news/ioncell-oy-to-commercialise-cellulose-based-fibre/"
+    },
+    {
+      "name": "Elea & Lili",
+      "country": "Finland",
+      "what": "VTT spin-out (not Aalto); cellulose superabsorbents; EUR 2.5 million seed.",
+      "link": "https://tech.eu/2026/03/18/elea-lili-raises-eur25m-to-scale-fossil-free-absorbent-materials/"
+    },
+    {
+      "name": "Boreal Bioproducts (formerly Montinutra)",
+      "country": "Finland",
+      "what": "Lignin and hemicellulose chemicals, SpruceGlue adhesive; EUR 2 million pre-A led by Metsä Spring (2023).",
+      "link": "https://bebeez.eu/2023/12/18/finlands-montinutra-now-rebranded-as-boreal-bioproducts-secures-e2m-pre-a-for-eco-friendly-chemical-innovation/"
+    },
+    {
+      "name": "Lignin Industries",
+      "country": "Sweden",
+      "what": "Renol lignin thermoplastic; EUR 3.9 million in May 2025.",
+      "link": "https://tech.eu/2025/05/13/sweden-s-lignin-industries-raises-3-9m-to-scale-bio-based-plastic-alternative-derived-from-trees/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "FinnCERES flagship (Aalto, VTT) and Aalto bio-based materials research",
+      "link": "https://www.aalto.fi/en/collaboration/finnceres"
+    },
+    {
+      "what": "FinnCERES: Aalto enhancing bio-based materials research and innovations",
+      "link": "https://www.finnceres.fi/post/aalto-university-enhancing-the-bio-based-materials-research-and-innovations"
+    },
+    {
+      "what": "Woamy Oy, Aalto spin-out (seed round)",
+      "link": "https://innovation.aalto.fi/woamy-oy-closes-eu1-million-seed-round"
+    },
+    {
+      "what": "Nordic Bioproducts Group, Aalto spin-off (CMPC collaboration)",
+      "link": "https://innovation.aalto.fi/nordic-bioproducts-group-launches-collaboration-with-cmpc"
+    },
+    {
+      "what": "LignoSphere, FinnCERES spin-out",
+      "link": "https://www.finnceres.fi/post/from-forest-industry-byproduct-to-high-technology-finnceres-spin-out-lignosphere-closes-pre-seed-f"
+    },
+    {
+      "what": "Ioncell Oy, cellulose fibre commercialisation",
+      "link": "https://www.just-style.com/news/ioncell-oy-to-commercialise-cellulose-based-fibre/"
+    },
+    {
+      "what": "CELLIGHT bio-based opacifiers",
+      "link": "https://www.aalto.fi/en/news/bio-based-opacifiers-offer-solutions-to-cleaner-environment"
+    },
+    {
+      "what": "BioProtex innovation portfolio",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/bioprotex"
+    },
+    {
+      "what": "Österberg team, bio-based packaging funding",
+      "link": "https://www.aalto.fi/en/news/professor-monika-osterbergs-team-received-funding-for-the-development-of-bio-based-packaging"
+    }
+  ],
+  "updated": "2026-11-19T16:46"
+}

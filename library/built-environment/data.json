@@ -1,56 +1,77 @@
 {
-  "headline": "Finnish construction is growing at double-digit rates, driven by data centres (September 2026: output +12.6% and turnover +13.2% year on year). Google's €13 billion Finnish build-out and Skanska's record backlog point to more of the same. Housing remains at a historic low, EU building output is still shrinking, and a new Helsinki AI-for-construction pre-seed round (Stoa, EUR 3.5M) shows that local construction-tech money is available.",
+  "headline": "Finnish construction is booming on data centres (output +12.6% in September) while housing and EU buildings stay weak, and construction-tech venture money keeps flowing to AI and robotics.",
   "metrics": [
     {
-      "label": "Finland construction production, year on year (calendar adjusted, September)",
-      "value": "+12.6% (July +16.1%, August +13.5%; specialised construction +19.8%)",
+      "label": "Finland construction (NACE F): enterprises / persons employed / net turnover",
+      "value": "57,350 / 169,006 / EUR 41.0 bn",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "EU27 construction: enterprises / persons employed / net turnover",
+      "value": "4.07 M / 13.9 M / EUR 2,312 bn",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+    },
+    {
+      "label": "Finland construction production, year on year (calendar adjusted)",
+      "value": "+12.6% (Sept); +13.5% (Aug); EU27 -1.4% (Sept)",
       "year": "2026",
       "source": "https://ec.europa.eu/eurostat/databrowser/view/sts_copr_m/default/table"
     },
     {
-      "label": "Finland construction turnover, year on year (working-day adjusted, September)",
-      "value": "+13.2% (buildings +5.1%, civil engineering +10.0%, specialised +20.7%)",
+      "label": "Finland construction turnover, year on year (September)",
+      "value": "+13.2% (volume +12.6%); specialised construction +20.7%",
       "year": "2026",
       "source": "https://stat.fi/fi/julkaisu/cmg0qmciwaxrs07uptm8o6hsb"
     },
     {
-      "label": "Finland construction sector (NACE F): enterprises, employment, net turnover",
-      "value": "57,350 enterprises; 169,006 persons employed; EUR 41.0 billion",
-      "year": "2024",
-      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
-    },
-    {
-      "label": "EU27 construction production growth (annual)",
-      "value": "+2.3% (buildings -0.2%, civil engineering +2.2%)",
-      "year": "2025",
-      "source": "https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/default/table"
-    },
-    {
-      "label": "Finland water supply and sewerage turnover (E36+E37)",
-      "value": "EUR 1.72 billion; 1,671 enterprises",
-      "year": "2024",
-      "source": "https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table"
+      "label": "Finland building permit volume, 12 months to September",
+      "value": "+27% total; non-residential +37%; residential -12%",
+      "year": "2026",
+      "source": "https://stat.fi/fi/uutinen/datakeskusbuumi-nakyy-rakentamisluvissa-lupien-kuutiomaara-kasvoi-27-vaikka-asuntorakentaminen-pysyy-laskussa"
     },
     {
       "label": "Finland building cost index, year on year (September)",
-      "value": "+3.4% (heating, water and sewage fittings +11.6%)",
+      "value": "+3.4%",
       "year": "2026",
       "source": "https://stat.fi/fi/julkaisu/cmfdpsb3e1q8d07w69h3cl22y"
     },
     {
-      "label": "EU water sector value added and jobs",
-      "value": "EUR 111.7 billion; 1.6 million jobs",
-      "year": "2026",
-      "source": "https://environment.ec.europa.eu/news/commissioner-roswall-discusses-action-plan-digitalise-european-water-sector-2026-11-09_en"
+      "label": "Finnish renovation construction value",
+      "value": "EUR 14.9 bn",
+      "year": "2025",
+      "source": "https://rt.fi/tiedotteet-ja-uutiset/2026/10/datakeskukset-ovat-vetaneet-rakentamisen-kasvuun/"
     },
     {
-      "label": "Finland construction forecast (RT autumn review)",
-      "value": "+2% in 2026, +4% in 2027; housing production not growing",
+      "label": "EU water sector value added / jobs",
+      "value": "EUR 111.7 bn / 1.6 M jobs",
       "year": "2026",
-      "source": "https://rt.fi/tiedotteet-ja-uutiset/2026/10/datakeskukset-ovat-vetaneet-rakentamisen-kasvuun/"
+      "source": "https://environment.ec.europa.eu/news/commissioner-roswall-discusses-action-plan-digitalise-european-water-sector-2026-11-09_en"
     }
   ],
   "signals": [
+    {
+      "date": "2026-11-17",
+      "title": "Further Finnish data-centre plans: Riihimäki, Kuusamo, Laihia",
+      "detail": "DCD, via a search summary, reports Northern Europe Energy targeting a Riihimäki data centre, with Kuusamo and Laihia in preparation. Other large plans reported: Nebius 310 MW in Lappeenranta, Cerebras 165 MW in Mikkeli, atNorth EUR 2bn in Salo. These are not verified individually.",
+      "impact": "positive",
+      "source": "https://www.datacenterdynamics.com/en/news/atnorth-signs-contract-with-yit-for-additional-data-center-building-at-campus-in-finland/"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Finnish building permits: data-centre boom lifts non-residential, housing falls",
+      "detail": "September 2026: permit volume +27%, non-residential +37%, residential -12%, 15,885 dwellings (-13%).",
+      "impact": "neutral",
+      "source": "https://stat.fi/fi/uutinen/datakeskusbuumi-nakyy-rakentamisluvissa-lupien-kuutiomaara-kasvoi-27-vaikka-asuntorakentaminen-pysyy-laskussa"
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Stoa raises EUR 3.5M pre-seed for AI on construction sites (Helsinki)",
+      "detail": "Led by Lifeline Ventures. Data-centre focus. Shows Nordic seed capital for construction AI.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/11/16/backed-by-supercell-wolt-and-plangrid-founders-stoa-lands-eur35m-to-bring-ai-to-construction-sites/"
+    },
     {
       "date": "2026-11-16",
       "title": "Helsinki AI-for-construction startup Stoa raises EUR 3.5M pre-seed",
@@ -60,17 +81,17 @@
     },
     {
       "date": "2026-11-10",
-      "title": "Statistics Finland: construction turnover +13.2% in September",
-      "detail": "Turnover rose in every segment: buildings +5.1%, civil engineering +10.0%, specialised construction +20.7%. Sales volume rose 12.6%. This independently confirms the Eurostat output growth.",
+      "title": "Zacua Ventures closes $135M Fund II for construction tech",
+      "detail": "LPs include Volvo Group, Holcim, Hilti and Trimble.",
       "impact": "positive",
-      "source": "https://stat.fi/fi/julkaisu/cmg0qmciwaxrs07uptm8o6hsb"
+      "source": "https://thenextweb.com/news/zacua-ventures-135m-fund-ii-construction-tech"
     },
     {
       "date": "2026-11-10",
-      "title": "Zacua Ventures closes $135M second fund for construction and infrastructure tech",
-      "detail": "Fund II is more than double the $56M first fund (2024). It invests early stage, with construction at the core plus robotics, AI-powered machinery and new building materials. Its 30+ limited partners include Volvo Group, Holcim, Hilti and Trimble. The 34 portfolio companies are in 11 markets, more than half in North America.",
+      "title": "Statistics Finland: construction turnover +13.2% in September",
+      "detail": "Specialised construction +20.7%, buildings +5.1%, civil engineering +10.0%. Confirms the Eurostat output figures.",
       "impact": "positive",
-      "source": "https://thenextweb.com/news/zacua-ventures-135m-fund-ii-construction-tech"
+      "source": "https://stat.fi/fi/julkaisu/cmg0qmciwaxrs07uptm8o6hsb"
     },
     {
       "date": "2026-11-10",
@@ -102,8 +123,8 @@
     },
     {
       "date": "2026-11-09",
-      "title": "Commission consults stakeholders on its water digitalisation action plan",
-      "detail": "Commissioner Roswall held a roundtable on the draft plan, a flagship of the Water Resilience Strategy, which also links to an EU smart-metering initiative. Barriers named: fragmented data, poor interoperability, lack of digital skills and outdated procurement rules. Adoption is expected in the first half of 2027.",
+      "title": "Commission discusses EU water-sector digitalisation action plan",
+      "detail": "The plan is due in the first half of 2027. It is expected to back smart metering and leak detection.",
       "impact": "positive",
       "source": "https://environment.ec.europa.eu/news/commissioner-roswall-discusses-action-plan-digitalise-european-water-sector-2026-11-09_en"
     },
@@ -124,14 +145,14 @@
     {
       "date": "2026-11-05",
       "title": "Skanska Q3 2026: record backlog",
-      "detail": "Revenue SEK 49.4 billion (43.7 billion a year earlier), operating income SEK 2.1 billion (+52%), construction order bookings SEK 68.0 billion (39.9 billion), and an all-time-high backlog of SEK 328.3 billion (book-to-build 128%). Operating income was below consensus (SEK 2,072M against 2,319M). Published before the last update but missed then.",
+      "detail": "Backlog SEK 328.3 billion, revenue SEK 49.4 billion, operating income SEK 2.1 billion (+52%), slightly below consensus.",
       "impact": "positive",
       "source": "https://www.inderes.fi/releases/skanska-interim-report-third-quarter-2026"
     },
     {
       "date": "2026-11-04",
-      "title": "NCC wins SEK 260M preparatory works for a data centre in Pori",
-      "detail": "Preparatory works for ASP DC at the Pori Copper Industrial Park, completing in spring 2027. Construction of the data centre itself will be procured separately. One more Finnish data-centre site in the pipeline.",
+      "title": "NCC wins SEK 260M data-centre preparatory works at Pori",
+      "detail": "Works for ASP DC, completing in spring 2027.",
       "impact": "positive",
       "source": "https://www.tipranks.com/news/company-announcements/ncc-secures-sek-260-million-finnish-data-center-assignment"
     },
@@ -150,6 +171,13 @@
       "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2024-DIGITAL-EMERGING-01-04"
     },
     {
+      "date": "2026-10-31",
+      "title": "Reported pause of two Google data-centre builds in Finland over forest clearing",
+      "detail": "Baxtel reportedly said in October 2026 that two Google sites were paused after a 300-hectare forest clearing. This came from a secondary search summary and I did not verify it. It is a permitting and reputation risk for the pipeline.",
+      "impact": "negative",
+      "source": "https://baxtel.com/news/atnorth-signs-yit-contract-for-additional-data-center-building-in-finland"
+    },
+    {
       "date": "2026-10-30",
       "title": "YIT Q3 2026: revenue +14%, record order book, data centres named fastest-growing business (published before the last update, first captured now)",
       "detail": "Q3 revenue EUR 530M (466M), adjusted operating profit EUR 30M (24M); January-September revenue EUR 1,400M (+7%). Order book EUR 3,448M (2,929M a year earlier). 2026 adjusted operating profit guidance narrowed to EUR 80-90M. YIT sees a path to about EUR 1 billion data-centre revenue in 2029, conditional on power availability and customer investment. Finnish apartment sales are not expected to grow in 2026.",
@@ -162,6 +190,13 @@
       "detail": "Q3 orders received EUR 2,292.9M and sales EUR 2,906.0M; adjusted EBIT EUR 369.0M (12.7% of sales). 2026 sales growth guidance raised to 4-6% at comparable rates. Secondary summaries say service and modernisation were about 65% of Q3 sales and China new building remained weak. The planned combination with TK Elevator received its first regulatory clearances.",
       "impact": "positive",
       "source": "https://www.inderes.fi/en/releases/kone-oyj-interim-report-of-kone-corporation-for-january-september-2026"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Finland has 145 announced data-centre projects, 60 of them this year",
+      "detail": "Yle reports 145 planned projects nationwide (60 announced this year, 50 in 2025). New projects are moving north because city grids are congested. Proposed rules would steer large power users to remote areas, possibly from 2027. The article date is inferred (timestamp 7.10., year not shown).",
+      "impact": "positive",
+      "source": "https://yle.fi/a/74-20250264"
     },
     {
       "date": "2026-09-30",
@@ -183,208 +218,166 @@
       "detail": "Growth is non-residential-led. Residential recovery lags, and B+L does not expect a sustainable residential recovery before 2027.",
       "impact": "positive",
       "source": "https://stat.fi/en/publication/cmfxlb8z094ck07w33f2j03gr"
-    },
-    {
-      "date": "2026-08-26",
-      "title": "Skanska to build €77M data centre in Finland",
-      "detail": "Core and shell work starts Q4 2026, completes Q3 2027. This follows a €100M Espoo data centre expansion started in April 2026. Data centres are a main driver of Finnish non-residential construction and of demand for heat recovery and building energy tech.",
-      "impact": "positive",
-      "source": "https://www.skanska.com/group/en/media/press-releases/2026/skanska-to-build-data-center-in-finland-for-eur-77m-about-sek-830m"
     }
   ],
   "funding_calls": [
     {
-      "id": "HORIZON-NEB-2026-01-REGEN-01",
-      "title": "Thermal comfort in buildings (New European Bauhaus, IA)",
+      "id": "HORIZON-NEB-2026-01 (REGEN, BUSINESS and PARTICIPATION topics)",
+      "title": "New European Bauhaus 2026 calls (thermal comfort, maintenance and repair, vacant spaces, neighbourhood design and others)",
       "deadline": "2026-12-01",
       "budget": "EUR 12,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-regen-01"
     },
     {
-      "id": "HORIZON-NEB-2026-01-REGEN-02",
-      "title": "Sustainable maintenance and repair of existing buildings (IA)",
-      "deadline": "2026-12-01",
-      "budget": "EUR 10,000,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-regen-02"
-    },
-    {
-      "id": "HORIZON-NEB-2026-01-REGEN-03",
-      "title": "Sustainable and beautiful use of vertical space (IA)",
-      "deadline": "2026-12-01",
-      "budget": "EUR 15,000,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-regen-03"
-    },
-    {
-      "id": "HORIZON-NEB-2026-01-BUSINESS-03",
-      "title": "Reuse of vacant, obsolete or underutilised spaces (RIA)",
-      "deadline": "2026-12-01",
-      "budget": "EUR 9,000,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-business-03"
-    },
-    {
-      "id": "RCF-SRC-2027-RESOURCES",
-      "title": "Strategic Research Council programme: Strategic Resources for the Future (RESOURCES); Finnish consortia; responsible use of materials and data",
+      "id": "SRC RESOURCES (Research Council of Finland)",
+      "title": "Strategic Research Council programme RESOURCES (Finnish consortia)",
       "deadline": "2026-12-15",
       "budget": "not published",
       "link": "https://www.aka.fi/apply"
     },
     {
+      "id": "HORIZON-CL4-2024-DIGITAL-EMERGING-01-04",
+      "title": "AI, Data and Robotics Partnership (listed on the portal; fit to construction robotics and AI not checked)",
+      "deadline": "2027-01-27",
+      "budget": "not published",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2024-digital-emerging-01-04"
+    },
+    {
       "id": "HORIZON-EIC-2027-ACCELERATOR-01",
-      "title": "EIC Accelerator short proposal (rolling; for spin-offs and SMEs)",
+      "title": "EIC Accelerator (short proposals, rolling)",
       "deadline": "2027-12-16",
       "budget": "not published",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01"
     },
     {
-      "id": "HORIZON-EIC-2027-PATHFINDEROPEN-two-stage",
-      "title": "EIC Pathfinder Open (opens 2026-11-25; stage 1 deadline)",
+      "id": "HORIZON-EIC-2027-PATHFINDEROPEN-TWO-STAGE",
+      "title": "EIC Pathfinder Open (opens 2026-11-25; stage 1 cut-off 2027-02-25)",
       "deadline": "2027-02-25",
       "budget": "EUR 166,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage"
     },
     {
       "id": "HORIZON-CL6-2027-02-CLIMATE-01-two-stage",
-      "title": "Water Resilience open topic (stage 1; stage 2 on 2027-09-14)",
+      "title": "Water Resilience open topic (stage 1 2027-04-08, stage 2 2027-09-14)",
       "deadline": "2027-04-08",
       "budget": "EUR 11,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2027-02-climate-01-two-stage"
     },
     {
-      "id": "HORIZON-CL5-2021-D2-01-16 (DUT 2026)",
-      "title": "Driving Urban Transitions partnership: full proposals by invitation (pre-proposals close 2026-11-17); Business Finland EUR 3M for Finnish partners",
-      "deadline": "2027-04-15",
-      "budget": "Business Finland EUR 3M national budget; EUR 200,000-500,000 per Finnish sub-consortium",
-      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/dut-funding-call-2026/"
-    },
-    {
       "id": "HORIZON-CL5-2027-05-D4-05",
-      "title": "On-site robotic and automated techniques for renovation and new construction",
+      "title": "On-site robotic and automated techniques for building renovation and new construction (opens 2027-05-05)",
       "deadline": "2027-09-15",
       "budget": "EUR 20,250,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-05-d4-05"
     },
     {
-      "id": "HORIZON-CL5-2027-05-D4-06",
-      "title": "Waste heat recovery of IT rooms and small edge data centres",
-      "deadline": "2027-09-15",
-      "budget": "EUR 15,750,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-05-d4-06"
-    },
-    {
-      "id": "HORIZON-CL5-2027-05-D4-07",
-      "title": "Circularity in LCA-based modelling for building renovation",
-      "deadline": "2027-09-15",
-      "budget": "EUR 27,000,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-05-d4-07"
-    },
-    {
-      "id": "HORIZON-MISS-2027-07-CLIMA-CIT-CCRI-02",
-      "title": "Wastewater valorisation in cities",
-      "deadline": "2027-09-22",
-      "budget": "EUR 28,500,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-miss-2027-07-clima-cit-ccri-02"
-    },
-    {
-      "id": "HORIZON-MISS-2027-04-CIT-03",
-      "title": "Inclusive and climate-resilient multimodal passenger hubs",
-      "deadline": "2027-10-07",
-      "budget": "EUR 18,000,000",
-      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-miss-2027-04-cit-03"
-    },
-    {
       "id": "HORIZON-NEB-2027-01-REGEN-01",
-      "title": "Hybrid conventional and innovative construction materials, products and techniques (RIA, TRL 4-5)",
+      "title": "Combining conventional and innovative construction materials (opens 2027-05-05)",
       "deadline": "2027-12-01",
       "budget": "EUR 12,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2027-01-regen-01"
     },
     {
       "id": "HORIZON-NEB-2027-01-REGEN-02",
-      "title": "Sustainable, beautiful and healthy construction and renovation sites (RIA)",
+      "title": "Healthy construction and renovation sites (opens 2027-05-05)",
       "deadline": "2027-12-01",
       "budget": "EUR 8,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2027-01-regen-02"
     },
     {
       "id": "HORIZON-NEB-2027-01-REGEN-04",
-      "title": "Enabling environments for circular construction (must support at least one start-up)",
+      "title": "Enabling environments for a sustainable and circular construction sector (must support at least one start-up)",
       "deadline": "2027-12-01",
       "budget": "EUR 9,000,000",
       "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2027-01-regen-04"
+    },
+    {
+      "id": "HORIZON-NEB-2027-01-BUSINESS-01",
+      "title": "Mass customisation of offsite manufactured modular construction components",
+      "deadline": "2027-12-01",
+      "budget": "EUR 10,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2027-01-business-01"
+    },
+    {
+      "id": "HORIZON-CL6-2027-01-CIRCBIO-02",
+      "title": "Enhancing ecodesign and circularity of construction products",
+      "deadline": "2027-09-22",
+      "budget": "EUR 10,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2027-01-circbio-02"
     }
   ],
   "companies": [
     {
       "name": "YIT",
       "country": "Finland",
-      "what": "Largest Finnish contractor. Q3 2026 revenue EUR 530M (+14%), order book EUR 3.4 billion, aiming for about EUR 1 billion of data-centre revenue in 2029",
+      "what": "Construction and data-centre builder. Q3 2026 revenue EUR 530M (+14%), order book EUR 3,448M, targets about EUR 1bn data-centre revenue in 2029.",
       "link": "https://www.yitgroup.com/en/investors"
     },
     {
       "name": "KONE",
       "country": "Finland",
-      "what": "Elevators and escalators, smart-building services. Q3 2026 sales EUR 2.9 billion (+5.2%); combination with TK Elevator pending",
+      "what": "Elevators and escalators. Q3 2026 sales EUR 2,906M (+5.2%), guidance raised, TK Elevator combination in regulatory review.",
       "link": "https://www.kone.com/en/"
     },
     {
       "name": "SRV",
       "country": "Finland",
-      "what": "Contractor; about EUR 270M data-centre contract in Lahti",
+      "what": "Contractor with a Day One data-centre contract in Lahti (about EUR 270M).",
       "link": "https://www.rakennuslehti.fi/2026/03/srvlle-iso-datakeskus-urakka-lahdesta-nostaa-tilauskantaa-yli-kolmanneksella/"
     },
     {
       "name": "Skanska",
       "country": "Sweden/Finland",
-      "what": "Nordic contractor. Q3 2026 record backlog SEK 328.3 billion; EUR 77M Finnish data-centre contract",
+      "what": "Q3 2026 backlog SEK 328.3bn (record). EUR 77M Finnish data-centre contract.",
       "link": "https://www.skanska.fi/"
     },
     {
       "name": "Assemblin Caverion Group",
       "country": "Finland/Sweden",
-      "what": "Building technical services and smart-building maintenance (Caverion now reports within the merged group)",
+      "what": "Building technical services. Q2 2026 revenue SEK 10,961M (+7.8%).",
       "link": "https://www.assemblincaverion.com/"
     },
     {
       "name": "Kemira",
       "country": "Finland",
-      "what": "Water treatment chemistry for municipal and industrial water",
+      "what": "Water chemistry for utilities and industry.",
       "link": "https://www.kemira.com/"
     },
     {
       "name": "Stoa",
       "country": "Finland",
-      "what": "Helsinki AI platform for construction project information; EUR 3.5M pre-seed in November 2026",
-      "link": "https://techfundingnews.com/stoa-3-5m-pre-seed-ai-construction-data-centres/"
+      "what": "AI for construction sites, data-centre focus. EUR 3.5M pre-seed (Nov 2026).",
+      "link": "https://tech.eu/2026/11/16/backed-by-supercell-wolt-and-plangrid-founders-stoa-lands-eur35m-to-bring-ai-to-construction-sites/"
     },
     {
-      "name": "NPHarvest",
+      "name": "Groundhawk",
       "country": "Finland",
-      "what": "Aalto spin-off recovering nutrients from wastewater",
-      "link": "https://www.aalto.fi/en/innovation-portfolio/npharvest-oy"
-    },
-    {
-      "name": "PrinSys",
-      "country": "Finland",
-      "what": "Aalto-origin printed leak-detection tape for buildings",
-      "link": "https://www.aalto.fi/en/innovation-portfolio/prinsys"
-    },
-    {
-      "name": "Spolia Design",
-      "country": "Finland",
-      "what": "Aalto-linked reuse of building materials",
-      "link": "https://www.aalto.fi/en/innovation-portfolio/spolia-design-oy"
+      "what": "Digitises underground infrastructure. EUR 2M seed (March 2026). No Aalto link found.",
+      "link": "https://tech.eu/2026/03/03/groundhawk-raises-eur2m-to-digitise-europes-underground-infrastructure/"
     },
     {
       "name": "Buildots",
       "country": "Israel/UK",
-      "what": "AI construction progress tracking; $130M round in September 2026, expanding into data centres",
+      "what": "AI site progress tracking. $130M raise (Sept 2026).",
       "link": "https://siliconangle.com/2026/09/14/buildots-raises-130-million-to-expand-ai-powered-construction-platform/"
     },
     {
-      "name": "Kuro",
-      "country": "Germany",
-      "what": "AI for general contractors; EUR 10M round in October 2026",
-      "link": "https://www.eu-startups.com/2026/10/berlin-based-kuro-raises-e10-million-to-build-the-ai-foundation-for-general-contractors/"
+      "name": "Complink",
+      "country": "Finland",
+      "what": "Aalto student startup: AI for construction procurement.",
+      "link": "https://www.aalto.fi/en/news/ai-is-changing-the-game-in-construction-a-student-startup-streamlines-procurement-and-boosts"
+    },
+    {
+      "name": "PrinSys",
+      "country": "Finland",
+      "what": "Aalto-linked leak-detection tape.",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/prinsys"
+    },
+    {
+      "name": "NPHarvest",
+      "country": "Finland",
+      "what": "Aalto-linked wastewater nutrient recovery.",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/npharvest-oy"
     }
   ],
   "aalto_links": [
@@ -393,11 +386,11 @@
       "link": "https://www.aalto.fi/en/department-of-civil-engineering/performance-in-building-design-and-construction"
     },
     {
-      "what": "Building 2030 industry research consortium",
+      "what": "Building 2030",
       "link": "https://www.aalto.fi/en/building-2030"
     },
     {
-      "what": "Department of Built Environment (water and environmental engineering, transportation, real estate, geoinformatics; DIWA digital water flagship)",
+      "what": "Department of Built Environment (DIWA flagship)",
       "link": "https://www.aalto.fi/en/department-of-built-environment"
     },
     {
@@ -405,25 +398,17 @@
       "link": "https://www.aalto.fi/en/department-of-civil-engineering/abp-aalto-building-physics"
     },
     {
-      "what": "NPHarvest: Water Lab spin-off for wastewater nutrient recovery",
-      "link": "https://www.aalto.fi/en/innovation-portfolio/npharvest-oy"
-    },
-    {
-      "what": "PrinSys: leak-detection tape (fits Aalto patent application WO2026062326A1)",
-      "link": "https://www.aalto.fi/en/innovation-portfolio/prinsys"
-    },
-    {
-      "what": "Spolia Design: reuse of building materials",
+      "what": "Spin-off: Spolia Design (material reuse)",
       "link": "https://www.aalto.fi/en/innovation-portfolio/spolia-design-oy"
     },
     {
-      "what": "Complink: student startup for AI construction procurement",
-      "link": "https://www.aalto.fi/en/news/ai-is-changing-the-game-in-construction-a-student-startup-streamlines-procurement-and-boosts"
+      "what": "Spin-off: PrinSys (leak detection)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/prinsys"
     },
     {
-      "what": "Aalto patent application WO2026062326A1, self-powered leak sensor",
-      "link": "https://patents.google.com/patent/WO2026062326A1/en"
+      "what": "Spin-off: NPHarvest (wastewater nutrient recovery)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/npharvest-oy"
     }
   ],
-  "updated": "2026-11-16T21:16"
+  "updated": "2026-11-25T15:10"
 }

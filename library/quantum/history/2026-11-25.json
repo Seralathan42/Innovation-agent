@@ -1,0 +1,370 @@
+{
+  "headline": "Quantum technology in Europe and Finland is capital-rich and moving fast (IQM and Pasqal listed, Bluefors a unicorn), but the EU Quantum Act is still unconfirmed and early-stage rounds remain small.",
+  "metrics": [
+    {
+      "label": "IQM Q3 2026 revenue (+51% year on year); Jan-Sep revenue €17.73M",
+      "value": "€8.86M",
+      "year": "2026",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002113060/000119312526448359/iqmx-ex99_1.htm"
+    },
+    {
+      "label": "IQM order backlog (+52% since start of year); cash €260.4M",
+      "value": "€102.5M",
+      "year": "2026",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002113060/000119312526448359/iqmx-ex99_1.htm"
+    },
+    {
+      "label": "IQM FY2026 revenue guidance (implies €24-29M in Q4 alone, own calculation)",
+      "value": "€42-47M",
+      "year": "2026",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002113060/000119312526448359/iqmx-ex99_1.htm"
+    },
+    {
+      "label": "Finnish business R&D expenditure (all sectors, context only; no official quantum statistics exist)",
+      "value": "€6,039M",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/rd_e_berdindr2/default/table"
+    },
+    {
+      "label": "EU27 business R&D expenditure (all sectors, context only)",
+      "value": "€270.6bn",
+      "year": "2024",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/rd_e_berdindr2/default/table"
+    },
+    {
+      "label": "Global quantum start-up investment, 6.3x 2024, about 90% into computing (search summary of report)",
+      "value": "$12.6bn",
+      "year": "2025",
+      "source": "https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-quantum-technology-monitor-2026-a-commercial-tipping-point"
+    },
+    {
+      "label": "Bluefors revenue (operating profit over €38M, 700+ staff; secondary report)",
+      "value": "about €217M",
+      "year": "2025",
+      "source": "https://dealroom.co/news/155743-bluefors-joins-finlands-unicorn-club-with-a-1b-valuation-and-217m-in-rev/"
+    },
+    {
+      "label": "Patent publications in CPC G06N10 (quantum computing), 1 Jan to 16 Nov (EPO search tool, own query)",
+      "value": "3,027",
+      "year": "2026",
+      "source": "https://worldwide.espacenet.com/patent/search?q=cpc%3DG06N10"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-16",
+      "title": "IQM issues treasury shares for cashless exercise of employee stock options",
+      "detail": "IQM's board resolved on a directed issue of treasury shares, to be transferred to Evli on 16 November 2026, to handle employee option exercises. Housekeeping after the July listing; number of shares not read (the GlobeNewswire page returned an access error, so this rests on the search summary).",
+      "impact": "neutral",
+      "source": "https://www.globenewswire.com/news-release/2026/11/16/3403207/0/en/iqm-resolves-on-a-directed-issue-of-treasury-shares-to-facilitate-cashless-exercise-of-employee-stock-options.html"
+    },
+    {
+      "date": "2026-11-14",
+      "title": "Draft EU Quantum Act leaked: EU-control procurement preference",
+      "detail": "Leaked draft would limit public quantum procurement and strategic projects to EU-controlled firms, target ~100 logical qubits per system by 2030, and set no budget. Commission reportedly scheduled to propose on 18 Nov 2026. My searches on 19 Nov found no confirmation of adoption; check the Commission press corner.",
+      "impact": "positive",
+      "source": "https://www.technology.org/2026/11/14/draft-eu-quantum-act-european-suppliers-logical-qubits-2030/"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Q-CTRL raises $290M Series C",
+      "detail": "Led by Salesforce Ventures at a valuation above $1bn. Control software draws late-stage capital, far above European peers' rounds.",
+      "impact": "neutral",
+      "source": "https://quantumcomputingreport.com/q-ctrl-raises-290-million-in-series-c-funding-led-by-salesforce-ventures-to-scale-quantum-infrastructure-software/"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "QuiX Quantum wins PhotonDelta funding",
+      "detail": "100+ qubit photonic computer with three Dutch universities, 2026-2028.",
+      "impact": "positive",
+      "source": "https://www.hpcwire.com/off-the-wire/quix-quantum-secures-photondelta-funding-for-photonic-quantum-computing/"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "Xanadu names Bluefors as cryogenics partner",
+      "detail": "Xanadu's Q3 2026 results list a partnership with Bluefors to develop compact, modular cryogenics that bring detector cooling into a data-centre footprint. No contract value given.",
+      "impact": "positive",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002097163/000209716326000025/exhibit991pressrelease-nov.htm"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Draft EU Quantum Act leaks; adoption still unconfirmed",
+      "detail": "The draft reserves public quantum procurement for EU-controlled firms and targets about 100 logical qubits per system by 2030. It has no budget. A search on 2026-11-25 found no Commission proposal. An MLex report says internal delays could push it into 2027.",
+      "impact": "neutral",
+      "source": "https://thequantuminsider.com/2026/11/10/draft-eu-quantum-act-would-favor-european-suppliers-set-computing-and-security-targets/"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Leaked draft of the EU Quantum Act reserves public procurement for EU-controlled suppliers",
+      "detail": "According to a draft obtained by The Quantum Insider (summarised by MLQ.ai; MLex first reported the leak on 28 October), public purchases of quantum products and participation in strategic quantum projects would generally be limited to EU-controlled companies, with non-EU suppliers needing a reciprocal partnership or Commission authorisation. Targets: about 100 logical qubits per system by 2030, industrial-scale quantum foundries in 2030-2035, and a European Quantum Service Platform. The draft sets no budget; funding would depend on the proposed European Competitiveness Fund. MLex reports the Commission is scheduled to propose the Act on 18 November 2026; the date is not confirmed by the Commission and the text may change. Published before the last update but missed then.",
+      "impact": "positive",
+      "source": "https://mlq.ai/news/draft-eu-quantum-act-would-reserve-public-quantum-purchases-for-eu-controlled-companies/"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "OtaNano promoted as open quantum facility for companies; Finnish 2035 targets restated",
+      "detail": "Article on Aalto-hosted OtaNano opening facilities to companies. Restates national 2035 targets: €3bn quantum-sector turnover, €400M private investment, 10,000 jobs; InstituteQ aims for 50 end-user companies by 2030. Finnish Quantum Flagship spin-outs named: A-Gate Sensors, Arctic Instruments, QMill. Promotional piece, no access terms given.",
+      "impact": "positive",
+      "source": "https://quantumzeitgeist.com/aalto-university-finlands-otanano-offers-quantum/"
+    },
+    {
+      "date": "2026-11-09",
+      "title": "Quantum Act status still unconfirmed",
+      "detail": "The act was planned for Q2 2026. Searches found only the consultation (Oct 2025) and legislative-train entry, with no confirmation of a formal proposal.",
+      "impact": "neutral",
+      "source": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-quantum-act"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "IQM Q3 2026 results",
+      "detail": "Revenue €8.86M (+51%), new orders €42.2M including €33M from the CSC LUMI AI Factory, backlog €102.5M. Guidance reaffirmed, but it implies a very large Q4.",
+      "impact": "positive",
+      "source": "https://www.sec.gov/Archives/edgar/data/0002113060/000119312526448359/iqmx-ex99_1.htm"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "IQM reports Q3 2026 results",
+      "detail": "Revenue about €8.9M (+51%), new orders €42.2M, backlog €102.5M, cash €260.4M. FY2026 guidance reaffirmed: revenue €42-47M, order intake €65-75M, weighted to Q4. A €127M non-cash listing charge is included in the reported result.",
+      "impact": "positive",
+      "source": "https://thequantuminsider.com/2026/11/05/iqm-books-e42-2-million-in-orders-as-quarterly-revenue-rises-51-in-q3-2026/"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "IQM Q3 2026 results due today",
+      "detail": "Date moved from 3 Nov to 5 Nov. Figures were not available at the time of this update.",
+      "impact": "neutral",
+      "source": "https://www.placera.se/pressmeddelanden/iqm-quantum-computers-iqm-quantum-computers-will-change-the-release-date-of-the-interim-report-for-january-september-2026-20261005"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Quint Computing raises €9.1M first round",
+      "detail": "Error-correction hardware start-up, plus €2.2M EIC Pathfinder money. A template for spin-offs: VC plus EIC.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/11/03/quint-computing-raises-eur91m-to-scale-quantum-computing-technology/"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "QuantrolOx raises €12M Series A",
+      "detail": "Anglo-Finnish Oxford spinout, led by IW Capital with the EIC Fund and Transpose Capital. Qubit control software.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/10/22/anglo-finnish-oxford-university-quantum-spinout-raises-eur12m/"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Coherence Quantum (Espoo, Aalto QCD spin-out) raises €2.78M seed",
+      "detail": "Cryogenic control infrastructure for larger quantum computers.",
+      "impact": "positive",
+      "source": "https://tech.eu/2026/10/20/coherence-quantum-raises-eur278m-to-tackle-quantum-computer-scaling-challenges/"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Horizon Bridging call opened",
+      "detail": "€32.5M, deadline 2027-01-28. Only for results of completed Pillar II projects, so it is a marginal fit for most Aalto inventions.",
+      "impact": "neutral",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "Coherence Quantum (Espoo) raises €2.78M seed",
+      "detail": "Led by Lifeline Ventures. Cryogenic signalling and control for scaling quantum computers; the money funds an Espoo lab and first prototypes. The firm is a likely partner for Aalto cryogenic-electronics work, but I did not verify its Aalto link.",
+      "impact": "positive",
+      "source": "https://thequantuminsider.com/2026/10/20/coherence-quantum-raises-e2-78-million-in-seed-round/"
+    },
+    {
+      "date": "2026-10-14",
+      "title": "EU Quantum Act proposal reported as expected on 18 November 2026",
+      "detail": "Law-firm briefing says the Commission is expected to present the Quantum Act on 18 November 2026 (slipped from Q2 2026). Expected pillars: research and innovation, industrial capacity and investment, supply-chain protection; strategic projects, pilot manufacturing facilities, simpler licensing. Date is not confirmed by the Commission.",
+      "impact": "neutral",
+      "source": "https://abreuadvogados.com/en/blogs/european-commission-prepares-proposal-for-a-regulation-to-boost-quantum-technologies-in-europe/"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "Pasqal-led €50M Q-PLANET pilot line enters execution, VTT among partners",
+      "detail": "Three-year Chips JU pilot line for neutral-atom quantum chips, 28 partners from 11 member states including VTT. Shows EU pilot-line money reaching Finnish research organisations.",
+      "impact": "positive",
+      "source": "https://thequantuminsider.com/2026/10/06/pasqal-50-million-q-planet-neutral-atom-quantum/"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "VTT appoints Jani Kivioja to lead Quantum Technologies",
+      "detail": "Took over as Vice President of VTT's quantum research area on 1 November 2026, with a brief to link research to piloting and commercial applications.",
+      "impact": "neutral",
+      "source": "https://thequantuminsider.com/2026/10/06/vtt-jani-kivioja-quantum-technologies-research/"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Bluefors and Verda become Finnish unicorns",
+      "detail": "Dealroom lists Bluefors (cryogenics) among September 2026 new unicorns (exact day not given); Algorithmiq raised a €18M Series B in May 2026.",
+      "impact": "positive",
+      "source": "https://dealroom.co/charts/finland-startups-2026"
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Bluefors valued above €1bn, Finland's second quantum unicorn (older news, first captured in this run)",
+      "detail": "Dealroom reports that Bluefors' latest financial statements imply a valuation above €1bn from a directed share offering, on revenue of nearly €217M and operating profit of more than €38M, with 700+ employees. A profitable cryogenics supplier of this size is a ready customer and partner for Aalto component inventions.",
+      "impact": "positive",
+      "source": "https://dealroom.co/news/155743-bluefors-joins-finlands-unicorn-club-with-a-1b-valuation-and-217m-in-rev/"
+    },
+    {
+      "date": "2026-08-28",
+      "title": "Pasqal began trading on Nasdaq under PSQL (older news, resolves an open question)",
+      "detail": "École Polytechnique reports that Pasqal's SPAC merger closed and shares began trading on 28 August 2026, with about $360M in cash and a valuation of about $2bn. With IQM, Europe now has two listed quantum hardware makers. Single source; not checked against an SEC filing.",
+      "impact": "positive",
+      "source": "https://www.polytechnique.edu/en/news/pasqal-co-founded-alain-aspect-and-antoine-browaeys-makes-its-nasdaq-debut"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "Business Finland Xecs Quantum Call 2026",
+      "title": "Xecs Quantum Call 2026 (preliminary application 2026-11-26; final 2027-03-05; national application 2027-03-19)",
+      "deadline": "2026-11-26",
+      "budget": "not published",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/xecs-quantum-call-2026/"
+    },
+    {
+      "id": "Business Finland research-SME cooperation",
+      "title": "Cooperation between research organizations and SMEs (80% funding to research organisations, at least three SMEs; open 2026-05-11)",
+      "deadline": "2026-12-18",
+      "budget": "not published",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/call-research-organizations-and-smes/"
+    },
+    {
+      "id": "DIGITAL-ECCC-2027-DEPLOY-CYBER-11-DUALUSE",
+      "title": "Dual-use technologies (cybersecurity; deployment focus, marginal fit)",
+      "deadline": "2027-01-14",
+      "budget": "EUR 10,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-eccc-2027-deploy-cyber-11-dualuse"
+    },
+    {
+      "id": "HORIZON-JU-EUROHPC-2026-QML-07-01",
+      "title": "Quantum Machine Learning (EuroHPC JU, RIA; only entities in EU, associated and EuroHPC states)",
+      "deadline": "2027-01-28",
+      "budget": "EUR 6,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-ju-eurohpc-2026-qml-07-01"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-02-05",
+      "title": "Advancing promising results from Pillar II collaborative research (needs a completed Pillar II project; max 6 partners)",
+      "deadline": "2027-01-28",
+      "budget": "EUR 32,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05"
+    },
+    {
+      "id": "HORIZON-CL4-2027-05-DIGITAL-EMERGING-03",
+      "title": "Advanced integrated photonic devices (RIA, Photonics Partnership)",
+      "deadline": "2027-03-18",
+      "budget": "EUR 25,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-05-digital-emerging-03"
+    },
+    {
+      "id": "HORIZON-CL4-2027-SPACE-03-71",
+      "title": "Quantum Space Gravimetry (opens 2027-03-09; EU/Norway/Iceland only)",
+      "deadline": "2027-09-02",
+      "budget": "EUR 29,200,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-space-03-71"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-03",
+      "title": "Secure PQC implementations, cryptanalysis and post-quantum digital trust (opens 2027-03-02)",
+      "deadline": "2027-09-15",
+      "budget": "EUR 19,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl3-2027-02-cs-eccc-03"
+    },
+    {
+      "id": "HORIZON-CL3-2027-02-CS-ECCC-04",
+      "title": "New primitives and protocols for hybrid classical and quantum networks (opens 2027-03-02)",
+      "deadline": "2027-09-15",
+      "budget": "EUR 4,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl3-2027-02-cs-eccc-04"
+    }
+  ],
+  "companies": [
+    {
+      "name": "IQM Quantum Computers",
+      "country": "Finland",
+      "what": "Superconducting quantum computers. Listed on Nasdaq and Nasdaq Helsinki in July 2026. Commercialises Aalto and VTT research.",
+      "link": "https://www.sec.gov/Archives/edgar/data/0002113060/000119312526448359/iqmx-ex99_1.htm"
+    },
+    {
+      "name": "Bluefors",
+      "country": "Finland",
+      "what": "Dilution refrigerators and cryogenics. Valuation above €1bn (September 2026). Partners with Xanadu on compact data-centre cryogenics.",
+      "link": "https://bluefors.com"
+    },
+    {
+      "name": "Coherence Quantum",
+      "country": "Finland",
+      "what": "Cryogenic control infrastructure, Aalto QCD spin-out, €2.78M seed.",
+      "link": "https://www.eu-startups.com/2026/10/espoo-based-coherence-quantum-raises-e2-78-million-to-build-infrastructure-for-larger-quantum-computers/"
+    },
+    {
+      "name": "SemiQon Technologies",
+      "country": "Finland",
+      "what": "Silicon quantum chips (VTT spin-off).",
+      "link": "https://www.semiqon.tech"
+    },
+    {
+      "name": "QMill",
+      "country": "Finland",
+      "what": "Quantum software and algorithms (Finnish Quantum Flagship spin-out); Telia use case.",
+      "link": "https://quantumzeitgeist.com/finland-quantum-computing-companies/"
+    },
+    {
+      "name": "Algorithmiq",
+      "country": "Finland / Italy",
+      "what": "Quantum algorithms for life sciences. €18M Series B in May 2026, moved headquarters from Helsinki to Milan.",
+      "link": "https://sifted.eu/articles/algorithmiq-fundraise-relocation-italy"
+    },
+    {
+      "name": "QuantrolOx",
+      "country": "UK / Finland",
+      "what": "Qubit control software, €12M Series A.",
+      "link": "https://tech.eu/2026/10/22/anglo-finnish-oxford-university-quantum-spinout-raises-eur12m/"
+    },
+    {
+      "name": "Pasqal",
+      "country": "France",
+      "what": "Neutral-atom quantum computers. Nasdaq listing in August 2026; leads the €50M Q-PLANET pilot line with VTT among the partners.",
+      "link": "https://www.polytechnique.edu/en/news/pasqal-co-founded-alain-aspect-and-antoine-browaeys-makes-its-nasdaq-debut"
+    },
+    {
+      "name": "Quint Computing",
+      "country": "Germany",
+      "what": "Error-correction hardware, €9.1M first round.",
+      "link": "https://tech.eu/2026/11/03/quint-computing-raises-eur91m-to-scale-quantum-computing-technology/"
+    },
+    {
+      "name": "Q-CTRL",
+      "country": "Australia",
+      "what": "Quantum control software, $290M Series C.",
+      "link": "https://quantumcomputingreport.com/q-ctrl-raises-290-million-in-series-c-funding-led-by-salesforce-ventures-to-scale-quantum-infrastructure-software/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Quantum Computing and Devices (QCD) group, Mikko Möttönen: qubit error suppression; source of the Coherence Quantum spin-out",
+      "link": "https://www.aalto.fi/en/department-of-applied-physics/quantum-computing-and-devices-qcd"
+    },
+    {
+      "what": "Aalto news: Möttönen's team aims to rein in qubit errors",
+      "link": "https://www.aalto.fi/en/news/mikko-mottonen-and-his-team-aim-to-rein-in-qubit-errors"
+    },
+    {
+      "what": "InstituteQ, the Finnish quantum institute (director Jukka Pekola, Aalto)",
+      "link": "https://www.aalto.fi/en/instituteq"
+    },
+    {
+      "what": "OtaNano, the nanotechnology research infrastructure open to companies",
+      "link": "https://quantumzeitgeist.com/aalto-university-finlands-otanano-offers-quantum/"
+    },
+    {
+      "what": "InstituteQ events, including Quantum Software Day 2026",
+      "link": "https://instituteq.fi/quantum-software-day-2026/"
+    },
+    {
+      "what": "IQM commercialises Aalto and VTT research",
+      "link": "https://www.vttresearch.com/en/news-and-ideas/quantum-computing-iqm-commercialise-groundbreaking-research-aalto-university-and-vtt"
+    }
+  ],
+  "updated": "2026-11-25T14:59"
+}

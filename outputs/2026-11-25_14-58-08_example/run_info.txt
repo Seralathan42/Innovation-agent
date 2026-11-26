@@ -1,0 +1,9 @@
+Started: 2026-11-25 14:58:08
+Inputs:
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/example.md
+
+[market] saved market.md (62 s)
+[ip] saved ip.md (61 s)
+[funding] saved funding.md (74 s)
+[nabc] saved nabc.md (31 s)
+[check] saved check.json (57 s)

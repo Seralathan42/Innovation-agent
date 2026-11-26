@@ -1,0 +1,9 @@
+Started: 2026-11-25 15:12:20
+Inputs:
+  /Users/brendonaslitvinas/Desktop/AI Project/disclosures/demo-sleep-radar.md
+
+[market] saved market.md (59 s)
+[ip] saved ip.md (62 s)
+[funding] saved funding.md (74 s)
+[nabc] saved nabc.md (33 s)
+[check] saved check.json (42 s)

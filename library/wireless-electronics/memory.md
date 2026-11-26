@@ -1,7 +1,7 @@
-# Wireless and electronics: knowledge file (updated 2026-11-16, fourth run)
+# Wireless and electronics: knowledge file (updated 2026-11-25, sixth run)
 
 ## Overview
-Scope: 6G and mobile communications, semiconductors, photonics, sensors and electronics, with a focus on Europe and Finland. Finland has a strong base: Nokia, the 6G Flagship at Oulu, VTT, Aalto, Tampere and a growing photonics and sensor startup scene. Electronics matters unusually much to Finland: it accounts for 7.1% of manufacturing employment, against 3.7% in the EU27 [Eurostat sbs_ovw_act, 2024](https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table). As of mid-November 2026 the sector is in an AI-driven chip and optical upcycle. 6G is expected earlier, around 2029. Finland is pushing 6G diplomatically at the ITU and through defence and resilience programmes, and Nokia is extending into AI infrastructure through the AI Gigafactory Northern bid.
+Scope: 6G and mobile communications, semiconductors, photonics, sensors and electronics, with a focus on Europe and Finland. Finland has a strong base: Nokia, the 6G Flagship at Oulu, VTT, Aalto, Tampere and a growing photonics and sensor startup scene. Electronics matters unusually much to Finland: it accounts for 7.1% of manufacturing employment, against 3.7% in the EU27 [Eurostat sbs_ovw_act, 2024](https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table). As of 25 November 2026 the sector is in an AI-driven chip and optical upcycle. 6G is expected earlier, around 2029. Finland is pushing 6G diplomatically at the ITU and through defence and resilience programmes, and Nokia is extending into AI infrastructure through the AI Gigafactory Northern bid.
 
 ## Market size and growth
 Official statistics:
@@ -16,7 +16,7 @@ Semiconductor market:
 - The growth comes mostly from AI-driven memory and logic demand and pricing. It is not evidence of broad growth in European electronics output.
 
 Companies and funding:
-- Nokia Q3 2026: net sales €5,154M (+10%). Network Infrastructure +15% in constant currency (IP Networks +43%, Optical +18%), and AI and cloud customer sales +123%. The 2026 comparable operating profit outlook is €2.1–2.6B. [Nokia, 2026](https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/)
+- Nokia Q3 2026: net sales €5,154M (+10%). Network Infrastructure +15% in constant currency (IP Networks +43%, Optical +18%), and AI and cloud customer sales +123%. The 2026 comparable operating profit outlook is €2.1–2.6B [Nokia, 2026](https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/).
 - EU 6G funding: SNS JU funded five projects worth about €22M (22 October 2026) [SNS JU, 2026](https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/). The final SNS JU call is reported at about €220–222M across 17 topics, expected to open in January 2027 and close by the end of April 2027, subject to Governing Board adoption in December 2026 [Techzine, 2026](https://www.techzine.eu/news/infrastructure/145223/europe-aims-to-increase-its-influence-on-6g-with-e220-million/), [Lovguiden summary, 2026](https://www.lovguiden.dk/en/det-offentlige/smart-networks-and-services-joint-undertaking/2026-10-30-sns-ju-praesenterede-6g-midler-og-arbejdsprogram-2027-i-paris).
 - Finnish deep-tech rounds:
   - Vexlum: €10M in February 2026 (€6M equity led by Kvanted with Tesi and the EIC Fund, €2.4M EIC Accelerator grant, €1.6M Nordea loan) [EU-Startups, 2026](https://www.eu-startups.com/2026/02/vexlum-raises-e10-million-to-scale-semiconductor-laser-manufacturing-for-quantum-and-space-applications/).
@@ -27,20 +27,21 @@ Companies and funding:
 - Cloudberry (Helsinki–London) closed a €30M first fund for pre-seed and seed startups in semiconductors, photonics and advanced materials, with cheques of €0.4–1M (spring 2026) [Tech Funding News, 2026](https://techfundingnews.com/cloudberry-30m-fund-europe-semiconductors-photonics/).
 - Aalto spinouts (all sectors) raised over €500M in H1 2026, mostly ICEYE, and about €2.6B since 2010 [Aalto, 2026](https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new).
 - Finnish startups (all sectors) raised $1.9B across 110 rounds in the year to 23 September 2026. This is a teaser figure, not sector-specific [Dealroom, 2026](https://dealroom.co/news/169137-finland-launches-three-growth-projects-to-boost-space-chips-and-factory/).
-- Trade register: a search for TOL 26110 (electronic components) in Espoo returned 28 companies, active and ceased. This is not a sector-wide count [PRH/YTJ via finnish_companies tool, 2026].
+- Trade register: a search for TOL 26110 (electronic components) in Espoo returned 28 companies, active and ceased. This is not a sector-wide count (PRH/YTJ via finnish_companies tool, 2026).
 - No reliable analyst figure for the 6G or photonics market size has been gathered, so do not quote one. Metaktik's "over €6B" addressable market is the company's own estimate.
 
 ## Key players
 - Telecom: Nokia (FI), Ericsson (SE), operators such as Telia.
-- Nokia's new moves:
-  - It is a founding partner of AI Gigafactory Northern with Nscale, Skeleton, Telia and Verda (16 November 2026), supplying connectivity and network infrastructure [Mobile Europe, 2026](https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/).
-  - It signed a video patent licence with ASUS that ends their litigation (16 November 2026) [Nokia, 2026](https://www.nokia.com/newsroom/nokia-signs-patent-license-agreement-with-asus/).
+- Nokia's recent moves:
+  - Founding partner of AI Gigafactory Northern with Nscale, Skeleton, Telia and Verda (16 November 2026) [Mobile Europe, 2026](https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/).
+  - Video patent licence with ASUS ending litigation (16 November 2026) [Nokia, 2026](https://www.nokia.com/newsroom/nokia-signs-patent-license-agreement-with-asus/).
+  - €1.5M donation to Aalto and expanded joint R&D (12 November 2026) [Nokia, 2026](https://www.nokia.com/newsroom/nokia-strengthens-partnership-with-aalto-university-with-15-million-donation-and-expanded-rd-collaboration-for-future-technology-research-and-talent/).
 - Finnish photonics, sensors and semiconductors:
   - Vexlum, Agate Sensors (Aalto spin-out, registered April 2024), Emberion, Comptek Solutions, Detection Technology and Aspocomp.
   - QID Oy (Helsinki, registered 2023) is in the register, but its business is unverified. Photoncycle is also unverified.
 - Aalto spin-offs:
-  - Metaktik Oy (business ID 3604810-2, registered 1 March 2026, Otakaari 5, Espoo, TOL 26300 communication equipment): metasurface antennas from the Space Technology Laboratory via a Research to Business project.
-  - Coherence Quantum Oy (3633417-6, registered 22 June 2026, Espoo, TOL 26510): cryogenic control hardware [PRH/YTJ via finnish_companies tool, 2026].
+  - Metaktik Oy (business ID 3604810-2, registered 1 March 2026, Otakaari 5, Espoo, TOL 26300): metasurface antennas from the Space Technology Laboratory via a Research to Business project.
+  - Coherence Quantum Oy (3633417-6, registered 22 June 2026, Espoo, TOL 26510): cryogenic control hardware (PRH/YTJ via finnish_companies tool, 2026).
   - Deltan Labs (2026, from the BOMP R2B project in Applied Physics) works on materials optimisation, not core to this sector (search summary, not verified).
 - Foreign chip firms with Espoo branches in the register: Infineon Technologies Nordic, Synopsys Technology Finland.
 - Nordic and European: Polar Light Technologies (microLED, SE), Photon Bridge (photonics lasers, NL).
@@ -48,6 +49,7 @@ Companies and funding:
 - Research:
   - Aalto, University of Oulu (6G Flagship, 6G Test Centre, coordinator of the 6G-VERSUS project), Tampere University and the 6G Finland ecosystem.
   - VTT runs the APECS chiplet and RF packaging pilot line (€29M, reported in 2025 [eeNews Europe](https://www.eenewseurope.com/en/e29m-for-6g-chiplet-packaging-line-in-finland/)) and supports AI Gigafactory Northern.
+  - The joint Finland–Sweden 6G programme lists Aalto, Chalmers, Luleå, VTT, Nokia, Ericsson, Bittium, Combient and Saab as members (search summary, date not confirmed) [University of Oulu, 2026](https://www.oulu.fi/en/news/finland-and-sweden-strengthen-societal-resilience-through-joint-6g-programme).
 
 ## Trends
 - **6G timing:** the commercial launch is now expected around 2029, two years earlier than planned (Helsinki summit, 3 November 2026) [6G Flagship, 2026](https://www.6gflagship.com/news/6g-is-coming-sooner-than-planned-industry-tells-helsinki-summit/). One guide puts the standard freeze in March 2029 (search summary, not verified).
@@ -56,14 +58,15 @@ Companies and funding:
 - **Energy-autonomous networks:** the 6G-VERSUS Finnish pilot runs an off-grid base station in Arctic Finland on solar, wind, battery and hydrogen with AI energy management, for one year from October 2026. It is one of six European pilots [6G Flagship, 2026](https://www.6gflagship.com/news/off-grid-base-station-pilot-finland/).
 - **Satellite:** non-terrestrial (satellite) networks are becoming part of the 6G radio access.
 - **AI demand:** AI and cloud demand drives optical and IP network sales and a sharp semiconductor upcycle. Telecom vendors are now joining AI compute infrastructure bids, such as AI Gigafactory Northern with an Oulu site under the EU InvestAI programme [Mobile Europe, 2026](https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/).
-- **Research growth:** OpenAlex lists 21,099 papers matching "6G wireless" in 2026 so far, against 19,999 in 2025 and 14,701 in 2024. The University of Oulu is third in the world (1,275 papers) and Aalto has 391 [OpenAlex via research_trend tool](https://openalex.org).
+- **Research growth:** OpenAlex lists 21,099 papers matching "6G wireless" in 2026 so far, against 19,999 in 2025 and 14,701 in 2024. The University of Oulu is third in the world (1,275 papers) and Aalto has 391 (OpenAlex via research_trend tool, [openalex.org](https://openalex.org)).
 - **Patents:** 298 publications since January 2026 mention "reconfigurable intelligent surface". They are mostly from Chinese universities and operators, plus Qualcomm, NTT, ETRI, Siemens, BT, Vestel and Jio [EPO Espacenet search, 2026](https://worldwide.espacenet.com). The field is crowded, so freedom to operate needs checking.
-- **Standards:** early 6G standards work runs through 2026–27. A Standards, Patents and Competitiveness Forum is scheduled for 18 November 2026. Patent licensing remains a large revenue line for Nokia (the ASUS deal of 16 November 2026).
+- **Standards:** early 6G standards work runs through 2026–27. The outcome of the 18 November 2026 Standards, Patents and Competitiveness Forum was not checked. Patent licensing remains a large revenue line for Nokia.
 - **Defence and resilience:**
-  - Finland and Sweden launched the joint 6G-FISRE programme (June 2026, per 6G Flagship).
+  - Finland and Sweden launched the joint 6G-FISRE programme (June 2026) [University of Oulu, 2026](https://www.oulu.fi/en/news/finland-and-sweden-strengthen-societal-resilience-through-joint-6g-programme).
   - Nokia expanded 6G and defence R&D in Finland with Business Finland support (17 June 2026) [Nokia, 2026](https://www.nokia.com/nokia-expands-6g-and-defense-network-rd-in-finland-with-support-from-business-finland/).
+  - Business Finland announced decisions under its 6G Bridge programme on 18 August 2026 (details not found; search summary).
   - The Ministry of Defence granted €4.8M to a Nokia-led Arctic 6G consortium [Finnish Government](https://valtioneuvosto.fi/en/-/236553176/minister-of-defence-hakkanen-oulu-5g-6g-project-to-receive-government-grant-of-eur-4.8-million), [SDxCentral](https://www.sdxcentral.com/news/nokia-in-65m-boost-to-arctic-6g-development/).
-  - The Oulu 6G Test Centre presented a route from lab tests to defence field trials at the Northern Security and Economy Forum (11 November 2026, per search summary) [6G Flagship](https://www.6gflagship.com/news/6g-test-centre-route-to-field-trials/).
+  - The Oulu 6G Test Centre presented a route from lab tests to defence field trials (11 November 2026, per search summary) [6G Flagship](https://www.6gflagship.com/news/6g-test-centre-route-to-field-trials/).
 - **Startup funding:** photonics and sensing startups are getting seed funding in Finland, and a dedicated seed fund (Cloudberry) now exists.
 - **Business Finland growth projects:** launched in early November 2026 for space, semiconductors and photonics, and AI in manufacturing. They are coordination and market-access vehicles, not direct funding [Dealroom, 2026](https://dealroom.co/news/169137-finland-launches-three-growth-projects-to-boost-space-chips-and-factory/). The Semiconductors and Photonics programme starts with an industry survey with Photonics Finland; no budget has been published [Photonics Finland, 2026](https://www.photonics.fi/2026/11/02/business-finland-launches-new-semiconductors-photonics-growth-programme/).
 - **Passive radio environment:** 6G concepts such as Aalto's metacrystal panels and passive metasurfaces.
@@ -72,40 +75,40 @@ Companies and funding:
 ## Regulation and policy
 - **Chips Act 2.0:**
   - Proposed by the Commission on 3 June 2026 (procedure 2026/0139(COD)). It covers strategic projects, demand accelerators, pilot lines, a Region of Excellence label and a procurement preference for startup chips, with no new headline budget [AENEAS, 2026](https://aeneas-office.org/2026/06/03/european-commission-unveils-proposed-chips-act-2-0/).
-  - Status: Council policy debate on 24 September 2026; the Irish Presidency presented a first compromise text on 12 October 2026; work continues in the Council Working Party on Competitiveness and Growth (Industry).
-  - In Parliament, ITRE rapporteur Oliver Schenk (EPP, DE) was appointed on 31 August 2026 and the referral was announced on 14 September 2026.
+  - Status as last checked (not re-checked on 25 November): Council policy debate on 24 September 2026; the Irish Presidency presented a first compromise text on 12 October 2026. In Parliament, ITRE rapporteur Oliver Schenk (EPP, DE) was appointed on 31 August 2026.
   - No general approach or Parliament vote is scheduled, and trilogues have not started [European Parliament Legislative Train, 2026](https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-chips-act-ii), [SEMI Europe, 2026](https://www.semi.org/sites/semi.org/files/2026-09/SEMI_Europe_July-August_EU_Policy_Brief.pdf), [Silicon Saxony, 2026](https://silicon-saxony.de/en/european-chips-act-2-0-from-a-political-initiative-to-the-regular-legislative-process).
-  - Correction: the Council document of 6 November 2026 (15512/26) appears to transmit the EESC opinion welcoming the proposal, not a Council position (search summary) [Council, 2026](https://data.consilium.europa.eu/doc/document/ST-15512-2026-INIT/en/pdf).
-- **ITU:** at the Plenipotentiary Conference in Doha (9–27 November 2026), Finland's top priority is 6G. It drafted a resolution with industry and partner countries on global 6G development and safe roll-out, and also raises satellite and AI, submarine cable resilience, and harmful radio interference (including GNSS and mobile interference from Russia) [Finnish Government, 2026](https://valtioneuvosto.fi/en/-/1410829/international-telecommunication-union-sets-the-global-direction-for-digital-technologies-).
-- **Spectrum:** a regulatory opinion says 6G could launch by 2030 in already harmonised bands, mainly upper 6 GHz (about ten months old) [Telecoms.com](https://www.telecoms.com/5g-6g/eu-says-there-is-already-enough-spectrum-to-launch-6g-by-2030).
+  - The Council document of 6 November 2026 (15512/26) appears to transmit the EESC opinion welcoming the proposal, not a Council position [Council, 2026](https://data.consilium.europa.eu/doc/document/ST-15512-2026-INIT/en/pdf).
+- **ITU:** at the Plenipotentiary Conference in Doha (9–27 November 2026), Finland's top priority is 6G. It drafted a resolution with industry and partner countries on global 6G development and safe roll-out, and also raises satellite and AI, submarine cable resilience, and harmful radio interference [Finnish Government, 2026](https://valtioneuvosto.fi/en/-/1410829/international-telecommunication-union-sets-the-global-direction-for-digital-technologies-). The outcome is not yet known.
+- **Spectrum:** a regulatory opinion says 6G could launch by 2030 in already harmonised bands, mainly upper 6 GHz [Telecoms.com](https://www.telecoms.com/5g-6g/eu-says-there-is-already-enough-spectrum-to-launch-6g-by-2030).
 - **SNS JU:** the final call under Horizon Europe is reported for January 2027.
 - **EIC 2027:**
   - Reported as adopted as Decision C(2026)7629 at over €1.8B. Sources conflict on adoption status, and the portal still shows no Accelerator budget.
   - The Accelerator has four full-proposal cut-offs reported for 2027: 20 January, 17 March, 1 September and 4 November [Evolution Europe, 2026](https://evolutioneurope.eu/blog/eic-work-programme-2027-draft/), [Rasph, 2026](https://www.rasph.com/eic-accelerator-cut-off-dates-2027).
-  - EIC Transition is limited to single applicants. An information day is on 19 November 2026 [EU Accelerator briefing, 2026](https://www.euacc.ai/briefing/pulse-20).
+  - EIC Transition is limited to single applicants [EU Accelerator briefing, 2026](https://www.euacc.ai/briefing/pulse-20).
 - **AI Gigafactories:** EuroHPC JU runs a tender for AI Gigafactory consortia under InvestAI (€20B target for gigafactories within a €200B AI investment ambition). The AIGF Northern consortium will bid [Mobile Europe, 2026](https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/).
 - **Participation limits:** several Horizon digital topics restrict participation to protect EU strategic interests (the photonics and telco edge topics exclude entities controlled from non-eligible countries).
 - **Finnish 6G roadmap:** the Ministry of Transport and Communications published its 6G roadmap on 17 June 2025 (per search summary, not verified on the primary page).
 
 ## Opportunities for Aalto inventions
-Open and upcoming calls (budgets from the EU portal):
-- MSCA Doctoral Networks 2026 with industrial doctorates: deadline 2026-11-24, €628.0M [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-msca-2026-dn-01-01).
+Open and upcoming calls (budgets from the EU portal; see the funding_calls list for the current set):
 - AI chip demonstrators (DIGITAL-JU-CHIPS-2026-AI1-SG): deadline 2026-12-01, €10M, about 10 grants of €0.5–1M for EU fabless companies [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-ai1-sg).
 - EU–Japan semiconductors (DIGITAL-JU-CHIPS-2026-SG-JAPAN): deadline 2026-12-08, €5M [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-sg-japan).
 - Horizon Bridging (HORIZON-BRIDGING-2027-02-05): deadline 2027-01-28, €32.5M, grants up to €2.5M; must build on a completed Pillar II project [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05).
-- EIC Pathfinder Open 2027: stage 1 on 2027-02-25, stage 2 on 2027-09-16, €166M, opens 2026-11-25 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage).
-- Integrated photonic devices RIA (HORIZON-CL4-2027-05-DIGITAL-EMERGING-03): deadline 2027-03-18, €25M, about 6 grants of €3–5M, TRL 3 to 6, opens 2026-11-17 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-05-digital-emerging-03).
+- EIC Pathfinder Open 2027: opened 2026-11-25; stage 1 on 2027-02-25, stage 2 on 2027-09-16, €166M [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage).
+- Integrated photonic devices RIA (HORIZON-CL4-2027-05-DIGITAL-EMERGING-03): deadline 2027-03-18, €25M, about 6 grants of €3–5M, TRL 3 to 6 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-05-digital-emerging-03).
 - Virtual Worlds hardware (HORIZON-CL4-2027-04-HUMAN-01): deadline 2027-03-18, €39M [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-human-01).
-- Telco Edge Cloud 3C demand pilots (HORIZON-CL4-2027-04-DATA-08): deadline 2027-03-18, €38M, two grants of about €19M. These are large consortia, so a partner role at most [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-data-08).
-- EIC Accelerator 2027 short proposals: open since 2026-11-10 and continuous; the portal lists the final date as 2027-12-16. The budget is not published on the portal, and the first full-proposal cut-off is reported as 2027-01-20 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01).
+- Telco Edge Cloud 3C demand pilots (HORIZON-CL4-2027-04-DATA-08): deadline 2027-03-18, €38M, two grants of about €19M. Large consortia, so a partner role at most [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-data-08).
+- EIC Accelerator 2027 short proposals: open since 2026-11-10 and continuous; the portal lists the final date as 2027-12-16. Budget not published; first full-proposal cut-off reported as 2027-01-20 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01).
 - EIC STEP Scale Up 2027: €290M, equity of €10–30M, deadline 2027-11-24 [EU portal](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-step).
+- MSCA Doctoral Networks 2026 closed on 2026-11-24. The 2027 round (HORIZON-MSCA-2027-DN-01-01) opens 2027-05-26 and closes 2027-11-23 (EU call database, 2026).
 
 Not open:
-- Business Finland Research to Business call 2/2026 closed on 16 September 2026 (€7.5M; projects typically €400–700k at 80% funding; decisions due January 2027) [Business Finland, 2026](https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/). Call 1/2027 is still not announced (checked 16 November 2026). Call 1/2026 ran from 1 December 2025 to 4 March 2026 [Business Finland](https://www.businessfinland.fi/en/services/funding/calls/2026/research-to-business--funding-call-12026/), so a December opening is likely but unconfirmed.
+- Business Finland Research to Business call 2/2026 closed on 16 September 2026 (€7.5M; projects typically €300–700k at 80% funding; decisions due January 2027) [Business Finland, 2026](https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/). Call 1/2027 is still not announced (checked 25 November 2026). Call 1/2026 ran from 1 December 2025 to 4 March 2026 [Business Finland](https://www.businessfinland.fi/en/services/funding/calls/2026/research-to-business--funding-call-12026/), so a December opening is likely but unconfirmed.
+- Business Finland lists other 2026 calls (quantum technology co-research projects, Rise to Challenge, research organisations with SMEs, partnership-model co-research). Their dates and fit were not checked [Business Finland, 2026](https://www.businessfinland.fi/en/services/funding/calls/2026/call-for-applications-for-quantum-technology-co-research-projects/).
 - No open Research Council of Finland Proof of Concept call was found; its winter call closed on 11 November 2026.
-- The Research Council of Finland's Finnish–South Korean 6G (NextG) and quantum call (four three-year projects, up to €166,650 a year per Finnish party) had letters of intent due in March–April 2026, so it is closed for new applicants [Research Council of Finland, 2026](https://www.aka.fi/en/about-the-rcf/whats-new/press-releases/2026/research-council-of-finland-to-support-finnishsouth-korean-6g-nextg-and-quantum-technology-research/).
-- The SNS JU 6G call expected in January 2027 is not yet in the EU call database. Watch for it.
-- Removed from consideration: the Open Internet Stack (HORIZON-CL4-2025-03-DATA-11) and Smart IoT Platforms (HORIZON-CL4-2024-DATA-01-03) entries are old topics with misleading dates. Treat "Reinforcing skills in semiconductors" (DIGITAL-2023-SKILLS-04) the same way until it is checked.
+- The Research Council of Finland's Finnish–South Korean 6G (NextG) and quantum call is closed [Research Council of Finland, 2026](https://www.aka.fi/en/about-the-rcf/whats-new/press-releases/2026/research-council-of-finland-to-support-finnishsouth-korean-6g-nextg-and-quantum-technology-research/).
+- The SNS JU 6G call expected in January 2027 is still not in the EU call database (checked 25 November 2026). Watch for it.
+- Misleading dates: the Open Internet Stack (HORIZON-CL4-2025-03-DATA-11) and Smart IoT Platforms (HORIZON-CL4-2024-DATA-01-03) topics show in the database with deadlines in January 2027, but they are old topics, so they are left out. Treat "Reinforcing skills in semiconductors" (DIGITAL-2023-SKILLS-04) the same way until checked.
 
 Fit and routes:
 - **Fit with Aalto research:** passive 6G surfaces, sensing, photonic integrated devices and low-power chips. Aalto has recent patent applications on:
@@ -130,19 +133,20 @@ Fit and routes:
 - The other Aalto 2026 spinouts in this sector.
 - SNS JU 2027 call: final budget, topics and dates after the December Governing Board.
 - EIC 2027: confirm adoption (C(2026)7629) and the cut-off dates on the official portal.
-- Business Finland Research to Business 1/2027 dates.
+- Business Finland Research to Business 1/2027 dates, the fit of its other 2026 calls, and what the 6G Bridge decisions of 18 August 2026 funded.
 - Status of the 6G Flagship's funding period, and the size of the Nokia/Business Finland 6G and defence support.
-- AI Gigafactory Northern: investment size, the Estonian site (Iru or the Tallinn region), the tender timeline, and the role of Finnish research partners.
+- AI Gigafactory Northern: investment size, the Estonian site, the tender timeline, and the role of Finnish research partners.
 - The outcome of Finland's 6G resolution at the ITU Plenipotentiary (closes 27 November 2026).
 - Unverified: a Nokia Federal Solutions "RAPID" contract (reported 13 November 2026 in a search summary); no primary source found.
 
 ## Changes since last update
-- New signals: AI Gigafactory Northern consortium with Nokia and an Oulu site (16 November), the Nokia–ASUS patent licence (16 November), Finland's 6G priority at the ITU Plenipotentiary (9 November), the 6G-VERSUS off-grid pilot in Arctic Finland (2 November), and the Photon Bridge €10M round as a European photonics benchmark (21 October).
-- Added the reported EIC 2027 adoption and Accelerator cut-offs (20 January, 17 March, 1 September and 4 November 2027). The portal lists 2027-12-16 as the short-proposal end date.
-- Corrected: the 6 November Council document on Chips Act 2.0 appears to be the EESC opinion, not a Council position.
-- Added the Research Council of Finland Finland–Korea 6G call as closed, and the photonics exit-route evidence from PIC Summit Europe.
-- Checked and rejected: a search result presented PhotonDelta's €1.1B plan as November 2026 news, but it was announced in April 2022. The Nokia RAPID contract is unverified and left out of the signals.
-- Research to Business 1/2027 is still not announced.
+- Light refresh on 25 November 2026. Searches of the EU call database and for new Finnish 6G news found no new market events beyond what the file already holds.
+- EIC Pathfinder Open 2027 opened today (2026-11-25), as scheduled.
+- MSCA Doctoral Networks 2026 closed on 2026-11-24 and was removed from open calls. The 2027 round is listed (opens 2027-05-26, deadline 2027-11-23).
+- Research to Business 1/2027 is still not announced, and the SNS JU January 2027 call is still not in the EU call database.
+- Added the Nokia newsroom source for the Aalto donation, and a note on the Business Finland 6G Bridge decision of 18 August 2026 (details not found).
+- Corrected the typical R2B project size to €300–700k (Business Finland page); the earlier note said €400–700k.
+- Nothing from the previous file was found to be false.
 
 ## Sources
 - https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table
@@ -151,6 +155,7 @@ Fit and routes:
 - https://www.semiconductor-digest.com/semiconductor-market-continues-to-accelerate-in-q3-2026/
 - https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/
 - https://www.nokia.com/newsroom/nokia-signs-patent-license-agreement-with-asus/
+- https://www.nokia.com/newsroom/nokia-strengthens-partnership-with-aalto-university-with-15-million-donation-and-expanded-rd-collaboration-for-future-technology-research-and-talent/
 - https://www.mobileeurope.co.uk/nokia-nscale-telia-ai-gigafactory/
 - https://smart-networks.europa.eu/e22-million-to-turn-europes-6g-research-into-industrial-innovation/
 - https://www.techzine.eu/news/infrastructure/145223/europe-aims-to-increase-its-influence-on-6g-with-e220-million/
@@ -176,13 +181,13 @@ Fit and routes:
 - https://evertiq.com/news/2026-11-10-ericsson-turns-mobile-networks-into-drone-detection-systems
 - https://www.mobileeurope.co.uk/nokia-aalto-university/
 - https://valtioneuvosto.fi/en/-/1410829/international-telecommunication-union-sets-the-global-direction-for-digital-technologies-
+- https://www.oulu.fi/en/news/finland-and-sweden-strengthen-societal-resilience-through-joint-6g-programme
 - https://openalex.org
 - https://worldwide.espacenet.com
 - https://patents.google.com/patent/WO2026162876A1/en
 - https://worldwide.espacenet.com/patent/search?q=pn%3DWO2025052026A1
 - https://worldwide.espacenet.com/patent/search?q=pn%3DWO2026176140A1
 - https://worldwide.espacenet.com/patent/search?q=pn%3DEP4826369A1
-- https://doi.org/10.1109/jsac.2020.3007211
 - https://www.nokia.com/nokia-expands-6g-and-defense-network-rd-in-finland-with-support-from-business-finland/
 - https://valtioneuvosto.fi/en/-/236553176/minister-of-defence-hakkanen-oulu-5g-6g-project-to-receive-government-grant-of-eur-4.8-million
 - https://www.sdxcentral.com/news/nokia-in-65m-boost-to-arctic-6g-development/
@@ -197,8 +202,8 @@ Fit and routes:
 - https://www.rasph.com/eic-accelerator-cut-off-dates-2027
 - https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/
 - https://www.businessfinland.fi/en/services/funding/calls/2026/research-to-business--funding-call-12026/
+- https://www.businessfinland.fi/en/services/funding/calls/2026/call-for-applications-for-quantum-technology-co-research-projects/
 - https://www.aka.fi/en/about-the-rcf/whats-new/press-releases/2026/research-council-of-finland-to-support-finnishsouth-korean-6g-nextg-and-quantum-technology-research/
-- https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-msca-2026-dn-01-01
 - https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-ai1-sg
 - https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/digital-ju-chips-2026-sg-japan
 - https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-02-05

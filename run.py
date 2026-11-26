@@ -17,6 +17,7 @@ import asyncio
 import functools
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -40,14 +41,43 @@ CLI = str(BUNDLED_CLI) if BUNDLED_CLI.exists() else shutil.which("claude")
 ROOT = Path(__file__).parent
 AGENTS_DIR = ROOT / "agents"
 OUTPUT_DIR = ROOT / "outputs"
+DISCLOSURES_DIR = ROOT / "disclosures"
+FILE_TYPES = {".pdf", ".md", ".txt", ".png", ".jpg", ".jpeg", ".gif", ".webp"}  # what the agents can read
 
 TASK = """Input files (read them all first):
 {files}
 
-The invention disclosure is confidential and unpublished. When searching the web or using data tools, \
-use general terms (field, product type, company names) and never paste distinctive details of the invention.
+Our own data, kept on this computer: stored_patents finds the patents in our database closest to a description, \
+stored_companies looks up the companies and patent applicants we track, and library/<sector>/memory.md holds our \
+latest research on each sector ({sectors}). Use what fits alongside your online searches, and say which findings \
+come from our own data.
 
-Reply with your finished report in Markdown as your final message."""
+The invention disclosure is confidential and unpublished. When searching the web or using online data tools, use \
+general terms (field, product type, company names) and never paste distinctive details of the invention. \
+stored_patents and stored_companies run on this computer, so they may be given the full description.
+
+Return the whole finished report in the report field. Only that field is saved, so do not write the report \
+elsewhere and point to it."""
+
+FIVE = {"type": "integer", "enum": [1, 2, 3, 4, 5]}
+PARTS = ["market", "ip", "funding", "nabc"]  # shown as Market, Patents, Funding and Summary
+SCHEMAS = {  # what an agent returns, chosen with 'output:' in its header
+    "report": {"type": "object", "properties": {
+        "report": {"type": "string", "description": "The complete report in Markdown, with every section and link. "
+                   "Only this field is saved: text written outside it is lost, so never refer to it."},
+        "score": FIVE, "reason": {"type": "string", "description": "One sentence: why this score"}},
+        "required": ["report", "score", "reason"], "additionalProperties": False},
+    "check": {"type": "object", "properties": {
+        "title": {"type": "string", "description": "The invention's name in a few words"},
+        "summary": {"type": "string", "description": "Two or three sentences: the overall picture and how far to trust the reports"},
+        "parts": {"type": "array", "items": {"type": "object", "properties": {
+            "part": {"type": "string", "enum": PARTS}, "agrees": {"type": "boolean"}, "score": FIVE,
+            "note": {"type": "string"}}, "required": ["part", "agrees", "score", "note"], "additionalProperties": False}},
+        "issues": {"type": "array", "items": {"type": "object", "properties": {
+            "part": {"type": "string", "enum": PARTS}, "claim": {"type": "string"}, "problem": {"type": "string"},
+            "link": {"type": "string"}}, "required": ["part", "claim", "problem", "link"], "additionalProperties": False}}},
+        "required": ["title", "summary", "parts", "issues"], "additionalProperties": False},
+}
 
 
 @functools.cache
@@ -104,26 +134,45 @@ def read_agent(name):
 def load_agent(name):
     config, prompt = read_agent(name)
     names = [t.strip() for t in config.get("tools", "").split(",") if t.strip()]
-    return agent_options(prompt, names, model=config.get("model"), effort=config.get("effort"))
+    schema = SCHEMAS[config.get("output", "report")]
+    return agent_options(prompt, names, model=config.get("model"), effort=config.get("effort"),
+                         output_format={"type": "json_schema", "schema": schema})
 
 
 async def run_agent(name, files):
-    """Run one agent on the input files and return its final reply."""
+    """Run one agent on the input files and return what it found, in the shape of its schema."""
     check_subscription()
-    prompt = TASK.format(files="\n".join(f"- {Path(f).resolve()}" for f in files))
+    sectors = ", ".join(s["id"] for s in json.loads((ROOT / "sectors.json").read_text()))
+    prompt = TASK.format(files="\n".join(f"- {Path(f).resolve()}" for f in files), sectors=sectors)
     result = None
     async for message in query(prompt=prompt, options=load_agent(name)):
         if isinstance(message, ResultMessage):
             result = message
-    if result is None or result.is_error:
+    if result is None or result.is_error or not result.structured_output:
         raise RuntimeError(result.errors or result.result if result else "no result")
-    return result.result
+    return result.structured_output
+
+
+def save_disclosure(name, data):
+    """Save an uploaded disclosure in disclosures/, never over a different file with the same name, and return its path."""
+    filename = re.sub(r"[^\w.-]", "_", Path(name).name)
+    suffix = Path(filename).suffix.lower()
+    if suffix not in FILE_TYPES:
+        raise ValueError("Use a PDF, text, Markdown or image file. Save Word files as PDF first.")
+    if not data:
+        raise ValueError("The file is empty.")
+    path, n = DISCLOSURES_DIR / filename, 2
+    while path.exists() and path.read_bytes() != data:
+        path, n = DISCLOSURES_DIR / f"{Path(filename).stem}-{n}{suffix}", n + 1
+    path.write_bytes(data)
+    return path
 
 
 def start_run(files, agents):
     """Create the run folder and return it with the coroutine that runs the agents.
 
-    Agents with 'after: reports' in their header wait until the others are done and also get their reports.
+    Each report agent saves <name>.md, and its 1 to 5 score goes into scores.json. Agents with 'after: reports' in
+    their header (the checker) wait until the others are done and also get their reports and scores; they save <name>.json.
     run_info.txt is rewritten whenever an agent starts or finishes, so it always shows the current progress.
     """
     started = datetime.now()
@@ -132,6 +181,7 @@ def start_run(files, agents):
     later = [a for a in agents if read_agent(a)[0].get("after") == "reports"]
     first = [a for a in agents if a not in later]
     status = {a: f"[{a}] {'waiting' if a in later else 'running'}" for a in agents}
+    scores = {}
     inputs = "\n".join(f"  {Path(f).resolve()}" for f in files)
 
     def save_status():
@@ -144,8 +194,15 @@ def start_run(files, agents):
         save_status()
         start = time.monotonic()
         try:
-            (out_dir / f"{name}.md").write_text(await run_agent(name, agent_files))
-            result = f"saved {name}.md"
+            found = await run_agent(name, agent_files)
+            if "report" in found:
+                (out_dir / f"{name}.md").write_text(found["report"])
+                scores[name] = {"score": found["score"], "reason": found["reason"]}
+                (out_dir / "scores.json").write_text(json.dumps(scores, indent=2, ensure_ascii=False))
+                result = f"saved {name}.md"
+            else:
+                (out_dir / f"{name}.json").write_text(json.dumps(found, indent=2, ensure_ascii=False))
+                result = f"saved {name}.json"
         except Exception as error:
             result = f"failed: {error}"
         status[name] = f"[{name}] {result} ({time.monotonic() - start:.0f} s)"
@@ -154,7 +211,7 @@ def start_run(files, agents):
 
     async def run_all():
         await asyncio.gather(*(run_and_save(a, files) for a in first))
-        reports = [str(out_dir / f"{a}.md") for a in first if (out_dir / f"{a}.md").exists()]
+        reports = [str(p) for p in [*(out_dir / f"{a}.md" for a in first), out_dir / "scores.json"] if p.exists()]
         await asyncio.gather(*(run_and_save(a, files + reports) for a in later))
 
     save_status()

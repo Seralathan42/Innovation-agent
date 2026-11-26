@@ -1,0 +1,429 @@
+{
+  "headline": "Energy storage in Europe keeps growing fast, with large financed projects in Finland and Germany. Europe still depends on Chinese cells (90% of extra-EU lithium-ion imports), and hydrogen is behind plan.",
+  "metrics": [
+    {
+      "label": "Europe battery storage installed",
+      "value": "36 GWh (+48% YoY); fleet above 100 GWh; forecast 138 GWh in 2030 (SolarPower Europe medium scenario)",
+      "year": "2025",
+      "source": "https://www.ess-news.com/2026/06/23/solarpower-europe-reports-record-36-gwh-of-european-storage-installs/"
+    },
+    {
+      "label": "EU27 imports of lithium-ion accumulators from outside the EU (HS 850760)",
+      "value": "EUR 28.59 billion (+25% vs 2024); China's share 90%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "Renewable share of gross final energy consumption, Finland vs EU27",
+      "value": "Finland 53.0%, EU27 26.2%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table"
+    },
+    {
+      "label": "Renewable share of electricity, Finland vs EU27",
+      "value": "Finland 56.6%, EU27 49.9%",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table"
+    },
+    {
+      "label": "Finland grid-connected electricity storage",
+      "value": "about 1,050 MW (980 MW from 261 systems of 1 MW or more, plus about 70 MW smaller)",
+      "year": "2026",
+      "source": "https://www.fingrid.fi/en/news/news/2026/the-combined-capacity-of-electricity-storages-in-finland-now-exceeds-1000-mw/"
+    },
+    {
+      "label": "Finland lithium-ion battery trade (HS 850760)",
+      "value": "Imports EUR 847 million (2024: EUR 1,171 million); exports EUR 364 million (2024: EUR 669 million)",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/DS-045409/default/table"
+    },
+    {
+      "label": "Finnish district heating: fossil fuels and peat share of supply; consumption",
+      "value": "13% (47% in 2019); just over 31 TWh; emissions -38%",
+      "year": "2025",
+      "source": "https://www.sttinfo.fi/tiedote/71751647/energiatilastot-2025-kaukolammon-paastot-putosivat-kolmanneksella-sahko-lahes-fossiilitonta-ja-euroopan-edullisinta"
+    },
+    {
+      "label": "EU Hydrogen Bank third auction (IF25) awards",
+      "value": "about EUR 1.09 billion to 9 projects, about 1.1 GW electrolysis",
+      "year": "2026",
+      "source": "https://hydrogeneurope.eu/high-levels-of-competition-in-3rd-eu-hydrogen-bank-auction/"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-25",
+      "title": "EIC Pathfinder Open 2027 opens",
+      "detail": "Opens 2026-11-25, with EUR 166 million for about 45 grants. Stage 1 deadline is 2027-02-25. No other major new news was found for 17-25 November.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage"
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Elements Green gets TenneT grid connection commitment for 1.6 GWh BESS",
+      "detail": "400 MW / 1.6 GWh Stadorf project in Germany. The company plans 3.2 GW in Germany by 2027. This is another sign that 4-hour systems are being financed.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/11/16/elements-green-receives-grid-connection-commitment-from-tennet-for-1-6-gwh-bess-in-germany/"
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Kemijärvi pumped-storage plants: few jobs after construction",
+      "detail": "Four plants are planned, the first in Finland. A Ramboll study expects about EUR 15 million of local spending in construction and about 6.3 person-years a year in operation.",
+      "impact": "neutral",
+      "source": "https://www.dailynorthern.com/39091/report-kemijarvi-pumped-storage-plants-would-create-few-jobs-after-construction/"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "ACER 2026 hydrogen market monitoring report",
+      "detail": "Reportedly says electrolytic hydrogen is growing but not fast enough and that storage deployment is limited. Draft TYNDP 2026 lists 73 hydrogen storage projects of about 1 million t. From a search summary; the PDF could not be read.",
+      "impact": "neutral",
+      "source": "https://www.acer.europa.eu/sites/default/files/documents/Publications/ACER-2026-Monitoring-Report-European-hydrogen-markets.pdf"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "Gore Street's EU battery fund reaches 550 MWh",
+      "detail": "Second close of the EU fund. Next deals are planned in Spain and Romania.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/11/12/gore-street-turns-to-spain-and-romania-for-next-deals-eu-battery-portfolio-reaches-550-mwh/"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "EU Grids Package trilogues are under way",
+      "detail": "The Council's Coreper I agenda for 11 and 13 November (ST 15420/26 REV 2) lists a Presidency debriefing on the outcome of a TEN-E trilogue and preparation for a permitting-directive trilogue. Commentary targets a deal in late 2026 or early 2027. This rests on a search summary of the agenda; the PDF could not be read.",
+      "impact": "positive",
+      "source": "https://data.consilium.europa.eu/doc/document/ST-15420-2026-REV-2/en/pdf"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "Industry-led Finnish battery strategy advises against mass cell production",
+      "detail": "The updated national battery strategy, led by Finnish Battery Industries and presented at Kokkola Material Week, says Finland should not pursue high-volume cell manufacturing. It prioritises the cathode-materials chain, security of supply, and high-value systems and digital services (mobile work machines, microbatteries, smart energy storage), and calls for turning R&D into export products. The article gives no numeric targets.",
+      "impact": "neutral",
+      "source": "https://www.dailynorthern.com/38452/finland-seeks-european-battery-lead-through-high-value-products/"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "EIC Work Programme 2027 reported adopted, with an energy materials Pathfinder Challenge",
+      "detail": "A consultancy summary updated on 2026-11-11 says the programme was adopted as Decision C(2026)7629. Accelerator cut-offs are 2027-01-20, 2027-03-17, 2027-09-01 and 2027-11-04. EIC Transition closes 2027-09-14 (some sources say 2027-09-16). A Pathfinder Challenge on advanced materials for electricity generation, storage and transmission closes 2027-09-29. The adoption date itself was not found, and the dates are not checked against the Commission text.",
+      "impact": "positive",
+      "source": "https://evolutioneurope.eu/blog/eic-work-programme-2027-draft/"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "EIC 2027 calls open on the Funding and Tenders portal",
+      "detail": "EIC Accelerator 2027 short proposals opened on 2026-11-10 (final portal deadline 2027-12-16; the budget is not published on the portal). EIC STEP Scale Up opens 2026-11-18. Pathfinder Open (EUR 166 million, about 45 grants of EUR 1-5 million) opens 2026-11-25, with stage 1 due 2027-02-25 and stage 2 on 2027-09-16.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "Vensum Power raises EUR 9 million Series A",
+      "detail": "Helsinki power-conversion company, listed in the Aalto Startup Center portfolio. Whether it is formally an Aalto spin-off is not confirmed.",
+      "impact": "positive",
+      "source": "https://www.eu-startups.com/2026/11/helsinkis-vensum-power-secures-e9-million-to-scale-its-software-defined-power-conversion-platform/"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Return secures EUR 835 million portfolio financing for German BESS",
+      "detail": "Pooled project financing for large-scale batteries. This is a sign of maturing finance and rising demand for optimisation software.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/11/05/return-secures-e835-million-in-portfolio-financing-for-large-scale-battery-storage-in-germany/"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Industry groups say EU battery regulation is on the wrong path",
+      "detail": "Battery, storage and e-mobility groups criticised the EU approach to battery regulation. Only a search summary was seen, and the specific demands were not read. Due diligence obligations are already postponed to 2027-08-18, and the Omnibus IV proposal would raise the turnover threshold from EUR 40 million to EUR 150 million.",
+      "impact": "neutral",
+      "source": "https://www.energy-storage.news/tag/europe/page/2"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Industry groups say the EU is taking the wrong approach to battery regulation",
+      "detail": "Reported in a search summary only. The text of the statement was not found. Background: battery due diligence obligations are postponed to 2027-08-18, and Omnibus IV would narrow their scope. Industry wants alignment with CSDDD and CSRD.",
+      "impact": "neutral",
+      "source": "https://eurobat.org/wp-content/uploads/2026/08/Final-EUROBAT-Battery-Omnibus-Paper.pdf"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Flower reported to start trading a 30 MW / 30 MWh battery at Kaunola, Finland",
+      "detail": "Renewables Now reports that the Swedish optimiser Flower has begun full-scale operations in Finland with this battery in the electricity and ancillary service markets. The page could not be opened in this run, so the details and date come from the search summary only.",
+      "impact": "positive",
+      "source": "https://renewablesnow.com/news/flower-starts-trading-30-mw-battery-in-finland-1304311/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "CIP's 500 MW / 2-hour Coalburn 1 BESS enters commercial operation (UK)",
+      "detail": "Reported by Energy-Storage.News in a search summary; the article was not opened. It is one of the largest operating BESS in Europe, alongside BW ESS Hams Hall (350 MW / 1,240 MWh).",
+      "impact": "positive",
+      "source": "https://www.energy-storage.news/tag/energystorageeurope/"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Italy authorises 3.7 GW of battery storage projects in October",
+      "detail": "ESS News reports 3.7 GW authorised in October after 3.2 GW in September, nearly 7 GW in two months. Figures are from the search summary; the article was not opened.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/11/03/italy-authorizes-nearly-7-gw-of-battery-storage/"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Fingrid to raise main grid fees 4% and build the 400 kV Forest Line 2",
+      "detail": "Fingrid's January to September review says main grid service fees rise by four per cent from 2027-01-01, and that it decided to invest in the roughly 350 km Vaala to Jämsä line, due in 2030. These points come from the search summary of the release; the release page itself could not be opened.",
+      "impact": "neutral",
+      "source": "https://www.globenewswire.com/news-release/2026/10/29/3391254/0/en/fingrid-group-management-s-review-1-1-30-9-2026.html"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "Delta Capacity closes financing for two Finnish batteries (250 MW/600 MWh)",
+      "detail": "Includes the 125 MW/300 MWh AKKU One in Lapinlahti. Shows that lenders are willing to finance merchant-exposed storage in Finland.",
+      "impact": "positive",
+      "source": "https://renewablesnow.com/news/delta-achieves-fin-close-on-finnish-battery-duo-of-600-mwh-total-1303807/"
+    },
+    {
+      "date": "2026-10-21",
+      "title": "Foresight acquires the 100 MW/400 MWh Nivala BESS project",
+      "detail": "Fully permitted, ready-to-build project in North Ostrobothnia, acquired by Foresight Energy Infrastructure Partners II.",
+      "impact": "positive",
+      "source": "https://foresight.group/news-insights/news/2026/foresight-energy-infrastructure-partners-ii-completes-acquisition-of-nivala-bess-from-fotowatio-renewable-ventures/"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "Fingrid requires grid-forming support for new wind and solar in weak grids",
+      "detail": "Batteries sized at ±10%, ±20% or ±30% of plant capacity, depending on the area's short-circuit ratio (ESCR), can meet the requirement. This creates demand for grid-forming battery and control technology.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/10/15/finland-demands-grid-forming-support-for-new-wind-solar-in-weak-grids/"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "Nala Renewables starts construction on 125 MW / 250 MWh Vuolijoki BESS",
+      "detail": "Notice to proceed issued for one of the largest BESS projects in Finland to start construction; it follows Nala's purchase of ready-to-build projects from Finnish developers such as Fu-Gen.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/10/08/nala-renewables-starts-construction-on-250-mwh-finland-bess/"
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Fu-Gen sells 100 MW Kärppiö BESS to Nala Renewables",
+      "detail": "Ready-to-build standalone project in Teuva, sold under a framework agreement between the two companies.",
+      "impact": "positive",
+      "source": "https://www.energy-storage.news/fu-gen-nala-renewables-close-100mw-bess-finland/"
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Delta Capacity starts 125 MW / 300 MWh Kärppiö BESS with Sungrow",
+      "detail": "Second Delta project under construction after AKKU One in Lapinlahti. Commissioning is planned for Q4 2027.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/09/25/delta-capacity-advances-second-major-finland-bess-this-month-with-sungrow-supply-deal/"
+    },
+    {
+      "date": "2026-09-07",
+      "title": "EUPD Research forecasts European storage at 57 GWh in 2026",
+      "detail": "Forecast of +78% YoY. It is higher than SolarPower Europe's forecast of more than 50 GWh.",
+      "impact": "positive",
+      "source": "https://www.ess-news.com/2026/09/07/europes-storage-market-to-hit-57-gwh-in-2026-says-eupd-research/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL5-2026-11-D3-23",
+      "title": "Data sharing to support the training and development of AI foundation models in the energy sector",
+      "deadline": "2026-12-01",
+      "budget": "EUR 30,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-11-d3-23"
+    },
+    {
+      "id": "Business Finland Co-Research 2026",
+      "title": "Co-Research call for research organisations and SMEs",
+      "deadline": "2026-12-18",
+      "budget": "not published",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/call-research-organizations-and-smes/"
+    },
+    {
+      "id": "HORIZON-BRIDGING-2027-06-02",
+      "title": "Horizon bridging call (technology transfer offices and incubators)",
+      "deadline": "2027-02-16",
+      "budget": "EUR 20,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-bridging-2027-06-02"
+    },
+    {
+      "id": "HORIZON-EIC-2027-PATHFINDEROPEN-TWO-STAGE",
+      "title": "EIC Pathfinder Open 2027",
+      "deadline": "2027-02-25",
+      "budget": "EUR 166,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-pathfinderopen-two-stage"
+    },
+    {
+      "id": "HORIZON-CL5-2027-02-D3-24",
+      "title": "Generative AI tools for a next-generation digital energy system (grid-forming and AI)",
+      "deadline": "2027-03-31",
+      "budget": "EUR 20,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-02-d3-24"
+    },
+    {
+      "id": "HORIZON-CL5-2027-02-D2-05",
+      "title": "Improvement of adaptability, flexibility and efficiency of existing recycling processes (BATT4EU)",
+      "deadline": "2027-03-31",
+      "budget": "EUR 18,800,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-02-d2-05"
+    },
+    {
+      "id": "HORIZON-CL5-2027-02-D2-06",
+      "title": "Cell production techniques for lithium-ion and sodium-ion batteries (BATT4EU)",
+      "deadline": "2027-03-31",
+      "budget": "EUR 37,800,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-02-d2-06"
+    },
+    {
+      "id": "HORIZON-CL5-2027-05-D2-08",
+      "title": "Demonstration of long-duration battery energy storage systems (BATT4EU)",
+      "deadline": "2027-09-15",
+      "budget": "EUR 18,800,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-05-d2-08"
+    },
+    {
+      "id": "HORIZON-CL5-2027-05-D4-09",
+      "title": "Industrial excess and waste heat conversion to mechanical or electrical power",
+      "deadline": "2027-09-15",
+      "budget": "EUR 13,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-05-d4-09"
+    },
+    {
+      "id": "HORIZON-CL5-2027-04-Two-Stage-D2-07",
+      "title": "Next-generation battery concepts with advanced materials (BATT4EU, IAM4EU)",
+      "deadline": "2027-04-14",
+      "budget": "EUR 48,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-04-two-stage-d2-07"
+    },
+    {
+      "id": "HORIZON-CL5-2027-07-D3-26 / D3-25 / D3-27",
+      "title": "Smart grids: ADMS (D3-26), TSO control rooms (D3-25), retrofitting infrastructure with storage (D3-27)",
+      "deadline": "2027-12-01",
+      "budget": "EUR 28,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-07-d3-26"
+    },
+    {
+      "id": "CETP 2026 (Business Finland)",
+      "title": "Clean Energy Transition Partnership: storage, P2X, demand response (full proposals by invitation)",
+      "deadline": "2027-03-11",
+      "budget": "EUR 5 million Finnish budget",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/cetp-funding-call-2026/"
+    },
+    {
+      "id": "HORIZON-EIC-2027-ACCELERATOR-01",
+      "title": "EIC Accelerator 2027",
+      "deadline": "2027-12-16",
+      "budget": "not published",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2027-accelerator-01"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Polar Night Energy",
+      "country": "Finland",
+      "what": "Sand batteries for district heating. The Loviisa unit is operating, and a 250 MWh unit for Lahti is due in summer 2027.",
+      "link": "https://polarnightenergy.com/"
+    },
+    {
+      "name": "Merus Power",
+      "country": "Finland",
+      "what": "Grid-forming BESS maker. A 30 MW / 80 MWh project in Rovaniemi is due by end of 2026.",
+      "link": "https://www.ess-news.com/2026/02/11/merus-power-to-deliver-80-mwh-grid-forming-battery-for-extreme-arctic-conditions/"
+    },
+    {
+      "name": "Fingrid",
+      "country": "Finland",
+      "what": "Finnish TSO. Sets the grid-forming requirement and is building Forest Line 2.",
+      "link": "https://www.fingrid.fi/en/news/news/2026/the-combined-capacity-of-electricity-storages-in-finland-now-exceeds-1000-mw/"
+    },
+    {
+      "name": "Delta Capacity",
+      "country": "Finland",
+      "what": "Battery developer. It has financed 250 MW / 600 MWh and is building Kärppiö, and AKKU One has a Centrica tolling deal.",
+      "link": "https://www.ess-news.com/2026/09/25/delta-capacity-advances-second-major-finland-bess-this-month-with-sungrow-supply-deal/"
+    },
+    {
+      "name": "Halide Energy",
+      "country": "Finland",
+      "what": "Aalto spin-off developing copper flow batteries, from the CuBER project.",
+      "link": "https://www.aalto.fi/en/news/from-research-to-resilient-energy-systems-halide-energy-accelerates-battery-development-at-aalto"
+    },
+    {
+      "name": "Vensum Power",
+      "country": "Finland",
+      "what": "Software-defined power conversion. EUR 9 million Series A in November 2026, and it is in the Aalto Startup Center portfolio.",
+      "link": "https://startupcenter.aalto.fi/innovation-portfolio/vensum-power"
+    },
+    {
+      "name": "Automous Oy",
+      "country": "Finland",
+      "what": "Storage optimisation SaaS from the Aalto ecosystem, with a EUR 575,000 pre-seed round.",
+      "link": "https://startupcenter.aalto.fi/automous-oy-secures-a-pre-seed-investment-round-of-575000eu"
+    },
+    {
+      "name": "Elcogen",
+      "country": "Finland",
+      "what": "Solid oxide cells for electrolysis and fuel cells, Vantaa.",
+      "link": "https://elcogen.com/"
+    },
+    {
+      "name": "Nala Renewables",
+      "country": "Finland",
+      "what": "Infrastructure investor. It bought Fu-Gen's 100 MW Teuva project and is building Vuolijoki (125 MW / 250 MWh).",
+      "link": "https://www.ess-news.com/2026/10/08/nala-renewables-starts-construction-on-250-mwh-finland-bess/"
+    },
+    {
+      "name": "Statkraft",
+      "country": "Norway",
+      "what": "Optimises OX2's two Finnish batteries (110 MW / 220 MWh and 125 MW / 250 MWh) for seven years from 2028.",
+      "link": "https://www.statkraft.com/newsroom/news-and-stories/2026/statkraft-signs-contract-with-OX2-to-optimize-large-scale-batteries-in-finland/"
+    },
+    {
+      "name": "Elements Green",
+      "country": "Germany",
+      "what": "Developer of a 400 MW / 1.6 GWh BESS with a TenneT connection commitment.",
+      "link": "https://www.ess-news.com/2026/11/16/elements-green-receives-grid-connection-commitment-from-tennet-for-1-6-gwh-bess-in-germany/"
+    },
+    {
+      "name": "Umicore",
+      "country": "Belgium",
+      "what": "Battery materials. Second pCAM line in Kokkola, Finland, and a new plant planned.",
+      "link": "https://www.dailynorthern.com/38452/finland-seeks-european-battery-lead-through-high-value-products/"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Electrochemical Energy Conversion and Storage group (Tanja Kallio), including the Edge electrode commercialisation effort",
+      "link": "https://www.aalto.fi/en/department-of-chemistry-and-materials-science/electrochemical-energy-conversion-and-storage"
+    },
+    {
+      "what": "Power and Energy cluster, department of Electrical Engineering and Automation (Marko Hinkkanen, Jorma Kyyrä)",
+      "link": "https://www.aalto.fi/en/department-of-electrical-engineering-and-automation/research-and-research-groups"
+    },
+    {
+      "what": "Energy Conversion and Systems group",
+      "link": "https://www.aalto.fi/en/department-of-energy-and-mechanical-engineering/energy-conversion-and-systems"
+    },
+    {
+      "what": "Electrolytic Processes group (DualFlow concept)",
+      "link": "https://www.aalto.fi/en/department-of-chemistry-and-materials-science/electrolytic-processes"
+    },
+    {
+      "what": "New Energy Technologies group",
+      "link": "https://www.aalto.fi/en/department-of-applied-physics/new-energy-technologies-renewable"
+    },
+    {
+      "what": "H2 Innovation Center",
+      "link": "https://www.aalto.fi/en/news/aalto-university-launches-h2-innovation-center-accelerating-the-transition-to-a-sustainable-hydrogen"
+    },
+    {
+      "what": "Key research area Advanced energy solutions",
+      "link": "https://www.aalto.fi/en/research-art/key-research-area-advanced-energy-solutions"
+    },
+    {
+      "what": "Li-Aku-Rec battery recycling (innovation portfolio)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/li-aku-rec"
+    },
+    {
+      "what": "Halide Energy (spin-off, copper flow batteries)",
+      "link": "https://www.aalto.fi/en/news/from-research-to-resilient-energy-systems-halide-energy-accelerates-battery-development-at-aalto"
+    }
+  ],
+  "updated": "2026-11-25T15:03"
+}

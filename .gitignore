@@ -8,3 +8,4 @@ _previous_version/
 library/*.db*
 library/*.new
 docs/Aalto Innovations brief.pdf
+demo/clips/

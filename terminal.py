@@ -13,7 +13,7 @@ from contextlib import asynccontextmanager
 
 import uvicorn
 from claude_agent_sdk import AssistantMessage, ResultMessage, StreamEvent, ToolUseBlock, create_sdk_mcp_server, query, tool
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
@@ -21,7 +21,7 @@ import library
 import patents
 import profiles
 import research
-from run import ROOT, agent_options, check_subscription
+from run import OUTPUT_DIR, PARTS, ROOT, agent_options, check_subscription, save_disclosure, start_run
 
 CHAT_PROMPT = """You are the assistant in Aalto Innovation's market terminal. You answer questions about market \
 sectors and can add new sectors to the library.
@@ -36,17 +36,23 @@ or add recent facts.
 add_sector. Pick an id (lowercase-with-dashes), a 4-letter code, the closest Aalto research area (Digitalisation and \
 AI, Materials, Art and design, Business and economics, Energy solutions, Living environments, Health and well-being) \
 and an EPO CQL patent query such as cpc=H01M or ta="vertical farming". Tell them it takes a few minutes to build.
+- When an invention brief is open on screen, its folder is named in the message. Read its reports (market.md, ip.md for \
+patents, funding.md, nabc.md for the summary), scores.json and check.json (the checker's notes) before answering. \
+run_info.txt names the disclosure file, which you may read. The disclosure is confidential: never put its \
+distinctive details into web searches or online tools; stored_patents and stored_companies run on this computer.
 - The first time you name a company or a person, write the name as a link so it can be clicked for a profile: \
 [Nokia](#company/Nokia) or [Antti Laaksonen](#person/Antti%20Laaksonen), with %20 for spaces. Use these links only \
 for companies and people, and keep normal source links as they are."""
 
 updating = set()  # sector ids being updated right now
+briefing = {}  # run id -> the task making that invention brief (kept so Python does not drop it before it ends)
 
 
 class Message(BaseModel):
     message: str
     session: str | None = None  # continue this conversation
     sector: str | None = None  # the sector open on screen
+    brief: str | None = None  # the invention brief open on screen
 
 
 async def refresh(sector_id):
@@ -251,6 +257,55 @@ async def profile_build(request: ProfileRequest):
     return found
 
 
+def brief_folder(run):
+    folder = (OUTPUT_DIR / run).resolve()
+    if folder.parent != OUTPUT_DIR.resolve() or not folder.is_dir():
+        raise HTTPException(404, "No such brief")
+    return folder
+
+
+def brief(folder, reports=False):
+    """One invention brief: its disclosure, each agent's state, the scores and the checker's notes (and the reports)."""
+    info = (folder / "run_info.txt").read_text() if (folder / "run_info.txt").exists() else ""
+    stopped = folder.name not in briefing  # a run cut off by a restart is not running any more
+    status = {a: "stopped" if stopped and s in ("running", "waiting") else s for a, s in re.findall(r"^\[(\w+)\] (\w+)", info, re.M)}
+    found = {"id": folder.name, "status": status, "file": (re.search(r"Inputs:\n\s+(.+)", info) or [None, ""])[1].split("/")[-1],
+             "started": (re.search(r"Started: (.+)", info) or [None, ""])[1],
+             "errors": sorted(set(re.findall(r"^\[\w+\] failed: (.+?)(?: \(\d+ s\))?$", info, re.M)))}
+    for name in ("scores", "check"):
+        path = folder / f"{name}.json"
+        found[name] = json.loads(path.read_text()) if path.exists() else None
+    if reports:
+        found["reports"] = {a: (folder / f"{a}.md").read_text() for a in PARTS if (folder / f"{a}.md").exists()}
+    return found
+
+
+@app.get("/api/briefs")
+def briefs():
+    return [brief(f) for f in sorted(OUTPUT_DIR.iterdir(), reverse=True) if f.is_dir()]
+
+
+@app.get("/api/briefs/{run}")
+def brief_view(run: str):
+    return brief(brief_folder(run), reports=True)
+
+
+@app.post("/api/briefs")
+async def brief_start(request: Request, name: str):
+    """Save a dropped disclosure and start the four research agents and the checker on it in the background."""
+    try:
+        check_subscription()
+        path = save_disclosure(name, await request.body())
+    except RuntimeError as error:
+        raise HTTPException(503, str(error))
+    except ValueError as error:
+        raise HTTPException(400, str(error))
+    out_dir, work = start_run([str(path)], PARTS + ["check"])
+    task = briefing[out_dir.name] = asyncio.create_task(work)
+    task.add_done_callback(lambda _: briefing.pop(out_dir.name, None))
+    return {"id": out_dir.name}
+
+
 @app.get("/api/sectors/{sector_id}/memory")
 def memory(sector_id: str):
     path = library.LIBRARY / sector_id / "memory.md"
@@ -271,13 +326,18 @@ async def chat(message: Message):
     check_subscription()
     names = ", ".join(f"{s['name']} ({s['id']})" for s in library.sectors())
     data_tools = ["WebSearch", "WebFetch", "epo_patents", "epo_patent", "research_trend", "eurostat_search", "eurostat_data", "finnish_companies",
-                  "eu_funding_calls", "research_projects", "search_papers"]
-    options = agent_options(CHAT_PROMPT.format(sectors=names), data_tools,
-                            allowed=["Read(./library/**)", "WebSearch", "WebFetch"],  # reads only the library
+                  "eu_funding_calls", "research_projects", "search_papers", "stored_patents", "stored_companies"]
+    readable = ["Read(./library/**)"]  # reads only the library, and the brief open on screen with its disclosure
+    if message.brief:
+        folder = brief_folder(message.brief)
+        readable += [f"Read(./outputs/{folder.name}/**)", "Read(./disclosures/**)"]
+    options = agent_options(CHAT_PROMPT.format(sectors=names), data_tools, allowed=readable + ["WebSearch", "WebFetch"],
                             resume=message.session, include_partial_messages=True)
     options.mcp_servers["terminal"] = create_sdk_mcp_server("terminal", tools=[add_sector])
     options.allowed_tools.append("mcp__terminal__add_sector")
     prompt = f"[Sector open on screen: {message.sector}]\n\n{message.message}" if message.sector else message.message
+    if message.brief:
+        prompt = f"[Invention brief open on screen: folder outputs/{message.brief}]\n\n{message.message}"
 
     async def stream():
         try:

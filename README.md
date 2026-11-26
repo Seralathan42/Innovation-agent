@@ -35,17 +35,18 @@ A dashboard of market knowledge for the sectors behind Aalto's main research are
 
 Then open http://127.0.0.1:8001. It runs next to the disclosure app (port 8000), so both can be open at once.
 
-- **Tabs:**
-  - Overview: all sectors with their headline.
+- **Tabs:** Brief, Sectors, Sector, Companies, Patents, Similar patents and Past research.
+  - Brief: drop an invention disclosure (PDF, text or Markdown) to get an invention brief in about 5 minutes. Four agents run at the same time: Market, Patents (`ip`), Funding and Summary (`nabc`, the NABC summary). They use our own data (the closest patents in the patent database, the stored companies and the sector memory files) together with online searches. Each scores its part from 1 to 5 against a written scale, with a one-sentence reason. Then a checker agent (`agents/check.md`) opens the sources behind the key claims, says for each part whether it agrees with the score or would give another, and lists the problems it found. The page shows the four steps, the score cards with the checker's notes, the overall score (the average of the checked scores) and the reports. The chat on the right reads the brief that is open. Use only fictional or public disclosures until a local model can remove the confidential details.
+  - Sectors: all sectors with their headline.
   - Sector: one sector in detail, with key metrics, signals, open funding calls, companies, Aalto links, patents, the full memory file and a list of every source.
   - Companies and Patents across all sectors.
-  - Research: earlier Aalto papers checked for missed opportunities, meaning research that someone else has since turned into patents or a business while Aalto did not. How it works:
+  - Past research: earlier Aalto papers checked for missed opportunities, meaning research that someone else has since turned into patents or a business while Aalto did not. How it works:
     - **Papers** come from ACRIS, Aalto's research portal, through Aalto's API gateway (the "Research API Public" product at https://3scale.apps.ocp4.aalto.fi). Put the application's user key in `.env` as `ACRIS_API_KEY=...` and restart the terminal. It keeps English journal and conference papers from 2012 to 2021 (the patents are in English, so other languages would match falsely) with at most 25 authors (`YEARS` and `MAX_AUTHORS` in `research.py`), with their department and Scopus citation count. The list loads in about 15 minutes; each abstract is a separate request, so all of them take a few hours, and papers appear in the tab as their abstracts arrive. Papers without an abstract are left out.
     - **Screening** (code only, on this computer, no Claude usage): each paper is compared with the stored patents. It counts how much of the paper's distinctive wording the closest patents share (a patent sharing 30% or more counts as close, `CLOSE` in `research.py`), how many companies own close patents, and whether one of the paper's authors is an inventor on a close patent or the patent is Aalto's. Papers are re-screened weekly as the patent store grows. Word overlap misses the same idea written in different words, so the screening only ranks papers for a closer look.
     - **In-depth analysis** (Sonnet), only when you ask: open a paper and press Analyse. It is shown at the top of the paper, above the abstract and the screening. The agent does not rely on the local store: it searches online, in several wordings, for patents worldwide (EPO and Google Patents), later research on the same idea, and companies anywhere selling the same thing with evidence of their success. It checks whether the closest patents were granted, and checks whether Aalto or the authors patented, licensed or spun it out. It gives a verdict (Missed opportunity, Partly missed, Followed up by Aalto or the authors, or No commercial use found), the evidence with links, and what Aalto could still do now.
     - Filters: Verdict, Closest patent overlap, Patented by the authors, Companies on close patents, Department and Year.
   - **Profiles:** click a company or person named in the chat (and companies listed on a research paper) to open a profile in the middle. A company profile shows what they do and are building, founding year, location, size and funding, and the key people with their photos and most impressive past work. A person profile shows their photo, current roles and earlier work. A profile is built by a Sonnet agent from public sources the first time someone opens it (about a minute) and stored in `library/profiles.db`, so it opens at once after that; Update builds it again. Photos come from public pages and fall back to initials.
-  - Similar: describe a piece of research or paste an abstract, and see the closest stored patents (best match first), who files most in that area, in which years, and in which CPC classes. It searches the patent database on this computer, so nothing you type is sent anywhere. It ranks by shared words, with rare words counting most, and covers only the stored EP and WO patents, so it is a first look, not a full prior art search. **Summarise** asks Sonnet for a short summary of the topic: what it covers, who patents it and how activity has changed, based on the closest stored patents. This sends the text to Claude, so use it only for public topics. For a worldwide search, ask the chat, which uses the EPO directly.
+  - Similar patents: describe a piece of research or paste an abstract, and see the closest stored patents (best match first), who files most in that area, in which years, and in which CPC classes. It searches the patent database on this computer, so nothing you type is sent anywhere. It ranks by shared words, with rare words counting most, and covers only the stored EP and WO patents, so it is a first look, not a full prior art search. **Summarise** asks Sonnet for a short summary of the topic: what it covers, who patents it and how activity has changed, based on the closest stored patents. This sends the text to Claude, so use it only for public topics. For a worldwide search, ask the chat, which uses the EPO directly.
   - The Companies tab lists every applicant in the patent database, together with the 6 to 12 companies the sector agent profiles for each sector, so it grows as the patent backfill runs. A profiled company is matched to its applicant name (for example Oura and OURA HEALTH OY) and keeps its description and link. Other applicants link to their patents on Espacenet.
     - Filters: Sector, Source (profiled or patent applicant only), Organisation type (company, university or research, person or other), Country, Finnish, Aalto connection (co-applicant on Aalto patents, or Aalto mentioned), Patents stored and Latest patent year. Plus search within results and four sort orders, with Most patents first by default. Private persons who file patents are hidden to start with; remove the "NOT Organisation type: Person or other" chip to see them.
     - Click a patent count to open the Patents tab filtered to that applicant.
@@ -163,7 +164,7 @@ You are a planning advisor at Aalto Innovation...
 
 Every agent can read the input files. Leave out `tools` for an agent that only works from the inputs. Without `model` the agent uses your account's default model.
 
-Agents run at the same time. An agent with `after: reports` in its header waits until the others are done and also gets their reports as input. [agents/overview.md](agents/overview.md) works this way.
+Agents run at the same time. Each returns its report in Markdown with a score from 1 to 5 and a reason; the report is saved as `<name>.md` and the score in `scores.json`. An agent with `after: reports` in its header waits until the others are done and also gets their reports and scores as input. [agents/check.md](agents/check.md) works this way, with `output: check` so it returns its checks instead of a report, saved as `check.json`.
 
 ## Data tools
 
@@ -183,15 +184,17 @@ Agents run at the same time. An agent with `after: reports` in its header waits 
 | `eurostat_data` | Eurostat | The numbers from one dataset, including production per product (PRODCOM) and EU trade per product |
 | `page_images` | Any web page | The pictures on a page with their alt text, used by the profiles to find photos and logos |
 | `research_projects` | OpenAIRE | Funded research projects (EU, Research Council of Finland and others): funder, dates, amount, summary |
+| `stored_patents` | Our patent database | The stored patents closest to a description, and who files in that area, when and in which classes. Runs on this computer |
+| `stored_companies` | Our company database | Stored companies and patent applicants by name or words, with country, sectors and patent counts |
 
 Which agent has what:
-- `ip`: EPO patent search and lookup, Google Patents pages, papers, research trend, research projects
-- `market`: Eurostat (with production and trade per product), Finnish companies
-- `funding`: EU calls, research projects
-- `nabc`: works from the disclosure only
-- `overview`: works from the disclosure and the other reports
+- `ip`: our stored patents and companies, EPO patent search and lookup, Google Patents pages, papers, research trend, research projects
+- `market`: our stored companies and patents, Eurostat (with production and trade per product), Finnish companies
+- `funding`: our stored companies, EU calls, research projects
+- `nabc`: our stored patents and companies
+- `check`: our stored patents and companies, EPO patent lookup
 
-All agents except `nabc` and `overview` also have web search.
+All agents also have web search, and every agent can read the sector memory files in `library/`.
 
 Agents search patents at the European Patent Office with `epo_patents` and check a patent's status with `epo_patent`. `google_patent` adds what the EPO service lacks: the patents that cite a patent and similar ones. Google Patents has no free search API and its rules forbid automated searching, so it is only used to read single patent pages. OpenAlex works without a key on a small shared daily allowance. For more, get a free key at openalex.org and set it as `OPENALEX_API_KEY`.
 

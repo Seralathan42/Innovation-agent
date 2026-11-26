@@ -1,0 +1,321 @@
+{
+  "headline": "Finnish games and design brands are growing at the top (Remedy, Marimekko, Supercell) while small studios close, and the Digital Fairness Act proposal of 2026-11-11 adds regulatory risk for game monetisation. Textile innovation remains pre-commercial, but it has the best-fitting open EU grant.",
+  "metrics": [
+    {
+      "label": "EU cultural employment (persons; 4.3% of total employment)",
+      "value": "8.886 million (Finland: 121,100, 4.6%)",
+      "year": "2025",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_emp_sex/default/table"
+    },
+    {
+      "label": "EU cultural sectors: turnover (1.47% of business economy) and value added",
+      "value": "€363.3 bn turnover; €146.6 bn value added (latest Eurostat enterprise data, dated)",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "Finland cultural sectors turnover and value added",
+      "value": "€7.08 bn turnover (1.79%); €3.0 bn value added (2.88%)",
+      "year": "2020",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/cult_ent_val/default/table"
+    },
+    {
+      "label": "European games market consumer spending (16 markets)",
+      "value": "€29.7 bn; 199 million players; 123,000 employees; 8,700 studios",
+      "year": "2025",
+      "source": "https://www.videogameseurope.eu/publication/2025-all-about-video-games-european-key-facts/"
+    },
+    {
+      "label": "Finnish games industry turnover",
+      "value": "€2.85 bn; about 4,300 staff; 270 studios; operating result about €400 m (2023: about €800 m). No 2025 turnover figure published yet.",
+      "year": "2024",
+      "source": "https://neogames.fi/wp-content/uploads/2025/08/FinnishGameIndustryReport2024.pdf"
+    },
+    {
+      "label": "EU textile and clothing industry turnover",
+      "value": "€166 bn; about 1.2 million jobs (down 2.8%); exports €61 bn; imports €122 bn",
+      "year": "2026 edition",
+      "source": "https://euratex.eu/facts-and-key-figures/"
+    },
+    {
+      "label": "Remedy revenue, January–September (up 48.2%; EBIT -€2.3 m)",
+      "value": "€62.9 m",
+      "year": "2026",
+      "source": "https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date"
+    },
+    {
+      "label": "Marimekko net sales, January–September (up 2%; comparable operating profit €23.4 m, 17.0%)",
+      "value": "€137.5 m",
+      "year": "2026",
+      "source": "https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales"
+    }
+  ],
+  "signals": [
+    {
+      "date": "2026-11-13",
+      "title": "Playnest closes; Rovio cuts about 20 jobs at Ruby Games; Supercell paid €216.4 m Finnish corporate tax for 2025",
+      "detail": "Same Neogames weekly roundup: Silent But Deadly, a new studio founded by Supercell and Remedy veterans, is backed by Sisu Game Ventures. Supercell joined a $5M pre-seed round for Anorak (generative-video formats), co-led by Play Ventures and Backed VC.",
+      "impact": "neutral",
+      "source": "https://neogames.fi/weekly-news-46-26/"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "Commission proposes the Digital Fairness Act",
+      "detail": "Adopted 2026-11-11. It targets dark patterns, addictive design, in-game currency pricing and gambling-like features for minors. Enforcement via the CPC revision allows fines of up to 6% of global turnover. The Commission estimates savings of up to €13.7 bn a year for consumers. Neogames reads the text as threatening Finnish game firms. Parliament and Council negotiations come next, with no application date yet.",
+      "impact": "negative",
+      "source": "https://news.europawire.eu/european-commission-proposes-digital-fairness-act-and-stronger-eu-consumer-law-enforcement/eu-press-release/2026/11/12/15/28/04/187330/"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "Neogames: Digital Fairness Act threatens Finnish and European game industry",
+      "detail": "The Finnish games association reads the proposal as banning in-game purchases by under-18s, requiring a euro value to be shown for every in-game currency use, and banning loosely defined pay-to-win and pay-to-progress mechanics. Law-firm and press readings suggest the published text is narrower: in-game currency is off by default for minors, while paid loot boxes for minors are banned.",
+      "impact": "negative",
+      "source": "https://neogames.fi/statement-new-eu-regulation-threatens-the-finnish-game-industry-and-the-european-game-industry/"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Spinnova signs LOI with Outlast",
+      "detail": "Non-binding letter of intent to develop SPINNOVA fibre for insulation and temperature regulation. A sign of brand partnerships for bio-based fibres, but revenue is still tiny (H1 2026 about €0.29 m).",
+      "impact": "positive",
+      "source": "https://mfn.se/a/spinnova/spinnova-signs-letter-of-intent-with-outlast-to-develop-spinnova-r-fibre-for-insulation-and-temperature-regulation"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "EIC sets aside €1.8 bn for deep tech in 2027",
+      "detail": "The EIC Accelerator 2027 has cut-offs on 20 January, 17 March, 1 September and 4 November 2027. This is a route for deep-tech spin-offs, including materials and media technology.",
+      "impact": "positive",
+      "source": "https://www.lovguiden.dk/en/det-offentlige/europa-kommissionen-press-corner/2026-11-05-eu-innovation-council-sets-aside-1-8-billion-for-deep-tech-in-2027"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "Spinnova signs letter of intent with Outlast Technologies",
+      "detail": "Non-binding LOI to develop Spinnova fibre for insulation and temperature regulation. Spinnova's Woodspin demo factory is in trial runs, with larger-scale production targeted to restart during 2026, depending on trial results.",
+      "impact": "positive",
+      "source": "https://www.textileworld.com/?p=112068"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Marimekko Q3: net sales up 3%, international sales up 16%, Finland down 9%",
+      "detail": "Q3 net sales were €52.1 m and comparable operating profit €13.0 m (25.0% margin). January–September net sales were €137.5 m with comparable operating profit of €23.4 m. Guidance is unchanged (growth on 2025's €189.6 m, margin about 16–19%), but Finnish sales are now expected to decline in 2026.",
+      "impact": "positive",
+      "source": "https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Remedy: CONTROL Resonant is its fastest-selling game; Q3 revenue up 226%",
+      "detail": "Q3 2026 revenue was €39.6 m and the game sold one million copies in three weeks, while January–September EBIT stayed slightly negative at -€2.3 m.",
+      "impact": "positive",
+      "source": "https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "Aalto ranks third in Europe for university spinout funding",
+      "detail": "Over €500 m raised in H1 2026, mostly by ICEYE. Aalto had eight research spinouts in 2026 and targets 20 a year. The new Aalto Innovation unit now covers commercialisation.",
+      "impact": "positive",
+      "source": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "Creative Europe 2027 calls open",
+      "detail": "The Creative Innovation Lab (due 2027-04-22) and journalism partnership calls are open. Tools and business models and video game calls are also open (see funding_calls).",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2027-innovlab"
+    },
+    {
+      "date": "2026-10-22",
+      "title": "CREA news and media calls open",
+      "detail": "CREA calls on journalism partnerships, media literacy and media freedom open, with deadlines from 2027-01-20 to 2027-02-04.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2027-MEDIALITERACY"
+    },
+    {
+      "date": "2026-10-14",
+      "title": "Ubisoft proposes closing RedLynx (Helsinki)",
+      "detail": "Up to 52 positions are affected, subject to Finnish change negotiations. No final outcome was found as of 2026-11-19.",
+      "impact": "negative",
+      "source": "https://www.pocketgamer.biz/ubisoft-plans-to-close-redlynx-and-cut-70-jobs-in-singapore/"
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Horizon call on textile circularity opens (Textiles for the Future)",
+      "detail": "HORIZON-CL4-2027-01-MAT-PROD-08 is an Innovation Action call on advanced processing and manufacturing for textile circularity, due 2027-02-02.",
+      "impact": "positive",
+      "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL4-2027-01-MAT-PROD-08"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Q3 2026 gaming deal flow concentrated in AI and dev tools",
+      "detail": "Reported M&A of $2.4 bn over 45 deals and $1.6 bn+ over 106 funding rounds, mostly to AI and tools. Secondary source, not verified against Drake Star.",
+      "impact": "neutral",
+      "source": "https://tech-insider.org/ubisoft-layoffs-gaming-ma-q3-2026/"
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Textile EPR fact sheet published; national transposition ahead",
+      "detail": "The revised Waste Framework Directive entered into force on 2025-10-16. Member states must transpose it by June 2027, and schemes are due by April 2028 (sources differ on the exact dates). Brands will pay eco-modulated fees based on durability and recyclability.",
+      "impact": "positive",
+      "source": "https://euratex.eu/sustainable-businesses/circular-economy/textiles-epr-europe/"
+    }
+  ],
+  "funding_calls": [
+    {
+      "id": "HORIZON-CL4-2027-01-MAT-PROD-08",
+      "title": "Textile ecodesign and circular materials (TRL 5–7; about 3 grants of €4–6 m; start-up involvement encouraged)",
+      "deadline": "2027-02-02",
+      "budget": "EUR 16,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-01-mat-prod-08"
+    },
+    {
+      "id": "CREA-MEDIA-2027-INNOVBUSMOD",
+      "title": "Creative Europe MEDIA: Innovative tools and business models",
+      "deadline": "2027-01-14",
+      "budget": "EUR 14,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-innovbusmod"
+    },
+    {
+      "id": "CREA-MEDIA-2027-DEVVGIM",
+      "title": "Creative Europe MEDIA: Video games and immersive content development (for companies)",
+      "deadline": "2027-02-02",
+      "budget": "EUR 13,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-devvgim"
+    },
+    {
+      "id": "CREA-CROSS-2027-INNOVLAB",
+      "title": "Creative Innovation Lab",
+      "deadline": "2027-04-22",
+      "budget": "EUR 7,183,502",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2027-innovlab"
+    },
+    {
+      "id": "HORIZON-CL4-2027-04-HUMAN-01",
+      "title": "XR and immersive technologies (TRL 3–5; about 8 grants)",
+      "deadline": "2027-03-18",
+      "budget": "EUR 39,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2027-04-human-01"
+    },
+    {
+      "id": "HORIZON-NEB-2026-01-PARTICIPATION-02",
+      "title": "New European Bauhaus: spatial design of neighbourhoods (2 grants)",
+      "deadline": "2026-12-01",
+      "budget": "EUR 10,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-neb-2026-01-participation-02"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-03",
+      "title": "Crafting routes to a circular economy",
+      "deadline": "2027-09-23",
+      "budget": "EUR 10,500,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-03"
+    },
+    {
+      "id": "HORIZON-CL2-2027-01-HERITAGE-02",
+      "title": "AI4Creatives Support Platform (one grant, opens 2027-05-13)",
+      "deadline": "2027-09-23",
+      "budget": "EUR 5,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-01-heritage-02"
+    },
+    {
+      "id": "HORIZON-CL2-2027-02-HERITAGE-09-two-stage",
+      "title": "Open topic: cultural heritage, arts and creative industries (first stage 2027-05-04)",
+      "deadline": "2027-05-04",
+      "budget": "EUR 20,000,000",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl2-2027-02-heritage-09-two-stage"
+    },
+    {
+      "id": "EIC-Transition-2027",
+      "title": "EIC Transition (up to €2.5 m; single applicants allowed)",
+      "deadline": "2027-09-14",
+      "budget": "€92 m",
+      "link": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Supercell",
+      "country": "Finland",
+      "what": "Mobile games leader; paid €216.4 m in Finnish corporate income tax for 2025; invests in AI game start-ups such as Anorak.",
+      "link": "https://neogames.fi/weekly-news-46-26/"
+    },
+    {
+      "name": "Remedy Entertainment",
+      "country": "Finland",
+      "what": "Listed AAA studio; CONTROL Resonant sold one million copies in three weeks; revenue January–September 2026 €62.9 m.",
+      "link": "https://www.inderes.se/en/releases/remedy-entertainment-plc-business-review-january-september-2026-control-resonant-launched-received-excellent-player-reception-and-became-the-fastest-selling-remedy-game-to-date"
+    },
+    {
+      "name": "Marimekko",
+      "country": "Finland",
+      "what": "Listed design and fashion brand; growth comes from international sales.",
+      "link": "https://www.inderes.dk/en/releases/interim-report-of-marimekko-1-jan-30-sept-2026-marimekkos-net-sales-and-operating-profit-increased-in-the-third-quarter-due-to-the-excellent-development-of-international-sales"
+    },
+    {
+      "name": "Spinnova",
+      "country": "Finland",
+      "what": "Wood-based textile fibre; Woodspin demo plant in trials; deals with Outlast and Tearfil; low revenue and heavy losses.",
+      "link": "https://mfn.se/a/spinnova/spinnova-signs-letter-of-intent-with-outlast-to-develop-spinnova-r-fibre-for-insulation-and-temperature-regulation"
+    },
+    {
+      "name": "Infinited Fiber Company",
+      "country": "Finland",
+      "what": "Textile-to-textile recycled fibre; Kemi plant delayed by permit appeal; new CEO in 2026.",
+      "link": "https://investors.infinitedfiber.com/investor-news/"
+    },
+    {
+      "name": "Ioncell Oy",
+      "country": "Finland",
+      "what": "Cellulose fibre from the Aalto and University of Helsinki Ioncell process; Aalto is a founding partner.",
+      "link": "https://aalto.fi/en/news/aalto-university-becomes-a-founding-partner-in-ioncell-oy"
+    },
+    {
+      "name": "Woamy Oy",
+      "country": "Finland",
+      "what": "Aalto spin-off making cellulose biofoam for packaging and insulation; €1 m seed in 2023; Secto Design invested.",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/woamy"
+    },
+    {
+      "name": "Housemarque / Rovio / Metacore / Fingersoft",
+      "country": "Finland",
+      "what": "Finnish game studios; Metacore cut 159 jobs in 2026 and Rovio cut about 20 jobs, which shows a two-speed market.",
+      "link": "https://www.pocketgamer.biz/metacore-closes-germany-and-sweden-offices-as-it-confirms-159-layoffs/"
+    },
+    {
+      "name": "Lenzing",
+      "country": "Austria",
+      "what": "European cellulose fibre producer and industrial partner in Aalto-led MELANGE.",
+      "link": "https://www.aalto.fi/en/news/design-at-the-start-of-the-supply-chain-aalto-university-leads-a-major-eu-project-to-transform"
+    },
+    {
+      "name": "Ubisoft (RedLynx)",
+      "country": "France / Finland",
+      "what": "RedLynx (Trials) closure proposed on 2026-10-14; up to 52 jobs.",
+      "link": "https://www.gamedeveloper.com/business/ubisoft-to-close-trials-studio-redlynx-downsize-ubisoft-singapore"
+    }
+  ],
+  "aalto_links": [
+    {
+      "what": "Aalto Innovation: commercialisation unit and innovation portfolio (spin-offs such as Woamy)",
+      "link": "https://www.aalto.fi/en/innovation-portfolio/woamy"
+    },
+    {
+      "what": "MELANGE: Aalto-led €4 m EU project on design at the start of the textile supply chain (Department of Design)",
+      "link": "https://www.aalto.fi/en/news/design-at-the-start-of-the-supply-chain-aalto-university-leads-a-major-eu-project-to-transform"
+    },
+    {
+      "what": "Ioncell: cellulose fibre technology and co-founded Ioncell Oy",
+      "link": "https://www.aalto.fi/en/news/speeding-up-the-textile-revolution-with-ioncellr"
+    },
+    {
+      "what": "Aalto and VTT collaboration on novel textile fibres",
+      "link": "https://www.aalto.fi/en/news/aalto-university-and-vtt-collaborate-to-develop-novel-textile-fibres"
+    },
+    {
+      "what": "Bio-foams for buildings (cellulose foam research behind Woamy)",
+      "link": "https://www.aalto.fi/en/news/living-breathing-buildings-bio-foams-could-transform-the-way-we-build"
+    },
+    {
+      "what": "Aalto spinout push: third in Europe for spinout funding in H1 2026",
+      "link": "https://www.aalto.fi/en/news/aalto-ranks-third-in-europe-for-university-spinout-funding-this-is-the-recipe-for-creating-new"
+    }
+  ],
+  "updated": "2026-11-19T21:59"
+}

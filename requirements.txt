@@ -2,3 +2,4 @@ claude-agent-sdk
 fastapi
 uvicorn
 pypdf
+numpy  # demo/sound.py only

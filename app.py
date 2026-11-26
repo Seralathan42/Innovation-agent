@@ -7,7 +7,6 @@ Like run.py, it only runs on your Claude subscription login.
 
 import asyncio
 import json
-import re
 from pathlib import Path
 
 import uvicorn
@@ -16,10 +15,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, PlainTextResponse, StreamingResponse
 from pydantic import BaseModel
 
-from run import AGENTS_DIR, OUTPUT_DIR, ROOT, TOOLS, agent_options, check_subscription, start_run
-
-DISCLOSURES_DIR = ROOT / "disclosures"
-FILE_TYPES = {".pdf", ".md", ".txt", ".png", ".jpg", ".jpeg", ".gif", ".webp"}  # what the agents can read
+from run import AGENTS_DIR, OUTPUT_DIR, ROOT, TOOLS, agent_options, check_subscription, save_disclosure, start_run
 
 CHAT_PROMPT = """You help an innovation advisor at Aalto Innovation work with the results of one analysis run.
 
@@ -75,21 +71,13 @@ def runs():
 @app.post("/api/runs")
 async def new_run(request: Request, name: str):
     """Save an uploaded disclosure in disclosures/ and start all agents on it in the background."""
-    filename = re.sub(r"[^\w.-]", "_", Path(name).name)
-    suffix = Path(filename).suffix.lower()
-    if suffix not in FILE_TYPES:
-        raise HTTPException(400, "Use a PDF, text, Markdown or image file. Save Word files as PDF first.")
-    data = await request.body()
-    if not data:
-        raise HTTPException(400, "The file is empty.")
     try:
         check_subscription()
+        path = save_disclosure(name, await request.body())
     except RuntimeError as error:
         raise HTTPException(503, str(error))
-    path, n = DISCLOSURES_DIR / filename, 2
-    while path.exists() and path.read_bytes() != data:  # never overwrite a different file with the same name
-        path, n = DISCLOSURES_DIR / f"{Path(filename).stem}-{n}{suffix}", n + 1
-    path.write_bytes(data)
+    except ValueError as error:
+        raise HTTPException(400, str(error))
     out_dir, work = start_run([str(path)], sorted(p.stem for p in AGENTS_DIR.glob("*.md")))
     task = asyncio.create_task(work)
     analyses.add(task)

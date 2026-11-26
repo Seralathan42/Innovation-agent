@@ -1,0 +1,98 @@
+{
+  "title": "Water-based lignin binder for NMC811 cathodes",
+  "summary": "The four reports are mostly well sourced and honest about gaps. I checked the patent claims and legal events at the EPO, the Business Finland pages and the Horizon D2-07 dates, and they matched. The problems are small: some patent-status wording, two inconsistent applicant counts and a few claims that could not be checked. The scores are reasonable. The advisor can rely on the main message: a known concept with a narrow patent window, no team or customer, and a publication planned before any filing.",
+  "parts": [
+    {
+      "part": "market",
+      "agrees": true,
+      "score": 3,
+      "note": "A real, growing binder market (Mordor USD 3.94B in 2026, PVDF 46.5%, which I confirmed). NMP and PFAS pressure gives a reason to switch. But qualification is slow, aqueous binders already exist, and there is no customer contact. The report is candid that the reachable market is unquantified and that its USD 1-2B cathode estimate is its own. Its PFAS timeline (consultation to 25 May 2026) matches what I found. SEAC's final opinion is expected by end-2026, which is a near-term swing factor the report could have stressed."
+    },
+    {
+      "part": "ip",
+      "agrees": true,
+      "score": 2,
+      "note": "The analysis holds up against the EPO data. Lignin as a water-based binder, including for NMC, is prior art: Innventia/RISE, the NTNU papers, and Borregaard and Great Power for modified lignin. The Chalmers claims are narrow, since they need lignin plus a polyol plus a polycarboxylic cross-linker. The Innventia claims are narrow too, since they need pretreated lignin with fractions under 1000 Da removed. So blocking risk is moderate and depends on the unknown chemistry. A narrow claim on the modification or on NMC811 may be possible. The score could be 2 or 3. I keep 2 because the headline idea is not new and nothing is filed."
+    },
+    {
+      "part": "funding",
+      "agrees": true,
+      "score": 3,
+      "note": "The deadlines I checked are correct. Co-Research runs to 2026-12-18 and needs at least 3 SMEs. R2B 2/2026 closed 2026-09-16. Horizon D2-07 opens 2026-12-15, with stage 1 due 2027-04-14 and stage 2 due 2027-10-07, and a budget of EUR 48M. The report is honest that no call is a clean fit: Co-Research is too tight, the R2B 2027 round is unannounced, Horizon needs a consortium, and the bridging call is a weak fit. The EUR 150-400k and EUR 0.5-1.5M need estimates are labelled as the agent's own. Score 3 is fair."
+    },
+    {
+      "part": "nabc",
+      "agrees": true,
+      "score": 3,
+      "note": "The summary is balanced. It names the need as unvalidated, the 2-point gain as marginal, the Al corrosion and Li leaching risk, the missing business lead, and the publication-before-filing risk. It is the shortest report and relies on the others. Score 3, promising but with clear gaps, fits."
+    }
+  ],
+  "issues": [
+    {
+      "part": "ip",
+      "claim": "Innventia/RISE family: \"Its claims could not be read (not available from the EPO)\" and \"expiry is likely in most states\".",
+      "problem": "EP3266057B1 claims are available from the EPO (in German). They are narrow: a method and electrode using isolated lignin pretreated to remove fractions under 1000 Da, in a water slurry. The US patent US10439204B2 had a maintenance fee paid in 2023, so it is probably still in force. The \"likely expired\" wording understates the US risk. Only SE expired and CN lapsed, plus some EP states.",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DEP3266057"
+    },
+    {
+      "part": "ip",
+      "claim": "SE546446C2 is \"granted\" and EP4774768A1 is in examination.",
+      "problem": "The EPO shows no recorded legal events for SE546446C2. The grant is inferred from the C2 kind code only. The WO also shows entry into the national phase on 2026-04-07 and non-entry on 2026-04-08, which the report flagged but left unresolved. Which countries were entered is still unknown. The claims do match the report (lignin, polyol and cross-linker, with NMC listed as an active material).",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DWO2025053785"
+    },
+    {
+      "part": "market",
+      "claim": "Top applicants among the 100 closest families: ZEON (11), LINTEC (5), Meishan Indigo (5), Sumitomo Seika (5), LG Energy Solution (4).",
+      "problem": "The ip.md report gives different counts from the same database: LG Energy Solution 10, Samsung SDI 6, Zeon 5, and no Sumitomo Seika. The two reports probably ran different queries, but neither says so. The competitor counts cannot be relied on as exact.",
+      "link": ""
+    },
+    {
+      "part": "ip",
+      "claim": "Borregaard EP3544099A1 was \"refused in 2020-03\".",
+      "problem": "Confirmed at the EPO. But the same family's WO and the later EP3769360A1 are still alive, and US2020411873A1 is pending. The claims cover water-soluble lignin plus CMC for negative electrodes, so the report's low risk rating for cathodes is fair.",
+      "link": "https://worldwide.espacenet.com/patent/search?q=pn%3DEP3544099"
+    },
+    {
+      "part": "market",
+      "claim": "Stora Enso is the largest kraft lignin producer with 50,000 t/year capacity.",
+      "problem": "I could not verify this: the Stora Enso page returned HTTP 403. The funding report says Stora Enso has \"lignin binder\" work, but nabc.md says Lignode is an anode material, not a binder. The market report itself says to check this. The Stora Enso role (partner or competitor) is unresolved across the reports.",
+      "link": "https://www.storaenso.com/en/products/lignin/lignode"
+    },
+    {
+      "part": "market",
+      "claim": "The cathode PVDF binder pool is about USD 1-2 billion a year; PVDF binder estimates range from USD 1.2 to 2.3 billion.",
+      "problem": "The USD 1-2B figure is the agent's own estimate, and the report says so. Mordor gives cathode binders 42.7% of its USD 3.94B total, about USD 1.7B across all binder types. That is consistent, but it is not a PVDF-only figure. Mordor's own pages also give different 2027 values (4.14B vs 4.35B). There is no bottom-up reachable-market figure, so market size is only indicative.",
+      "link": "https://www.mordorintelligence.com/industry-reports/lithium-ion-battery-binders-market"
+    },
+    {
+      "part": "market",
+      "claim": "Competitors: BASF Licity and LA133 as aqueous binders.",
+      "problem": "The sources are a magazine page and a search-result snippet, and the cathode use was not verified. nabc.md names Nanoramic and ip.md names dry-electrode processing, but market.md names neither. The competitor lists across the reports are not aligned.",
+      "link": "https://www.emobility-engineering.com/?p=17945"
+    },
+    {
+      "part": "funding",
+      "claim": "Business Finland Co-Research: deadline 2026-12-18; at least 3 SMEs; 80% funding.",
+      "problem": "Correct and confirmed on the call page. The report's own concern also holds: it is a three-week window, and the pulp company may not count as an SME. The report rates it \"moderate fit\", but the realistic chance is lower. The nabc.md suggestion of a \"Co-Innovation with the pulp partner\" route is not checked in any report and is a different instrument.",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/call-research-organizations-and-smes/"
+    },
+    {
+      "part": "funding",
+      "claim": "Horizon D2-07: opens 2026-12-15, stage 1 due 2027-04-14, stage 2 due 2027-10-07, EUR 48M, about 10 grants.",
+      "problem": "I confirmed the dates and budget through a search of the official call listings. The portal page itself returned no content. The consortium rules are not checked, and the report says so. Its \"Area A, under EUR 35/kWh\" fit argument could not be verified.",
+      "link": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2027-04-two-stage-d2-07"
+    },
+    {
+      "part": "funding",
+      "claim": "R2B next round could open around December 2026; Tempo closed October 2025; Horizon bridging deadline 2027-02-16.",
+      "problem": "The R2B timing is the agent's inference and is labelled as such. The Tempo closing date and the bridging deadline come only from own data or Business Finland pages that I did not open. The R2B 2/2026 dates and budget (8 June to 16 September, EUR 7.5M) are confirmed. The R2B round is the key next step for this team, and its timing is the least certain.",
+      "link": "https://www.businessfinland.fi/en/services/funding/calls/2026/r2b-funding-call-2-2026/"
+    },
+    {
+      "part": "nabc",
+      "claim": "The suggestion of Business Finland \"Tutkijalähtöinen-type support\" and a proof-of-concept grant.",
+      "problem": "The report says \"check current names\", and none of the programmes is verified or compared with the funding report, which does not mention them.",
+      "link": ""
+    }
+  ]
+}

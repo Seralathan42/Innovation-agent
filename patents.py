@@ -110,6 +110,7 @@ def db():
             family TEXT, priority TEXT, PRIMARY KEY (sector, number));
         CREATE INDEX IF NOT EXISTS patents_date ON patents (date);
         CREATE INDEX IF NOT EXISTS patents_family ON patents (family);
+        CREATE INDEX IF NOT EXISTS patents_sector ON patents (sector, aalto, date);  -- each sector's newest patents, fast
         CREATE VIRTUAL TABLE IF NOT EXISTS patent_text USING fts5(title, abstract, content='patents', content_rowid='rowid',
             tokenize='porter unicode61');  -- word index for similar(), kept in step by the two triggers
         CREATE TRIGGER IF NOT EXISTS patents_added AFTER INSERT ON patents BEGIN

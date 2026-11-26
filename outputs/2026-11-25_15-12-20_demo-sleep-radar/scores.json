@@ -1,0 +1,18 @@
+{
+  "nabc": {
+    "score": 3,
+    "reason": "Real clinical need and promising early data with a differentiating obstructive/central split, but crowded radar competition, no IP filed, a small 31-patient dataset, and no regulatory expertise on the team."
+  },
+  "market": {
+    "score": 3,
+    "reason": "Sleep apnea screening is a large, real-need market with the obstructive/central split as a differentiator, but it is crowded (Sleepiz, Withings, ResMed, Philips), regulated under MDR, and the evidence base is small (31 patients)."
+  },
+  "ip": {
+    "score": 2,
+    "reason": "Radar-based sleep apnea detection and even obstructive/central distinction via chest-abdomen signals already appear in several recent Chinese filings (one granted in CN), leaving mostly narrow implementation details and clinical validation to protect."
+  },
+  "funding": {
+    "score": 3,
+    "reason": "Business Finland R2B is a strong fit but its 1/2027 dates are unconfirmed, and the EIC, EIT Health and Horizon options need a company or consortium that does not yet exist."
+  }
+}

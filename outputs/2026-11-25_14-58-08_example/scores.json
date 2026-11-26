@@ -1,0 +1,18 @@
+{
+  "nabc": {
+    "score": 3,
+    "reason": "Real need and a plausible cost/sustainability edge, but evidence is lab-scale with a marginal 2-point cycling gain, a crowded prior-art field including lignin binder patents, and no business lead or customer contact."
+  },
+  "ip": {
+    "score": 2,
+    "reason": "Lignin as a water-based binder, including for NMC cathodes, is already published and patented (Innventia/RISE, Borregaard, NTNU papers, many Chinese filings), so only a narrow claim on the specific modification chemistry or NMC811 performance might remain."
+  },
+  "market": {
+    "score": 3,
+    "reason": "The battery binder market is real and growing, and NMP and PFAS pressure gives a reason to switch, but it is crowded and conservative. Prior lignin-binder patents exist, there is no data beyond coin cells, and no business lead is involved yet."
+  },
+  "funding": {
+    "score": 3,
+    "reason": "Several plausible routes exist (Business Finland Co-Research closing 18 Dec, next Research to Business round, Horizon battery calls and bridging call), but no call is a clean fit now. The nearest deadline is hard to meet, the Horizon calls need consortia and have far-off dates, and the team has no company yet."
+  }
+}
